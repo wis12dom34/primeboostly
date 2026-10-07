@@ -1,1 +1,63 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Support · Prime Boostly</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/support.css"></head><body class="support-page"><main class="support-mobile" data-figma-node="11:99"><header class="support-mobile-head"><a class="brand support-mobile-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a><a class="support-mobile-menu" href="/dashboard.html" aria-label="Open menu">☰</a></header><section class="support-mobile-content"><h1>Support</h1><p class="support-mobile-sub">Create and follow up on support requests from your account.</p><a class="support-create" href="/new-ticket.html">Create New Ticket</a><article class="support-notice"><h2>Need a faster answer?</h2><p>Include your order ID, transaction ID, or a screenshot when reporting an issue.</p></article><a class="support-ticket" href="/ticket-detail.html"><div class="support-ticket-top"><span>#TKT-204</span><em class="support-status open">Open</em></div><h2>Order not starting</h2><p>Today 10:22 AM</p></a><a class="support-ticket" href="/ticket-detail.html"><div class="support-ticket-top"><span>#TKT-198</span><em class="support-status answered">Answered</em></div><h2>Wallet funding delay</h2><p>Yesterday 6:18 PM</p></a><a class="support-ticket" href="/ticket-detail.html"><div class="support-ticket-top"><span>#TKT-181</span><em class="support-status closed">Closed</em></div><h2>Service question</h2><p>03 Oct 2026</p></a></section></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Support · Prime Boostly</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/dashboard-figma.css">
+  <link rel="stylesheet" href="/support.css">
+  <link rel="stylesheet" href="/support-figma.css">
+  <script src="/auth.js" defer></script>
+</head>
+<body class="app support-page" data-auth-protected="true">
+  <aside class="pb-sidebar">
+    <div class="pb-side-brand"><strong><span>SMM</span>Panel</strong><small>Prime Boostly</small></div>
+    <nav>
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/dashboard.html">New Order</a>
+      <a href="/orders.html">Orders</a>
+      <a href="/orders.html#history">Order History</a>
+      <a href="/add-funds.html">Add Funds</a>
+      <a class="active" href="/support.html">Support</a>
+      <a href="/settings.html">Settings</a>
+    </nav>
+    <a class="logout" href="/login.html" data-auth-logout>Log out</a>
+  </aside>
+
+  <main class="support-desktop" data-figma-node="6:326">
+    <div class="support-desktop-inner">
+      <header class="support-desktop-heading"><div><h1>Support</h1><p>Get help with orders, payments, account access, or API issues.</p></div><a class="support-new-ticket" href="/new-ticket.html">New Ticket</a></header>
+      <section class="support-desktop-stats" aria-label="Support statistics"><article><small>Open Tickets</small><b>2</b></article><article><small>Resolved</small><b>38</b></article><article><small>Avg. Response</small><b>&lt; 15 min</b></article></section>
+      <div class="support-workspace">
+        <section class="support-ticket-list">
+          <h2>Your Tickets</h2>
+          <a class="support-ticket-card" href="/ticket-detail.html"><div class="support-ticket-card-top"><span>#T-219</span><em class="support-desktop-badge">Open</em></div><h3>Order #1247 still processing</h3><p>Updated 4 min ago</p></a>
+          <a class="support-ticket-card" href="/ticket-detail.html"><div class="support-ticket-card-top"><span>#T-214</span><em class="support-desktop-badge waiting">Waiting</em></div><h3>Wallet funding pending</h3><p>Updated 2h ago</p></a>
+          <a class="support-ticket-card" href="/ticket-detail.html"><div class="support-ticket-card-top"><span>#T-207</span><em class="support-desktop-badge">Resolved</em></div><h3>Service refill request</h3><p>Yesterday</p></a>
+          <a class="support-ticket-card" href="/ticket-detail.html"><div class="support-ticket-card-top"><span>#T-201</span><em class="support-desktop-badge">Resolved</em></div><h3>API authentication question</h3><p>02 Oct 2026</p></a>
+        </section>
+        <form class="support-contact" action="/new-ticket.html" method="get">
+          <h2>How can we help?</h2>
+          <p>Create a ticket with your order ID, payment reference, or screenshots so support can resolve it faster.</p>
+          <label>Subject<input name="subject" placeholder="What do you need help with?"></label>
+          <textarea name="message" aria-label="Message" placeholder="Describe the issue clearly…"></textarea>
+          <button type="submit">Submit Ticket</button>
+          <small>Human support is available 24/7.</small>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <main class="support-mobile" data-figma-node="11:99">
+    <header class="support-mobile-head"><a class="brand support-mobile-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a><a class="support-mobile-menu" href="/mobile-menu.html" aria-label="Open menu">☰</a></header>
+    <section class="support-mobile-content">
+      <h1>Support</h1><p class="support-mobile-sub">Create and follow up on support requests from your account.</p><a class="support-create" href="/new-ticket.html">Create New Ticket</a>
+      <article class="support-notice"><h2>Need a faster answer?</h2><p>Include your order ID, transaction ID, or a screenshot when reporting an issue.</p></article>
+      <a class="support-ticket" href="/ticket-detail.html"><div class="support-ticket-top"><span>#TKT-204</span><em class="support-status open">Open</em></div><h2>Order not starting</h2><p>Today 10:22 AM</p></a>
+      <a class="support-ticket" href="/ticket-detail.html"><div class="support-ticket-top"><span>#TKT-198</span><em class="support-status answered">Answered</em></div><h2>Wallet funding delay</h2><p>Yesterday 6:18 PM</p></a>
+      <a class="support-ticket" href="/ticket-detail.html"><div class="support-ticket-top"><span>#TKT-181</span><em class="support-status closed">Closed</em></div><h2>Service question</h2><p>03 Oct 2026</p></a>
+    </section>
+  </main>
+</body>
+</html>
