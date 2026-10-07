@@ -1,1 +1,63 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Settings · Prime Boostly</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/settings.css"></head><body class="settings-page"><main class="settings-mobile" data-figma-node="11:139"><header class="settings-mobile-head"><a class="brand settings-mobile-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a><a class="settings-mobile-menu" href="/dashboard.html" aria-label="Open menu">☰</a></header><section class="settings-mobile-content"><h1>Settings</h1><p class="settings-mobile-sub">Manage your Prime Boostly account details and preferences.</p><section class="settings-card profile-card"><h2>Profile</h2><label class="settings-field"><span>Username</span><div>wick</div></label><label class="settings-field"><span>Email</span><div>user@example.com</div></label><label class="settings-field"><span>Phone</span><div>0800 000 0000</div></label></section><section class="settings-card preferences-card"><h2>Preferences</h2><div class="settings-preference"><span>Order updates</span><em class="setting-status on">On</em></div><div class="settings-preference"><span>Payment alerts</span><em class="setting-status on">On</em></div><div class="settings-preference"><span>Marketing emails</span><em class="setting-status off">Off</em></div></section><button class="settings-save" type="button">Save Changes</button></section></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Settings · Prime Boostly</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/dashboard-figma.css">
+  <link rel="stylesheet" href="/settings.css">
+  <link rel="stylesheet" href="/settings-figma.css">
+  <script src="/auth.js" defer></script>
+</head>
+<body class="app settings-page" data-auth-protected="true">
+  <aside class="pb-sidebar">
+    <div class="pb-side-brand"><strong><span>SMM</span>Panel</strong><small>Prime Boostly</small></div>
+    <nav>
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/dashboard.html">New Order</a>
+      <a href="/orders.html">Orders</a>
+      <a href="/orders.html#history">Order History</a>
+      <a href="/add-funds.html">Add Funds</a>
+      <a href="/support.html">Support</a>
+      <a class="active" href="/settings.html">Settings</a>
+    </nav>
+    <a class="logout" href="/login.html" data-auth-logout>Log out</a>
+  </aside>
+
+  <main class="settings-desktop" data-figma-node="6:416">
+    <div class="settings-desktop-inner">
+      <header class="settings-desktop-heading"><h1>Settings</h1><p>Manage your profile, password, notifications, and API access.</p></header>
+      <nav class="settings-tabs" aria-label="Settings sections"><a class="settings-tab active" href="#profile">Profile</a><a class="settings-tab" href="#security">Security</a><a class="settings-tab" href="#api">API</a><a class="settings-tab" href="#notifications">Notifications</a></nav>
+      <div class="settings-workspace">
+        <form class="settings-profile-panel" id="profile">
+          <h2>Profile Information</h2><p>Update your public account details.</p>
+          <div class="settings-name-row"><label class="settings-desktop-field">First Name<input name="firstName" value="Wick"></label><label class="settings-desktop-field">Last Name<input name="lastName" value="Spend"></label></div>
+          <label class="settings-desktop-field">Username<input name="username" value="wick"></label>
+          <label class="settings-desktop-field">Email<input name="email" type="email" value="user@example.com"></label>
+          <label class="settings-desktop-field">Phone<input name="phone" type="tel" value="+234 800 000 0000"></label>
+          <label class="settings-desktop-field">Timezone<select name="timezone"><option>Africa/Lagos</option></select></label>
+          <button class="settings-save-desktop" type="button">Save Changes</button>
+        </form>
+        <section class="settings-security-panel" id="security">
+          <h2>Security</h2><p>Protect your account with a strong password and keep your API key private.</p>
+          <label class="settings-desktop-field">Current Password<input type="password" value="password" aria-label="Current password"></label>
+          <label class="settings-desktop-field">New Password<input type="password" placeholder="At least 8 characters" aria-label="New password"></label>
+          <button class="settings-secondary-btn" type="button">Update Password</button>
+          <div class="settings-api-card" id="api"><h3>API Key</h3><p>••••••••••••••••••••</p><small>Use your API key only on trusted servers.</small><button class="settings-secondary-btn" type="button">Regenerate Key</button></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <main class="settings-mobile" data-figma-node="11:139">
+    <header class="settings-mobile-head"><a class="brand settings-mobile-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a><a class="settings-mobile-menu" href="/mobile-menu.html" aria-label="Open menu">☰</a></header>
+    <section class="settings-mobile-content">
+      <h1>Settings</h1><p class="settings-mobile-sub">Manage your Prime Boostly account details and preferences.</p>
+      <section class="settings-card profile-card"><h2>Profile</h2><label class="settings-field"><span>Username</span><div>wick</div></label><label class="settings-field"><span>Email</span><div>user@example.com</div></label><label class="settings-field"><span>Phone</span><div>0800 000 0000</div></label></section>
+      <section class="settings-card preferences-card" id="notifications"><h2>Preferences</h2><div class="settings-preference"><span>Order updates</span><em class="setting-status on">On</em></div><div class="settings-preference"><span>Payment alerts</span><em class="setting-status on">On</em></div><div class="settings-preference"><span>Marketing emails</span><em class="setting-status off">Off</em></div></section>
+      <button class="settings-save" type="button">Save Changes</button>
+    </section>
+  </main>
+</body>
+</html>
