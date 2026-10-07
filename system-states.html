@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>System States · Prime Boostly</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/system-states.css">
+</head>
+<body class="system-states-page">
+  <main class="system-states-desktop" data-figma-node="37:971">
+    <h1>PrimeBoostly System States</h1>
+    <p class="lead">Reusable loading, empty, error, and success states for lists, orders, services, and payments.</p>
+
+    <section class="state-grid" aria-label="System states">
+      <article class="state-card">
+        <span class="state-icon">…</span>
+        <h2>Loading</h2>
+        <p>Use while fetching services, orders, balances, or payment records.</p>
+        <div class="state-skeletons" aria-hidden="true"><i></i><i></i><i></i></div>
+      </article>
+
+      <article class="state-card">
+        <span class="state-icon">0</span>
+        <h2>Nothing here yet</h2>
+        <p>Use for empty order history, fund history, search results, or tickets.</p>
+        <a class="state-primary" href="/dashboard.html">Create New Order</a>
+      </article>
+
+      <article class="state-card">
+        <span class="state-icon error">!</span>
+        <h2>Something went wrong</h2>
+        <p>Use when a request fails. Keep the user’s input and allow a safe retry.</p>
+        <button class="state-secondary" type="button" onclick="location.reload()">Try Again</button>
+      </article>
+    </section>
+
+    <section class="success-banner" aria-label="Payment confirmed">
+      <span class="success-icon">✓</span>
+      <div class="success-copy"><b>Payment confirmed</b><span>₦25,000 has been added to your PrimeBoostly wallet.</span></div>
+    </section>
+  </main>
+
+  <main class="system-states-mobile" data-figma-node="37:1188">
+    <header class="ss-mobile-head">
+      <a class="ss-brand" href="/" aria-label="Prime Boostly home">
+        <span class="ss-brand-row"><span>PRIME</span><span>BOOSTLY</span></span>
+        <small>Prime Boostly</small>
+      </a>
+      <a class="ss-menu" href="/mobile-menu.html" aria-label="Open menu">☰</a>
+    </header>
+
+    <section class="ss-mobile-title">
+      <h1>System States</h1>
+      <p>Reusable feedback states for customer and admin screens.</p>
+    </section>
+
+    <article class="ss-mobile-card">
+      <div class="ss-state-top"><span class="ss-mobile-icon">…</span><b>Loading</b></div>
+      <p>Fetching your latest data…</p>
+    </article>
+
+    <article class="ss-mobile-card">
+      <div class="ss-state-top"><span class="ss-mobile-icon">0</span><b>Nothing here yet</b></div>
+      <p>No records match this view.</p>
+    </article>
+
+    <article class="ss-mobile-card">
+      <div class="ss-state-top"><span class="ss-mobile-icon error">!</span><b>Something went wrong</b></div>
+      <p>We could not load this data. Try again.</p>
+      <button class="state-secondary" type="button" onclick="location.reload()">Try Again</button>
+    </article>
+  </main>
+</body>
+</html>
