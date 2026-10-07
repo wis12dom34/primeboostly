@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Services · Prime Boostly</title>
   <link rel="stylesheet" href="/style.css">
+  <script src="/auth.js" defer></script>
 </head>
-<body class="pb-mobile-bg">
+<body class="pb-mobile-bg" data-auth-protected="true">
   <main class="services-desktop" data-figma-node="2:32">
     <header class="legacy-user-header">
       <a class="brand desktop-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
       <nav><a href="/dashboard.html">Dashboard</a><a href="/orders.html">Order</a><a class="active" href="/services.html">Services</a><a href="/add-funds.html">Add Fund</a><a href="/fund-history.html">Fund History</a><a href="/transactions.html">Transactions</a></nav>
-      <div class="desktop-profile"><i></i><b>wick</b><span>●</span></div>
+      <div class="desktop-profile"><i></i><b data-auth-name>wick</b><span>●</span></div>
     </header>
     <section class="services-desktop-content">
       <p class="desktop-crumb">Home&nbsp;&nbsp;/&nbsp;&nbsp;Service</p>
@@ -30,7 +31,7 @@
   </main>
 
   <main class="mobile figma-services" data-figma-node="6:509">
-    <header class="mtop"><a class="brand figma-brand" href="/" aria-label="Prime Boostly home"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a><a class="menu" href="/dashboard.html" aria-label="Open menu">☰</a></header>
+    <header class="mtop"><a class="brand figma-brand" href="/" aria-label="Prime Boostly home"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a><a class="menu" href="/mobile-menu.html" aria-label="Open menu">☰</a></header>
     <section class="mobile-content services-content">
       <h1>Services</h1><p class="lead">Find the right service and order in seconds.</p>
       <label class="mobile-search"><span>Search</span><div>Search services</div></label>
