@@ -5,55 +5,71 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Orders · Prime Boostly</title>
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/dashboard-figma.css">
+  <link rel="stylesheet" href="/orders-figma.css">
+  <script src="/auth.js" defer></script>
 </head>
-<body class="pb-mobile-bg">
-  <main class="mobile figma-orders" data-figma-node="6:663">
-    <header class="mtop">
-      <a class="brand figma-brand" href="/" aria-label="Prime Boostly home">
-        <span class="mark">B</span>
-        <span><b>PRIME</b><strong>BOOSTLY</strong></span>
-      </a>
-      <a class="menu" href="/dashboard.html" aria-label="Open menu">☰</a>
-    </header>
+<body class="app orders-page" data-auth-protected="true">
+  <aside class="pb-sidebar">
+    <div class="pb-side-brand"><strong><span>SMM</span>Panel</strong><small>Prime Boostly</small></div>
+    <nav>
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/dashboard.html">New Order</a>
+      <a class="active" href="/orders.html">Orders</a>
+      <a href="/orders.html#history">Order History</a>
+      <a href="/add-funds.html">Add Funds</a>
+      <a href="/support.html">Support</a>
+      <a href="/settings.html">Settings</a>
+    </nav>
+    <a class="logout" href="/login.html" data-auth-logout>Log out</a>
+  </aside>
 
+  <main class="orders-desktop" data-figma-node="6:2">
+    <div class="orders-desktop-inner">
+      <header class="orders-heading"><h1>Orders</h1><p>Track, filter, and manage your active service orders.</p></header>
+      <section class="orders-stats" aria-label="Order statistics">
+        <article><small>All Orders</small><b>1,248</b></article>
+        <article><small>Processing</small><b>18</b></article>
+        <article><small>Completed</small><b>1,201</b></article>
+        <article><small>Canceled</small><b>29</b></article>
+      </section>
+      <form class="orders-filter" action="/orders.html" method="get">
+        <label class="orders-control">Search<input name="q" placeholder="Order ID or service"></label>
+        <label class="orders-control">Status<select name="status"><option>All statuses</option><option>Pending</option><option>Processing</option><option>Completed</option><option>Canceled</option></select></label>
+        <label class="orders-control">Period<select name="period"><option>Last 30 days</option><option>Last 7 days</option><option>Last 90 days</option></select></label>
+        <button class="orders-search-btn" type="submit">Search</button>
+      </form>
+      <section class="orders-table-card" id="history">
+        <h2>Latest Orders</h2>
+        <table class="orders-table">
+          <thead><tr><th>ORDER</th><th>SERVICE</th><th>CHARGE</th><th>STATUS</th><th>START</th><th>REMAINS</th><th>ACTION</th></tr></thead>
+          <tbody>
+            <tr><td>#1248</td><td>Instagram Followers | Fast</td><td>₦1,850</td><td class="completed">Completed</td><td>12,408</td><td>0</td><td><a class="action" href="/order-detail.html">Refill</a></td></tr>
+            <tr><td>#1247</td><td>TikTok Views | Instant</td><td>₦720</td><td class="processing">Processing</td><td>85,100</td><td>14,900</td><td><a class="action" href="/order-detail.html">Cancel</a></td></tr>
+            <tr><td>#1246</td><td>YouTube Views | HQ</td><td>₦1,200</td><td class="pending">Pending</td><td>—</td><td>50,000</td><td><a class="action" href="/order-detail.html">Cancel</a></td></tr>
+            <tr><td>#1245</td><td>Facebook Page Likes</td><td>₦3,400</td><td class="completed">Completed</td><td>9,220</td><td>0</td><td><a class="action" href="/order-detail.html">Details</a></td></tr>
+            <tr><td>#1244</td><td>Telegram Members</td><td>₦2,150</td><td class="partial">Partial</td><td>4,400</td><td>600</td><td><a class="action" href="/order-detail.html">Refill</a></td></tr>
+            <tr><td>#1243</td><td>Instagram Reels Views</td><td>₦540</td><td class="completed">Completed</td><td>220,000</td><td>0</td><td><a class="action" href="/order-detail.html">Details</a></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <main class="mobile figma-orders orders-mobile pb-mobile-bg" data-figma-node="6:663">
+    <header class="mtop">
+      <a class="brand figma-brand" href="/" aria-label="Prime Boostly home"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
+      <a class="menu" href="/mobile-menu.html" aria-label="Open menu">☰</a>
+    </header>
     <section class="mobile-content orders-content">
       <h1>Orders</h1>
       <p class="lead">Track your latest service orders.</p>
-
-      <div class="stats" aria-label="Order statistics">
-        <div class="processing"><small>Processing</small><b>18</b></div>
-        <div class="completed"><small>Completed</small><b>1,201</b></div>
-        <div class="issues"><small>Issues</small><b>3</b></div>
-      </div>
-
-      <label class="mobile-search">
-        <span>Search</span>
-        <div>Order ID or service</div>
-      </label>
-
-      <nav class="chips order-chips" aria-label="Order status">
-        <span class="active">All</span>
-        <span>Pending</span>
-        <span>Completed</span>
-      </nav>
-
-      <a class="order" href="/order-detail.html">
-        <div class="order-top"><span>#1248</span><em class="badge completed-badge">Completed</em></div>
-        <h3>Instagram Followers</h3>
-        <div class="order-bottom"><b>₦1,850</b><span>View details →</span></div>
-      </a>
-
-      <a class="order" href="/order-detail.html">
-        <div class="order-top"><span>#1247</span><em class="badge warn processing-badge">Processing</em></div>
-        <h3>TikTok Views</h3>
-        <div class="order-bottom"><b>₦720</b><span>View details →</span></div>
-      </a>
-
-      <a class="order" href="/order-detail.html">
-        <div class="order-top"><span>#1246</span><em class="badge warn pending-badge">Pending</em></div>
-        <h3>YouTube Views</h3>
-        <div class="order-bottom"><b>₦1,200</b><span>View details →</span></div>
-      </a>
+      <div class="stats" aria-label="Order statistics"><div class="processing"><small>Processing</small><b>18</b></div><div class="completed"><small>Completed</small><b>1,201</b></div><div class="issues"><small>Issues</small><b>3</b></div></div>
+      <label class="mobile-search"><span>Search</span><div>Order ID or service</div></label>
+      <nav class="chips order-chips" aria-label="Order status"><span class="active">All</span><span>Pending</span><span>Completed</span></nav>
+      <a class="order" href="/order-detail.html"><div class="order-top"><span>#1248</span><em class="badge completed-badge">Completed</em></div><h3>Instagram Followers</h3><div class="order-bottom"><b>₦1,850</b><span>View details →</span></div></a>
+      <a class="order" href="/order-detail.html"><div class="order-top"><span>#1247</span><em class="badge warn processing-badge">Processing</em></div><h3>TikTok Views</h3><div class="order-bottom"><b>₦720</b><span>View details →</span></div></a>
+      <a class="order" href="/order-detail.html"><div class="order-top"><span>#1246</span><em class="badge warn pending-badge">Pending</em></div><h3>YouTube Views</h3><div class="order-bottom"><b>₦1,200</b><span>View details →</span></div></a>
     </section>
   </main>
 </body>
