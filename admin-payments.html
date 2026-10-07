@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Payments · Prime Boostly</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/admin-payments.css">
+</head>
+<body class="admin-payments-page">
+  <main class="admin-payments-desktop" data-figma-node="14:762">
+    <aside class="apd-sidebar">
+      <a class="apd-brand" href="/admin.html"><b><span>PRIME</span> BOOSTLY</b><small>Admin Panel</small></a>
+      <nav>
+        <p>OVERVIEW</p><a href="/admin.html">• <span>Dashboard</span></a>
+        <p>MANAGE SERVICE</p><a>• <span>Add Services</span></a><a>• <span>Show Services</span></a><a>• <span>Categories</span></a><a>• <span>API Providers</span></a>
+        <p>MANAGE ORDERS</p><a href="/admin-orders.html">• <span>All Orders</span></a><a>• <span>Awaiting</span></a><a>• <span>Pending</span></a><a>• <span>Processing</span></a><a>• <span>Completed</span></a><a>• <span>Refunded</span></a>
+        <p>MANAGE USER</p><a href="/admin-users.html">• <span>All Users</span></a><a>• <span>Send Email</span></a>
+        <p>PAYMENT SETTINGS</p><a class="active" href="/admin-payments.html">• <span>Payment Methods</span></a><a>• <span>Manual Gateway</span></a><a>• <span>Deposit Request</span></a><a>• <span>Payment Log</span></a>
+        <p>OPERATIONS</p><a>• <span>Transactions</span></a><a>• <span>Support Tickets</span></a>
+        <p>CONTROLS</p><a>• <span>Basic Controls</span></a><a>• <span>Color Settings</span></a><a>• <span>Plugins</span></a><a>• <span>Theme &amp; Content</span></a>
+      </nav>
+    </aside>
+
+    <section class="apd-content">
+      <header class="apd-header">
+        <div><h1>Admin Payments</h1><p>Manage gateways, manual funding, deposit requests, and payment logs</p></div>
+        <div class="apd-actions"><button>Notifications</button><span><b>A</b> Admin</span></div>
+      </header>
+
+      <section class="apd-metrics">
+        <article class="soft"><small>Collected</small><b>₦37.8M</b></article>
+        <article><small>Today</small><b>₦1.26M</b></article>
+        <article><small>Pending Requests</small><b class="warning-text">23</b></article>
+        <article><small>Failed Today</small><b class="error-text">9</b></article>
+      </section>
+
+      <div class="apd-section-title"><h2>Payment Methods</h2><button>Add Manual Gateway</button></div>
+      <section class="apd-gateways">
+        <article><div class="top"><h3>Paystack</h3><em class="apd-status success">Active</em></div><p>Currency · NGN</p><div class="gateway-actions"><button>Edit</button><button class="danger">Disable</button></div></article>
+        <article><div class="top"><h3>Korapay</h3><em class="apd-status success">Active</em></div><p>Currency · NGN</p><div class="gateway-actions"><button>Edit</button><button class="danger">Disable</button></div></article>
+        <article><div class="top"><h3>Flutterwave</h3><em class="apd-status success">Active</em></div><p>Currency · NGN</p><div class="gateway-actions"><button>Edit</button><button class="danger">Disable</button></div></article>
+        <article><div class="top"><h3>VPay</h3><em class="apd-status success">Active</em></div><p>Currency · NGN</p><div class="gateway-actions"><button>Edit</button><button class="danger">Disable</button></div></article>
+      </section>
+
+      <h2 class="apd-heading">Deposit Requests</h2>
+      <section class="apd-table deposit-table">
+        <div class="apd-table-row head"><span>TRX</span><span>USER</span><span>GATEWAY</span><span>AMOUNT</span><span>STATUS</span><span>ACTION</span></div>
+        <div class="apd-table-row"><span>94A71</span><span>wick</span><span>Paystack</span><span>₦25,000</span><span><em class="apd-status success">Complete</em></span><span>View</span></div>
+        <div class="apd-table-row"><span>94A62</span><span>socialshop</span><span>Korapay</span><span>₦10,000</span><span><em class="apd-status warning">Pending</em></span><a>Review</a></div>
+        <div class="apd-table-row"><span>94B87</span><span>primecustomer</span><span>Manual</span><span>₦50,000</span><span><em class="apd-status warning">Pending</em></span><span>Review</span></div>
+        <div class="apd-table-row"><span>94C02</span><span>retailhub</span><span>Paystack</span><span>₦8,000</span><span><em class="apd-status error">Failed</em></span><span>View</span></div>
+      </section>
+
+      <h2 class="apd-heading">Payment Log</h2>
+      <section class="apd-table log-table">
+        <div class="apd-table-row head"><span>DATE</span><span>TRANSACTION</span><span>GATEWAY</span><span>AMOUNT</span><span>CHARGE</span><span>RESULT</span></div>
+        <div class="apd-table-row"><span>06 Oct 11:42</span><span>TRX-94A71</span><span>Paystack</span><span>₦25,000</span><span>₦375</span><span><em class="apd-status success">Success</em></span></div>
+        <div class="apd-table-row"><span>06 Oct 10:08</span><span>TRX-94A62</span><span>Korapay</span><span>₦10,000</span><span>₦150</span><span><em class="apd-status success">Success</em></span></div>
+        <div class="apd-table-row"><span>05 Oct 21:16</span><span>TRX-94B87</span><span>Manual</span><span>₦50,000</span><span>₦0</span><span><em class="apd-status warning">Pending</em></span></div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
