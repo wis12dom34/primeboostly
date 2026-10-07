@@ -1,1 +1,63 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Create Account · Prime Boostly</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/auth.css"><script src="/auth.js" defer></script></head><body class="auth-page"><main class="auth-shell"><section class="authbox"><a class="brand" href="/"><span class="mark">PB</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a><h1>Create your account</h1><p class="auth-lead">Set up a Prime Boostly preview account and continue to the dashboard.</p><form class="auth-form" data-auth-register novalidate><p class="auth-error" data-auth-error role="alert"></p><p class="auth-success" data-auth-success role="status"></p><label class="auth-field">Username<input name="username" autocomplete="username" placeholder="Choose a username" required minlength="3"></label><label class="auth-field">Email<input name="email" type="email" autocomplete="email" inputmode="email" placeholder="Enter your email" required></label><label class="auth-field">Password<div class="auth-input-wrap"><input id="register-password" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" required minlength="8"><button class="auth-toggle" type="button" data-password-toggle="register-password" aria-pressed="false">Show</button></div></label><label class="auth-field">Confirm Password<div class="auth-input-wrap"><input id="register-confirm" name="confirm" type="password" autocomplete="new-password" placeholder="Repeat your password" required><button class="auth-toggle" type="button" data-password-toggle="register-confirm" aria-pressed="false">Show</button></div></label><button class="auth-submit" type="submit">Create Account →</button></form><p class="auth-foot">Already registered? <a href="/login.html">Sign in</a></p><a class="auth-back" href="/">← Back to home</a><p class="auth-note">Preview authentication only. The password is stored as a one-way browser hash, not as plain text.</p></section></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Create Account · Prime Boostly</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/auth.css">
+  <script src="/auth.js" defer></script>
+</head>
+<body class="auth-page auth-register-page">
+  <header class="register-mobile-header">
+    <a class="brand auth-mobile-header-brand" href="/" aria-label="Prime Boostly home"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
+    <a class="register-mobile-menu" href="/" aria-label="Open menu">☰</a>
+  </header>
+  <main class="auth-figma-shell">
+    <aside class="auth-brand-panel">
+      <a class="brand auth-brand" href="/" aria-label="Prime Boostly home"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
+      <h1>Start growing today</h1>
+      <p>Create your Prime Boostly account and access SMM services from one clean dashboard.</p>
+      <div class="auth-benefits" aria-label="Prime Boostly benefits">
+        <span>✓&nbsp; Fast service delivery</span>
+        <span>✓&nbsp; Simple ordering flow</span>
+        <span>✓&nbsp; Secure wallet funding</span>
+        <span>✓&nbsp; 24/7 support</span>
+      </div>
+    </aside>
+    <section class="auth-form-panel register-form-panel">
+      <h2 class="desktop-register-title">REGISTER</h2>
+      <h2 class="mobile-register-title">Create Account</h2>
+      <p class="auth-panel-lead desktop-register-lead">Create your account in a few quick steps.</p>
+      <p class="auth-panel-lead mobile-register-lead">Join Prime Boostly and start ordering.</p>
+      <form class="auth-form auth-figma-form register-figma-form" data-auth-register novalidate>
+        <p class="auth-error" data-auth-error role="alert"></p>
+        <p class="auth-success" data-auth-success role="status"></p>
+        <div class="auth-field-row">
+          <label class="auth-field">First Name<input name="firstName" autocomplete="given-name" placeholder="First name" required></label>
+          <label class="auth-field">Last Name<input name="lastName" autocomplete="family-name" placeholder="Last name" required></label>
+        </div>
+        <div class="auth-field-row desktop-account-row">
+          <label class="auth-field">Username<input name="username" autocomplete="username" placeholder="Username" required minlength="3"></label>
+          <label class="auth-field">Email Address<input name="email" type="email" autocomplete="email" inputmode="email" placeholder="Email address" required></label>
+        </div>
+        <div class="mobile-stack-fields">
+          <label class="auth-field">Username<input name="username-mobile" autocomplete="username" placeholder="Choose username"></label>
+          <label class="auth-field">Email<input name="email-mobile" type="email" autocomplete="email" inputmode="email" placeholder="Email address"></label>
+        </div>
+        <label class="auth-field">Phone Number<input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="Phone number" required></label>
+        <div class="auth-field-row desktop-password-row">
+          <label class="auth-field">Password<div class="auth-input-wrap"><input id="register-password" name="password" type="password" autocomplete="new-password" placeholder="Password" required minlength="8"><button class="auth-toggle" type="button" data-password-toggle="register-password" aria-pressed="false">Show</button></div></label>
+          <label class="auth-field">Confirm Password<div class="auth-input-wrap"><input id="register-confirm" name="confirm" type="password" autocomplete="new-password" placeholder="Confirm password" required><button class="auth-toggle" type="button" data-password-toggle="register-confirm" aria-pressed="false">Show</button></div></label>
+        </div>
+        <div class="mobile-stack-fields password-mobile-stack">
+          <label class="auth-field">Password<div class="auth-input-wrap"><input id="register-password-mobile" name="password-mobile" type="password" autocomplete="new-password" placeholder="Create password"><button class="auth-toggle" type="button" data-password-toggle="register-password-mobile" aria-pressed="false">Show</button></div></label>
+          <label class="auth-field">Confirm<div class="auth-input-wrap"><input id="register-confirm-mobile" name="confirm-mobile" type="password" autocomplete="new-password" placeholder="Confirm password"><button class="auth-toggle" type="button" data-password-toggle="register-confirm-mobile" aria-pressed="false">Show</button></div></label>
+        </div>
+        <button class="auth-submit" type="submit">Create Account</button>
+      </form>
+      <p class="auth-inline-foot">Already have an account? <a href="/login.html">Login</a></p>
+    </section>
+  </main>
+</body>
+</html>
