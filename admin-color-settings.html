@@ -1,1 +1,65 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Color Settings · Prime Boostly Admin</title><link rel="stylesheet" href="/preview-system.css"></head><body class="admin"><div class="pb-shell"><aside class="pb-side"><a class="pb-brand" href="/admin.html"><span class="pb-brand-text"><small>PRIME BOOSTLY</small><b>Admin Panel</b></span></a><nav class="pb-nav"><div class="label">OVERVIEW</div><a href="/admin.html">Dashboard</a><div class="label">MANAGE SERVICE</div><a href="/admin-add-service.html">Add Services</a><a href="/admin-services.html">Show Services</a><a href="/admin-categories.html">Categories</a><a href="/admin-api-providers.html">API Providers</a><div class="label">MANAGE ORDERS</div><a href="/admin-orders.html">All Orders</a><div class="label">MANAGE USER</div><a href="/admin-users.html">All Users</a><a href="/admin-send-email.html">Send Email</a><div class="label">PAYMENT SETTINGS</div><a href="/admin-payments.html">Payment Methods</a><a href="/admin-manual-gateway.html">Manual Gateway</a><a href="/admin-deposit-requests.html">Deposit Request</a><a href="/admin-payment-logs.html">Payment Log</a><div class="label">OPERATIONS</div><a href="/admin-transactions.html">Transactions</a><a href="/admin-support.html">Support Tickets</a><div class="label">CONTROLS</div><a href="/admin-controls.html">Basic Controls</a><a class="active" href="/admin-color-settings.html">Color Settings</a><a href="/admin-plugins.html">Plugins</a><a href="/admin-theme-content.html">Theme & Content</a></nav></aside><main class="pb-main"><header class="pb-top"><div><h1>Color Settings</h1><p>Keep PrimeBoostly branding consistent across customer screens</p></div><div class="pb-user"><a class="mobile-menu" href="/admin.html">☰</a><span class="avatar">A</span><span>Admin</span></div></header><section class="pb-content"><div class="pb-grid"><section class="card span-7"><h3>Brand palette</h3><div class="list"><div class="list-row"><span>Primary</span><b>#2db05e</b></div><div class="list-row"><span>Dark green</span><b>#23924d</b></div><div class="list-row"><span>Soft green</span><b>#edf8f1</b></div><div class="list-row"><span>Background</span><b>#f8fbf8</b></div><div class="list-row"><span>Surface</span><b>#ffffff</b></div><div class="list-row"><span>Text</span><b>#16212d</b></div></div><button class="btn primary" style="margin-top:14px">Save colors</button></section><aside class="card span-5"><h3>Preview</h3><div class="card soft" style="margin-top:12px"><b>PrimeBoostly</b><p style="margin:6px 0 12px">Grow faster with clean, reliable social media services.</p><button class="btn primary">Primary button</button></div></aside></div></section></main></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Color Settings · Prime Boostly Admin</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/admin-settings.css">
+  <script src="/admin-settings.js" defer></script>
+</head>
+<body class="admin-settings-page color-settings-page">
+  <main class="settings-desktop">
+    <aside class="set-side">
+      <a class="set-brand" href="/admin.html"><span class="set-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></a>
+      <p class="set-label">OVERVIEW</p><a class="set-nav" href="/admin.html">Dashboard</a>
+      <p class="set-label">MANAGE SERVICE</p><a class="set-nav" href="/admin-add-service.html">Add Services</a><a class="set-nav" href="/admin-services.html">Show Services</a><a class="set-nav" href="/admin-categories.html">Categories</a><a class="set-nav" href="/admin-api-providers.html">API Providers</a>
+      <p class="set-label">MANAGE ORDERS</p><a class="set-nav" href="/admin-orders.html">All Orders</a><a class="set-nav" href="/admin-orders.html">Awaiting</a><a class="set-nav" href="/admin-orders.html">Pending</a><a class="set-nav" href="/admin-orders.html">Processing</a><a class="set-nav" href="/admin-orders.html">Completed</a><a class="set-nav" href="/admin-orders.html">Refunded</a>
+      <p class="set-label">MANAGE USER</p><a class="set-nav" href="/admin-users.html">All Users</a><a class="set-nav" href="/admin-send-email.html">Send Email</a>
+      <p class="set-label">PAYMENT SETTINGS</p><a class="set-nav" href="/admin-payments.html">Payment Methods</a><a class="set-nav" href="/admin-manual-gateway.html">Manual Gateway</a><a class="set-nav" href="/admin-deposit-requests.html">Deposit Request</a><a class="set-nav" href="/admin-payment-logs.html">Payment Log</a>
+      <p class="set-label">OPERATIONS</p><a class="set-nav" href="/admin-transactions.html">Transactions</a><a class="set-nav" href="/admin-support.html">Support Tickets</a>
+      <p class="set-label">CONTROLS</p><a class="set-nav" href="/admin-controls.html">Basic Controls</a><a class="set-nav active" href="/admin-color-settings.html">Color Settings</a><a class="set-nav" href="/admin-plugins.html">Plugins</a><a class="set-nav" href="/admin-theme-content.html">Theme &amp; Content</a>
+    </aside>
+    <section class="set-content">
+      <header class="set-header">
+        <div><h1>Color Settings</h1><p>Manage the colors used across Prime Boostly customer experiences</p></div>
+        <div class="set-header-actions"><a class="set-secondary" href="/admin-notifications.html">Notifications</a><span class="set-admin"><b>A</b><span>Admin</span></span></div>
+      </header>
+      <div class="set-section-title"><div><h2>Brand Palette</h2><p>Changes update the preview instantly.</p></div><button class="set-reset" type="button" data-colors-reset>Reset defaults</button></div>
+      <div class="color-layout">
+        <section class="set-card color-card">
+          <div class="color-field"><div><span class="swatch" data-swatch="primary"></span><label for="primaryHex">Primary</label></div><div class="color-control"><input class="color-picker" type="color" value="#2db05e" data-picker="primary" aria-label="Primary color picker"><input id="primaryHex" value="#2DB05E" maxlength="7" data-color="primary" aria-label="Primary hex color"></div></div>
+          <div class="color-field"><div><span class="swatch" data-swatch="dark"></span><label for="darkHex">Dark / Hover</label></div><div class="color-control"><input class="color-picker" type="color" value="#23924d" data-picker="dark" aria-label="Dark green color picker"><input id="darkHex" value="#23924D" maxlength="7" data-color="dark" aria-label="Dark green hex color"></div></div>
+          <div class="color-field"><div><span class="swatch" data-swatch="soft"></span><label for="softHex">Soft Green</label></div><div class="color-control"><input class="color-picker" type="color" value="#edf8f1" data-picker="soft" aria-label="Soft green color picker"><input id="softHex" value="#EDF8F1" maxlength="7" data-color="soft" aria-label="Soft green hex color"></div></div>
+          <div class="color-field"><div><span class="swatch" data-swatch="background"></span><label for="backgroundHex">Page Background</label></div><div class="color-control"><input class="color-picker" type="color" value="#f8fbf8" data-picker="background" aria-label="Background color picker"><input id="backgroundHex" value="#F8FBF8" maxlength="7" data-color="background" aria-label="Background hex color"></div></div>
+          <div class="color-field"><div><span class="swatch" data-swatch="surface"></span><label for="surfaceHex">Surface</label></div><div class="color-control"><input class="color-picker" type="color" value="#ffffff" data-picker="surface" aria-label="Surface color picker"><input id="surfaceHex" value="#FFFFFF" maxlength="7" data-color="surface" aria-label="Surface hex color"></div></div>
+          <div class="color-field"><div><span class="swatch" data-swatch="text"></span><label for="textHex">Text</label></div><div class="color-control"><input class="color-picker" type="color" value="#16212d" data-picker="text" aria-label="Text color picker"><input id="textHex" value="#16212D" maxlength="7" data-color="text" aria-label="Text hex color"></div></div>
+          <div class="color-field"><div><span class="swatch" data-swatch="border"></span><label for="borderHex">Border</label></div><div class="color-control"><input class="color-picker" type="color" value="#dbe7de" data-picker="border" aria-label="Border color picker"><input id="borderHex" value="#DBE7DE" maxlength="7" data-color="border" aria-label="Border hex color"></div></div>
+          <div class="set-actions"><button class="set-primary" type="button" data-colors-save>Save Colors</button><span class="set-feedback" data-color-feedback role="status"></span></div>
+        </section>
+        <aside class="set-card preview-card" data-color-preview>
+          <div class="preview-top"><span class="preview-logo"><b>PRIME</b> BOOSTLY</span><span class="preview-pill">Active</span></div>
+          <div class="preview-body"><small>LIVE PREVIEW</small><h3>Grow faster with Prime Boostly</h3><p>Your selected palette is shown here before you save it.</p><div class="preview-actions"><button type="button">Primary button</button><span>Secondary</span></div></div>
+          <div class="preview-row"><span>Order status</span><b>Completed</b></div><div class="preview-row"><span>Available balance</span><strong>₦125,500.00</strong></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <main class="settings-mobile">
+    <header class="setm-head"><a class="setm-brand" href="/admin.html"><span><b>PRIME</b> BOOSTLY</span><small>Admin Panel</small></a><a class="setm-menu" href="/admin.html" aria-label="Open admin menu">☰</a></header>
+    <h1>Color Settings</h1><p class="setm-lead">Manage the colors used across Prime Boostly.</p>
+    <section class="setm-card mobile-color-list">
+      <div class="mcolor"><div><span class="swatch" data-swatch="primary"></span><b>Primary</b></div><input value="#2DB05E" maxlength="7" data-color="primary" aria-label="Primary hex color mobile"></div>
+      <div class="mcolor"><div><span class="swatch" data-swatch="dark"></span><b>Dark / Hover</b></div><input value="#23924D" maxlength="7" data-color="dark" aria-label="Dark green hex color mobile"></div>
+      <div class="mcolor"><div><span class="swatch" data-swatch="soft"></span><b>Soft Green</b></div><input value="#EDF8F1" maxlength="7" data-color="soft" aria-label="Soft green hex color mobile"></div>
+      <div class="mcolor"><div><span class="swatch" data-swatch="background"></span><b>Background</b></div><input value="#F8FBF8" maxlength="7" data-color="background" aria-label="Background hex color mobile"></div>
+      <div class="mcolor"><div><span class="swatch" data-swatch="surface"></span><b>Surface</b></div><input value="#FFFFFF" maxlength="7" data-color="surface" aria-label="Surface hex color mobile"></div>
+      <div class="mcolor"><div><span class="swatch" data-swatch="text"></span><b>Text</b></div><input value="#16212D" maxlength="7" data-color="text" aria-label="Text hex color mobile"></div>
+      <div class="mcolor"><div><span class="swatch" data-swatch="border"></span><b>Border</b></div><input value="#DBE7DE" maxlength="7" data-color="border" aria-label="Border hex color mobile"></div>
+    </section>
+    <section class="setm-card mobile-preview" data-color-preview><small>LIVE PREVIEW</small><h2>Prime Boostly</h2><p>Customer-facing color preview.</p><button type="button">Primary button</button></section>
+    <div class="setm-actions"><button class="setm-save" type="button" data-colors-save>Save Changes</button><button class="setm-reset" type="button" data-colors-reset>Reset</button></div><span class="set-feedback" data-color-feedback role="status"></span>
+  </main>
+</body>
+</html>
