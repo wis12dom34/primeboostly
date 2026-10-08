@@ -1,1 +1,61 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Send Email · Prime Boostly Admin</title><link rel="stylesheet" href="/preview-system.css"></head><body class="admin"><div class="pb-shell"><aside class="pb-side"><a class="pb-brand" href="/admin.html"><span class="pb-brand-text"><small>PRIME BOOSTLY</small><b>Admin Panel</b></span></a><nav class="pb-nav"><div class="label">OVERVIEW</div><a class="" href="/admin.html">Dashboard</a><div class="label">MANAGE SERVICE</div><a class="" href="/admin-add-service.html">Add Services</a><a class="" href="/admin-services.html">Show Services</a><a class="" href="/admin-categories.html">Categories</a><a class="" href="/admin-api-providers.html">API Providers</a><div class="label">MANAGE ORDERS</div><a class="" href="/admin-orders.html">All Orders</a><div class="label">MANAGE USER</div><a class="" href="/admin-users.html">All Users</a><a class="active" href="/admin-send-email.html">Send Email</a><div class="label">PAYMENT SETTINGS</div><a class="" href="/admin-payments.html">Payment Methods</a><a class="" href="/admin-manual-gateway.html">Manual Gateway</a><a class="" href="/admin-deposit-requests.html">Deposit Request</a><a class="" href="/admin-payment-logs.html">Payment Log</a><div class="label">OPERATIONS</div><a class="" href="/admin-transactions.html">Transactions</a><a class="" href="/admin-support.html">Support Tickets</a><div class="label">CONTROLS</div><a class="" href="/admin-controls.html">Basic Controls</a><a class="" href="/admin-color-settings.html">Color Settings</a><a class="" href="/admin-plugins.html">Plugins</a><a class="" href="/admin-theme-content.html">Theme & Content</a></nav></aside><main class="pb-main"><header class="pb-top"><div><h1>Send Email</h1><p>Send targeted announcements or account messages</p></div><div class="pb-user"><a class="mobile-menu" href="/admin.html" aria-label="Open admin menu">☰</a><span class="avatar">A</span><span>Admin</span></div></header><section class="pb-content"><div class="pb-grid"><section class="card span-8"><div class="form-grid"><div class="field"><label>Audience</label><div class="control">All active users <span>⌄</span></div></div><div class="field"><label>Template</label><div class="control">No template <span>⌄</span></div></div><div class="field full"><label>Subject</label><div class="control muted">Email subject</div></div><div class="field full"><label>Message</label><textarea class="control" placeholder="Write the message..."></textarea></div></div><div class="actions" style="margin-top:14px"><button class="btn primary">Send email</button><button class="btn">Send test</button></div></section><aside class="card span-4 soft"><h3>Delivery summary</h3><div class="kv" style="margin-top:12px;grid-template-columns:110px 1fr"><span>Recipients</span><b>18,201</b><span>Excluded</span><b>241 blocked</b><span>Sender</span><b>PrimeBoostly</b></div></aside></div></section></main></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Send Email · Prime Boostly Admin</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/admin-send-email.css">
+  <script src="/admin-send-email.js" defer></script>
+</head>
+<body class="send-email-page">
+  <main class="send-email-desktop" data-figma-node="25:329">
+    <aside class="se-side">
+      <a class="se-brand" href="/admin.html"><span><b>PRIME</b><strong>BOOSTLY</strong></span><small>Admin Panel</small></a>
+      <p class="se-label">OVERVIEW</p><a class="se-nav" href="/admin.html">Dashboard</a>
+      <p class="se-label">MANAGE SERVICE</p><a class="se-nav" href="/admin-add-service.html">Add Services</a><a class="se-nav" href="/admin-services.html">Show Services</a><a class="se-nav" href="/admin-categories.html">Categories</a><a class="se-nav" href="/admin-api-providers.html">API Providers</a>
+      <p class="se-label">MANAGE ORDERS</p><a class="se-nav" href="/admin-orders.html">All Orders</a><a class="se-nav" href="/admin-orders.html">Awaiting</a><a class="se-nav" href="/admin-orders.html">Pending</a><a class="se-nav" href="/admin-orders.html">Processing</a><a class="se-nav" href="/admin-orders.html">Completed</a><a class="se-nav" href="/admin-orders.html">Refunded</a>
+      <p class="se-label">MANAGE USER</p><a class="se-nav" href="/admin-users.html">All Users</a><a class="se-nav active" href="/admin-send-email.html">Send Email</a>
+      <p class="se-label">PAYMENT SETTINGS</p><a class="se-nav" href="/admin-payments.html">Payment Methods</a><a class="se-nav" href="/admin-manual-gateway.html">Manual Gateway</a><a class="se-nav" href="/admin-deposit-requests.html">Deposit Request</a><a class="se-nav" href="/admin-payment-logs.html">Payment Log</a>
+      <p class="se-label">OPERATIONS</p><a class="se-nav" href="/admin-transactions.html">Transactions</a><a class="se-nav" href="/admin-support.html">Support Tickets</a>
+      <p class="se-label">CONTROLS</p><a class="se-nav" href="/admin-controls.html">Basic Controls</a><a class="se-nav" href="/admin-color-settings.html">Color Settings</a><a class="se-nav" href="/admin-plugins.html">Plugins</a><a class="se-nav" href="/admin-theme-content.html">Theme &amp; Content</a>
+    </aside>
+    <section class="se-content">
+      <header class="se-header"><div><h1>Send Email</h1><p>Compose announcements and targeted messages to PrimeBoostly users</p></div><div class="se-header-actions"><a href="/admin-notifications.html">Notifications</a><span><b>A</b> Admin</span></div></header>
+      <div class="se-compose-row">
+        <form class="se-compose" data-send-email-form>
+          <h2>Compose Message</h2>
+          <div class="se-audience-row">
+            <label class="se-field audience"><span>Audience</span><select data-email-field="audience"><option>All users</option><option>Funded users</option><option>New users</option><option>Single user</option></select></label>
+            <label class="se-field recipient"><span>Recipient</span><input data-email-field="recipient" placeholder="Optional username/email"></label>
+          </div>
+          <label class="se-field full"><span>Subject</span><input data-email-field="subject" value="PrimeBoostly service update" required></label>
+          <label class="se-field full"><span>Message</span><textarea data-email-field="message" required>Hello! We have improved service delivery and payment processing. You can log in to review the latest updates.</textarea></label>
+          <div class="se-chips"><button type="button" class="se-chip enabled" data-toggle-email>Email enabled</button><button type="button" class="se-chip" data-toggle-link>Include account link</button></div>
+          <button class="se-primary" type="submit">Send Email</button>
+        </form>
+        <aside class="se-summary"><h2>Delivery Summary</h2><small>Estimated recipients</small><strong data-recipient-count>18,442 users</strong><p>From: Prime Boostly</p><p>Reply-to: support@primeboostly.com</p><span>SMTP connected</span></aside>
+      </div>
+      <h2 class="se-recent-title">Recent Sends</h2>
+      <section class="se-table" aria-label="Recent email sends">
+        <div class="se-row head"><span>SUBJECT</span><span>AUDIENCE</span><span>SENT</span><span>DELIVERED</span><span>STATUS</span></div>
+        <div class="se-row"><span>Service update</span><span>All users</span><span>18,201</span><span>17,944</span><span><b>Complete</b></span></div>
+        <div class="se-row"><span>Deposit notice</span><span>Funded users</span><span>2,840</span><span>2,813</span><span><b>Complete</b></span></div>
+        <div class="se-row"><span>Welcome tips</span><span>New users</span><span>194</span><span>191</span><span><b>Complete</b></span></div>
+      </section>
+    </section>
+  </main>
+  <main class="send-email-mobile" data-figma-node="25:2663">
+    <header class="sem-head"><a class="sem-brand" href="/admin.html"><span><b>PRIME</b><strong>BOOSTLY</strong></span><small>Admin Panel</small></a><a class="sem-menu" href="/admin.html" aria-label="Open admin menu">☰</a></header>
+    <section class="sem-title"><h1>Send Email</h1><p>Compose a customer announcement.</p></section>
+    <form class="sem-form" data-send-email-form>
+      <label class="sem-field"><span>Audience</span><select data-email-field="audience"><option>All users</option><option>Funded users</option><option>New users</option><option>Single user</option></select></label>
+      <label class="sem-field"><span>Subject</span><input data-email-field="subject" value="PrimeBoostly service update" required></label>
+      <label class="sem-field"><span>Message</span><textarea data-email-field="message" required>Hello! We have improved service delivery and payment processing.</textarea></label>
+      <span class="sem-smtp">SMTP connected</span>
+      <button class="sem-primary" type="submit">Send Email</button>
+    </form>
+  </main>
+  <p class="se-feedback" data-send-email-feedback role="status" aria-live="polite"></p>
+</body>
+</html>
