@@ -1,0 +1,18 @@
+.mobile-login-lead,.mobile-register-foot,.mobile-register-phone-label{display:none}
+
+@media(min-width:901px){
+  .auth-register-page .register-form-panel{padding-top:92px;gap:14px}
+  .auth-register-page .register-form-panel .auth-panel-lead{min-height:40px}
+  .auth-register-page .register-figma-form{gap:14px}
+  .auth-register-page .register-figma-form .auth-field{gap:7px}
+  .auth-register-page .register-figma-form .auth-field input{height:48px}
+  .auth-register-page .register-figma-form .auth-submit{height:46px;margin-top:0}
+}
+
+@media(max-width:900px){
+  .auth-login-page .desktop-login-lead{display:none}
+  .auth-login-page .mobile-login-lead{display:block;width:auto;min-height:0;font:400 13px/1.4 Nunito,Inter,sans-serif;text-align:center;white-space:nowrap}
+  .auth-register-page .desktop-register-foot,.auth-register-page .desktop-register-phone-label{display:none}
+  .auth-register-page .mobile-register-foot,.auth-register-page .mobile-register-phone-label{display:inline}
+  .auth-register-page .mobile-register-foot{display:block}
+}
