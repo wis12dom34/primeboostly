@@ -31,16 +31,16 @@
       <div class="ae-section-title"><h2>SMTP Configuration</h2></div>
       <div class="ae-smtp-grid">
         <section class="ae-card">
-          <label class="ae-field"><span>Mail Driver</span><select><option>SMTP</option></select></label>
-          <label class="ae-field"><span>SMTP Host</span><input value="smtp.example.com"></label>
-          <div class="ae-pair"><label class="ae-field"><span>Port</span><input value="587"></label><label class="ae-field"><span>Encryption</span><select><option>TLS</option></select></label></div>
-          <button class="ae-primary" type="button">Save SMTP</button>
+          <label class="ae-field"><span>Mail Driver</span><select data-email-setting="driver"><option>SMTP</option></select></label>
+          <label class="ae-field"><span>SMTP Host</span><input value="smtp.example.com" data-email-setting="host"></label>
+          <div class="ae-pair"><label class="ae-field"><span>Port</span><input value="587" data-email-setting="port" inputmode="numeric"></label><label class="ae-field"><span>Encryption</span><select data-email-setting="encryption"><option>TLS</option></select></label></div>
+          <button class="ae-primary" type="button" data-email-settings-save>Save SMTP</button>
         </section>
         <section class="ae-card">
-          <label class="ae-field"><span>From Name</span><input value="Prime Boostly"></label>
-          <label class="ae-field"><span>From Email</span><input value="support@primeboostly.com"></label>
-          <label class="ae-field"><span>Test Recipient</span><input value="user@example.com"></label>
-          <button class="ae-test" type="button">Send Test Email</button>
+          <label class="ae-field"><span>From Name</span><input value="Prime Boostly" data-email-setting="fromName"></label>
+          <label class="ae-field"><span>From Email</span><input value="support@primeboostly.com" type="email" data-email-setting="fromEmail"></label>
+          <label class="ae-field"><span>Test Recipient</span><input value="user@example.com" type="email" data-email-setting="testRecipient"></label>
+          <button class="ae-test" type="button" data-email-test>Send Test Email</button>
         </section>
       </div>
 
@@ -59,17 +59,17 @@
     <header class="aem-head"><a class="aem-brand" href="/admin.html"><span class="aem-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></a><a class="aem-menu" href="/admin.html" aria-label="Open admin menu">☰</a></header>
     <h1>Email Settings</h1>
     <p class="aem-lead">Configure SMTP delivery and customer email templates.</p>
-    <label class="aem-field"><span>Mail Driver</span><select><option>SMTP</option></select></label>
-    <label class="aem-field"><span>SMTP Host</span><input value="smtp.example.com"></label>
-    <label class="aem-field"><span>Port</span><input value="587"></label>
-    <label class="aem-field"><span>Encryption</span><select><option>TLS</option></select></label>
-    <label class="aem-field"><span>From Name</span><input value="Prime Boostly"></label>
-    <label class="aem-field"><span>From Email</span><input value="support@primeboostly.com"></label>
-    <button class="aem-save" type="button">Save SMTP</button>
-    <section class="aem-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="email" data-editor-key="email:welcome" data-editor-title="Welcome Email" data-editor-subject="Welcome to Prime Boostly"><div class="aem-item-top"><h2>Welcome Email</h2><b class="aem-badge" data-content-status>Active</b></div><p>Email template · Tap to edit</p></section>
-    <section class="aem-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="email" data-editor-key="email:deposit-approved" data-editor-title="Deposit Approved" data-editor-subject="Your wallet has been funded"><div class="aem-item-top"><h2>Deposit Approved</h2><b class="aem-badge" data-content-status>Active</b></div><p>Email template · Tap to edit</p></section>
-    <section class="aem-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="email" data-editor-key="email:order-update" data-editor-title="Order Update" data-editor-subject="Your order status changed"><div class="aem-item-top"><h2>Order Update</h2><b class="aem-badge" data-content-status>Active</b></div><p>Email template · Tap to edit</p></section>
-    <section class="aem-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="email" data-editor-key="email:password-reset" data-editor-title="Password Reset" data-editor-subject="Reset your Prime Boostly password"><div class="aem-item-top"><h2>Password Reset</h2><b class="aem-badge" data-content-status>Active</b></div><p>Email template · Tap to edit</p></section>
+    <label class="aem-field"><span>Mail Driver</span><select data-email-setting="driver"><option>SMTP</option></select></label>
+    <label class="aem-field"><span>SMTP Host</span><input value="smtp.example.com" data-email-setting="host"></label>
+    <label class="aem-field"><span>Port</span><input value="587" data-email-setting="port" inputmode="numeric"></label>
+    <label class="aem-field"><span>Encryption</span><select data-email-setting="encryption"><option>TLS</option></select></label>
+    <label class="aem-field"><span>From Name</span><input value="Prime Boostly" data-email-setting="fromName"></label>
+    <label class="aem-field"><span>From Email</span><input value="support@primeboostly.com" type="email" data-email-setting="fromEmail"></label>
+    <button class="aem-save" type="button" data-email-settings-save>Save SMTP</button>
+    <section class="aem-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="email" data-editor-key="email:welcome" data-editor-title="Welcome Email" data-editor-subject="Welcome to Prime Boostly"><div class="aem-item-top"><h2>Welcome Email</h2><b class="aem-badge" data-content-status>Active</b></div><p>Email template</p></section>
+    <section class="aem-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="email" data-editor-key="email:deposit-approved" data-editor-title="Deposit Approved" data-editor-subject="Your wallet has been funded"><div class="aem-item-top"><h2>Deposit Approved</h2><b class="aem-badge" data-content-status>Active</b></div><p>Email template</p></section>
+    <section class="aem-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="email" data-editor-key="email:order-update" data-editor-title="Order Update" data-editor-subject="Your order status changed"><div class="aem-item-top"><h2>Order Update</h2><b class="aem-badge" data-content-status>Active</b></div><p>Email template</p></section>
+    <section class="aem-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="email" data-editor-key="email:password-reset" data-editor-title="Password Reset" data-editor-subject="Reset your Prime Boostly password"><div class="aem-item-top"><h2>Password Reset</h2><b class="aem-badge" data-content-status>Active</b></div><p>Email template</p></section>
   </main>
 </body>
 </html>
