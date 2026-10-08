@@ -1,1 +1,77 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Basic Controls · Prime Boostly Admin</title><link rel="stylesheet" href="/preview-system.css"></head><body class="admin"><div class="pb-shell"><aside class="pb-side"><a class="pb-brand" href="/admin.html"><span class="pb-brand-text"><small>PRIME BOOSTLY</small><b>Admin Panel</b></span></a><nav class="pb-nav"><div class="label">OVERVIEW</div><a href="/admin.html">Dashboard</a><div class="label">MANAGE SERVICE</div><a href="/admin-add-service.html">Add Services</a><a href="/admin-services.html">Show Services</a><a href="/admin-categories.html">Categories</a><a href="/admin-api-providers.html">API Providers</a><div class="label">MANAGE ORDERS</div><a href="/admin-orders.html">All Orders</a><div class="label">MANAGE USER</div><a href="/admin-users.html">All Users</a><a href="/admin-send-email.html">Send Email</a><div class="label">PAYMENT SETTINGS</div><a href="/admin-payments.html">Payment Methods</a><a href="/admin-manual-gateway.html">Manual Gateway</a><a href="/admin-deposit-requests.html">Deposit Request</a><a href="/admin-payment-logs.html">Payment Log</a><div class="label">OPERATIONS</div><a href="/admin-transactions.html">Transactions</a><a href="/admin-support.html">Support Tickets</a><div class="label">CONTROLS</div><a class="active" href="/admin-controls.html">Basic Controls</a><a href="/admin-color-settings.html">Color Settings</a><a href="/admin-plugins.html">Plugins</a><a href="/admin-theme-content.html">Theme & Content</a></nav></aside><main class="pb-main"><header class="pb-top"><div><h1>Basic Controls</h1><p>Configure core PrimeBoostly behavior</p></div><div class="pb-user"><a class="mobile-menu" href="/admin.html">☰</a><span class="avatar">A</span><span>Admin</span></div></header><section class="pb-content"><div class="pb-grid"><section class="card span-8"><h3>Platform settings</h3><div class="list"><div class="list-row"><div><b>User registration</b><br><small>Allow new customer accounts.</small></div><div class="switch on"><i></i></div></div><div class="list-row"><div><b>New orders</b><br><small>Allow customers to submit orders.</small></div><div class="switch on"><i></i></div></div><div class="list-row"><div><b>API access</b><br><small>Allow customer API orders.</small></div><div class="switch on"><i></i></div></div><div class="list-row"><div><b>Maintenance mode</b><br><small>Temporarily show a maintenance screen.</small></div><div class="switch"><i></i></div></div></div></section><aside class="card span-4"><h3>Order defaults</h3><div class="field"><label>Currency</label><div class="control">NGN</div></div><div class="field" style="margin-top:12px"><label>Default profit markup</label><div class="control">15%</div></div><div class="field" style="margin-top:12px"><label>Minimum wallet funding</label><div class="control">₦500</div></div><button class="btn primary" style="margin-top:14px;width:100%">Save controls</button></aside></div></section></main></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Basic Controls · Prime Boostly Admin</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/admin-controls-figma.css">
+</head>
+<body class="admin-controls-page">
+  <main class="admin-controls-desktop" data-figma-node="20:866">
+    <aside class="ac-side">
+      <a class="ac-brand" href="/admin.html"><span class="ac-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></a>
+      <p class="ac-label">OVERVIEW</p><a class="ac-nav" href="/admin.html">Dashboard</a>
+      <p class="ac-label">MANAGE SERVICE</p><a class="ac-nav" href="/admin-add-service.html">Add Services</a><a class="ac-nav" href="/admin-services.html">Show Services</a><a class="ac-nav" href="/admin-categories.html">Categories</a><a class="ac-nav" href="/admin-api-providers.html">API Providers</a>
+      <p class="ac-label">MANAGE ORDERS</p><a class="ac-nav" href="/admin-orders.html">All Orders</a><a class="ac-nav" href="/admin-orders.html">Awaiting</a><a class="ac-nav" href="/admin-orders.html">Pending</a><a class="ac-nav" href="/admin-orders.html">Processing</a><a class="ac-nav" href="/admin-orders.html">Completed</a><a class="ac-nav" href="/admin-orders.html">Refunded</a>
+      <p class="ac-label">MANAGE USER</p><a class="ac-nav" href="/admin-users.html">All Users</a><a class="ac-nav" href="/admin-send-email.html">Send Email</a>
+      <p class="ac-label">PAYMENT SETTINGS</p><a class="ac-nav" href="/admin-payments.html">Payment Methods</a><a class="ac-nav" href="/admin-manual-gateway.html">Manual Gateway</a><a class="ac-nav" href="/admin-deposit-requests.html">Deposit Request</a><a class="ac-nav" href="/admin-payment-logs.html">Payment Log</a>
+      <p class="ac-label">OPERATIONS</p><a class="ac-nav" href="/admin-transactions.html">Transactions</a><a class="ac-nav" href="/admin-support.html">Support Tickets</a>
+      <p class="ac-label">CONTROLS</p><a class="ac-nav active" href="/admin-controls.html">Basic Controls</a><a class="ac-nav" href="/admin-color-settings.html">Color Settings</a><a class="ac-nav" href="/admin-plugins.html">Plugins</a><a class="ac-nav" href="/admin-theme-content.html">Theme &amp; Content</a>
+    </aside>
+
+    <section class="ac-content">
+      <header class="ac-header">
+        <div class="ac-header-copy"><h1>Basic Controls</h1><p>Manage core site behavior, account rules, and localization</p></div>
+        <div class="ac-header-actions"><button class="ac-secondary" type="button">Notifications</button><span class="ac-admin"><b>A</b><span>Admin</span></span></div>
+      </header>
+
+      <div class="ac-section-title"><h2>General Settings</h2></div>
+      <div class="ac-settings-row">
+        <section class="ac-card">
+          <label class="ac-field"><span>Site Name</span><input value="Prime Boostly" aria-label="Site Name"></label>
+          <label class="ac-field"><span>Currency</span><select aria-label="Currency"><option>NGN</option></select></label>
+          <label class="ac-field"><span>Timezone</span><select aria-label="Timezone"><option>Africa/Lagos</option></select></label>
+          <button class="ac-primary" type="button">Save General Settings</button>
+        </section>
+        <section class="ac-card">
+          <div class="ac-rule"><span>User Registration</span><b class="ac-badge">Enabled</b></div>
+          <div class="ac-rule"><span>Email Verification</span><b class="ac-badge">Enabled</b></div>
+          <div class="ac-rule"><span>Maintenance Mode</span><b class="ac-badge neutral">Off</b></div>
+          <div class="ac-rule"><span>Two Factor Option</span><b class="ac-badge">Available</b></div>
+          <button class="ac-primary" type="button">Save Account Rules</button>
+        </section>
+      </div>
+
+      <div class="ac-section-title"><h2>Platform Preferences</h2></div>
+      <section class="ac-preferences">
+        <div class="ac-pref-fields">
+          <label class="ac-field"><span>Default Language</span><select aria-label="Default Language"><option>English</option></select></label>
+          <label class="ac-field"><span>Date Format</span><select aria-label="Date Format"><option>DD MMM YYYY</option></select></label>
+          <label class="ac-field"><span>Items Per Page</span><select aria-label="Items Per Page"><option>25</option></select></label>
+        </div>
+        <button class="ac-primary" type="button">Save Preferences</button>
+      </section>
+    </section>
+  </main>
+
+  <main class="admin-controls-mobile" data-figma-node="22:195">
+    <header class="acm-head">
+      <a class="acm-brand" href="/admin.html"><span class="acm-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></a>
+      <a class="acm-menu" href="/admin.html" aria-label="Open admin menu">☰</a>
+    </header>
+    <h1>Basic Controls</h1>
+    <p class="acm-lead">Manage core product behavior and account rules.</p>
+    <label class="acm-field"><span>Site Name</span><input value="Prime Boostly" aria-label="Site Name"></label>
+    <label class="acm-field"><span>Currency</span><select aria-label="Currency"><option>NGN</option></select></label>
+    <label class="acm-field"><span>Timezone</span><select aria-label="Timezone"><option>Africa/Lagos</option></select></label>
+    <section class="acm-rules">
+      <div class="acm-rule"><span>User Registration</span><b class="acm-badge regular">Enabled</b></div>
+      <div class="acm-rule"><span>Email Verification</span><b class="acm-badge regular">Enabled</b></div>
+      <div class="acm-rule"><span>Maintenance Mode</span><b class="acm-badge regular neutral">Off</b></div>
+      <div class="acm-rule"><span>Two Factor Option</span><b class="acm-badge">Available</b></div>
+    </section>
+    <button class="acm-save" type="button">Save Changes</button>
+  </main>
+</body>
+</html>
