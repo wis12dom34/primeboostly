@@ -1,5 +1,5 @@
 (()=>{
-  const ACCOUNT='primeboostly.preview.account.v1',SESSION='primeboostly.preview.session.v1';
+  const ACCOUNT='primeboostly.preview.account.v1',SESSION='primeboostly.preview.session.v1',RESET='primeboostly.preview.reset.v1';
   const $=(s,r=document)=>r.querySelector(s),all=(s,r=document)=>[...r.querySelectorAll(s)];
   const read=(k,store=localStorage)=>{try{return JSON.parse(store.getItem(k)||'null')}catch{return null}};
   const write=(k,v,store=localStorage)=>store.setItem(k,JSON.stringify(v));
@@ -12,6 +12,7 @@
   function clear(form){all('[data-auth-error],[data-auth-success]',form).forEach(x=>{x.textContent='';x.classList.remove('show')});all('[aria-invalid=true]',form).forEach(x=>x.removeAttribute('aria-invalid'))}
   function loading(form,on,label){const b=$('[type=submit]',form);if(!b)return;if(on){b.dataset.labelHtml=b.innerHTML;b.textContent=label;b.disabled=true}else{if(b.dataset.labelHtml)b.innerHTML=b.dataset.labelHtml;b.disabled=false}}
   function nextUrl(){const n=new URLSearchParams(location.search).get('next');return n&&n.startsWith('/')&&!n.startsWith('//')?n:'/dashboard.html'}
+  function makeToken(){return crypto.randomUUID?crypto.randomUUID():`${Date.now()}-${Math.random().toString(36).slice(2)}`}
 
   all('[data-password-toggle]').forEach(btn=>btn.addEventListener('click',()=>{const input=document.getElementById(btn.dataset.passwordToggle);if(!input)return;const show=input.type==='password';input.type=show?'text':'password';btn.textContent=show?'Hide':'Show';btn.setAttribute('aria-pressed',String(show))}));
 
@@ -61,25 +62,33 @@
     const em=value(reset,'email'),a=read(ACCOUNT);
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){error(reset,'Enter a valid email address.');return}
     if(!a||(a.email||'').toLowerCase()!==em.toLowerCase()){error(reset,'No preview account was found with that email.');return}
-    success(reset,'Reset request accepted. Opening the password reset screen…');
-    setTimeout(()=>location.href='/reset-password.html?email='+encodeURIComponent(em),350);
+    const t=makeToken();write(RESET,{email:a.email,token:t,requestedAt:Date.now()});
+    success(reset,'Reset link prepared. Opening the password reset screen…');
+    setTimeout(()=>location.href=`/reset-password.html?email=${encodeURIComponent(a.email)}&token=${encodeURIComponent(t)}`,350);
   });
 
-  const change=$('[data-password-change]');
+  const change=$('[data-auth-new-password],[data-password-change]');
   if(change){
-    const emailInput=$('[name="changeEmail"]',change),a=read(ACCOUNT),qsEmail=new URLSearchParams(location.search).get('email');
-    if(emailInput)emailInput.value=qsEmail||(a&&a.email)||'';
+    const q=new URLSearchParams(location.search),stored=read(RESET),a=read(ACCOUNT),active=session();
+    const emailInput=$('[data-reset-email]',change)||$('[name="changeEmail"]',change);
+    const hinted=q.get('email')||stored?.email||active?.email||a?.email||'';
+    if(emailInput&&hinted)emailInput.value=hinted;
     change.addEventListener('submit',async e=>{
       e.preventDefault();clear(change);
-      const em=value(change,'changeEmail'),pw=value(change,'newPassword'),cf=value(change,'confirmNewPassword'),account=read(ACCOUNT);
+      const em=value(change,'email','changeEmail'),pw=value(change,'password','newPassword'),cf=value(change,'confirm','confirmNewPassword');
       if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){error(change,'Enter a valid email address.');return}
-      if(!account||(account.email||'').toLowerCase()!==em.toLowerCase()){error(change,'No preview account was found with that email.');return}
       if(pw.length<8){error(change,'Password must be at least 8 characters.');return}
       if(pw!==cf){error(change,'Passwords do not match.');return}
+      const account=read(ACCOUNT),request=read(RESET),queryToken=q.get('token');
+      if(!account||(account.email||'').toLowerCase()!==em.toLowerCase()){error(change,'No preview account was found with that email.');return}
+      const fresh=request&&Date.now()-Number(request.requestedAt||0)<30*60*1000;
+      const fromLink=Boolean(fresh&&queryToken&&request.token===queryToken&&(request.email||'').toLowerCase()===em.toLowerCase());
+      const fromSession=Boolean(active&&(active.email||'').toLowerCase()===em.toLowerCase());
+      if(!fromLink&&!fromSession){error(change,'This reset request is missing or expired. Request a new reset link.');return}
       loading(change,true,'Resetting…');
       try{
         write(ACCOUNT,{...account,passwordHash:await hash(pw),passwordUpdatedAt:new Date().toISOString()});
-        drop(SESSION);success(change,'Password updated. Opening sign in…');setTimeout(()=>location.href='/login.html',500);
+        drop(RESET);drop(SESSION);success(change,'Password updated. Opening sign in…');setTimeout(()=>location.href='/login.html',450);
       }catch{error(change,'Could not reset the password. Please try again.')}finally{loading(change,false,'')}
     });
   }
