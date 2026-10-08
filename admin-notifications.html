@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Notifications · Prime Boostly Admin</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/admin-notifications.css">
+</head>
+<body class="admin-notifications-page">
+  <main class="admin-notifications-desktop" data-figma-node="20:1184">
+    <aside class="an-side">
+      <a class="an-brand" href="/admin.html"><span class="an-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></a>
+      <p class="an-label">OVERVIEW</p><a class="an-nav active" href="/admin.html">Dashboard</a>
+      <p class="an-label">MANAGE SERVICE</p><a class="an-nav" href="/admin-add-service.html">Add Services</a><a class="an-nav" href="/admin-services.html">Show Services</a><a class="an-nav" href="/admin-categories.html">Categories</a><a class="an-nav" href="/admin-api-providers.html">API Providers</a>
+      <p class="an-label">MANAGE ORDERS</p><a class="an-nav" href="/admin-orders.html">All Orders</a><a class="an-nav" href="/admin-orders.html">Awaiting</a><a class="an-nav" href="/admin-orders.html">Pending</a><a class="an-nav" href="/admin-orders.html">Processing</a><a class="an-nav" href="/admin-orders.html">Completed</a><a class="an-nav" href="/admin-orders.html">Refunded</a>
+      <p class="an-label">MANAGE USER</p><a class="an-nav" href="/admin-users.html">All Users</a><a class="an-nav" href="/admin-send-email.html">Send Email</a>
+      <p class="an-label">PAYMENT SETTINGS</p><a class="an-nav" href="/admin-payments.html">Payment Methods</a><a class="an-nav" href="/admin-manual-gateway.html">Manual Gateway</a><a class="an-nav" href="/admin-deposit-requests.html">Deposit Request</a><a class="an-nav" href="/admin-payment-logs.html">Payment Log</a>
+      <p class="an-label">OPERATIONS</p><a class="an-nav" href="/admin-transactions.html">Transactions</a><a class="an-nav" href="/admin-support.html">Support Tickets</a>
+      <p class="an-label">CONTROLS</p><a class="an-nav" href="/admin-controls.html">Basic Controls</a><a class="an-nav" href="/admin-color-settings.html">Color Settings</a><a class="an-nav" href="/admin-plugins.html">Plugins</a><a class="an-nav" href="/admin-theme-content.html">Theme &amp; Content</a>
+    </aside>
+
+    <section class="an-content">
+      <header class="an-header">
+        <div class="an-copy"><h1>Notifications</h1><p>Control in-app alerts, admin events, and customer notification rules</p></div>
+        <div class="an-header-actions"><a class="an-secondary" href="/admin-notifications.html">Notifications</a><span class="an-admin"><b>A</b><span>Admin</span></span></div>
+      </header>
+
+      <section class="an-metrics">
+        <article class="an-metric sent"><small>Sent today</small><b>2,418</b></article>
+        <article class="an-metric queued"><small>Queued</small><b>36</b></article>
+        <article class="an-metric failed"><small>Failed</small><b>7</b></article>
+        <article class="an-metric"><small>Templates</small><b>18</b></article>
+      </section>
+
+      <div class="an-section-title"><h2>Notification Events</h2></div>
+      <section class="an-rules">
+        <div class="an-rule"><strong>New Order</strong><span>Admin + User</span><b class="an-badge">Enabled</b></div>
+        <div class="an-rule"><strong>Order Completed</strong><span>User</span><b class="an-badge">Enabled</b></div>
+        <div class="an-rule"><strong>Deposit Pending</strong><span>Admin</span><b class="an-badge">Enabled</b></div>
+        <div class="an-rule"><strong>Deposit Approved</strong><span>User</span><b class="an-badge">Enabled</b></div>
+        <div class="an-rule"><strong>Ticket Reply</strong><span>User</span><b class="an-badge">Enabled</b></div>
+        <div class="an-rule"><strong>Provider Sync Error</strong><span>Admin</span><b class="an-badge">Enabled</b></div>
+      </section>
+
+      <div class="an-section-title"><h2>Recent Delivery</h2></div>
+      <section class="an-log">
+        <div class="an-log-head"><span>EVENT</span><span>RECIPIENT</span><span>CHANNEL</span><span>TIME</span><span>RESULT</span></div>
+        <div class="an-log-row"><span>Order Completed</span><span>wick</span><span>In-app</span><span>2 min ago</span><span class="an-result"><b class="an-badge">Delivered</b></span></div>
+        <div class="an-log-row"><span>Deposit Pending</span><span>Admin</span><span>In-app</span><span>8 min ago</span><span class="an-result"><b class="an-badge">Delivered</b></span></div>
+        <div class="an-log-row"><span>Provider Sync Error</span><span>Admin</span><span>In-app</span><span>18 min ago</span><span class="an-result"><b class="an-badge">Delivered</b></span></div>
+        <div class="an-log-row"><span>Ticket Reply</span><span>primecustomer</span><span>In-app</span><span>31 min ago</span><span class="an-result"><b class="an-badge">Delivered</b></span></div>
+      </section>
+    </section>
+  </main>
+
+  <main class="admin-notifications-mobile" data-figma-node="22:293">
+    <header class="anm-head"><a class="anm-brand" href="/admin.html"><span class="anm-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></a><a class="anm-menu" href="/admin.html" aria-label="Open admin menu">☰</a></header>
+    <h1>Notifications</h1>
+    <p class="anm-lead">Control admin and customer notification events.</p>
+    <section class="anm-stats"><article class="anm-stat sent"><small>Sent today</small><b>2,418</b></article><article class="anm-stat failed"><small>Failed</small><b>7</b></article></section>
+    <section class="anm-item"><div class="anm-item-top"><h2>New Order</h2><b class="anm-badge">Enabled</b></div><p>Admin + User</p></section>
+    <section class="anm-item"><div class="anm-item-top"><h2>Order Completed</h2><b class="anm-badge">Enabled</b></div><p>User</p></section>
+    <section class="anm-item"><div class="anm-item-top"><h2>Deposit Pending</h2><b class="anm-badge">Enabled</b></div><p>Admin</p></section>
+    <section class="anm-item"><div class="anm-item-top"><h2>Ticket Reply</h2><b class="anm-badge">Enabled</b></div><p>User</p></section>
+    <section class="anm-item"><div class="anm-item-top"><h2>Provider Sync Error</h2><b class="anm-badge">Enabled</b></div><p>Admin</p></section>
+  </main>
+</body>
+</html>
