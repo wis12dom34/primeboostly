@@ -10,7 +10,7 @@
   function error(form,msg){const el=$('[data-auth-error]',form);if(el){el.textContent=msg;el.classList.add('show')}}
   function success(form,msg){const el=$('[data-auth-success]',form);if(el){el.textContent=msg;el.classList.add('show')}}
   function clear(form){all('[data-auth-error],[data-auth-success]',form).forEach(x=>{x.textContent='';x.classList.remove('show')});all('[aria-invalid=true]',form).forEach(x=>x.removeAttribute('aria-invalid'))}
-  function loading(form,on,label){const b=$('[type=submit]',form);if(!b)return;if(on){b.dataset.label=b.textContent;b.textContent=label;b.disabled=true}else{b.textContent=b.dataset.label||b.textContent;b.disabled=false}}
+  function loading(form,on,label){const b=$('[type=submit]',form);if(!b)return;if(on){b.dataset.labelHtml=b.innerHTML;b.textContent=label;b.disabled=true}else{if(b.dataset.labelHtml)b.innerHTML=b.dataset.labelHtml;b.disabled=false}}
   function nextUrl(){const n=new URLSearchParams(location.search).get('next');return n&&n.startsWith('/')&&!n.startsWith('//')?n:'/dashboard.html'}
 
   all('[data-password-toggle]').forEach(btn=>btn.addEventListener('click',()=>{const input=document.getElementById(btn.dataset.passwordToggle);if(!input)return;const show=input.type==='password';input.type=show?'text':'password';btn.textContent=show?'Hide':'Show';btn.setAttribute('aria-pressed',String(show))}));
@@ -56,5 +56,31 @@
   });
 
   const reset=$('[data-auth-reset]');
-  if(reset)reset.addEventListener('submit',e=>{e.preventDefault();clear(reset);const em=value(reset,'email'),a=read(ACCOUNT);if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){error(reset,'Enter a valid email address.');return}if(!a||(a.email||'').toLowerCase()!==em.toLowerCase()){error(reset,'No preview account was found with that email.');return}success(reset,'Reset request accepted for this preview account. Return to sign in and use the password you created.');$('[type=submit]',reset).disabled=true});
+  if(reset)reset.addEventListener('submit',e=>{
+    e.preventDefault();clear(reset);
+    const em=value(reset,'email'),a=read(ACCOUNT);
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){error(reset,'Enter a valid email address.');return}
+    if(!a||(a.email||'').toLowerCase()!==em.toLowerCase()){error(reset,'No preview account was found with that email.');return}
+    success(reset,'Reset request accepted. Opening the password reset screen…');
+    setTimeout(()=>location.href='/reset-password.html?email='+encodeURIComponent(em),350);
+  });
+
+  const change=$('[data-password-change]');
+  if(change){
+    const emailInput=$('[name="changeEmail"]',change),a=read(ACCOUNT),qsEmail=new URLSearchParams(location.search).get('email');
+    if(emailInput)emailInput.value=qsEmail||(a&&a.email)||'';
+    change.addEventListener('submit',async e=>{
+      e.preventDefault();clear(change);
+      const em=value(change,'changeEmail'),pw=value(change,'newPassword'),cf=value(change,'confirmNewPassword'),account=read(ACCOUNT);
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){error(change,'Enter a valid email address.');return}
+      if(!account||(account.email||'').toLowerCase()!==em.toLowerCase()){error(change,'No preview account was found with that email.');return}
+      if(pw.length<8){error(change,'Password must be at least 8 characters.');return}
+      if(pw!==cf){error(change,'Passwords do not match.');return}
+      loading(change,true,'Resetting…');
+      try{
+        write(ACCOUNT,{...account,passwordHash:await hash(pw),passwordUpdatedAt:new Date().toISOString()});
+        drop(SESSION);success(change,'Password updated. Opening sign in…');setTimeout(()=>location.href='/login.html',500);
+      }catch{error(change,'Could not reset the password. Please try again.')}finally{loading(change,false,'')}
+    });
+  }
 })();
