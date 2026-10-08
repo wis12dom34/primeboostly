@@ -5,48 +5,73 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Plugins · Prime Boostly Admin</title>
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/admin-settings.css">
+  <link rel="stylesheet" href="/admin-plugins.css">
   <script src="/admin-settings.js" defer></script>
 </head>
-<body class="admin-settings-page plugins-page">
-  <main class="settings-desktop">
-    <aside class="set-side">
-      <a class="set-brand" href="/admin.html"><span class="set-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></a>
-      <p class="set-label">OVERVIEW</p><a class="set-nav" href="/admin.html">Dashboard</a>
-      <p class="set-label">MANAGE SERVICE</p><a class="set-nav" href="/admin-add-service.html">Add Services</a><a class="set-nav" href="/admin-services.html">Show Services</a><a class="set-nav" href="/admin-categories.html">Categories</a><a class="set-nav" href="/admin-api-providers.html">API Providers</a>
-      <p class="set-label">MANAGE ORDERS</p><a class="set-nav" href="/admin-orders.html">All Orders</a><a class="set-nav" href="/admin-orders.html">Awaiting</a><a class="set-nav" href="/admin-orders.html">Pending</a><a class="set-nav" href="/admin-orders.html">Processing</a><a class="set-nav" href="/admin-orders.html">Completed</a><a class="set-nav" href="/admin-orders.html">Refunded</a>
-      <p class="set-label">MANAGE USER</p><a class="set-nav" href="/admin-users.html">All Users</a><a class="set-nav" href="/admin-send-email.html">Send Email</a>
-      <p class="set-label">PAYMENT SETTINGS</p><a class="set-nav" href="/admin-payments.html">Payment Methods</a><a class="set-nav" href="/admin-manual-gateway.html">Manual Gateway</a><a class="set-nav" href="/admin-deposit-requests.html">Deposit Request</a><a class="set-nav" href="/admin-payment-logs.html">Payment Log</a>
-      <p class="set-label">OPERATIONS</p><a class="set-nav" href="/admin-transactions.html">Transactions</a><a class="set-nav" href="/admin-support.html">Support Tickets</a>
-      <p class="set-label">CONTROLS</p><a class="set-nav" href="/admin-controls.html">Basic Controls</a><a class="set-nav" href="/admin-color-settings.html">Color Settings</a><a class="set-nav active" href="/admin-plugins.html">Plugins</a><a class="set-nav" href="/admin-theme-content.html">Theme &amp; Content</a>
+<body class="admin-plugins-page">
+  <main class="plugins-desktop settings-desktop" aria-label="PrimeBoostly admin plugins">
+    <aside class="plugins-sidebar">
+      <a class="plugins-brand" href="/admin.html"><span><b>PRIME</b><strong>BOOSTLY</strong></span><small>Admin Panel</small></a>
+      <p class="plugins-section-label">OVERVIEW</p><a class="plugins-nav" href="/admin.html">Dashboard</a>
+      <p class="plugins-section-label">MANAGE SERVICE</p><a class="plugins-nav" href="/admin-add-service.html">Add Services</a><a class="plugins-nav" href="/admin-services.html">Show Services</a><a class="plugins-nav" href="/admin-categories.html">Categories</a><a class="plugins-nav" href="/admin-api-providers.html">API Providers</a>
+      <p class="plugins-section-label">MANAGE ORDERS</p><a class="plugins-nav" href="/admin-orders.html">All Orders</a><a class="plugins-nav" href="/admin-orders.html">Awaiting</a><a class="plugins-nav" href="/admin-orders.html">Pending</a><a class="plugins-nav" href="/admin-orders.html">Processing</a><a class="plugins-nav" href="/admin-orders.html">Completed</a><a class="plugins-nav" href="/admin-orders.html">Refunded</a>
+      <p class="plugins-section-label">MANAGE USER</p><a class="plugins-nav" href="/admin-users.html">All Users</a><a class="plugins-nav" href="/admin-send-email.html">Send Email</a>
+      <p class="plugins-section-label">PAYMENT SETTINGS</p><a class="plugins-nav" href="/admin-payments.html">Payment Methods</a><a class="plugins-nav" href="/admin-manual-gateway.html">Manual Gateway</a><a class="plugins-nav" href="/admin-deposit-requests.html">Deposit Request</a><a class="plugins-nav" href="/admin-payment-logs.html">Payment Log</a>
+      <p class="plugins-section-label">OPERATIONS</p><a class="plugins-nav" href="/admin-transactions.html">Transactions</a><a class="plugins-nav" href="/admin-support.html">Support Tickets</a>
+      <p class="plugins-section-label">CONTROLS</p><a class="plugins-nav" href="/admin-controls.html">Basic Controls</a><a class="plugins-nav" href="/admin-color-settings.html">Color Settings</a><a class="plugins-nav active" href="/admin-plugins.html" aria-current="page">Plugins</a><a class="plugins-nav" href="/admin-theme-content.html">Theme &amp; Content</a>
     </aside>
-    <section class="set-content">
-      <header class="set-header"><div><h1>Plugins</h1><p>Manage optional integrations and platform extensions</p></div><div class="set-header-actions"><a class="set-secondary" href="/admin-notifications.html">Notifications</a><span class="set-admin"><b>A</b><span>Admin</span></span></div></header>
-      <div class="plugin-summary"><article><small>Total Plugins</small><b data-plugin-total>4</b></article><article><small>Enabled</small><b data-plugin-enabled>3</b></article><article><small>Disabled</small><b data-plugin-disabled>1</b></article></div>
-      <div class="plugin-toolbar"><label class="plugin-search"><span>⌕</span><input type="search" placeholder="Search plugins" aria-label="Search plugins" data-plugin-search></label><div class="plugin-filters" role="group" aria-label="Plugin status filters"><button class="active" type="button" data-plugin-filter="all">All</button><button type="button" data-plugin-filter="enabled">Enabled</button><button type="button" data-plugin-filter="disabled">Disabled</button></div></div>
-      <section class="plugin-table">
-        <div class="plugin-table-head"><span>PLUGIN</span><span>STATUS</span><span>LAST UPDATED</span><span>ACTION</span></div>
-        <article class="plugin-row" data-plugin data-name="Google Analytics" data-enabled="true"><div class="plugin-copy"><i>GA</i><span><b>Google Analytics</b><small>Traffic and conversion analytics.</small></span></div><span><b class="plugin-badge enabled" data-plugin-status>Enabled</b></span><span class="plugin-date">Today 07:10</span><div class="plugin-actions"><button class="plugin-config" type="button" data-plugin-config>Configure</button><button class="plugin-toggle" type="button" data-plugin-toggle>Disable</button></div></article>
-        <article class="plugin-row" data-plugin data-name="reCAPTCHA" data-enabled="true"><div class="plugin-copy"><i>RC</i><span><b>reCAPTCHA</b><small>Protect login, signup, and forms from abuse.</small></span></div><span><b class="plugin-badge enabled" data-plugin-status>Enabled</b></span><span class="plugin-date">06 Oct</span><div class="plugin-actions"><button class="plugin-config" type="button" data-plugin-config>Configure</button><button class="plugin-toggle" type="button" data-plugin-toggle>Disable</button></div></article>
-        <article class="plugin-row" data-plugin data-name="Support widget" data-enabled="false"><div class="plugin-copy"><i>SW</i><span><b>Support widget</b><small>Show customer support entry points across the dashboard.</small></span></div><span><b class="plugin-badge disabled" data-plugin-status>Disabled</b></span><span class="plugin-date">04 Oct</span><div class="plugin-actions"><button class="plugin-config" type="button" data-plugin-config>Configure</button><button class="plugin-toggle primary" type="button" data-plugin-toggle>Enable</button></div></article>
-        <article class="plugin-row" data-plugin data-name="Webhook relay" data-enabled="true"><div class="plugin-copy"><i>WH</i><span><b>Webhook relay</b><small>Forward selected payment and order events.</small></span></div><span><b class="plugin-badge enabled" data-plugin-status>Enabled</b></span><span class="plugin-date">01 Oct</span><div class="plugin-actions"><button class="plugin-config" type="button" data-plugin-config>Configure</button><button class="plugin-toggle" type="button" data-plugin-toggle>Disable</button></div></article>
-        <div class="plugin-empty" data-plugin-empty hidden>No plugins match this filter.</div>
-      </section><p class="plugin-feedback" data-plugin-feedback role="status"></p>
+
+    <section class="plugins-content">
+      <header class="plugins-header">
+        <div class="plugins-heading"><h1>Plugins</h1><p>Manage tracking, support, security, and customer communication integrations</p></div>
+        <div class="plugins-header-actions"><a class="plugins-notifications" href="/admin-notifications.html">Notifications</a><span class="plugins-admin-pill"><b>A</b><span>Admin</span></span></div>
+      </header>
+
+      <section class="plugins-summary" aria-label="Plugin health summary">
+        <article class="summary-card enabled"><small>Enabled</small><strong data-plugin-enabled>4</strong></article>
+        <article class="summary-card"><small>Disabled</small><strong data-plugin-disabled>2</strong></article>
+        <article class="summary-card"><small>Needs setup</small><strong class="warning" data-plugin-needs-setup>1</strong></article>
+        <article class="summary-card"><small>Last health check</small><strong>2m ago</strong></article>
+      </section>
+
+      <h2 class="installed-title">Installed Plugins</h2>
+      <section class="plugins-grid" aria-label="Installed plugins">
+        <article class="plugin-card has-config" data-plugin data-name="Google reCAPTCHA" data-state="enabled">
+          <div class="plugin-card-head"><h3>Google reCAPTCHA</h3><span class="plugin-state enabled" data-plugin-status>Enabled</span></div>
+          <p class="plugin-category">Security</p><label class="plugin-config-field"><span>Configuration</span><input type="password" value="recaptcha-key" aria-label="Google reCAPTCHA configuration"></label><button type="button" class="plugin-config-button" data-plugin-config>Configure</button>
+        </article>
+        <article class="plugin-card has-config" data-plugin data-name="Google Analytics" data-state="enabled">
+          <div class="plugin-card-head"><h3>Google Analytics</h3><span class="plugin-state enabled" data-plugin-status>Enabled</span></div>
+          <p class="plugin-category">Analytics</p><label class="plugin-config-field"><span>Configuration</span><input type="password" value="analytics-key" aria-label="Google Analytics configuration"></label><button type="button" class="plugin-config-button" data-plugin-config>Configure</button>
+        </article>
+        <article class="plugin-card has-config" data-plugin data-name="Meta Pixel" data-state="disabled">
+          <div class="plugin-card-head"><h3>Meta Pixel</h3><span class="plugin-state disabled" data-plugin-status>Disabled</span></div>
+          <p class="plugin-category">Marketing</p><label class="plugin-config-field"><span>Configuration</span><input type="password" value="pixel-key" aria-label="Meta Pixel configuration"></label><button type="button" class="plugin-config-button" data-plugin-config>Configure</button>
+        </article>
+        <article class="plugin-card compact" data-plugin data-name="Tawk.to" data-state="enabled">
+          <div class="plugin-card-head"><h3>Tawk.to</h3><span class="plugin-state enabled" data-plugin-status>Enabled</span></div><p class="plugin-category">Support</p><button type="button" class="plugin-config-button" data-plugin-config>Configure</button>
+        </article>
+        <article class="plugin-card compact" data-plugin data-name="WhatsApp Widget" data-state="enabled">
+          <div class="plugin-card-head"><h3>WhatsApp Widget</h3><span class="plugin-state enabled" data-plugin-status>Enabled</span></div><p class="plugin-category">Support</p><button type="button" class="plugin-config-button" data-plugin-config>Configure</button>
+        </article>
+        <article class="plugin-card compact" data-plugin data-name="Cloudflare Turnstile" data-state="needs-setup">
+          <div class="plugin-card-head"><h3>Cloudflare Turnstile</h3><span class="plugin-state needs-setup" data-plugin-status>Needs setup</span></div><p class="plugin-category">Security</p><button type="button" class="plugin-config-button" data-plugin-config>Configure</button>
+        </article>
+      </section>
+      <p class="sr-only" data-plugin-feedback role="status" aria-live="polite"></p>
     </section>
   </main>
 
-  <main class="settings-mobile plugins-mobile">
-    <header class="setm-head"><a class="setm-brand" href="/admin.html"><span><b>PRIME</b> BOOSTLY</span><small>Admin Panel</small></a><a class="setm-menu" href="/admin.html" aria-label="Open admin menu">☰</a></header>
-    <h1>Plugins</h1><p class="setm-lead">Manage integrations and optional extensions.</p>
-    <label class="plugin-search plugin-search-mobile"><span>⌕</span><input type="search" placeholder="Search plugins" aria-label="Search plugins mobile" data-plugin-search></label>
-    <div class="plugin-filters plugin-filters-mobile" role="group" aria-label="Plugin filters mobile"><button class="active" type="button" data-plugin-filter="all">All</button><button type="button" data-plugin-filter="enabled">Enabled</button><button type="button" data-plugin-filter="disabled">Disabled</button></div>
-    <section class="mobile-plugin-list">
-      <article class="mobile-plugin" data-plugin data-name="Google Analytics" data-enabled="true"><div class="mobile-plugin-top"><div class="plugin-copy"><i>GA</i><span><b>Google Analytics</b><small>Traffic and conversion analytics.</small></span></div><b class="plugin-badge enabled" data-plugin-status>Enabled</b></div><div class="mobile-plugin-actions"><button type="button" data-plugin-config>Configure</button><button type="button" data-plugin-toggle>Disable</button></div></article>
-      <article class="mobile-plugin" data-plugin data-name="reCAPTCHA" data-enabled="true"><div class="mobile-plugin-top"><div class="plugin-copy"><i>RC</i><span><b>reCAPTCHA</b><small>Protect forms from automated abuse.</small></span></div><b class="plugin-badge enabled" data-plugin-status>Enabled</b></div><div class="mobile-plugin-actions"><button type="button" data-plugin-config>Configure</button><button type="button" data-plugin-toggle>Disable</button></div></article>
-      <article class="mobile-plugin" data-plugin data-name="Support widget" data-enabled="false"><div class="mobile-plugin-top"><div class="plugin-copy"><i>SW</i><span><b>Support widget</b><small>Customer support entry points.</small></span></div><b class="plugin-badge disabled" data-plugin-status>Disabled</b></div><div class="mobile-plugin-actions"><button type="button" data-plugin-config>Configure</button><button class="primary" type="button" data-plugin-toggle>Enable</button></div></article>
-      <article class="mobile-plugin" data-plugin data-name="Webhook relay" data-enabled="true"><div class="mobile-plugin-top"><div class="plugin-copy"><i>WH</i><span><b>Webhook relay</b><small>Forward payment and order events.</small></span></div><b class="plugin-badge enabled" data-plugin-status>Enabled</b></div><div class="mobile-plugin-actions"><button type="button" data-plugin-config>Configure</button><button type="button" data-plugin-toggle>Disable</button></div></article>
-      <div class="plugin-empty" data-plugin-empty hidden>No plugins match this filter.</div>
-    </section><p class="plugin-feedback" data-plugin-feedback role="status"></p>
+  <main class="plugins-mobile" aria-label="PrimeBoostly admin plugins mobile">
+    <header class="plugins-mobile-head"><a class="plugins-mobile-brand" href="/admin.html"><span><b>PRIME</b><strong>BOOSTLY</strong></span><small>Admin Panel</small></a><a class="plugins-mobile-menu" href="/admin.html" aria-label="Open admin menu">☰</a></header>
+    <div class="plugins-mobile-title"><h1>Plugins</h1><p>Manage integrations and health.</p></div>
+    <section class="plugins-mobile-list">
+      <article class="mobile-plugin-card" data-plugin data-name="Google reCAPTCHA" data-state="enabled"><div><h2>Google reCAPTCHA</h2><span class="plugin-state enabled" data-plugin-status>Enabled</span></div><p><span>Category</span><strong>Security</strong></p></article>
+      <article class="mobile-plugin-card" data-plugin data-name="Google Analytics" data-state="enabled"><div><h2>Google Analytics</h2><span class="plugin-state enabled" data-plugin-status>Enabled</span></div><p><span>Category</span><strong>Analytics</strong></p></article>
+      <article class="mobile-plugin-card" data-plugin data-name="Meta Pixel" data-state="disabled"><div><h2>Meta Pixel</h2><span class="plugin-state disabled" data-plugin-status>Disabled</span></div><p><span>Category</span><strong>Marketing</strong></p></article>
+      <article class="mobile-plugin-card" data-plugin data-name="Tawk.to" data-state="enabled"><div><h2>Tawk.to</h2><span class="plugin-state enabled" data-plugin-status>Enabled</span></div><p><span>Category</span><strong>Support</strong></p></article>
+    </section>
+    <p class="sr-only" data-plugin-feedback role="status" aria-live="polite"></p>
   </main>
 </body>
 </html>
