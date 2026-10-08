@@ -6,7 +6,7 @@
   <title>Basic Controls · Prime Boostly Admin</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/admin-controls-figma.css">
-</head>
+<script src="/admin-controls.js" defer></script></head>
 <body class="admin-controls-page">
   <main class="admin-controls-desktop" data-figma-node="20:866">
     <aside class="ac-side">
@@ -29,28 +29,28 @@
       <div class="ac-section-title"><h2>General Settings</h2></div>
       <div class="ac-settings-row">
         <section class="ac-card">
-          <label class="ac-field"><span>Site Name</span><input value="Prime Boostly" aria-label="Site Name"></label>
-          <label class="ac-field"><span>Currency</span><select aria-label="Currency"><option>NGN</option></select></label>
-          <label class="ac-field"><span>Timezone</span><select aria-label="Timezone"><option>Africa/Lagos</option></select></label>
-          <button class="ac-primary" type="button">Save General Settings</button>
+          <label class="ac-field"><span>Site Name</span><input value="Prime Boostly" aria-label="Site Name" data-control-setting="siteName"></label>
+          <label class="ac-field"><span>Currency</span><select aria-label="Currency" data-control-setting="currency"><option>NGN</option></select></label>
+          <label class="ac-field"><span>Timezone</span><select aria-label="Timezone" data-control-setting="timezone"><option>Africa/Lagos</option></select></label>
+          <button class="ac-primary" type="button" data-controls-save>Save General Settings</button>
         </section>
         <section class="ac-card">
           <div class="ac-rule"><span>User Registration</span><b class="ac-badge">Enabled</b></div>
           <div class="ac-rule"><span>Email Verification</span><b class="ac-badge">Enabled</b></div>
           <div class="ac-rule"><span>Maintenance Mode</span><b class="ac-badge neutral">Off</b></div>
           <div class="ac-rule"><span>Two Factor Option</span><b class="ac-badge">Available</b></div>
-          <button class="ac-primary" type="button">Save Account Rules</button>
+          <button class="ac-primary" type="button" data-controls-save>Save Account Rules</button>
         </section>
       </div>
 
       <div class="ac-section-title"><h2>Platform Preferences</h2></div>
       <section class="ac-preferences">
         <div class="ac-pref-fields">
-          <label class="ac-field"><span>Default Language</span><select aria-label="Default Language"><option>English</option></select></label>
-          <label class="ac-field"><span>Date Format</span><select aria-label="Date Format"><option>DD MMM YYYY</option></select></label>
-          <label class="ac-field"><span>Items Per Page</span><select aria-label="Items Per Page"><option>25</option></select></label>
+          <label class="ac-field"><span>Default Language</span><select aria-label="Default Language" data-control-setting="language"><option>English</option></select></label>
+          <label class="ac-field"><span>Date Format</span><select aria-label="Date Format" data-control-setting="dateFormat"><option>DD MMM YYYY</option></select></label>
+          <label class="ac-field"><span>Items Per Page</span><select aria-label="Items Per Page" data-control-setting="itemsPerPage"><option>25</option></select></label>
         </div>
-        <button class="ac-primary" type="button">Save Preferences</button>
+        <button class="ac-primary" type="button" data-controls-save>Save Preferences</button>
       </section>
     </section>
   </main>
@@ -62,16 +62,16 @@
     </header>
     <h1>Basic Controls</h1>
     <p class="acm-lead">Manage core product behavior and account rules.</p>
-    <label class="acm-field"><span>Site Name</span><input value="Prime Boostly" aria-label="Site Name"></label>
-    <label class="acm-field"><span>Currency</span><select aria-label="Currency"><option>NGN</option></select></label>
-    <label class="acm-field"><span>Timezone</span><select aria-label="Timezone"><option>Africa/Lagos</option></select></label>
+    <label class="acm-field"><span>Site Name</span><input value="Prime Boostly" aria-label="Site Name" data-control-setting="siteName"></label>
+    <label class="acm-field"><span>Currency</span><select aria-label="Currency" data-control-setting="currency"><option>NGN</option></select></label>
+    <label class="acm-field"><span>Timezone</span><select aria-label="Timezone" data-control-setting="timezone"><option>Africa/Lagos</option></select></label>
     <section class="acm-rules">
       <div class="acm-rule"><span>User Registration</span><b class="acm-badge regular">Enabled</b></div>
       <div class="acm-rule"><span>Email Verification</span><b class="acm-badge regular">Enabled</b></div>
       <div class="acm-rule"><span>Maintenance Mode</span><b class="acm-badge regular neutral">Off</b></div>
       <div class="acm-rule"><span>Two Factor Option</span><b class="acm-badge">Available</b></div>
     </section>
-    <button class="acm-save" type="button">Save Changes</button>
+    <button class="acm-save" type="button" data-controls-save>Save Changes</button>
   </main>
 </body>
 </html>
