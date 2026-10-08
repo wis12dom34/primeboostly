@@ -1,1 +1,72 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Services · Prime Boostly Admin</title><link rel="stylesheet" href="/preview-system.css"></head><body class="admin"><div class="pb-shell"><aside class="pb-side"><a class="pb-brand" href="/admin.html"><span class="pb-brand-text"><small>PRIME BOOSTLY</small><b>Admin Panel</b></span></a><nav class="pb-nav"><div class="label">OVERVIEW</div><a class="" href="/admin.html">Dashboard</a><div class="label">MANAGE SERVICE</div><a class="" href="/admin-add-service.html">Add Services</a><a class="active" href="/admin-services.html">Show Services</a><a class="" href="/admin-categories.html">Categories</a><a class="" href="/admin-api-providers.html">API Providers</a><div class="label">MANAGE ORDERS</div><a class="" href="/admin-orders.html">All Orders</a><div class="label">MANAGE USER</div><a class="" href="/admin-users.html">All Users</a><a class="" href="/admin-send-email.html">Send Email</a><div class="label">PAYMENT SETTINGS</div><a class="" href="/admin-payments.html">Payment Methods</a><a class="" href="/admin-manual-gateway.html">Manual Gateway</a><a class="" href="/admin-deposit-requests.html">Deposit Request</a><a class="" href="/admin-payment-logs.html">Payment Log</a><div class="label">OPERATIONS</div><a class="" href="/admin-transactions.html">Transactions</a><a class="" href="/admin-support.html">Support Tickets</a><div class="label">CONTROLS</div><a class="" href="/admin-controls.html">Basic Controls</a><a class="" href="/admin-color-settings.html">Color Settings</a><a class="" href="/admin-plugins.html">Plugins</a><a class="" href="/admin-theme-content.html">Theme & Content</a></nav></aside><main class="pb-main"><header class="pb-top"><div><h1>Services</h1><p>Manage pricing, provider mapping, and availability</p></div><div class="pb-user"><a class="mobile-menu" href="/admin.html" aria-label="Open admin menu">☰</a><span class="avatar">A</span><span>Admin</span></div></header><section class="pb-content"><div class="pb-grid"><section class="card span-3 metric"><small>Total Services</small><b>2,846</b></section><section class="card span-3 metric soft"><small>Active</small><b>2,702</b></section><section class="card span-3 metric"><small>Disabled</small><b>144</b></section><section class="card span-3 metric"><small>Categories</small><b>38</b></section><section class="card span-12"><div class="actions" style="justify-content:space-between"><div class="control" style="width:min(420px,100%)">Search service ID or name</div><a class="btn primary" href="/admin-add-service.html">+ Add Service</a></div></section><section class="card span-12"><div class="table-wrap"><table class="table"><thead><tr><th>ID</th><th>NAME</th><th>CATEGORY</th><th>PROVIDER</th><th>RATE / 1K</th><th>STATUS</th><th>ACTION</th></tr></thead><tbody><tr><td>101</td><td>Instagram Followers | Fast</td><td>Instagram</td><td>Mercury</td><td>₦1,850</td><td><span class="status">Active</span></td><td>Edit</td></tr><tr><td>217</td><td>TikTok Views | Instant</td><td>TikTok</td><td>Atlas</td><td>₦720</td><td><span class="status">Active</span></td><td>Edit</td></tr><tr><td>344</td><td>YouTube Views | HQ</td><td>YouTube</td><td>Mercury</td><td>₦1,200</td><td><span class="status warn">Paused</span></td><td>Edit</td></tr></tbody></table></div></section></div></section></main></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Services · Prime Boostly Admin</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/admin-services.css">
+  <script src="/admin-services.js" defer></script>
+</head>
+<body class="admin-services-page">
+  <main class="services-desktop" data-figma-node="20:2">
+    <aside class="services-sidebar">
+      <a class="services-brand" href="/admin.html"><span><b>PRIME</b><strong>BOOSTLY</strong></span><small>Admin Panel</small></a>
+      <p class="services-section-label">OVERVIEW</p><a class="services-nav" href="/admin.html">Dashboard</a>
+      <p class="services-section-label">MANAGE SERVICE</p><a class="services-nav" href="/admin-add-service.html">Add Services</a><a class="services-nav active" href="/admin-services.html" aria-current="page">Show Services</a><a class="services-nav" href="/admin-categories.html">Categories</a><a class="services-nav" href="/admin-api-providers.html">API Providers</a>
+      <p class="services-section-label">MANAGE ORDERS</p><a class="services-nav" href="/admin-orders.html">All Orders</a><a class="services-nav" href="/admin-orders.html">Awaiting</a><a class="services-nav" href="/admin-orders.html">Pending</a><a class="services-nav" href="/admin-orders.html">Processing</a><a class="services-nav" href="/admin-orders.html">Completed</a><a class="services-nav" href="/admin-orders.html">Refunded</a>
+      <p class="services-section-label">MANAGE USER</p><a class="services-nav" href="/admin-users.html">All Users</a><a class="services-nav" href="/admin-send-email.html">Send Email</a>
+      <p class="services-section-label">PAYMENT SETTINGS</p><a class="services-nav" href="/admin-payments.html">Payment Methods</a><a class="services-nav" href="/admin-manual-gateway.html">Manual Gateway</a><a class="services-nav" href="/admin-deposit-requests.html">Deposit Request</a><a class="services-nav" href="/admin-payment-logs.html">Payment Log</a>
+      <p class="services-section-label">OPERATIONS</p><a class="services-nav" href="/admin-transactions.html">Transactions</a><a class="services-nav" href="/admin-support.html">Support Tickets</a>
+      <p class="services-section-label">CONTROLS</p><a class="services-nav" href="/admin-controls.html">Basic Controls</a><a class="services-nav" href="/admin-color-settings.html">Color Settings</a><a class="services-nav" href="/admin-plugins.html">Plugins</a><a class="services-nav" href="/admin-theme-content.html">Theme &amp; Content</a>
+    </aside>
+
+    <section class="services-content">
+      <header class="services-header">
+        <div class="services-heading"><h1>Services</h1><p>Manage live SMM services, rates, limits, providers, and visibility</p></div>
+        <div class="services-header-actions"><a class="services-notifications" href="/admin-notifications.html">Notifications</a><span class="services-admin-pill"><b>A</b><span>Admin</span></span></div>
+      </header>
+
+      <section class="services-metrics" aria-label="Service metrics">
+        <article class="services-metric active"><small>Active</small><strong>512</strong></article>
+        <article class="services-metric"><small>Hidden</small><strong>18</strong></article>
+        <article class="services-metric"><small>Out of sync</small><strong class="warning">7</strong></article>
+        <article class="services-metric"><small>Providers</small><strong>12</strong></article>
+      </section>
+
+      <div class="services-section-title"><h2>Service Catalogue</h2><a class="services-add-secondary" href="/admin-add-service.html">Add Service</a></div>
+
+      <form class="services-filters" data-services-filter>
+        <label class="services-field search"><span>Search</span><input type="search" value="Service ID or name" data-service-search aria-label="Search services"></label>
+        <label class="services-field"><span>Provider</span><select data-service-provider><option value="all">All providers</option><option>Mercury</option><option>Atlas</option><option>Nova</option></select></label>
+        <label class="services-field"><span>Category</span><select data-service-category><option value="all">All categories</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Telegram</option></select></label>
+        <button class="services-search-button" type="submit">Search</button>
+      </form>
+
+      <section class="services-table-card">
+        <div class="services-table-head"><span>ID</span><span>SERVICE</span><span>PROVIDER</span><span>RATE / 1K</span><span>MIN / MAX</span><span>STATUS</span><span>ACTION</span></div>
+        <div class="services-row" data-service-row data-id="101" data-name="Instagram Followers | Fast" data-provider="Mercury" data-category="Instagram"><span>101</span><span>Instagram Followers | Fast</span><span>Mercury</span><span>₦1,850</span><span>100 / 100K</span><span class="status-cell"><b class="service-badge active">Active</b></span><a href="/admin-add-service.html?service=101">Edit</a></div>
+        <div class="services-row" data-service-row data-id="217" data-name="TikTok Views | Instant" data-provider="Atlas" data-category="TikTok"><span>217</span><span>TikTok Views | Instant</span><span>Atlas</span><span>₦720</span><span>100 / 1M</span><span class="status-cell"><b class="service-badge active">Active</b></span><a href="/admin-add-service.html?service=217">Edit</a></div>
+        <div class="services-row" data-service-row data-id="344" data-name="YouTube Views | HQ" data-provider="Mercury" data-category="YouTube"><span>344</span><span>YouTube Views | HQ</span><span>Mercury</span><span>₦1,200</span><span>100 / 500K</span><span class="status-cell"><b class="service-badge neutral">Hidden</b></span><a href="/admin-add-service.html?service=344">Edit</a></div>
+        <div class="services-row" data-service-row data-id="418" data-name="Telegram Members" data-provider="Nova" data-category="Telegram"><span>418</span><span>Telegram Members</span><span>Nova</span><span>₦2,150</span><span>50 / 100K</span><span class="status-cell"><b class="service-badge warning">Sync issue</b></span><a href="/admin-add-service.html?service=418">Review</a></div>
+        <p class="services-empty" data-services-empty hidden>No services match these filters.</p>
+      </section>
+    </section>
+  </main>
+
+  <main class="services-mobile" data-figma-node="22:2">
+    <header class="services-mobile-head"><a class="services-mobile-brand" href="/admin.html"><span><b>PRIME</b><strong>BOOSTLY</strong></span><small>Admin Panel</small></a><a class="services-mobile-menu" href="/admin.html" aria-label="Open admin menu">☰</a></header>
+    <h1>Services</h1>
+    <p class="services-mobile-lead">Manage live SMM services and visibility.</p>
+    <section class="services-mobile-stats"><article class="mobile-stat active"><small>Active</small><strong>512</strong></article><article class="mobile-stat"><small>Issues</small><strong>7</strong></article></section>
+    <label class="services-mobile-search"><span>Search</span><input type="search" value="Service ID or name" data-service-search aria-label="Search services"></label>
+    <section class="services-mobile-list">
+      <a class="mobile-service-card" href="/admin-add-service.html?service=101" data-service-card data-id="101" data-name="Instagram Followers | Fast" data-provider="Mercury" data-category="Instagram"><div><h2>Instagram Followers | Fast</h2><b class="service-badge active">Active</b></div><p>Mercury · ₦1,850 / 1K</p><small>Min 100 · Max 100K</small></a>
+      <a class="mobile-service-card" href="/admin-add-service.html?service=217" data-service-card data-id="217" data-name="TikTok Views | Instant" data-provider="Atlas" data-category="TikTok"><div><h2>TikTok Views | Instant</h2><b class="service-badge active">Active</b></div><p>Atlas · ₦720 / 1K</p><small>Min 100 · Max 1M</small></a>
+      <a class="mobile-service-card" href="/admin-add-service.html?service=344" data-service-card data-id="344" data-name="YouTube Views | HQ" data-provider="Mercury" data-category="YouTube"><div><h2>YouTube Views | HQ</h2><b class="service-badge neutral">Hidden</b></div><p>Mercury · ₦1,200 / 1K</p><small>Min 100 · Max 500K</small></a>
+      <p class="services-empty" data-services-empty hidden>No services match your search.</p>
+    </section>
+    <a class="services-mobile-add" href="/admin-add-service.html">Add Service</a>
+  </main>
+</body>
+</html>
