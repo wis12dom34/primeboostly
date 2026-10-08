@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root{--pb-green:#2db05e;--pb-green-dark:#23924d;--pb-bg:#f8fbf8;--pb-soft:#f4faf6;--pb-white:#fff;--pb-text:#16212d;--pb-muted:#6c7b88;--pb-border:#dbe7de;--pb-error:#dc2626;--pb-error-soft:#ffebeb}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Poppins,Inter,Arial,sans-serif;color:var(--pb-text);background:var(--pb-bg)}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.flow-page{min-height:100vh;background:var(--pb-bg)}
+.flow-header{height:72px;padding:16px 24px;background:#fff;border-bottom:1px solid var(--pb-border);display:flex;align-items:center;justify-content:space-between}
+.flow-brand{display:flex;align-items:center;gap:8px}.flow-brand .mark{width:28px;height:28px;border-radius:10px;background:var(--pb-green);display:grid;place-items:center;color:#fff;font-size:13px;font-weight:700}.flow-brand>span:last-child{display:flex;flex-direction:column;color:var(--pb-green);font-weight:700;line-height:1}.flow-brand b{font-size:8px}.flow-brand strong{font-size:15px}
+.flow-nav{display:flex;align-items:center;gap:22px;font-size:12px;font-weight:400}.flow-nav a:hover{color:var(--pb-green)}
+.flow-user{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600}.flow-avatar{width:32px;height:32px;border-radius:50%;background:var(--pb-soft);flex:0 0 auto}
+.flow-menu{display:none;width:44px;height:44px;border:1px solid var(--pb-border);border-radius:14px;background:#fff;align-items:center;justify-content:center;font:700 18px/1 Inter,Arial,sans-serif}
+.flow-content{height:828px;padding:34px 90px;overflow:hidden}.flow-crumb{margin:0 0 18px;color:var(--pb-muted);font-size:11px;line-height:1.4}
+.flow-card{background:#fff;border:1px solid var(--pb-border);border-radius:14px}
+.flow-button{min-height:44px;padding:12px 18px;border:1px solid var(--pb-green);border-radius:10px;background:var(--pb-green);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;line-height:18px;cursor:pointer}.flow-button:hover{background:var(--pb-green-dark);border-color:var(--pb-green-dark)}
+.flow-button.secondary{height:46px;background:#fff;border-color:var(--pb-border);color:var(--pb-text)}
+.mobile-only{display:none}
+
+/* Paystack */
+.paystack-card{width:860px;height:520px;padding:28px}.paystack-top{display:flex;gap:24px;align-items:flex-start}.paystack-logo{width:180px;height:180px;border:1px solid var(--pb-border);border-radius:20px;background:var(--pb-soft);display:grid;place-items:center;color:var(--pb-green);font-size:46px;font-weight:700;flex:0 0 auto}.paystack-details{display:flex;flex-direction:column;align-items:flex-start;gap:12px}.paystack-details h1{margin:0;font-size:26px;line-height:1.25}.paystack-details .pay-due{margin:0;font-size:18px;font-weight:600}.paystack-details .pay-credit{margin:0;color:var(--pb-muted);font-size:15px}.pay-summary{width:250px;padding:14px;border:1px solid var(--pb-border);border-radius:10px;background:var(--pb-soft);display:flex;flex-direction:column;gap:8px;font-size:12px}.pay-summary p{margin:0;display:flex;justify-content:space-between}.pay-summary span{color:var(--pb-muted)}.pay-summary b{font-weight:600}.paystack-note{margin:16px 0 0;color:var(--pb-muted);font-size:11px}
+
+/* Manual deposit */
+.manual-card{width:900px;height:650px;padding:28px;display:flex;flex-direction:column;align-items:flex-start;gap:18px}.manual-card h1{margin:0;font-size:25px;line-height:1.25}.manual-instructions{width:100%;padding:16px;border:1px solid var(--pb-border);border-radius:10px;background:var(--pb-soft);display:flex;flex-direction:column;gap:8px;font-size:13px}.manual-instructions p{margin:0}.manual-instructions .muted{font-size:12px;color:var(--pb-muted)}.manual-fields-row{display:flex;gap:14px}.flow-field{display:flex;flex-direction:column;gap:7px;width:360px;color:var(--pb-green);font-size:12px;font-weight:600}.flow-field input{width:100%;height:44px;padding:0 12px;border:1px solid var(--pb-border);border-radius:10px;background:#fff;color:var(--pb-text);font-size:13px;font-weight:400;outline:none}.flow-field input::placeholder{color:var(--pb-muted)}.flow-field input:focus{border-color:var(--pb-green)}.manual-reference{width:734px}.manual-upload{width:734px;height:110px;padding:16px;border:1px solid var(--pb-border);border-radius:10px;background:#fff;display:flex;flex-direction:column;gap:8px;cursor:pointer}.manual-upload b{font-size:13px}.manual-upload small{font-size:11px;color:var(--pb-muted)}.manual-upload input{position:absolute;opacity:0;pointer-events:none}
+
+/* 2FA */
+.security-columns{display:flex;gap:18px;align-items:flex-start}.security-card{flex:1;min-width:0;padding:24px;display:flex;flex-direction:column;align-items:flex-start;gap:16px}.security-card h1{margin:0;color:var(--pb-green);font-size:22px;line-height:1.25}.security-card p{margin:0;color:var(--pb-muted);font-size:13px}.security-card .security-copy{max-width:470px;color:var(--pb-text)}.secret-field{display:flex;flex-direction:column;gap:7px;color:var(--pb-green);font-size:12px;font-weight:600}.secret-value{height:44px;padding:0 14px;border:1px solid var(--pb-border);border-radius:10px;background:#fff;color:var(--pb-muted);display:flex;align-items:center;font-size:13px;font-weight:400}.qr-box{width:220px;height:220px;padding:20px;border:1px solid var(--pb-border);border-radius:14px;background:var(--pb-soft);display:grid;place-items:center;color:var(--pb-green);font-size:54px;font-weight:700}
+
+/* Status */
+.status-content{height:708px;padding:34px 90px;overflow:hidden}.status-wrap{padding-top:100px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}.status-icon{min-width:30px;min-height:50px;padding:0 2px;background:var(--pb-soft);display:grid;place-items:center;color:var(--pb-green);font-size:48px;font-weight:700;line-height:1}.status-wrap h1{margin:0;font-size:40px;line-height:1.2}.status-wrap .status-message{width:620px;max-width:100%;margin:0;color:var(--pb-muted);font-size:15px;line-height:1.55}.status-wrap small{color:var(--pb-muted);font-size:11px}.failed .status-icon{background:var(--pb-error-soft);color:var(--pb-error)}.failed .status-wrap h1{color:var(--pb-error)}
+
+@media(max-width:900px){
+  .desktop-only{display:none!important}.mobile-only{display:block}
+  .flow-header{height:74px;padding:0 20px;border-bottom:0;background:var(--pb-bg)}.flow-nav,.flow-user{display:none}.flow-menu{display:flex}
+  .flow-content,.status-content{height:778px;padding:12px 20px 24px;overflow:hidden}.flow-crumb{display:none}
+  .mobile-title{margin:0 0 14px;font-size:26px;line-height:1.25}.mobile-lead{width:350px;max-width:100%;margin:0 0 16px;color:var(--pb-muted);font-size:13px;line-height:1.65}
+  .flow-button{width:100%}
+
+  .paystack-card{width:100%;height:auto;padding:18px;display:flex;flex-direction:column;gap:14px}.paystack-top{display:contents}.paystack-logo{width:90px;height:90px;padding:14px;border-radius:14px;font-size:30px}.paystack-details{display:contents}.paystack-details h1{display:none}.paystack-details .pay-due{font-size:18px}.paystack-details .pay-credit{font-size:14px}.pay-summary{width:100%}.paystack-note{display:none}
+
+  .manual-card{width:100%;height:auto;padding:0;border:0;background:transparent;gap:16px}.manual-card>h1{display:none}.manual-instructions{padding:14px;gap:7px;font-size:12px}.manual-instructions .muted{display:none}.manual-fields-row{width:100%;display:contents}.flow-field,.manual-reference{width:100%}.manual-reference span{font-size:0}.manual-reference span::after{content:'Reference';font-size:12px}.manual-upload{width:100%;height:72px;padding:14px;border-radius:14px}.manual-upload b{font-size:12px}.manual-upload b .desktop-upload-copy{display:none}.manual-upload b::after{content:'Upload payment screenshot'}
+
+  .security-columns{display:flex;flex-direction:column;gap:16px;width:100%}.security-card{width:100%;padding:16px;gap:12px}.security-card h1{font-size:18px}.security-card .desktop-security-lead,.security-card .security-copy,.security-card .download-button{display:none}.secret-field{width:100%}.secret-value{width:100%}.qr-box{width:160px;height:160px;padding:14px;font-size:44px}.google-card{gap:8px}.google-card h1{color:var(--pb-text);font-size:16px}.google-card .mobile-google-copy{display:block!important;width:100%;font-size:12px;line-height:1.55}
+
+  .status-content{padding:12px 20px 24px}.status-wrap{padding-top:70px;gap:16px}.status-icon{width:80px;height:80px;min-width:80px;min-height:80px;padding:0;font-size:38px}.status-wrap h1{font-size:30px}.status-wrap .status-message{width:330px;text-align:left;font-size:13px;line-height:1.65}.status-wrap .flow-button{width:auto}.status-wrap small{font-size:11px}
+}
