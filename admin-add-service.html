@@ -1,1 +1,65 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Add Service · Prime Boostly Admin</title><link rel="stylesheet" href="/preview-system.css"></head><body class="admin"><div class="pb-shell"><aside class="pb-side"><a class="pb-brand" href="/admin.html"><span class="pb-brand-text"><small>PRIME BOOSTLY</small><b>Admin Panel</b></span></a><nav class="pb-nav"><div class="label">OVERVIEW</div><a class="" href="/admin.html">Dashboard</a><div class="label">MANAGE SERVICE</div><a class="active" href="/admin-add-service.html">Add Services</a><a class="" href="/admin-services.html">Show Services</a><a class="" href="/admin-categories.html">Categories</a><a class="" href="/admin-api-providers.html">API Providers</a><div class="label">MANAGE ORDERS</div><a class="" href="/admin-orders.html">All Orders</a><div class="label">MANAGE USER</div><a class="" href="/admin-users.html">All Users</a><a class="" href="/admin-send-email.html">Send Email</a><div class="label">PAYMENT SETTINGS</div><a class="" href="/admin-payments.html">Payment Methods</a><a class="" href="/admin-manual-gateway.html">Manual Gateway</a><a class="" href="/admin-deposit-requests.html">Deposit Request</a><a class="" href="/admin-payment-logs.html">Payment Log</a><div class="label">OPERATIONS</div><a class="" href="/admin-transactions.html">Transactions</a><a class="" href="/admin-support.html">Support Tickets</a><div class="label">CONTROLS</div><a class="" href="/admin-controls.html">Basic Controls</a><a class="" href="/admin-color-settings.html">Color Settings</a><a class="" href="/admin-plugins.html">Plugins</a><a class="" href="/admin-theme-content.html">Theme & Content</a></nav></aside><main class="pb-main"><header class="pb-top"><div><h1>Add Service</h1><p>Create a customer-facing service and provider mapping</p></div><div class="pb-user"><a class="mobile-menu" href="/admin.html" aria-label="Open admin menu">☰</a><span class="avatar">A</span><span>Admin</span></div></header><section class="pb-content"><div class="pb-grid"><section class="card span-8"><h3>Service details</h3><div class="form-grid"><div class="field"><label>Service name</label><div class="control muted">e.g. Instagram Followers | Fast</div></div><div class="field"><label>Category</label><div class="control">Instagram <span>⌄</span></div></div><div class="field"><label>API provider</label><div class="control">Mercury <span>⌄</span></div></div><div class="field"><label>Provider service ID</label><div class="control muted">101</div></div><div class="field"><label>Customer rate / 1k</label><div class="control muted">₦0.00</div></div><div class="field"><label>Provider rate / 1k</label><div class="control muted">₦0.00</div></div><div class="field"><label>Minimum quantity</label><div class="control muted">100</div></div><div class="field"><label>Maximum quantity</label><div class="control muted">100000</div></div><div class="field full"><label>Description</label><textarea class="control" placeholder="Explain speed, refill, quality, and delivery notes..."></textarea></div></div><div class="actions" style="margin-top:16px"><button class="btn primary">Create service</button><a class="btn" href="/admin-services.html">Cancel</a></div></section><aside class="card span-4 soft"><h3>Preview</h3><p>The customer will see this service inside the existing PrimeBoostly service list.</p><div class="card" style="margin-top:14px"><b>Instagram Followers | Fast</b><p style="margin-top:6px">₦1,850 / 1k · 100–100k</p><span class="status" style="margin-top:10px">Active</span></div></aside></div></section></main></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Add Service · Prime Boostly Admin</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/admin-add-service.css">
+  <script src="/admin-add-service.js" defer></script>
+</head>
+<body class="add-service-page">
+  <main class="add-service-desktop" data-figma-derived-from="25:2326">
+    <aside class="ase-side">
+      <a class="ase-brand" href="/admin.html"><span class="ase-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></a>
+      <p class="ase-label">OVERVIEW</p><a class="ase-nav" href="/admin.html">Dashboard</a>
+      <p class="ase-label">MANAGE SERVICE</p><a class="ase-nav active" href="/admin-add-service.html">Add Services</a><a class="ase-nav" href="/admin-services.html">Show Services</a><a class="ase-nav" href="/admin-categories.html">Categories</a><a class="ase-nav" href="/admin-api-providers.html">API Providers</a>
+      <p class="ase-label">MANAGE ORDERS</p><a class="ase-nav" href="/admin-orders.html">All Orders</a><a class="ase-nav" href="/admin-orders.html">Awaiting</a><a class="ase-nav" href="/admin-orders.html">Pending</a><a class="ase-nav" href="/admin-orders.html">Processing</a><a class="ase-nav" href="/admin-orders.html">Completed</a><a class="ase-nav" href="/admin-orders.html">Refunded</a>
+      <p class="ase-label">MANAGE USER</p><a class="ase-nav" href="/admin-users.html">All Users</a><a class="ase-nav" href="/admin-send-email.html">Send Email</a>
+      <p class="ase-label">PAYMENT SETTINGS</p><a class="ase-nav" href="/admin-payments.html">Payment Methods</a><a class="ase-nav" href="/admin-manual-gateway.html">Manual Gateway</a><a class="ase-nav" href="/admin-deposit-requests.html">Deposit Request</a><a class="ase-nav" href="/admin-payment-logs.html">Payment Log</a>
+      <p class="ase-label">OPERATIONS</p><a class="ase-nav" href="/admin-transactions.html">Transactions</a><a class="ase-nav" href="/admin-support.html">Support Tickets</a>
+      <p class="ase-label">CONTROLS</p><a class="ase-nav" href="/admin-controls.html">Basic Controls</a><a class="ase-nav" href="/admin-color-settings.html">Color Settings</a><a class="ase-nav" href="/admin-plugins.html">Plugins</a><a class="ase-nav" href="/admin-theme-content.html">Theme &amp; Content</a>
+    </aside>
+    <section class="ase-content">
+      <header class="ase-header"><div><h1>Add Service</h1><p>Create provider mapping, rate, limits, visibility, and customer-facing service copy</p></div><div class="ase-header-actions"><a class="ase-secondary" href="/admin-notifications.html">Notifications</a><span class="ase-admin"><b>A</b><span>Admin</span></span></div></header>
+      <div class="ase-workspace">
+        <form class="ase-card" data-service-form>
+          <h2>Service Configuration</h2>
+          <div class="ase-three provider-row">
+            <label class="ase-field w240"><span>Provider</span><select data-service-field="provider"><option>Mercury</option><option>Peakerr</option><option>SMMFollows</option></select></label>
+            <label class="ase-field w240"><span>Provider Service ID</span><input data-service-field="providerId" value="8441" inputmode="numeric"></label>
+            <label class="ase-field w226"><span>Category</span><select data-service-field="category"><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Facebook</option></select></label>
+          </div>
+          <label class="ase-field full"><span>Service Name</span><input data-service-field="serviceName" value="Instagram Followers | Fast" required></label>
+          <div class="ase-three rate-row">
+            <label class="ase-field w230"><span>Rate / 1K</span><input data-service-field="rate" value="₦1,850"></label>
+            <label class="ase-field w230"><span>Minimum</span><input data-service-field="minimum" value="100" inputmode="numeric"></label>
+            <label class="ase-field w246"><span>Maximum</span><input data-service-field="maximum" value="100,000" inputmode="numeric"></label>
+          </div>
+          <div class="ase-three rate-row">
+            <label class="ase-field w230"><span>Average Time</span><input data-service-field="averageTime" value="0–2 hours"></label>
+            <label class="ase-field w230"><span>Refill</span><input data-service-field="refill" value="30 days"></label>
+            <label class="ase-field w246"><span>Visibility</span><select data-service-field="visibility"><option>Active</option><option>Hidden</option></select></label>
+          </div>
+          <label class="ase-field full"><span>Description</span><textarea data-service-field="description">Fast Instagram followers with gradual delivery. Keep the account public while the order is processing.</textarea></label>
+          <div class="ase-actions"><button class="ase-primary" type="submit">Create Service</button><a class="ase-secondary action" href="/admin-services.html">Cancel</a></div>
+        </form>
+        <aside class="ase-health"><h2>Service Preview</h2><span class="ase-pill">Ready to create</span><small>Customer rate</small><strong data-preview-rate>₦1,850 / 1K</strong><small>Limits</small><strong data-preview-limits>100 – 100,000</strong><small>Provider</small><strong data-preview-provider>Mercury · 8441</strong><div class="ase-preview-name" data-preview-name>Instagram Followers | Fast</div></aside>
+      </div>
+    </section>
+  </main>
+  <main class="add-service-mobile" data-figma-derived-from="25:2927">
+    <header class="asem-head"><a class="asem-brand" href="/admin.html"><span><b>PRIME</b><strong>BOOSTLY</strong></span><small>Admin Panel</small></a><a class="asem-menu" href="/admin.html" aria-label="Open admin menu">☰</a></header>
+    <section class="asem-title"><h1>Add Service</h1><p>Configure a new service.</p></section>
+    <form class="asem-form" data-service-form>
+      <label class="asem-field"><span>Service Name</span><input data-service-field="serviceName" value="Instagram Followers | Fast" required></label>
+      <label class="asem-field"><span>Provider</span><input data-service-provider-summary value="Mercury · 8441" aria-label="Provider and service ID"></label>
+      <div class="asem-two"><label class="asem-field"><span>Rate / 1K</span><input data-service-field="rate" value="₦1,850"></label><label class="asem-field"><span>Minimum</span><input data-service-field="minimum" value="100"></label></div>
+      <div class="asem-two"><label class="asem-field"><span>Maximum</span><input data-service-field="maximum" value="100,000"></label><label class="asem-field"><span>Visibility</span><select data-service-field="visibility"><option>Active</option><option>Hidden</option></select></label></div>
+      <label class="asem-field"><span>Description</span><textarea data-service-field="description">Fast Instagram followers with gradual delivery.</textarea></label>
+      <button class="asem-primary" type="submit">Create Service</button>
+    </form>
+  </main>
+  <p class="ase-toast" data-service-feedback role="status" aria-live="polite"></p>
+</body>
+</html>
