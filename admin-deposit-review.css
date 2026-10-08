@@ -1,0 +1,23 @@
+.deposit-review-page .pd-content{gap:18px}
+.deposit-review-page .pd-metrics article:nth-child(1){background:#f4faf6}
+.deposit-review-main{width:1128px;display:grid;grid-template-columns:650px 460px;gap:18px;align-items:start}
+.deposit-proof,.deposit-details{border:1px solid #dbe7de;border-radius:14px;background:#fff;padding:16px;display:flex;flex-direction:column;gap:12px}
+.deposit-proof h2,.deposit-details h2{margin:0;font:600 18px/normal Poppins,Inter,sans-serif}
+.deposit-proof-box{width:616px;height:360px;border-radius:12px;background:#f4faf6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.deposit-proof-box strong{font:600 16px/normal Poppins,Inter,sans-serif}.deposit-proof-box small{color:#6c7b88;font:400 11px/normal Poppins,Inter,sans-serif}
+.deposit-detail-row{width:426px;display:flex;justify-content:space-between;gap:20px;font:400 11px/normal Poppins,Inter,sans-serif}.deposit-detail-row span{color:#6c7b88}.deposit-detail-row b{font-weight:600;text-align:right}
+.deposit-note{width:426px;display:flex;flex-direction:column;gap:6px}.deposit-note span{color:#2db05e;font:600 11px/normal Poppins,Inter,sans-serif}.deposit-note textarea{width:426px;height:96px;padding:14px;border:1px solid #dbe7de;border-radius:10px;background:#fff;resize:none;outline:none;color:#6c7b88;font:400 12px/normal Poppins,Inter,sans-serif}
+.deposit-actions{display:flex;gap:10px}.deposit-actions button{height:42px;padding:0 18px;border-radius:10px;font:600 13px/normal Poppins,Inter,sans-serif;cursor:pointer}.deposit-actions .approve{border:1px solid #2db05e;background:#2db05e;color:#fff}.deposit-actions .reject{border:1px solid #dbe7de;background:#fff;color:#16212d}
+.deposit-review-mobile{display:none}
+.deposit-review-feedback{position:fixed;right:18px;bottom:18px;margin:0;padding:10px 14px;border-radius:10px;background:#16212d;color:#fff;font:600 11px Poppins,Inter,sans-serif;opacity:0;pointer-events:none;transition:.18s;z-index:40}.deposit-review-feedback.show{opacity:1}
+@media(max-width:1100px){
+  .deposit-review-page .pd-desktop{display:none}
+  .deposit-review-mobile{width:min(393px,100%);min-height:852px;margin:0 auto;padding:18px 20px 20px;background:#f8fbf8;display:flex;flex-direction:column;gap:14px;overflow-x:hidden}
+  .drm-head{width:353px;display:flex;justify-content:space-between;align-items:flex-start}.drm-brand{width:180px;display:flex;flex-direction:column;line-height:normal}.drm-brand>span{display:flex;gap:5px;font-size:10px;font-weight:700}.drm-brand b{color:#2db05e}.drm-brand strong{color:#16212d}.drm-brand small{font-size:10px;color:#6c7b88}.drm-menu{width:44px;height:44px;border:1px solid #dbe7de;border-radius:12px;background:#fff;display:grid;place-items:center;color:#16212d;font:600 18px Poppins,Inter,sans-serif}
+  .drm-title{width:353px;display:flex;flex-direction:column;gap:4px}.drm-title h1{margin:0;font:700 26px/normal Poppins,Inter,sans-serif}.drm-title p{margin:0;color:#6c7b88;font:400 12px/normal Poppins,Inter,sans-serif}
+  .drm-stats{width:353px;display:grid;grid-template-columns:171px 171px;gap:10px}.drm-stats article{min-height:90px;padding:16px;border:1px solid #dbe7de;border-radius:14px;background:#fff;display:flex;flex-direction:column;gap:6px}.drm-stats article.soft{background:#f4faf6}.drm-stats small{color:#6c7b88;font:400 11px/normal Poppins,Inter,sans-serif}.drm-stats b{font:600 22px/normal Poppins,Inter,sans-serif}.drm-stats .pending{color:#f59e0b}
+  .drm-request{width:353px;padding:16px;border:1px solid #dbe7de;border-radius:14px;background:#fff;display:flex;flex-direction:column;gap:8px}.drm-request h2{margin:0;font:600 13px/normal Poppins,Inter,sans-serif}.drm-line{display:flex;gap:6px;font:400 11px/normal Poppins,Inter,sans-serif}.drm-line span{color:#6c7b88}.drm-line b{font-weight:600}
+  .drm-proof{width:353px;padding:16px;border:1px solid #dbe7de;border-radius:14px;background:#f4faf6;display:flex;flex-direction:column;gap:8px}.drm-proof strong{font:600 13px/normal Poppins,Inter,sans-serif}.drm-proof small{color:#6c7b88;font:400 11px/normal Poppins,Inter,sans-serif}
+  .drm-actions{display:flex;gap:10px}.drm-actions button{height:44px;padding:0 18px;border-radius:10px;font:600 13px/normal Poppins,Inter,sans-serif}.drm-actions .approve{border:1px solid #2db05e;background:#2db05e;color:#fff}.drm-actions .reject{border:1px solid #dbe7de;background:#fff;color:#16212d}
+}
+@media(min-width:521px) and (max-width:1100px){.deposit-review-mobile{width:min(768px,100%)}.drm-head,.drm-title,.drm-stats,.drm-request,.drm-proof{width:100%}.drm-stats{grid-template-columns:1fr 1fr}}
