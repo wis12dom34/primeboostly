@@ -6,6 +6,8 @@
   <title>Theme &amp; Content · Prime Boostly Admin</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/admin-theme-content-figma.css">
+  <link rel="stylesheet" href="/admin-editor.css">
+  <script src="/admin-editor.js" defer></script>
 </head>
 <body class="admin-theme-page">
   <main class="admin-theme-desktop" data-figma-node="20:1016">
@@ -35,10 +37,10 @@
       <div class="at-section-title"><h2>Homepage Sections</h2></div>
       <section class="at-table">
         <div class="at-table-head"><span>SECTION</span><span>STATUS</span><span>LAST UPDATED</span><span>ACTION</span></div>
-        <div class="at-row"><span>Hero</span><span class="at-status-cell"><b class="at-badge">Published</b></span><span>Today 09:12</span><a href="#">Edit</a></div>
-        <div class="at-row"><span>Features</span><span class="at-status-cell"><b class="at-badge">Published</b></span><span>05 Oct</span><a href="#">Edit</a></div>
-        <div class="at-row"><span>Why PrimeBoostly</span><span class="at-status-cell"><b class="at-badge">Published</b></span><span>04 Oct</span><a href="#">Edit</a></div>
-        <div class="at-row"><span>FAQ</span><span class="at-status-cell"><b class="at-badge neutral">Draft</b></span><span>03 Oct</span><a href="#">Edit</a></div>
+        <div class="at-row" data-content-row data-content-key="theme:hero"><span data-content-title>Hero</span><span class="at-status-cell"><b class="at-badge" data-content-status>Published</b></span><span data-content-updated>Today 09:12</span><button class="admin-edit-link" type="button" data-edit-content data-editor-kind="theme" data-editor-key="theme:hero" data-editor-title="Hero">Edit</button></div>
+        <div class="at-row" data-content-row data-content-key="theme:features"><span data-content-title>Features</span><span class="at-status-cell"><b class="at-badge" data-content-status>Published</b></span><span data-content-updated>05 Oct</span><button class="admin-edit-link" type="button" data-edit-content data-editor-kind="theme" data-editor-key="theme:features" data-editor-title="Features">Edit</button></div>
+        <div class="at-row" data-content-row data-content-key="theme:why"><span data-content-title>Why PrimeBoostly</span><span class="at-status-cell"><b class="at-badge" data-content-status>Published</b></span><span data-content-updated>04 Oct</span><button class="admin-edit-link" type="button" data-edit-content data-editor-kind="theme" data-editor-key="theme:why" data-editor-title="Why PrimeBoostly">Edit</button></div>
+        <div class="at-row" data-content-row data-content-key="theme:faq"><span data-content-title>FAQ</span><span class="at-status-cell"><b class="at-badge neutral" data-content-status>Draft</b></span><span data-content-updated>03 Oct</span><button class="admin-edit-link" type="button" data-edit-content data-editor-kind="theme" data-editor-key="theme:faq" data-editor-title="FAQ">Edit</button></div>
       </section>
     </section>
   </main>
@@ -49,10 +51,10 @@
     <p class="atm-lead">Manage branding and homepage content.</p>
     <section class="atm-logo"><h2>Primary Logo</h2><div class="atm-logo-preview"><span>PRIME</span><span>BOOSTLY</span></div><button class="atm-upload" type="button">Upload Logo</button></section>
     <section class="atm-colors"><div class="atm-color-row"><span>Primary</span><b>#2DB05E</b></div><div class="atm-color-row"><span>Background</span><b>#F8FBF8</b></div><div class="atm-color-row"><span>Text</span><b>#16212D</b></div></section>
-    <section class="atm-item"><div class="atm-item-top"><h3>Hero</h3><b class="atm-badge">Published</b></div><p>Homepage section</p></section>
-    <section class="atm-item"><div class="atm-item-top"><h3>Features</h3><b class="atm-badge">Published</b></div><p>Homepage section</p></section>
-    <section class="atm-item"><div class="atm-item-top"><h3>Why PrimeBoostly</h3><b class="atm-badge">Published</b></div><p>Homepage section</p></section>
-    <section class="atm-item"><div class="atm-item-top"><h3>FAQ</h3><b class="atm-badge neutral">Draft</b></div><p>Homepage section</p></section>
+    <section class="atm-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="theme" data-editor-key="theme:hero" data-editor-title="Hero"><div class="atm-item-top"><h3>Hero</h3><b class="atm-badge" data-content-status>Published</b></div><p>Homepage section · Tap to edit</p></section>
+    <section class="atm-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="theme" data-editor-key="theme:features" data-editor-title="Features"><div class="atm-item-top"><h3>Features</h3><b class="atm-badge" data-content-status>Published</b></div><p>Homepage section · Tap to edit</p></section>
+    <section class="atm-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="theme" data-editor-key="theme:why" data-editor-title="Why PrimeBoostly"><div class="atm-item-top"><h3>Why PrimeBoostly</h3><b class="atm-badge" data-content-status>Published</b></div><p>Homepage section · Tap to edit</p></section>
+    <section class="atm-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="theme" data-editor-key="theme:faq" data-editor-title="FAQ"><div class="atm-item-top"><h3>FAQ</h3><b class="atm-badge neutral" data-content-status>Draft</b></div><p>Homepage section · Tap to edit</p></section>
   </main>
 </body>
 </html>

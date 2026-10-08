@@ -6,6 +6,8 @@
   <title>Email Settings · Prime Boostly Admin</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/admin-email-settings.css">
+  <link rel="stylesheet" href="/admin-editor.css">
+  <script src="/admin-editor.js" defer></script>
 </head>
 <body class="admin-email-page">
   <main class="admin-email-desktop" data-figma-node="20:1387">
@@ -45,10 +47,10 @@
       <div class="ae-section-title"><h2>Email Templates</h2></div>
       <section class="ae-table">
         <div class="ae-table-head"><span>TEMPLATE</span><span>SUBJECT</span><span>STATUS</span><span>ACTION</span></div>
-        <div class="ae-table-row"><span>Welcome Email</span><span>Welcome to Prime Boostly</span><span class="ae-status-cell"><b class="ae-badge">Active</b></span><a href="#">Edit</a></div>
-        <div class="ae-table-row"><span>Deposit Approved</span><span>Your wallet has been funded</span><span class="ae-status-cell"><b class="ae-badge">Active</b></span><a href="#">Edit</a></div>
-        <div class="ae-table-row"><span>Order Update</span><span>Your order status changed</span><span class="ae-status-cell"><b class="ae-badge">Active</b></span><a href="#">Edit</a></div>
-        <div class="ae-table-row"><span>Password Reset</span><span>Reset your Prime Boostly password</span><span class="ae-status-cell"><b class="ae-badge">Active</b></span><a href="#">Edit</a></div>
+        <div class="ae-table-row" data-content-row data-content-key="email:welcome"><span data-content-title>Welcome Email</span><span data-content-subject>Welcome to Prime Boostly</span><span class="ae-status-cell"><b class="ae-badge" data-content-status>Active</b></span><button class="admin-edit-link" type="button" data-edit-content data-editor-kind="email" data-editor-key="email:welcome" data-editor-title="Welcome Email" data-editor-subject="Welcome to Prime Boostly">Edit</button></div>
+        <div class="ae-table-row" data-content-row data-content-key="email:deposit-approved"><span data-content-title>Deposit Approved</span><span data-content-subject>Your wallet has been funded</span><span class="ae-status-cell"><b class="ae-badge" data-content-status>Active</b></span><button class="admin-edit-link" type="button" data-edit-content data-editor-kind="email" data-editor-key="email:deposit-approved" data-editor-title="Deposit Approved" data-editor-subject="Your wallet has been funded">Edit</button></div>
+        <div class="ae-table-row" data-content-row data-content-key="email:order-update"><span data-content-title>Order Update</span><span data-content-subject>Your order status changed</span><span class="ae-status-cell"><b class="ae-badge" data-content-status>Active</b></span><button class="admin-edit-link" type="button" data-edit-content data-editor-kind="email" data-editor-key="email:order-update" data-editor-title="Order Update" data-editor-subject="Your order status changed">Edit</button></div>
+        <div class="ae-table-row" data-content-row data-content-key="email:password-reset"><span data-content-title>Password Reset</span><span data-content-subject>Reset your Prime Boostly password</span><span class="ae-status-cell"><b class="ae-badge" data-content-status>Active</b></span><button class="admin-edit-link" type="button" data-edit-content data-editor-kind="email" data-editor-key="email:password-reset" data-editor-title="Password Reset" data-editor-subject="Reset your Prime Boostly password">Edit</button></div>
       </section>
     </section>
   </main>
@@ -64,10 +66,10 @@
     <label class="aem-field"><span>From Name</span><input value="Prime Boostly"></label>
     <label class="aem-field"><span>From Email</span><input value="support@primeboostly.com"></label>
     <button class="aem-save" type="button">Save SMTP</button>
-    <section class="aem-item"><div class="aem-item-top"><h2>Welcome Email</h2><b class="aem-badge">Active</b></div><p>Email template</p></section>
-    <section class="aem-item"><div class="aem-item-top"><h2>Deposit Approved</h2><b class="aem-badge">Active</b></div><p>Email template</p></section>
-    <section class="aem-item"><div class="aem-item-top"><h2>Order Update</h2><b class="aem-badge">Active</b></div><p>Email template</p></section>
-    <section class="aem-item"><div class="aem-item-top"><h2>Password Reset</h2><b class="aem-badge">Active</b></div><p>Email template</p></section>
+    <section class="aem-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="email" data-editor-key="email:welcome" data-editor-title="Welcome Email" data-editor-subject="Welcome to Prime Boostly"><div class="aem-item-top"><h2>Welcome Email</h2><b class="aem-badge" data-content-status>Active</b></div><p>Email template · Tap to edit</p></section>
+    <section class="aem-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="email" data-editor-key="email:deposit-approved" data-editor-title="Deposit Approved" data-editor-subject="Your wallet has been funded"><div class="aem-item-top"><h2>Deposit Approved</h2><b class="aem-badge" data-content-status>Active</b></div><p>Email template · Tap to edit</p></section>
+    <section class="aem-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="email" data-editor-key="email:order-update" data-editor-title="Order Update" data-editor-subject="Your order status changed"><div class="aem-item-top"><h2>Order Update</h2><b class="aem-badge" data-content-status>Active</b></div><p>Email template · Tap to edit</p></section>
+    <section class="aem-item admin-edit-card" role="button" tabindex="0" data-edit-content data-editor-kind="email" data-editor-key="email:password-reset" data-editor-title="Password Reset" data-editor-subject="Reset your Prime Boostly password"><div class="aem-item-top"><h2>Password Reset</h2><b class="aem-badge" data-content-status>Active</b></div><p>Email template · Tap to edit</p></section>
   </main>
 </body>
 </html>
