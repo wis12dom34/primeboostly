@@ -1,4 +1,65 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Deposit Requests · Prime Boostly Admin</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/admin-payment-derived.css"><script src="/admin-payment-derived.js" defer></script></head><body class="pd-page" data-payment-page="deposits">
-<main class="pd-desktop" data-figma-derived-from="14:762"><aside class="pd-side"><a class="pd-brand" href="/admin.html"><span><b>PRIME</b><strong>BOOSTLY</strong></span><small>Admin Panel</small></a><p class="pd-label">OVERVIEW</p><a class="pd-nav" href="/admin.html">Dashboard</a><p class="pd-label">MANAGE SERVICE</p><a class="pd-nav" href="/admin-add-service.html">Add Services</a><a class="pd-nav" href="/admin-services.html">Show Services</a><a class="pd-nav" href="/admin-categories.html">Categories</a><a class="pd-nav" href="/admin-api-providers.html">API Providers</a><p class="pd-label">MANAGE ORDERS</p><a class="pd-nav" href="/admin-orders.html">All Orders</a><a class="pd-nav" href="/admin-orders.html">Awaiting</a><a class="pd-nav" href="/admin-orders.html">Pending</a><a class="pd-nav" href="/admin-orders.html">Processing</a><a class="pd-nav" href="/admin-orders.html">Completed</a><a class="pd-nav" href="/admin-orders.html">Refunded</a><p class="pd-label">MANAGE USER</p><a class="pd-nav" href="/admin-users.html">All Users</a><a class="pd-nav" href="/admin-send-email.html">Send Email</a><p class="pd-label">PAYMENT SETTINGS</p><a class="pd-nav" href="/admin-payments.html">Payment Methods</a><a class="pd-nav" href="/admin-manual-gateway.html">Manual Gateway</a><a class="pd-nav active" href="/admin-deposit-requests.html">Deposit Request</a><a class="pd-nav" href="/admin-payment-logs.html">Payment Log</a><p class="pd-label">OPERATIONS</p><a class="pd-nav" href="/admin-transactions.html">Transactions</a><a class="pd-nav" href="/admin-support.html">Support Tickets</a><p class="pd-label">CONTROLS</p><a class="pd-nav" href="/admin-controls.html">Basic Controls</a><a class="pd-nav" href="/admin-color-settings.html">Color Settings</a><a class="pd-nav" href="/admin-plugins.html">Plugins</a><a class="pd-nav" href="/admin-theme-content.html">Theme &amp; Content</a></aside>
-<section class="pd-content"><header class="pd-header"><div><h1>Deposit Requests</h1><p>Review manual funding submissions and confirm customer wallet credits</p></div><div><a href="/admin-notifications.html">Notifications</a><span><b>A</b> Admin</span></div></header><section class="pd-metrics"><article class="soft"><small>Pending Requests</small><strong class="warning" data-pending-count>2</strong></article><article><small>Approved Today</small><strong>84</strong></article><article><small>Pending Value</small><strong data-pending-value>₦75,000</strong></article><article><small>Rejected Today</small><strong class="error">3</strong></article></section><h2 class="pd-heading">Manual Deposit Requests</h2><section class="pd-filters"><label class="pd-field search"><span>Search</span><input data-payment-search placeholder="Reference or username"></label><label class="pd-field small"><span>Status</span><select data-payment-status><option value="all">All statuses</option><option>Pending</option><option>Approved</option><option>Rejected</option></select></label><button class="pd-filter-button" type="button" data-payment-filter>Filter</button></section><section class="pd-table"><div class="pd-row deposit head"><span>TRX</span><span>USER</span><span>GATEWAY</span><span>AMOUNT</span><span>PROOF</span><span>STATUS</span><span>ACTION</span></div><div class="pd-row deposit" data-payment-row data-search="94B87 primecustomer Manual 50000" data-status="Pending" data-amount="50000"><span>94B87</span><span>primecustomer</span><span>Manual</span><span>₦50,000</span><span>proof.jpg</span><span><b class="pd-status pending" data-row-status>Pending</b></span><span class="pd-actions"><button class="approve" type="button" data-deposit-action="Approved">Approve</button><button class="reject" type="button" data-deposit-action="Rejected">Reject</button></span></div><div class="pd-row deposit" data-payment-row data-search="94A62 socialshop Korapay 25000" data-status="Pending" data-amount="25000"><span>94A62</span><span>socialshop</span><span>Korapay</span><span>₦25,000</span><span>receipt.png</span><span><b class="pd-status pending" data-row-status>Pending</b></span><span class="pd-actions"><button class="approve" type="button" data-deposit-action="Approved">Approve</button><button class="reject" type="button" data-deposit-action="Rejected">Reject</button></span></div><div class="pd-row deposit" data-payment-row data-search="94A71 wick Paystack 25000" data-status="Approved" data-amount="25000"><span>94A71</span><span>wick</span><span>Paystack</span><span>₦25,000</span><span>receipt.jpg</span><span><b class="pd-status" data-row-status>Approved</b></span><span class="pd-actions"><a href="/admin-payment-logs.html">View log</a></span></div></section></section></main>
-<main class="pd-mobile" data-figma-derived-from="17:177"><header class="pdm-head"><a class="pdm-brand" href="/admin.html"><span><b>PRIME</b><strong>BOOSTLY</strong></span><small>Admin Panel</small></a><a class="pdm-menu" href="/admin.html">☰</a></header><section class="pdm-title"><h1>Deposit Requests</h1><p>Review manual funding submissions.</p></section><section class="pdm-metrics"><article class="soft"><small>Pending</small><strong class="warning" data-pending-count>2</strong></article><article><small>Pending Value</small><strong data-pending-value>₦75K</strong></article></section><label class="pdm-search"><span>Search</span><input data-payment-search placeholder="Reference or username"></label><h2 class="pdm-section-title">Requests</h2><article class="pdm-card" data-payment-card data-search="94B87 primecustomer Manual 50000" data-status="Pending" data-amount="50000"><div class="pdm-card-top"><b>TRX-94B87</b><span class="pd-status pending" data-row-status>Pending</span></div><h3>Manual · primecustomer</h3><div class="pdm-line"><span>Amount</span><b>₦50,000</b></div><div class="pdm-actions"><button class="approve" type="button" data-deposit-action="Approved">Approve</button><button class="reject" type="button" data-deposit-action="Rejected">Reject</button></div></article><article class="pdm-card" data-payment-card data-search="94A62 socialshop Korapay 25000" data-status="Pending" data-amount="25000"><div class="pdm-card-top"><b>TRX-94A62</b><span class="pd-status pending" data-row-status>Pending</span></div><h3>Korapay · socialshop</h3><div class="pdm-line"><span>Amount</span><b>₦25,000</b></div><div class="pdm-actions"><button class="approve" type="button" data-deposit-action="Approved">Approve</button><button class="reject" type="button" data-deposit-action="Rejected">Reject</button></div></article><article class="pdm-card" data-payment-card data-search="94A71 wick Paystack 25000" data-status="Approved" data-amount="25000"><div class="pdm-card-top"><b>TRX-94A71</b><span class="pd-status" data-row-status>Approved</span></div><h3>Paystack · wick</h3><div class="pdm-line"><span>Amount</span><b>₦25,000</b></div></article></main><p class="pd-feedback" data-payment-feedback role="status" aria-live="polite"></p></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Deposit Request #94B87 · Prime Boostly Admin</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/admin-payment-derived.css">
+  <link rel="stylesheet" href="/admin-deposit-review.css">
+</head>
+<body class="pd-page deposit-review-page">
+  <main class="pd-desktop" data-figma-node="25:938">
+    <aside class="pd-side">
+      <a class="pd-brand" href="/admin.html"><span><b>PRIME</b><strong>BOOSTLY</strong></span><small>Admin Panel</small></a>
+      <p class="pd-label">OVERVIEW</p><a class="pd-nav" href="/admin.html">Dashboard</a>
+      <p class="pd-label">MANAGE SERVICE</p><a class="pd-nav" href="/admin-add-service.html">Add Services</a><a class="pd-nav" href="/admin-services.html">Show Services</a><a class="pd-nav" href="/admin-categories.html">Categories</a><a class="pd-nav" href="/admin-api-providers.html">API Providers</a>
+      <p class="pd-label">MANAGE ORDERS</p><a class="pd-nav" href="/admin-orders.html">All Orders</a><a class="pd-nav" href="/admin-orders.html">Awaiting</a><a class="pd-nav" href="/admin-orders.html">Pending</a><a class="pd-nav" href="/admin-orders.html">Processing</a><a class="pd-nav" href="/admin-orders.html">Completed</a><a class="pd-nav" href="/admin-orders.html">Refunded</a>
+      <p class="pd-label">MANAGE USER</p><a class="pd-nav" href="/admin-users.html">All Users</a><a class="pd-nav" href="/admin-send-email.html">Send Email</a>
+      <p class="pd-label">PAYMENT SETTINGS</p><a class="pd-nav" href="/admin-payments.html">Payment Methods</a><a class="pd-nav" href="/admin-manual-gateway.html">Manual Gateway</a><a class="pd-nav active" href="/admin-deposit-requests.html">Deposit Request</a><a class="pd-nav" href="/admin-payment-logs.html">Payment Log</a>
+      <p class="pd-label">OPERATIONS</p><a class="pd-nav" href="/admin-transactions.html">Transactions</a><a class="pd-nav" href="/admin-support.html">Support Tickets</a>
+      <p class="pd-label">CONTROLS</p><a class="pd-nav" href="/admin-controls.html">Basic Controls</a><a class="pd-nav" href="/admin-color-settings.html">Color Settings</a><a class="pd-nav" href="/admin-plugins.html">Plugins</a><a class="pd-nav" href="/admin-theme-content.html">Theme &amp; Content</a>
+    </aside>
+    <section class="pd-content">
+      <header class="pd-header">
+        <div><h1>Deposit Request #94B87</h1><p>Review submitted transfer proof before crediting the customer wallet</p></div>
+        <div><a href="/admin-notifications.html">Notifications</a><span><b>A</b> Admin</span></div>
+      </header>
+      <section class="pd-metrics">
+        <article class="soft"><small>Amount</small><strong>₦50,000</strong></article>
+        <article><small>User</small><strong>primecustomer</strong></article>
+        <article><small>Gateway</small><strong>Bank Transfer</strong></article>
+        <article><small>Status</small><strong class="warning" data-review-status>Pending</strong></article>
+      </section>
+      <section class="deposit-review-main">
+        <article class="deposit-proof"><h2>Payment Proof</h2><div class="deposit-proof-box"><strong>Payment screenshot / receipt</strong><small>PNG · submitted 06 Oct 10:02</small></div></article>
+        <article class="deposit-details">
+          <h2>Request Details</h2>
+          <div class="deposit-detail-row"><span>TRX</span><b>94B87</b></div>
+          <div class="deposit-detail-row"><span>User</span><b>primecustomer</b></div>
+          <div class="deposit-detail-row"><span>Sender</span><b>A. Customer</b></div>
+          <div class="deposit-detail-row"><span>Reference</span><b>OPAY-7732192</b></div>
+          <div class="deposit-detail-row"><span>Submitted</span><b>06 Oct 10:02</b></div>
+          <div class="deposit-detail-row"><span>Current balance</span><b>₦9,300</b></div>
+          <label class="deposit-note"><span>Admin Note</span><textarea placeholder="Optional review note"></textarea></label>
+          <div class="deposit-actions"><button class="approve" type="button" data-review-action="Approved">Approve Deposit</button><button class="reject" type="button" data-review-action="Rejected">Reject</button></div>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <main class="deposit-review-mobile" data-figma-node="25:2729">
+    <header class="drm-head"><a class="drm-brand" href="/admin.html"><span><b>PRIME</b><strong>BOOSTLY</strong></span><small>Admin Panel</small></a><a class="drm-menu" href="/admin-mobile-menu.html" aria-label="Open admin menu">☰</a></header>
+    <section class="drm-title"><h1>Deposit Review</h1><p>Review request #94B87 before crediting wallet.</p></section>
+    <section class="drm-stats"><article class="soft"><small>Amount</small><b>₦50K</b></article><article><small>Status</small><b class="pending" data-review-status>Pending</b></article></section>
+    <article class="drm-request"><h2>primecustomer</h2><div class="drm-line"><span>Reference</span><b>OPAY-7732192</b></div><div class="drm-line"><span>Gateway</span><b>Bank Transfer</b></div><div class="drm-line"><span>Submitted</span><b>06 Oct 10:02</b></div></article>
+    <article class="drm-proof"><strong>Payment screenshot / receipt</strong><small>PNG · submitted 10:02</small></article>
+    <div class="drm-actions"><button class="approve" type="button" data-review-action="Approved">Approve</button><button class="reject" type="button" data-review-action="Rejected">Reject</button></div>
+  </main>
+
+  <p class="deposit-review-feedback" data-review-feedback role="status" aria-live="polite"></p>
+  <script>
+    (()=>{const feedback=document.querySelector('[data-review-feedback]');document.querySelectorAll('[data-review-action]').forEach(button=>button.addEventListener('click',()=>{const next=button.dataset.reviewAction;document.querySelectorAll('[data-review-status]').forEach(el=>{el.textContent=next;el.style.color=next==='Approved'?'#2db05e':'#dc2626'});if(feedback){feedback.textContent=`Deposit ${next.toLowerCase()} in preview.`;feedback.classList.add('show');setTimeout(()=>feedback.classList.remove('show'),1800)}}))})();
+  </script>
+</body>
+</html>
