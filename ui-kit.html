@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PrimeBoostly UI Kit</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/ui-kit.css">
+</head>
+<body class="pb-ui-kit-page">
+  <main class="pb-kit" data-figma-node="47:6">
+    <h1>PrimeBoostly UI Kit</h1>
+    <p class="pb-kit-lead">Implementation-ready components bound to PrimeBoostly variables. CSS token prefix: --pb-. Typography: Poppins. Minimum mobile tap target: 44×44.</p>
+
+    <section class="pb-kit-section pb-kit-buttons">
+      <h2>Buttons</h2>
+      <p class="pb-kit-copy">Primary, secondary, and destructive actions. Disabled states are included in the source component set.</p>
+      <div class="pb-kit-examples">
+        <button class="pb-kit-btn" type="button">Continue</button>
+        <button class="pb-kit-btn secondary" type="button">Secondary</button>
+        <button class="pb-kit-btn danger" type="button">Delete</button>
+      </div>
+    </section>
+
+    <section class="pb-kit-section pb-kit-inputs">
+      <h2>Input Fields</h2>
+      <p class="pb-kit-copy">Default, focus, error, and disabled field states with editable label, value, and helper text.</p>
+      <div class="pb-kit-examples">
+        <div class="pb-kit-input-demo">
+          <span class="pb-kit-label">Search</span>
+          <div class="pb-kit-input">Service ID or name</div>
+          <span class="pb-kit-helper">Helper text</span>
+        </div>
+        <div class="pb-kit-input-demo error">
+          <span class="pb-kit-label">Search</span>
+          <div class="pb-kit-input">Invalid value</div>
+          <span class="pb-kit-helper">Check this field</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-kit-section pb-kit-statuses">
+      <h2>Status Badges</h2>
+      <p class="pb-kit-copy">Use the tone that matches the backend state; do not encode status using color alone in implementation.</p>
+      <div class="pb-kit-examples">
+        <span class="pb-kit-badge">Active</span>
+        <span class="pb-kit-badge warning">Pending</span>
+        <span class="pb-kit-badge error">Failed</span>
+        <span class="pb-kit-badge neutral">Hidden</span>
+      </div>
+    </section>
+
+    <section class="pb-kit-section pb-kit-navigation">
+      <h2>Navigation</h2>
+      <p class="pb-kit-copy">Desktop sidebar and mobile menu versions share one component API.</p>
+      <div class="pb-kit-examples">
+        <div class="pb-kit-nav">Dashboard</div>
+        <div class="pb-kit-nav active">Dashboard</div>
+        <div class="pb-kit-nav mobile">Services</div>
+        <div class="pb-kit-nav mobile active">Services</div>
+      </div>
+    </section>
+
+    <section class="pb-kit-section pb-kit-form-controls">
+      <h2>Form Controls</h2>
+      <p class="pb-kit-copy">PrimeBoostly-native select, compact text, amount/quantity, and textarea patterns. Heights match the production screens instead of forcing one generic field size.</p>
+      <div class="pb-kit-examples">
+        <div class="pb-kit-control provider"><span>Provider</span><div class="control-box">Mercury</div></div>
+        <div class="pb-kit-control search"><span>Search</span><div class="control-box">Order ID or service</div></div>
+        <div class="pb-kit-control amount"><span>Amount</span><div class="control-box">₦25,000</div></div>
+        <div class="pb-kit-control quantity"><span>Quantity</span><div class="control-box">1,000</div></div>
+        <div class="pb-kit-control textarea"><span>Description</span><div class="control-box">Tell us what you need.</div></div>
+      </div>
+    </section>
+
+    <section class="pb-kit-section pb-kit-utilities">
+      <h2>Utility Controls</h2>
+      <p class="pb-kit-copy">Menu and secret-key controls are componentized separately because they have distinct behavior and security semantics.</p>
+      <div class="pb-kit-examples">
+        <button class="pb-kit-menu" type="button" aria-label="Menu">☰</button>
+        <div class="pb-kit-secret"><span>Secret Key</span><div class="secret-box">••••••••••••••</div></div>
+      </div>
+    </section>
+
+    <section class="pb-kit-section pb-kit-tabs">
+      <h2>Tabs &amp; Chips</h2>
+      <p class="pb-kit-copy">Reusable tabs, filters, and informational chips keep order states, categories, and service metadata visually consistent.</p>
+      <div class="pb-kit-examples">
+        <span class="pb-kit-tab">New Order</span>
+        <span class="pb-kit-tab default">Mass Order</span>
+        <span class="pb-kit-chip">Pending</span>
+        <span class="pb-kit-chip default">Completed</span>
+        <span class="pb-kit-chip info">₦1,850 / 1k</span>
+        <span class="pb-kit-chip info neutral">100 — 100k</span>
+      </div>
+    </section>
+
+    <section class="pb-kit-section pb-kit-handoff">
+      <h2>Laravel handoff rules</h2>
+      <p class="pb-kit-copy">Use Blade markup and the existing Laravel routes/controllers. Map Figma variables to :root CSS custom properties; preserve 44px minimum mobile controls; keep success/warning/error states semantic.</p>
+      <div class="pb-kit-examples">
+        <span class="pb-token">--pb-brand-primary</span>
+        <span class="pb-token">--pb-surface-background</span>
+        <span class="pb-token">--pb-text-primary</span>
+        <span class="pb-token">--pb-border-default</span>
+        <span class="pb-token">--pb-status-error</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
