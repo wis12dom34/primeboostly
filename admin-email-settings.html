@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Email Settings · Prime Boostly Admin</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/admin-email-settings.css">
+</head>
+<body class="admin-email-page">
+  <main class="admin-email-desktop" data-figma-node="20:1387">
+    <aside class="ae-side">
+      <a class="ae-brand" href="/admin.html"><span class="ae-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></a>
+      <p class="ae-label">OVERVIEW</p><a class="ae-nav" href="/admin.html">Dashboard</a>
+      <p class="ae-label">MANAGE SERVICE</p><a class="ae-nav" href="/admin-add-service.html">Add Services</a><a class="ae-nav" href="/admin-services.html">Show Services</a><a class="ae-nav" href="/admin-categories.html">Categories</a><a class="ae-nav" href="/admin-api-providers.html">API Providers</a>
+      <p class="ae-label">MANAGE ORDERS</p><a class="ae-nav" href="/admin-orders.html">All Orders</a><a class="ae-nav" href="/admin-orders.html">Awaiting</a><a class="ae-nav" href="/admin-orders.html">Pending</a><a class="ae-nav" href="/admin-orders.html">Processing</a><a class="ae-nav" href="/admin-orders.html">Completed</a><a class="ae-nav" href="/admin-orders.html">Refunded</a>
+      <p class="ae-label">MANAGE USER</p><a class="ae-nav" href="/admin-users.html">All Users</a><a class="ae-nav active" href="/admin-email-settings.html">Send Email</a>
+      <p class="ae-label">PAYMENT SETTINGS</p><a class="ae-nav" href="/admin-payments.html">Payment Methods</a><a class="ae-nav" href="/admin-manual-gateway.html">Manual Gateway</a><a class="ae-nav" href="/admin-deposit-requests.html">Deposit Request</a><a class="ae-nav" href="/admin-payment-logs.html">Payment Log</a>
+      <p class="ae-label">OPERATIONS</p><a class="ae-nav" href="/admin-transactions.html">Transactions</a><a class="ae-nav" href="/admin-support.html">Support Tickets</a>
+      <p class="ae-label">CONTROLS</p><a class="ae-nav" href="/admin-controls.html">Basic Controls</a><a class="ae-nav" href="/admin-color-settings.html">Color Settings</a><a class="ae-nav" href="/admin-plugins.html">Plugins</a><a class="ae-nav" href="/admin-theme-content.html">Theme &amp; Content</a>
+    </aside>
+
+    <section class="ae-content">
+      <header class="ae-header">
+        <div class="ae-copy"><h1>Email Settings</h1><p>Configure SMTP delivery, sender identity, and customer email templates</p></div>
+        <div class="ae-header-actions"><a class="ae-secondary" href="/admin-notifications.html">Notifications</a><span class="ae-admin"><b>A</b><span>Admin</span></span></div>
+      </header>
+
+      <div class="ae-section-title"><h2>SMTP Configuration</h2></div>
+      <div class="ae-smtp-grid">
+        <section class="ae-card">
+          <label class="ae-field"><span>Mail Driver</span><select><option>SMTP</option></select></label>
+          <label class="ae-field"><span>SMTP Host</span><input value="smtp.example.com"></label>
+          <div class="ae-pair"><label class="ae-field"><span>Port</span><input value="587"></label><label class="ae-field"><span>Encryption</span><select><option>TLS</option></select></label></div>
+          <button class="ae-primary" type="button">Save SMTP</button>
+        </section>
+        <section class="ae-card">
+          <label class="ae-field"><span>From Name</span><input value="Prime Boostly"></label>
+          <label class="ae-field"><span>From Email</span><input value="support@primeboostly.com"></label>
+          <label class="ae-field"><span>Test Recipient</span><input value="user@example.com"></label>
+          <button class="ae-test" type="button">Send Test Email</button>
+        </section>
+      </div>
+
+      <div class="ae-section-title"><h2>Email Templates</h2></div>
+      <section class="ae-table">
+        <div class="ae-table-head"><span>TEMPLATE</span><span>SUBJECT</span><span>STATUS</span><span>ACTION</span></div>
+        <div class="ae-table-row"><span>Welcome Email</span><span>Welcome to Prime Boostly</span><span class="ae-status-cell"><b class="ae-badge">Active</b></span><a href="#">Edit</a></div>
+        <div class="ae-table-row"><span>Deposit Approved</span><span>Your wallet has been funded</span><span class="ae-status-cell"><b class="ae-badge">Active</b></span><a href="#">Edit</a></div>
+        <div class="ae-table-row"><span>Order Update</span><span>Your order status changed</span><span class="ae-status-cell"><b class="ae-badge">Active</b></span><a href="#">Edit</a></div>
+        <div class="ae-table-row"><span>Password Reset</span><span>Reset your Prime Boostly password</span><span class="ae-status-cell"><b class="ae-badge">Active</b></span><a href="#">Edit</a></div>
+      </section>
+    </section>
+  </main>
+
+  <main class="admin-email-mobile" data-figma-node="22:343">
+    <header class="aem-head"><a class="aem-brand" href="/admin.html"><span class="aem-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></a><a class="aem-menu" href="/admin.html" aria-label="Open admin menu">☰</a></header>
+    <h1>Email Settings</h1>
+    <p class="aem-lead">Configure SMTP delivery and customer email templates.</p>
+    <label class="aem-field"><span>Mail Driver</span><select><option>SMTP</option></select></label>
+    <label class="aem-field"><span>SMTP Host</span><input value="smtp.example.com"></label>
+    <label class="aem-field"><span>Port</span><input value="587"></label>
+    <label class="aem-field"><span>Encryption</span><select><option>TLS</option></select></label>
+    <label class="aem-field"><span>From Name</span><input value="Prime Boostly"></label>
+    <label class="aem-field"><span>From Email</span><input value="support@primeboostly.com"></label>
+    <button class="aem-save" type="button">Save SMTP</button>
+    <section class="aem-item"><div class="aem-item-top"><h2>Welcome Email</h2><b class="aem-badge">Active</b></div><p>Email template</p></section>
+    <section class="aem-item"><div class="aem-item-top"><h2>Deposit Approved</h2><b class="aem-badge">Active</b></div><p>Email template</p></section>
+    <section class="aem-item"><div class="aem-item-top"><h2>Order Update</h2><b class="aem-badge">Active</b></div><p>Email template</p></section>
+    <section class="aem-item"><div class="aem-item-top"><h2>Password Reset</h2><b class="aem-badge">Active</b></div><p>Email template</p></section>
+  </main>
+</body>
+</html>
