@@ -1,0 +1,90 @@
+/* PrimeBoostly Services V2 — Figma QQMyjtZsbq3WSJC1hAiOxU node 14:2 */
+.services-v2{display:none}
+
+@media(max-width:900px){
+  body.pb-mobile-bg{
+    margin:0;
+    min-height:100vh;
+    background:#fff;
+    color:#0e1310;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,Arial,sans-serif;
+    overflow-x:hidden
+  }
+  body.pb-mobile-bg>.mobile.figma-services{display:none!important}
+  body.pb-mobile-bg>.services-desktop{display:none!important}
+  body.pb-mobile-bg>.services-v2{
+    width:min(393px,100%);
+    min-height:852px;
+    margin:0 auto;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden
+  }
+  .services-v2 *{box-sizing:border-box}
+  .services-v2 a{text-decoration:none;color:inherit}
+
+  .sv2-status{
+    width:100%;height:44px;flex:0 0 44px;padding:0 22px;
+    display:flex;align-items:center;justify-content:space-between;
+    background:#fff;color:#0e1310;font-size:14px;font-weight:600
+  }
+  .sv2-status-right{font-size:12px;letter-spacing:.2px}
+
+  .sv2-content{
+    width:100%;height:734px;flex:0 0 734px;padding:18px 20px;
+    background:#fff;display:flex;flex-direction:column;gap:16px;overflow:hidden
+  }
+  .sv2-header{height:50px;flex:0 0 50px;display:flex;align-items:center;justify-content:space-between;overflow:hidden}
+  .sv2-title-block{display:flex;flex-direction:column;gap:2px;overflow:hidden}
+  .sv2-title{margin:0;color:#0e1310;font-size:27px;line-height:33px;font-weight:700;letter-spacing:-.45px}
+  .sv2-subtitle{margin:0;color:#66736b;font-size:12px;line-height:15px;font-weight:500}
+  .sv2-profile{width:36px;height:36px;border-radius:18px;background:#f2f6f2;display:grid;place-items:center;font-size:16px;font-weight:600}
+
+  .sv2-search{
+    width:100%;height:46px;flex:0 0 46px;border-radius:16px;background:#f2f6f2;
+    display:flex;align-items:center;gap:9px;padding:0 14px;color:#66736b
+  }
+  .sv2-search-icon{font-size:17px;font-weight:600;line-height:1}
+  .sv2-search-copy{font-size:13px;font-weight:500}
+
+  .sv2-row-head{height:22px;flex:0 0 22px;display:flex;align-items:center;justify-content:space-between;overflow:hidden}
+  .sv2-row-head h2{margin:0;color:#0e1310;font-size:18px;line-height:22px;font-weight:700;letter-spacing:-.2px}
+  .sv2-row-head span,.sv2-row-head a{color:#16a34a;font-size:11px;line-height:14px;font-weight:600}
+
+  .sv2-type{
+    width:100%;height:92px;flex:0 0 92px;border-radius:22px;display:flex;align-items:center;
+    gap:12px;padding:14px;overflow:hidden
+  }
+  .sv2-type-real{background:#e8faf0}
+  .sv2-type-normal{background:#fff;border:1px solid #e3ebe5}
+  .sv2-type-icon{width:46px;height:46px;flex:0 0 46px;border-radius:15px;display:grid;place-items:center;font-size:15px;font-weight:700}
+  .sv2-type-real .sv2-type-icon{background:#d6f5e3;color:#16a34a}
+  .sv2-type-normal .sv2-type-icon{background:#f2f6f2;color:#0e1310}
+  .sv2-type-copy{min-width:0;flex:1;display:flex;flex-direction:column;gap:5px;overflow:hidden}
+  .sv2-type-copy strong{color:#0e1310;font-size:16px;line-height:19px;font-weight:700;white-space:nowrap}
+  .sv2-type-copy small{color:#66736b;font-size:11px;line-height:14px;font-weight:500;white-space:nowrap}
+  .sv2-type-arrow{width:34px;height:34px;flex:0 0 34px;border-radius:17px;background:#fff;display:grid;place-items:center;font-size:20px;font-weight:600}
+  .sv2-type-real .sv2-type-arrow{color:#16a34a}
+  .sv2-type-normal .sv2-type-arrow{color:#0e1310}
+
+  .sv2-platform-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;height:162px;flex:0 0 162px}
+  .sv2-platform{
+    height:76px;border-radius:18px;display:flex;align-items:center;gap:10px;
+    padding:12px 10px 12px 12px;overflow:hidden
+  }
+  .sv2-platform.ig{background:#e8faf0}.sv2-platform.tt{background:#f0f5ff}.sv2-platform.fb{background:#f2f6f2}.sv2-platform.yt{background:#fff5e0}
+  .sv2-platform-icon{width:38px;height:38px;flex:0 0 38px;border-radius:13px;background:#fff;display:grid;place-items:center;font-size:14px;font-weight:700}
+  .sv2-platform.ig .sv2-platform-icon{color:#16a34a}.sv2-platform.tt .sv2-platform-icon{color:#2e57b8}.sv2-platform.fb .sv2-platform-icon{color:#0e1310}.sv2-platform.yt .sv2-platform-icon{color:#eb8012}
+  .sv2-platform-copy{min-width:0;display:flex;flex-direction:column;gap:3px;overflow:hidden}
+  .sv2-platform-copy strong{color:#0e1310;font-size:13px;line-height:16px;font-weight:600;white-space:nowrap}
+  .sv2-platform-copy small{color:#66736b;font-size:9.5px;line-height:12px;font-weight:500;white-space:nowrap}
+
+  .sv2-bottom-nav{
+    width:100%;height:74px;flex:0 0 74px;border-top:1px solid #e3ebe5;background:#fff;
+    display:flex;align-items:center;justify-content:space-between;padding:10px 16px 12px
+  }
+  .sv2-tab{width:58px;height:50px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#66736b;font-size:10px;font-weight:500}
+  .sv2-tab-icon{font-size:17px;line-height:20px;font-weight:600}
+  .sv2-tab.active{color:#16a34a;font-weight:600}
+}
