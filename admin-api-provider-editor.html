@@ -1,62 +1,7 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Mercury Provider · Prime Boostly Admin</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/admin-api-provider-editor.css">
-</head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mercury Provider · Prime Boostly Admin</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/admin-api-provider-editor.css"></head>
 <body class="api-provider-editor-page">
-  <main class="ape-desktop" data-figma-node="37:484">
-    <aside class="ape-side">
-      <div class="ape-brand"><span class="ape-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></div>
-      <p class="ape-label">OVERVIEW</p><a class="ape-nav" href="/admin.html">Dashboard</a>
-      <p class="ape-label">MANAGE SERVICE</p><a class="ape-nav" href="/admin-add-service.html">Add Services</a><a class="ape-nav" href="/admin-services.html">Show Services</a><a class="ape-nav" href="/admin-categories.html">Categories</a><a class="ape-nav active" href="/admin-api-providers.html">API Providers</a>
-      <p class="ape-label">MANAGE ORDERS</p><a class="ape-nav" href="/admin-orders.html">All Orders</a><a class="ape-nav" href="/admin-orders.html">Awaiting</a><a class="ape-nav" href="/admin-orders.html">Pending</a><a class="ape-nav" href="/admin-orders.html">Processing</a><a class="ape-nav" href="/admin-orders.html">Completed</a><a class="ape-nav" href="/admin-orders.html">Refunded</a>
-      <p class="ape-label">MANAGE USER</p><a class="ape-nav" href="/admin-users.html">All Users</a><a class="ape-nav" href="/admin-send-email.html">Send Email</a>
-      <p class="ape-label">PAYMENT SETTINGS</p><a class="ape-nav" href="/admin-payments.html">Payment Methods</a><a class="ape-nav" href="/admin-manual-gateway.html">Manual Gateway</a><a class="ape-nav" href="/admin-deposit-requests.html">Deposit Request</a><a class="ape-nav" href="/admin-payment-logs.html">Payment Log</a>
-      <p class="ape-label">OPERATIONS</p><a class="ape-nav" href="/admin-transactions.html">Transactions</a><a class="ape-nav" href="/admin-support.html">Support Tickets</a>
-      <p class="ape-label">CONTROLS</p><a class="ape-nav" href="/admin-controls.html">Basic Controls</a><a class="ape-nav" href="/admin-color-settings.html">Color Settings</a><a class="ape-nav" href="/admin-plugins.html">Plugins</a><a class="ape-nav" href="/admin-theme-content.html">Theme & Content</a>
-    </aside>
-
-    <section class="ape-content">
-      <header class="ape-header"><div class="ape-header-copy"><h1>Mercury Provider</h1><p>Configure API credentials, synchronization, currency, and health checks</p></div><div class="ape-header-actions"><a class="ape-btn" href="/admin-notifications.html">Notifications</a><span class="ape-admin"><b>A</b><span>Admin</span></span></div></header>
-
-      <section class="ape-metrics">
-        <article class="ape-metric"><small>Provider balance</small><b>₦92,430</b></article>
-        <article class="ape-metric"><small>Mapped services</small><b>214</b></article>
-        <article class="ape-metric"><small>Last sync</small><b>2 min ago</b></article>
-        <article class="ape-metric"><small>Errors today</small><b>0</b></article>
-      </section>
-
-      <div class="ape-grid">
-        <section class="ape-card">
-          <h2>Connection details</h2>
-          <label class="ape-field"><span>Provider name</span><input value="Mercury" aria-label="Provider name"></label>
-          <label class="ape-field"><span>API URL</span><input value="https://api.mercury.example/v2" aria-label="API URL"></label>
-          <label class="ape-field"><span>API key</span><input value="••••••••••••••••••••" aria-label="API key"></label>
-          <div class="ape-two"><label class="ape-field"><span>Currency</span><select aria-label="Currency"><option>NGN</option></select></label><label class="ape-field"><span>Sync mode</span><select aria-label="Sync mode"><option>Automatic</option></select></label></div>
-          <div class="ape-actions"><button class="ape-primary" type="button">Save Provider</button><button class="ape-btn" type="button">Test Connection</button><button class="ape-btn" type="button">Sync Services</button></div>
-        </section>
-        <aside class="ape-health"><h2>Connection health</h2><span class="ape-status">Healthy</span><div class="ape-health-row"><span>Response time</span><b>184ms</b></div><div class="ape-health-row"><span>Last balance check</span><b>2 min ago</b></div><div class="ape-health-row"><span>Last service sync</span><b>4 min ago</b></div><div class="ape-health-row"><span>Failed requests</span><b>0</b></div></aside>
-      </div>
-    </section>
-  </main>
-
-  <main class="ape-mobile" data-figma-node="37:1092">
-    <header class="apem-head"><a class="apem-brand" href="/admin.html"><span class="apem-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></a><a class="apem-menu" href="/admin.html" aria-label="Open admin menu">☰</a></header>
-    <section class="apem-title"><h1>Mercury Provider</h1><p>Manage connection credentials and service synchronization.</p></section>
-    <section class="apem-card">
-      <label class="ape-field"><span>Provider name</span><input value="Mercury" aria-label="Provider name"></label>
-      <label class="ape-field"><span>API URL</span><input value="api.mercury.example/v2" aria-label="API URL"></label>
-      <label class="ape-field"><span>API key</span><input value="••••••••••••••" aria-label="API key"></label>
-      <div class="apem-row"><span>Connection</span><b>Healthy</b></div>
-      <div class="apem-row"><span>Mapped services</span><b>214</b></div>
-      <div class="apem-row"><span>Last sync</span><b>2 min ago</b></div>
-      <button class="ape-primary" type="button">Save Provider</button>
-      <button class="ape-btn" type="button">Test Connection</button>
-    </section>
-  </main>
-</body>
-</html>
+  <main class="ape-desktop" data-figma-node="37:484"><aside class="ape-side"><div class="ape-brand"><span class="ape-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></div><p class="ape-label">OVERVIEW</p><a class="ape-nav" href="/admin.html">Dashboard</a><p class="ape-label">MANAGE SERVICE</p><a class="ape-nav" href="/admin-add-service.html">Add Services</a><a class="ape-nav" href="/admin-services.html">Show Services</a><a class="ape-nav" href="/admin-categories.html">Categories</a><a class="ape-nav active" href="/admin-api-providers.html">API Providers</a><p class="ape-label">MANAGE ORDERS</p><a class="ape-nav" href="/admin-orders.html">All Orders</a><a class="ape-nav" href="/admin-orders.html">Awaiting</a><a class="ape-nav" href="/admin-orders.html">Pending</a><a class="ape-nav" href="/admin-orders.html">Processing</a><a class="ape-nav" href="/admin-orders.html">Completed</a><a class="ape-nav" href="/admin-orders.html">Refunded</a><p class="ape-label">MANAGE USER</p><a class="ape-nav" href="/admin-users.html">All Users</a><a class="ape-nav" href="/admin-send-email.html">Send Email</a><p class="ape-label">PAYMENT SETTINGS</p><a class="ape-nav" href="/admin-payments.html">Payment Methods</a><a class="ape-nav" href="/admin-manual-gateway.html">Manual Gateway</a><a class="ape-nav" href="/admin-deposit-requests.html">Deposit Request</a><a class="ape-nav" href="/admin-payment-logs.html">Payment Log</a><p class="ape-label">OPERATIONS</p><a class="ape-nav" href="/admin-transactions.html">Transactions</a><a class="ape-nav" href="/admin-support.html">Support Tickets</a><p class="ape-label">CONTROLS</p><a class="ape-nav" href="/admin-controls.html">Basic Controls</a><a class="ape-nav" href="/admin-color-settings.html">Color Settings</a><a class="ape-nav" href="/admin-plugins.html">Plugins</a><a class="ape-nav" href="/admin-theme-content.html">Theme & Content</a></aside><section class="ape-content"><header class="ape-header"><div class="ape-header-copy"><h1>Mercury Provider</h1><p>Configure API credentials, synchronization, currency, and health checks</p></div><div class="ape-header-actions"><a class="ape-btn" href="/admin-notifications.html">Notifications</a><span class="ape-admin"><b>A</b><span>Admin</span></span></div></header><section class="ape-metrics"><article class="ape-metric"><small>Provider balance</small><b>₦92,430</b></article><article class="ape-metric"><small>Mapped services</small><b>214</b></article><article class="ape-metric"><small>Last sync</small><b>2 min ago</b></article><article class="ape-metric"><small>Errors today</small><b>0</b></article></section><div class="ape-grid"><section class="ape-card"><h2>Connection details</h2><label class="ape-field"><span>Provider name</span><input value="Mercury" aria-label="Provider name"></label><label class="ape-field"><span>API URL</span><input value="https://api.mercury.example/v2" aria-label="API URL"></label><label class="ape-field"><span>API key</span><input value="••••••••••••••••••••" aria-label="API key"></label><div class="ape-two"><label class="ape-field"><span>Currency</span><select aria-label="Currency"><option>NGN</option></select></label><label class="ape-field"><span>Sync mode</span><select aria-label="Sync mode"><option>Automatic</option></select></label></div><div class="ape-actions"><button class="ape-primary" type="button">Save Provider</button><button class="ape-btn" type="button">Test Connection</button><button class="ape-btn" type="button">Sync Services</button></div></section><aside class="ape-health"><h2>Connection health</h2><span class="ape-status">Healthy</span><div class="ape-health-row"><span>Response time</span><b>184ms</b></div><div class="ape-health-row"><span>Last balance check</span><b>2 min ago</b></div><div class="ape-health-row"><span>Last service sync</span><b>4 min ago</b></div><div class="ape-health-row"><span>Failed requests</span><b>0</b></div></aside></div></section></main>
+  <main class="ape-mobile" data-figma-node="37:1092"><header class="apem-head"><a class="apem-brand" href="/admin.html"><span class="apem-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></a><a class="apem-menu" href="/admin-mobile-menu.html" aria-label="Open admin menu">☰</a></header><section class="apem-title"><h1>Mercury Provider</h1><p>Manage connection credentials and service synchronization.</p></section><section class="apem-card"><label class="ape-field"><span>Provider name</span><input value="Mercury" aria-label="Provider name"></label><label class="ape-field"><span>API URL</span><input value="api.mercury.example/v2" aria-label="API URL"></label><label class="ape-field"><span>API key</span><input value="••••••••••••••" aria-label="API key"></label><div class="apem-row"><span>Connection</span><b>Healthy</b></div><div class="apem-row"><span>Mapped services</span><b>214</b></div><div class="apem-row"><span>Last sync</span><b>2 min ago</b></div><button class="ape-primary" type="button">Save Provider</button><button class="ape-btn" type="button">Test Connection</button></section></main>
+</body></html>
