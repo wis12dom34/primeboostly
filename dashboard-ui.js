@@ -35,12 +35,37 @@
     markPlatform(platform?.dataset.platform || '');
   });
 
+  function applyV2OrderState(params) {
+    const step = params.get('step') || 'platform';
+    const rawPlatform = (params.get('platform') || 'instagram').toLowerCase();
+    const platformLabels = {
+      instagram: 'Instagram',
+      tiktok: 'TikTok',
+      facebook: 'Facebook',
+      youtube: 'YouTube'
+    };
+    const platform = platformLabels[rawPlatform] || 'Instagram';
+
+    document.body.dataset.orderStep = step;
+    document.body.dataset.selectedPlatform = rawPlatform;
+    document.querySelectorAll('[data-selected-platform]').forEach(node => {
+      node.textContent = platform;
+    });
+  }
+
   function applyMobileView(mode, hasExplicitMode) {
     const mobile = window.matchMedia('(max-width: 900px)').matches;
     const orderView = mobile && hasExplicitMode;
     document.body.classList.toggle('mobile-order-view', orderView);
-    if (orderView) document.body.dataset.orderMode = mode;
-    else delete document.body.dataset.orderMode;
+
+    if (orderView) {
+      document.body.dataset.orderMode = mode;
+      applyV2OrderState(new URLSearchParams(location.search));
+    } else {
+      delete document.body.dataset.orderMode;
+      delete document.body.dataset.orderStep;
+      delete document.body.dataset.selectedPlatform;
+    }
   }
 
   function showMode(requested, updateUrl = false) {
