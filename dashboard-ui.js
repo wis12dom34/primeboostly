@@ -45,6 +45,7 @@
       youtube: 'YouTube'
     };
     const platform = platformLabels[rawPlatform] || 'Instagram';
+    const encoded = encodeURIComponent(rawPlatform);
 
     document.body.dataset.orderStep = step;
     document.body.dataset.selectedPlatform = rawPlatform;
@@ -52,10 +53,16 @@
       node.textContent = platform;
     });
 
-    const readyUrl = `/dashboard.html?mode=new&platform=${encodeURIComponent(rawPlatform)}&step=ready`;
-    const reviewUrl = `/dashboard.html?mode=new&platform=${encodeURIComponent(rawPlatform)}&step=review`;
+    const readyUrl = `/dashboard.html?mode=new&platform=${encoded}&step=ready`;
+    const reviewUrl = `/dashboard.html?mode=new&platform=${encoded}&step=review`;
+    const priceUrl = `/dashboard.html?mode=new&platform=${encoded}&step=price`;
+    const submittedUrl = `/dashboard.html?mode=new&platform=${encoded}&step=submitted`;
+
     document.querySelectorAll('.ordrv2-review').forEach(link => { link.href = reviewUrl; });
     document.querySelectorAll('.orrv2-back').forEach(link => { link.href = readyUrl; });
+    document.querySelectorAll('.orprice-back').forEach(link => { link.href = reviewUrl; });
+    document.querySelectorAll('[data-order-next="price"]').forEach(link => { link.href = priceUrl; });
+    document.querySelectorAll('[data-order-next="submitted"]').forEach(link => { link.href = submittedUrl; });
   }
 
   function applyMobileView(mode, hasExplicitMode) {
