@@ -1,165 +1,21 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Prime Boostly</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/auth.css">
-  <link rel="stylesheet" href="/landing-fix.css">
-  <script src="/auth.js" defer></script>
-</head>
-<body class="landing-page">
-  <div class="landing-desktop" data-figma-node="2:24">
-    <header class="landing-navbar">
-      <a class="brand" href="/" aria-label="Prime Boostly home">
-        <span class="mark">B</span>
-        <span class="wordmark"><b>PRIME</b><strong>BOOSTLY</strong></span>
-      </a>
-      <nav aria-label="Primary navigation">
-        <a href="#features">Features</a>
-        <a href="/services.html">Services</a>
-        <a href="#how">How It Works</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <div class="header-actions">
-        <a class="btn secondary" href="/login.html">Sign In</a>
-        <a class="btn primary" href="/register.html">Sign Up</a>
-      </div>
-    </header>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PrimeBoostly — Grow Faster. Reach More People.</title><meta name="description" content="Social media growth services for creators, businesses, agencies and resellers."><style>
+:root{--primary:#15803d;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;color:var(--ink);background:white;font-family:Inter,Arial,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #15803d;outline-offset:4px}.wrap{max-width:1180px;margin:auto;padding:0 28px}header{border-bottom:1px solid var(--line);background:#fffffffa;position:sticky;top:0;z-index:10}nav{height:82px;display:flex;align-items:center;gap:30px}.brand{font-size:23px;font-weight:800;letter-spacing:-1px;white-space:nowrap}.brand b{display:inline-grid;place-items:center;background:var(--primary);color:white;width:34px;height:34px;border-radius:10px;margin-right:9px;font-size:22px}.links{display:flex;gap:25px;margin:auto;font-size:13px;font-weight:600}.actions{display:flex;align-items:center;gap:20px;font-size:13px;font-weight:700}.btn{min-height:46px;display:inline-flex;justify-content:center;align-items:center;padding:12px 21px;border-radius:11px;background:var(--primary);color:white;font-weight:700;font-size:14px;gap:18px;transition:transform .18s,background .18s}.btn:hover{background:#166534;transform:translateY(-2px)}.btn.secondary{background:white;color:var(--ink);border:1px solid var(--line)}.menu{display:none;background:white;border:1px solid var(--line);border-radius:9px;min-width:44px;min-height:44px}.hero{padding:86px 0 64px;background:linear-gradient(180deg,#fff 45%,#f7f9fc)}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--primary);text-transform:uppercase}.pill{display:inline-block;border:1px solid #bbf7d0;background:#f0fdf4;border-radius:30px;padding:7px 13px;font-size:11px;color:#166534;font-weight:700;letter-spacing:.5px}h1{font-size:64px;line-height:1.05;letter-spacing:-3.5px;margin:24px 0}h1 em{font-style:normal;color:var(--primary)}p{color:var(--muted);font-size:15px;margin:12px 0}.hero p{max-width:470px;font-size:17px}.cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}.small{font-size:11px!important;margin-top:19px!important}.app{background:white;border:1px solid #dae3ef;border-radius:18px;box-shadow:0 24px 70px #14532d13;overflow:hidden;text-align:left}.app-top{display:flex;align-items:center;justify-content:space-between;padding:15px 20px;border-bottom:1px solid var(--line);font-size:12px;font-weight:700}.demo{font-size:9px;letter-spacing:1px;color:var(--muted);background:#f1f5f9;padding:4px 7px;border-radius:5px}.app-body{padding:23px}.app h3{font-size:18px;margin:0 0 18px}.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{background:#f7f9fc;border:1px solid #eef1f5;border-radius:10px;padding:12px;font-size:10px;color:var(--muted)}.stat strong{display:block;font-size:22px;color:var(--ink);margin-top:3px}.stat:first-child{background:#f0fdf4}.form{padding:20px 0 0}.label{font-size:10px;color:#64748b;display:block;margin-bottom:5px}.field{border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:11px;min-height:38px;margin-bottom:12px}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.platform-row{display:flex;gap:8px;margin-bottom:17px}.platform-row span{border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:17px}.platform-row span:first-child{background:#f0fdf4;border-color:#86efac}.app-note{font-size:10px;padding-top:10px;color:var(--muted)}.trust{padding:36px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.trust p{text-align:center;font-size:12px;margin:0 0 20px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}.metrics div{border-right:1px solid var(--line)}.metrics div:last-child{border:0}.metrics strong{font-size:26px;letter-spacing:-1px;display:block}.metrics span{font-size:11px;color:var(--muted)}section{padding:86px 0}h2{font-size:40px;line-height:1.15;letter-spacing:-1.8px;margin:12px 0 15px}.section-head{max-width:580px;margin-bottom:36px}.section-head.center{text-align:center;margin:0 auto 38px}.services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.service{border:1px solid var(--line);border-radius:16px;padding:25px;transition:transform .2s,box-shadow .2s}.service:hover{transform:translateY(-4px);box-shadow:0 12px 30px #0f172a08}.icon{font-size:30px;font-weight:800;display:inline-grid;place-items:center;width:49px;height:49px;background:#f7f9fc;border-radius:12px}.service h3{font-size:18px;margin:18px 0 6px}.service p{font-size:12px}.tags{font-size:11px;line-height:1.9;color:var(--muted);min-height:66px;margin:18px 0}.service a{font-size:12px;font-weight:700;color:var(--primary);display:flex;justify-content:space-between;min-height:44px;align-items:center}.service:last-child{grid-column:span 2}.soft{background:#f7f9fc}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}.stepnum{color:var(--primary);font-size:13px;font-weight:700;border:1px solid #bbf7d0;background:#f0fdf4;width:45px;height:45px;border-radius:12px;display:grid;place-items:center;margin-bottom:24px}.steps h3{font-size:16px;margin:0}.steps p{font-size:13px}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:34px 26px}.features h3{font-size:15px;margin:14px 0 8px}.features p{font-size:12px}.featureicon{font-size:24px;color:var(--primary)}.api{background:#0f172a;color:white;border-radius:24px;padding:55px;display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.api p{color:#a8b6ca}.api .eyebrow{color:#86efac}.api h2{font-size:40px}.checklist{display:grid;grid-template-columns:1fr 1fr;gap:9px;font-size:11px;margin:26px 0;color:#d5ddea}.checklist span:before{content:'✓ ';color:#86efac}.code{background:#172238;border:1px solid #2b3850;border-radius:14px;overflow:hidden;min-width:0}.code-head{padding:15px 20px;border-bottom:1px solid #2b3850;color:#9cafca;font-size:11px}.code pre{font-size:12px;color:#bbf7d0;margin:0;padding:23px;line-height:2;white-space:pre-wrap;overflow-wrap:anywhere}.code footer{padding:15px 20px;font-size:10px;color:#91a6c3;border-top:1px solid #2b3850}.showcase{display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:80px}.dashboard{display:grid;grid-template-columns:115px 1fr}.sidebar{background:#f7f9fc;border-right:1px solid var(--line);padding:18px 10px;font-size:10px;color:var(--muted)}.sidebar div{padding:9px 7px}.sidebar .selected{background:#dcfce7;color:#166534;border-radius:7px;font-weight:700}.audiences{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.audiences article{border:1px solid var(--line);border-radius:15px;padding:27px;background:white}.audiences .number{font-size:11px;color:var(--primary)}.audiences h3{font-size:20px;margin:25px 0 7px}.audiences p{font-size:13px}.faq{max-width:760px;margin:auto}details{border-bottom:1px solid var(--line);padding:6px 0}summary{list-style:none;cursor:pointer;min-height:62px;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;gap:20px}summary::-webkit-details-marker{display:none}summary span{color:var(--primary);font-size:22px}details[open] summary span{transform:rotate(45deg)}details p{font-size:13px;margin:0 30px 20px 0}.final{background:#f0fdf4;text-align:center;border-radius:24px;padding:64px 24px}.final .cta{justify-content:center}footer.site-footer{padding:60px 0 25px}.footer-grid{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:35px}.footer-grid h4{font-size:12px;margin:4px 0 15px}.footer-grid a:not(.brand){display:block;color:var(--muted);font-size:12px;padding:6px 0;min-height:32px}.footer-grid p{font-size:12px;max-width:260px}.copyright{border-top:1px solid var(--line);padding-top:22px;margin-top:40px;font-size:10px;color:var(--muted);display:flex;justify-content:space-between;gap:20px}.reveal{animation:appear .5s ease both}@keyframes appear{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@media(max-width:1000px){.links{gap:14px}.hero-grid{gap:30px}h1{font-size:52px}.services,.features{grid-template-columns:repeat(3,1fr)}.service:last-child{grid-column:auto}.api{padding:35px;gap:30px}.showcase{gap:35px}}@media(max-width:760px){.wrap{padding:0 20px}nav{height:70px;justify-content:space-between;gap:12px}.brand{font-size:20px}.links,.actions{display:none}.menu{display:block}.links.open{position:absolute;top:70px;left:0;right:0;display:flex;flex-direction:column;gap:0;padding:14px 20px;background:white;border-bottom:1px solid var(--line)}.links.open a{padding:12px;min-height:44px}.hero{padding:45px 0 40px}.hero-grid,.api,.showcase{grid-template-columns:1fr;gap:35px}h1{font-size:51px;letter-spacing:-2.7px;max-width:550px}.hero p{font-size:15px}.app{max-width:530px;width:100%;margin:auto}.metrics{grid-template-columns:repeat(2,1fr);gap:25px}.metrics div:nth-child(2){border:0}.metrics strong{font-size:23px}section{padding:56px 0}h2{font-size:33px;letter-spacing:-1.3px}.services,.features,.steps,.audiences{grid-template-columns:repeat(2,1fr)}.service{padding:20px}.api{padding:28px 22px}.api h2{font-size:33px}.footer-grid{grid-template-columns:repeat(3,1fr);gap:25px}.footer-grid>div:first-child{grid-column:1/-1}.copyright{flex-direction:column}.final{padding:45px 20px}.dashboard{grid-template-columns:100px 1fr}.dashboard .app-body{padding:16px}.dashboard .stat-row{grid-template-columns:1fr 1fr}.dashboard .stat-row .stat:last-child{display:none}}@media(max-width:380px){.wrap{padding:0 16px}h1{font-size:44px}.services,.audiences{grid-template-columns:1fr}.features{gap:25px 17px}.steps{gap:25px 17px}.app-body{padding:17px}.stat{padding:8px}.stat strong{font-size:18px}.dashboard{grid-template-columns:1fr}.sidebar{display:none}.footer-grid{grid-template-columns:1fr 1fr}.cta .btn{flex:1;padding:12px 14px;font-size:12px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style></head><body><header><nav class="wrap"><a class="brand" href="#"><b>↗</b>PrimeBoostly</a><div class="links" id="navlinks"><a href="#services">Services</a><a href="#features">Features</a><a href="#how">How it works</a><a href="#api">API</a><a href="#faq">FAQ</a><a class="mobile-account" href="https://primebooslty.com/register">Create account ↗</a></div><div class="actions"><a href="https://primebooslty.com/login">Sign in</a><a class="btn" href="https://primebooslty.com/register">Create account ↗</a></div><button class="menu" aria-label="Open navigation" aria-expanded="false" aria-controls="navlinks">☰</button></nav></header>
+<main><section class="hero"><div class="wrap hero-grid"><div class="reveal"><span class="pill">YOUR NEXT CHAPTER OF GROWTH</span><h1>Grow faster<br>on <em>social media.</em></h1><p>Followers, likes, views, subscribers and engagement for your favorite platforms — from one powerful dashboard.</p><div class="cta"><a class="btn" href="https://primebooslty.com/register">Get started ↗</a><a class="btn secondary" href="#services">Explore services</a></div><p class="small">For creators. For businesses. For your next big move.</p></div><div class="app reveal"><div class="app-top"><span>↗ PrimeBoostly</span><span class="demo">INTERFACE PREVIEW</span></div><div class="app-body"><h3>Your growth starts here.</h3><div class="stat-row"><div class="stat">Wallet balance<strong>—</strong></div><div class="stat">Active orders<strong>—</strong></div><div class="stat">Completed<strong>—</strong></div></div><div class="form"><span class="label">SELECT YOUR PLATFORM</span><div class="platform-row"><span>◎</span><span>♪</span><span>▶</span><span>𝕏</span><span>➤</span></div><span class="label">Service</span><div class="field">Choose from available services <span style="float:right">⌄</span></div><span class="label">Your link</span><div class="field" style="color:#94a3b8">Paste your profile or content link</div><div class="field-row"><div><span class="label">Quantity</span><div class="field">Enter quantity</div></div><div><span class="label">Charge</span><div class="field">Calculated by service</div></div></div><a class="btn" style="width:100%" href="https://primebooslty.com/register">Start your first order ↗</a><div class="app-note">Illustrative layout. Balances and rates appear after sign in.</div></div></div></div></div></section>
+<div class="trust"><div class="wrap"><p>Trusted by creators, businesses and resellers worldwide.</p><div class="metrics"><div><strong>25K+</strong><span>Customers*</span></div><div><strong>500+</strong><span>Services*</span></div><div><strong>99.9%</strong><span>Uptime*</span></div><div><strong>Fast</strong><span>Order processing</span></div></div><p style="margin:19px 0 0;font-size:9px">*Figures published on the existing PrimeBoostly landing page.</p></div></div>
+<section id="services"><div class="wrap"><div class="section-head"><span class="eyebrow">ONE PLATFORM. MORE POSSIBILITIES.</span><h2>Everything you need to grow.</h2><p>Find the right service for your next post, your brand or your customers. Explore the catalogue for current availability and rates.</p></div><div class="services"><article class="service"><span class="icon" style="color:#c13584">◎</span><h3>Instagram</h3><p>More ways to reach your audience.</p><div class="tags">Followers · Likes · Reels · Stories · Engagement</div><a href="https://primebooslty.com/services">View services <span>↗</span></a></article><article class="service"><span class="icon" style="color:#0f172a">♪</span><h3>TikTok</h3><p>More ways to reach your audience.</p><div class="tags">Followers · Video views · Likes · Shares · Live views</div><a href="https://primebooslty.com/services">View services <span>↗</span></a></article><article class="service"><span class="icon" style="color:#ef4444">▶</span><h3>YouTube</h3><p>More ways to reach your audience.</p><div class="tags">Subscribers · Views · Watch hours · Likes · Comments</div><a href="https://primebooslty.com/services">View services <span>↗</span></a></article><article class="service"><span class="icon" style="color:#1877f2">f</span><h3>Facebook</h3><p>More ways to reach your audience.</p><div class="tags">Page followers · Likes · Engagement · Video views</div><a href="https://primebooslty.com/services">View services <span>↗</span></a></article><article class="service"><span class="icon" style="color:#0f172a">𝕏</span><h3>X / Twitter</h3><p>More ways to reach your audience.</p><div class="tags">Followers · Reposts · Likes · Views · Impressions</div><a href="https://primebooslty.com/services">View services <span>↗</span></a></article><article class="service"><span class="icon" style="color:#229ed9">➤</span><h3>Telegram</h3><p>More ways to reach your audience.</p><div class="tags">Channel members · Post views · Reactions · Groups</div><a href="https://primebooslty.com/services">View services <span>↗</span></a></article><article class="service"><span class="icon" style="color:#16a34a">≋</span><h3>Spotify</h3><p>More ways to reach your audience.</p><div class="tags">Streams · Followers · Monthly listeners · Playlists</div><a href="https://primebooslty.com/services">View services <span>↗</span></a></article></div></div></section>
+<section class="soft" id="how"><div class="wrap"><div class="section-head center"><span class="eyebrow">FROM SIGN UP TO YOUR FIRST ORDER</span><h2>Four steps. One simple dashboard.</h2></div><div class="steps"><article><span class="stepnum">01</span><h3>Create your account</h3><p>Register in a few simple steps.</p></article><article><span class="stepnum">02</span><h3>Fund your wallet</h3><p>Choose from the payment methods available in your account.</p></article><article><span class="stepnum">03</span><h3>Choose a service</h3><p>Select your social network and the service you need.</p></article><article><span class="stepnum">04</span><h3>Track your growth</h3><p>Enter your link and quantity. Follow progress in your dashboard.</p></article></div></div></section>
+<section id="features"><div class="wrap"><div class="section-head"><span class="eyebrow">LESS FRICTION. MORE FOCUS.</span><h2>A better way to manage growth.</h2><p>Everything you need to order, manage and track your social media services in one place.</p></div><div class="features"><article><span class="featureicon">↗</span><h3>Fast delivery</h3><p>Orders begin processing quickly. Timing varies by service.</p></article><article><span class="featureicon">◇</span><h3>Affordable pricing</h3><p>Explore current rates in the existing service catalogue.</p></article><article><span class="featureicon">▦</span><h3>Hundreds of services</h3><p>Find growth services across your favorite social networks.</p></article><article><span class="featureicon">⌁</span><h3>Easy ordering</h3><p>Choose a service, paste your link and enter a quantity.</p></article><article><span class="featureicon">◷</span><h3>Order tracking</h3><p>Follow each order’s progress from your dashboard.</p></article><article><span class="featureicon">✦</span><h3>Support when you need it</h3><p>Contact the team through the existing support page.</p></article><article><span class="featureicon">▣</span><h3>One wallet</h3><p>Manage funding and service purchases from one balance.</p></article><article><span class="featureicon">⌘</span><h3>Reseller friendly</h3><p>Connect your own workflows through the existing API.</p></article></div></div></section>
+<section id="api" style="padding-top:0"><div class="wrap"><div class="api"><div><span class="eyebrow">MADE FOR YOUR NEXT MOVE</span><h2>Power your own<br>SMM business.</h2><p>Connect your website, app or automation directly to PrimeBoostly using the existing reseller API.</p><div class="checklist"><span>Fetch services</span><span>Create orders</span><span>Check order status</span><span>Check multiple orders</span><span>Supported refills</span><span>Retrieve balance</span></div><div class="cta"><a class="btn" href="https://primebooslty.com/api-docs">View API documentation ↗</a><a href="https://primebooslty.com/register" style="font-size:12px;align-self:center">Become a reseller →</a></div></div><div class="code"><div class="code-head">API / SERVICE CATALOGUE</div><pre><span style="color:#7e91ac">// Run from your server</span>
+POST https://primebooslty.com/api/v1
+Content-Type: application/x-www-form-urlencoded
 
-    <main class="landing-canvas">
-      <section class="hero" data-figma-node="3:19">
-        <h1>Rise on Social Media with Ease!</h1>
-        <p>The best SMM panel for growing your social media presence. Get real followers, likes, and views at the most affordable prices.</p>
-        <div class="users">
-          <img class="avatar-stack" src="/assets/figma-active-users.svg" alt="" aria-hidden="true">
-          <b>25,000+ Active Users</b>
-        </div>
-        <div class="hero-actions">
-          <a class="btn primary" href="/register.html">Get Started →</a>
-          <a class="btn secondary" href="/services.html">View Services</a>
-        </div>
-        <form class="loginbox" data-auth-login novalidate>
-          <h3>Login to Your Account</h3>
-          <p class="auth-error" data-auth-error role="alert"></p>
-          <div class="loginfields">
-            <label><span>Username or Email</span><input name="identity" autocomplete="username" placeholder="Username or Email" required></label>
-            <label><span>Password</span><input name="password" autocomplete="current-password" placeholder="Password" type="password" required></label>
-          </div>
-          <div class="remember">
-            <label class="home-check"><input name="remember" type="checkbox"> Remember me</label>
-            <a href="/forgot-password.html">Forgot password?</a>
-          </div>
-          <button class="btn primary login" type="submit">Sign In →</button>
-        </form>
-      </section>
+key=YOUR_API_KEY
+&amp;action=services
 
-      <section class="platforms" aria-label="Supported social platforms" data-figma-node="3:48">
-        <article><i>FA</i><b>Facebook</b></article>
-        <article><i>IN</i><b>Instagram</b></article>
-        <article><i>YO</i><b>YouTube</b></article>
-        <article><i>TW</i><b>Twitter</b></article>
-        <article><i>TI</i><b>TikTok</b></article>
-        <article><i>SP</i><b>Spotify</b></article>
-        <article><i>TE</i><b>Telegram</b></article>
-      </section>
-
-      <section class="features" id="features" data-figma-node="3:77">
-        <h2>Checkout Our Features</h2>
-        <p>Everything you need to grow your social media presence in one powerful panel.</p>
-        <div class="feature-grid">
-          <article><i>◎</i><h3>User Friendly Interface</h3><p>Clean and intuitive dashboard that makes placing orders quick and effortless.</p></article>
-          <article><i>?</i><h3>24/7 Live Support</h3><p>Our support team monitors orders around the clock and responds quickly.</p></article>
-          <article><i>⚡</i><h3>Instant Delivery</h3><p>Most orders start processing immediately after placement for rapid results.</p></article>
-          <article><i>＋</i><h3>Easy Ordering</h3><p>Paste your link, choose quantity, and your order is placed in seconds.</p></article>
-        </div>
-      </section>
-
-      <section class="why" id="how" data-figma-node="3:101">
-        <div class="why-copy">
-          <h2>Why Choose Prime Boostly?</h2>
-          <p>Result-oriented social media services with real engagement, competitive prices, secure payments, and support when you need it.</p>
-          <ul>
-            <li>100% Organic &amp; Real Services</li>
-            <li>Guaranteed Results That Last</li>
-            <li>24/7 Dedicated Support Team</li>
-            <li>Secure &amp; Anonymous Payments</li>
-          </ul>
-          <a class="btn primary" href="/register.html">Register Now →</a>
-        </div>
-        <div class="stat">
-          <strong>25K+</strong>
-          <p>Happy customers worldwide</p>
-          <div>
-            <span><b>500+</b><small>Services</small></span>
-            <span><b>99.9%</b><small>Uptime</small></span>
-            <span><b>&lt; 1min</b><small>Avg. Start</small></span>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <main class="landing-mobile" data-figma-node="8:262">
-    <div class="mobile-home-scroll" data-figma-node="8:263">
-      <header class="mobile-home-header" data-figma-node="8:264">
-        <a class="mobile-home-brand" href="/" aria-label="Prime Boostly home">
-          <span class="mobile-brand-mark">B</span>
-          <span class="mobile-wordmark"><b>PRIME</b><strong>BOOSTLY</strong></span>
-        </a>
-        <a class="mobile-menu-button" href="/mobile-menu.html" aria-label="Open menu">☰</a>
-      </header>
-
-      <section class="mobile-home-hero" data-figma-node="8:273">
-        <h1>Rise on Social Media with Ease!</h1>
-        <p>Grow followers, likes and views from one simple SMM panel with fast ordering and wallet funding.</p>
-        <div class="mobile-active-users" data-figma-node="8:276">
-          <i class="mobile-avatar avatar-a" aria-hidden="true"></i>
-          <i class="mobile-avatar avatar-b" aria-hidden="true"></i>
-          <i class="mobile-avatar avatar-a" aria-hidden="true"></i>
-          <i class="mobile-avatar avatar-b" aria-hidden="true"></i>
-          <b>25,000+ Active Users</b>
-        </div>
-        <div class="mobile-hero-actions">
-          <a class="btn primary" href="/register.html">Get Started →</a>
-          <a class="btn secondary" href="/services.html">View Services</a>
-        </div>
-      </section>
-
-      <form class="mobile-login-card" data-auth-login novalidate data-figma-node="8:287">
-        <h2>Login to Your Account</h2>
-        <p class="auth-error" data-auth-error role="alert"></p>
-        <label class="mobile-login-field"><span>Username or Email</span><input name="identity" autocomplete="username" placeholder="Username or Email" required></label>
-        <label class="mobile-login-field"><span>Password</span><input name="password" autocomplete="current-password" placeholder="Username or Email" type="password" required></label>
-        <div class="mobile-login-meta">
-          <label><input name="remember" type="checkbox"> Remember me</label>
-          <a href="/forgot-password.html">Forgot password?</a>
-        </div>
-        <button class="btn primary" type="submit">Sign In →</button>
-      </form>
-
-      <section class="mobile-platform-section" data-figma-node="8:302">
-        <h2>Popular Platforms</h2>
-        <div class="mobile-platform-row" data-figma-node="8:304">
-          <article><i class="fb">FB</i><b>FB</b></article>
-          <article><i class="ig">IG</i><b>IG</b></article>
-          <article><i class="yt">YT</i><b>YT</b></article>
-          <article><i class="x">X</i><b>X</b></article>
-          <article><i class="tt">TT</i><b>TT</b></article>
-          <article><i class="tg">TG</i><b>TG</b></article>
-        </div>
-      </section>
-
-      <section class="mobile-feature-section" data-figma-node="8:329">
-        <h2>Checkout Our Features</h2>
-        <p>Everything you need to order quickly and manage your growth.</p>
-        <article><h3>User Friendly Interface</h3><p>Clean dashboard and simple order flow.</p></article>
-        <article><h3>24/7 Live Support</h3><p>Support is available whenever an order needs attention.</p></article>
-        <article><h3>Instant Delivery</h3><p>Most services start shortly after placement.</p></article>
-        <article><h3>Easy Ordering</h3><p>Pick a service, paste your link and submit.</p></article>
-      </section>
-    </div>
-  </main>
-</body>
-</html>
+<span style="color:#7e91ac">// Access current service details,
+// rates and ordering limits.</span></pre><footer>One API. Your existing PrimeBoostly account.</footer></div></div></div></section>
+<section><div class="wrap showcase"><div><span class="eyebrow">YOUR GROWTH, ORGANIZED</span><h2>One place.<br>Every order.</h2><p>Move from choosing a service to tracking your orders without juggling different tools.</p><p>Manage your wallet, orders and API access from the existing PrimeBoostly dashboard.</p><a class="btn secondary" style="margin-top:20px" href="https://primebooslty.com/login">Open your dashboard ↗</a></div><div class="app"><div class="app-top"><span>↗ PrimeBoostly</span><span class="demo">INTERFACE PREVIEW</span></div><div class="dashboard"><aside class="sidebar"><div class="">Dashboard</div><div class="selected">New Order</div><div class="">Services</div><div class="">Orders</div><div class="">Add Funds</div><div class="">API</div><div class="">Support</div><div class="">Account</div></aside><div class="app-body"><h3>New order</h3><div class="stat-row"><div class="stat">Total orders<strong>—</strong></div><div class="stat">Completed<strong>—</strong></div><div class="stat">Pending<strong>—</strong></div></div><div class="form"><span class="label">Platform</span><div class="field">Choose platform ⌄</div><span class="label">Service</span><div class="field">Choose service ⌄</div><span class="label">Link</span><div class="field">Your content link</div><div class="field-row"><div><span class="label">Quantity</span><div class="field">Enter quantity</div></div><div><span class="label">Charge</span><div class="field">—</div></div></div><a class="btn" href="https://primebooslty.com/login" style="width:100%">Sign in to place order ↗</a><p class="app-note">Design preview — no customer data shown.</p></div></div></div></div></div></section>
+<section class="soft"><div class="wrap"><div class="section-head center"><span class="eyebrow">ROOM FOR EVERY AMBITION</span><h2>Your goals. Your way to grow.</h2></div><div class="audiences"><article><span class="number">01 / PRIMEBOOSTLY FOR</span><h3>Creators</h3><p>Grow your personal brand and content reach.</p></article><article><span class="number">02 / PRIMEBOOSTLY FOR</span><h3>Businesses</h3><p>Increase visibility for your brand and products.</p></article><article><span class="number">03 / PRIMEBOOSTLY FOR</span><h3>Agencies</h3><p>Manage services for multiple customers.</p></article><article><span class="number">04 / PRIMEBOOSTLY FOR</span><h3>Resellers</h3><p>Sell services with the platform and API.</p></article></div></div></section>
+<section id="faq"><div class="wrap"><div class="section-head center"><span class="eyebrow">GOOD QUESTIONS. CLEAR ANSWERS.</span><h2>Before you get started.</h2></div><div class="faq"><details><summary>What is PrimeBoostly?<span>+</span></summary><p>A social media growth platform offering followers, likes, views and other services across multiple social networks.</p></details><details><summary>How do I place an order?<span>+</span></summary><p>Create an account, fund your wallet, choose a service, then enter your link and quantity in the existing dashboard.</p></details><details><summary>How quickly do orders start?<span>+</span></summary><p>Start times and completion times vary by service. Check the service details before ordering.</p></details><details><summary>Which platforms are supported?<span>+</span></summary><p>The public landing page lists Instagram, TikTok, YouTube, Facebook, X / Twitter, Telegram and Spotify. Check the service catalogue for current availability.</p></details><details><summary>How do I fund my wallet?<span>+</span></summary><p>Sign in and use Add Funds to see the payment options currently available to your account.</p></details><details><summary>Can I track my orders?<span>+</span></summary><p>Use the Orders section of your dashboard to follow order progress.</p></details><details><summary>Do you support resellers and provide an API?<span>+</span></summary><p>Yes. The existing API documentation covers services, placing orders, single and multiple order status, refills and account balance.</p></details><details><summary>Where can I contact support?<span>+</span></summary><p>Visit the existing Contact page using the Support link below.</p></details></div></div></section><section style="padding-top:0"><div class="wrap"><div class="final"><span class="eyebrow">YOUR NEXT STEP STARTS HERE</span><h2>Ready to grow your social media?</h2><p>Access hundreds of growth services from one simple dashboard.</p><div class="cta"><a class="btn" href="https://primebooslty.com/register">Create free account ↗</a><a class="btn secondary" href="https://primebooslty.com/services">Explore services</a></div></div></div></section></main>
+<footer class="site-footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="#"><b>↗</b>PrimeBoostly</a><p>Grow faster. Reach more people.<br>Social media services for your next chapter.</p></div><div><h4>Product</h4><a href="https://primebooslty.com/services">Services & pricing</a><a href="https://primebooslty.com/login">New order</a><a href="https://primebooslty.com/api-docs">Reseller API</a></div><div><h4>Support</h4><a href="#faq">FAQ</a><a href="https://primebooslty.com/contact">Contact & support</a><a href="https://primebooslty.com/api-docs">API documentation</a></div><div><h4>Account</h4><a href="https://primebooslty.com/login">Sign in</a><a href="https://primebooslty.com/register">Create account</a></div></div><div class="copyright"><span>© 2026 PrimeBoostly. All rights reserved.</span><span>Landing page design concept · Existing platform links</span></div></div></footer><script>const btn=document.querySelector('.menu'),links=document.querySelector('.links');btn.addEventListener('click',()=>{const open=links.classList.toggle('open');btn.setAttribute('aria-expanded',String(open));btn.setAttribute('aria-label',open?'Close navigation':'Open navigation');});links.addEventListener('click',e=>{if(e.target.closest('a')){links.classList.remove('open');btn.setAttribute('aria-expanded','false')}});document.addEventListener('keydown',e=>{if(e.key==='Escape'){links.classList.remove('open');btn.setAttribute('aria-expanded','false')}});</script><style>@media(min-width:761px){.mobile-account{display:none}}</style></body></html>
