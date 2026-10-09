@@ -6,10 +6,93 @@
 <title>Prime Boostly Dashboard</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/dashboard-figma.css">
+<link rel="stylesheet" href="/dashboard-v2.css">
 <script src="/auth.js" defer></script>
 <script src="/dashboard-ui.js" defer></script>
 </head>
 <body class="app" data-auth-protected="true">
+
+<!-- Mobile home: PrimeBoostly Modern Dashboard V2 — Figma node 1:20 -->
+<section class="v2-dashboard" aria-label="PrimeBoostly dashboard">
+  <div class="v2-status" aria-hidden="true">
+    <span>9:41</span>
+    <span class="v2-status-right">● 5G ▰</span>
+  </div>
+
+  <div class="v2-content">
+    <div class="v2-body">
+      <p class="v2-greeting">Good afternoon</p>
+      <h1 class="v2-title">PrimeBoostly</h1>
+
+      <button class="v2-top-action v2-notifications" type="button" aria-label="Notifications">
+        ◔<span class="v2-unread" aria-hidden="true"></span>
+      </button>
+      <a class="v2-top-action v2-profile" href="/settings.html" aria-label="Profile">♙</a>
+
+      <section class="v2-wallet" aria-label="Wallet balance">
+        <p class="v2-wallet-label">Available balance</p>
+        <p class="v2-wallet-balance">₦48,250.00</p>
+        <span class="v2-currency">₦</span>
+        <a class="v2-add-funds" href="/add-funds.html">＋&nbsp; Add funds</a>
+        <a class="v2-live-orders" href="/orders.html"><strong>Live orders</strong><small>today</small></a>
+      </section>
+
+      <h2 class="v2-section-title v2-quick-title">Quick actions</h2>
+      <a class="v2-section-link v2-manage" href="/services.html">Manage</a>
+
+      <nav class="v2-quick-grid" aria-label="Quick actions">
+        <a class="v2-quick v2-q-new" href="/dashboard.html?mode=new">
+          <span class="v2-quick-icon">＋</span><span>New order</span>
+        </a>
+        <a class="v2-quick v2-q-services" href="/services.html">
+          <span class="v2-quick-icon">◎</span><span>Services</span>
+        </a>
+        <a class="v2-quick v2-q-orders" href="/orders.html">
+          <span class="v2-quick-icon">↗</span><span>Orders</span>
+        </a>
+        <a class="v2-quick v2-q-support" href="/support.html">
+          <span class="v2-quick-icon">?</span><span>Support</span>
+        </a>
+      </nav>
+
+      <h2 class="v2-section-title v2-services-title">Choose a service</h2>
+      <a class="v2-section-link v2-view-all" href="/services.html">View all</a>
+
+      <a class="v2-service-card v2-service-real" href="/services.html">
+        <span class="v2-service-icon">NG</span>
+        <p class="v2-service-name">Real Nigeria Followers</p>
+        <p class="v2-service-desc">Local audience • Higher trust</p>
+        <span class="v2-arrow">›</span>
+      </a>
+
+      <a class="v2-service-card v2-service-normal" href="/services.html">
+        <span class="v2-service-icon">↗</span>
+        <p class="v2-service-name">Normal SMM</p>
+        <p class="v2-service-desc">Followers, likes, views &amp; more</p>
+        <span class="v2-arrow">›</span>
+      </a>
+
+      <h2 class="v2-section-title v2-recent-title">Recent activity</h2>
+      <a class="v2-section-link v2-see-all" href="/orders.html">See all</a>
+
+      <a class="v2-recent-card" href="/order-detail.html">
+        <p class="v2-recent-name">Instagram Followers</p>
+        <p class="v2-recent-desc">Production order details</p>
+        <span class="v2-processing">Processing</span>
+      </a>
+    </div>
+  </div>
+
+  <nav class="v2-bottom-nav" aria-label="Primary navigation">
+    <a class="v2-tab active" href="/dashboard.html" aria-current="page"><span class="v2-tab-icon">⌂</span><span>Home</span></a>
+    <a class="v2-tab" href="/services.html"><span class="v2-tab-icon">◎</span><span>Services</span></a>
+    <a class="v2-tab" href="/dashboard.html?mode=new"><span class="v2-tab-icon">＋</span><span>Order</span></a>
+    <a class="v2-tab" href="/orders.html"><span class="v2-tab-icon">▤</span><span>Orders</span></a>
+    <a class="v2-tab" href="/settings.html"><span class="v2-tab-icon">♙</span><span>Profile</span></a>
+  </nav>
+</section>
+
+<!-- Existing desktop dashboard + mobile order form. Kept so current flows are preserved. -->
 <aside class="pb-sidebar">
 <div class="pb-side-brand">
 <strong><span>SMM</span>Panel</strong>
