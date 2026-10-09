@@ -1,13 +1,17 @@
-/* PrimeBoostly New Order V2 — Figma nodes 18:2, 18:63 and 18:126 */
-.order-v2,.order-ready-v2,.order-review-v2{display:none}
+/* PrimeBoostly New Order V2 — Figma nodes 18:2, 18:63, 18:126, 21:191 and 21:253 */
+.order-v2,.order-ready-v2,.order-review-v2,.order-price-v2,.order-submitted-v2{display:none}
 @media(max-width:900px){
   body.app.mobile-order-view>.pb-dashboard{display:none!important}
   body.app.mobile-order-view>.order-v2,
   body.app.mobile-order-view[data-order-step="ready"]>.order-ready-v2,
-  body.app.mobile-order-view[data-order-step="review"]>.order-review-v2{width:min(393px,100%);min-height:852px;margin:0 auto;background:#fff;display:flex;flex-direction:column;overflow:hidden;color:#0e1310;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,Arial,sans-serif}
+  body.app.mobile-order-view[data-order-step="review"]>.order-review-v2,
+  body.app.mobile-order-view[data-order-step="price"]>.order-price-v2,
+  body.app.mobile-order-view[data-order-step="submitted"]>.order-submitted-v2{width:min(393px,100%);min-height:852px;margin:0 auto;background:#fff;display:flex;flex-direction:column;overflow:hidden;color:#0e1310;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,Arial,sans-serif}
   body.app.mobile-order-view[data-order-step="ready"]>.order-v2,
-  body.app.mobile-order-view[data-order-step="review"]>.order-v2{display:none!important}
-  .order-v2 *,.order-ready-v2 *,.order-review-v2 *{box-sizing:border-box}.order-v2 a,.order-ready-v2 a,.order-review-v2 a{text-decoration:none;color:inherit}
+  body.app.mobile-order-view[data-order-step="review"]>.order-v2,
+  body.app.mobile-order-view[data-order-step="price"]>.order-v2,
+  body.app.mobile-order-view[data-order-step="submitted"]>.order-v2{display:none!important}
+  .order-v2 *,.order-ready-v2 *,.order-review-v2 *,.order-price-v2 *,.order-submitted-v2 *{box-sizing:border-box}.order-v2 a,.order-ready-v2 a,.order-review-v2 a,.order-price-v2 a,.order-submitted-v2 a{text-decoration:none;color:inherit}
   .orv2-status{height:44px;flex:0 0 44px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600}.orv2-status-right{font-size:12px}
   .orv2-content,.ordrv2-content,.orrv2-content{height:734px;flex:0 0 734px;padding:18px 20px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
   .orv2-top,.ordrv2-top,.orrv2-top{height:54px;display:grid;grid-template-columns:36px 1fr 36px;align-items:center}.orv2-circle,.ordrv2-circle,.orrv2-circle{width:36px;height:36px;border-radius:18px;background:#f2f6f2;display:grid;place-items:center;font-weight:600}.orv2-back,.ordrv2-back,.orrv2-back{font-size:24px}.orv2-help,.ordrv2-help,.orrv2-help{font-size:14px}.orv2-top h1,.ordrv2-top h1,.orrv2-top h1{margin:0;text-align:center;font-size:19px;line-height:23px;font-weight:700}
