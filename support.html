@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/dashboard-figma.css">
   <link rel="stylesheet" href="/support.css">
   <link rel="stylesheet" href="/support-figma.css">
+  <link rel="stylesheet" href="/support-v2.css">
   <script src="/auth.js" defer></script>
 </head>
 <body class="app support-page" data-auth-protected="true">
@@ -15,7 +16,7 @@
     <div class="pb-side-brand"><strong><span>SMM</span>Panel</strong><small>Prime Boostly</small></div>
     <nav>
       <a href="/dashboard.html">Dashboard</a>
-      <a href="/dashboard.html">New Order</a>
+      <a href="/dashboard.html?mode=new">New Order</a>
       <a href="/orders.html">Orders</a>
       <a href="/order-history.html">Order History</a>
       <a href="/add-funds.html">Add Funds</a>
@@ -47,6 +48,26 @@
         </form>
       </div>
     </div>
+  </main>
+
+  <main class="support-v2" aria-label="Support">
+    <div class="spv2-status" aria-hidden="true"><span>9:41</span><span class="spv2-status-right">● 5G ▰</span></div>
+    <section class="spv2-content">
+      <header class="spv2-top"><a class="spv2-back" href="/settings.html" aria-label="Back">‹</a><h1>Support</h1><span class="spv2-spacer"></span></header>
+      <div class="spv2-notice"><span class="spv2-info">i</span><span class="spv2-notice-copy"><strong>PrimeBoostly Support</strong><small>Choose the issue type in production so your request reaches the right support queue.</small></span></div>
+      <a class="spv2-row" href="/new-ticket.html?type=order"><span class="spv2-row-copy"><strong>Order issue</strong><small>Problems with an active or completed service order</small></span><span class="spv2-action">Support</span></a>
+      <a class="spv2-row" href="/new-ticket.html?type=wallet"><span class="spv2-row-copy"><strong>Wallet or funding</strong><small>Deposit, balance or transaction questions</small></span><span class="spv2-action">Support</span></a>
+      <a class="spv2-row" href="/new-ticket.html?type=account"><span class="spv2-row-copy"><strong>Account access</strong><small>Login, password or account assistance</small></span><span class="spv2-action">Support</span></a>
+      <a class="spv2-row" href="/new-ticket.html?type=general"><span class="spv2-row-copy"><strong>General question</strong><small>Anything else about PrimeBoostly</small></span><span class="spv2-action">Support</span></a>
+      <p class="spv2-footnote">Support conversations and case references are created by the production support system.</p>
+    </section>
+    <nav class="spv2-bottom" aria-label="Primary navigation">
+      <a class="spv2-tab" href="/dashboard.html"><span class="spv2-tab-icon">⌂</span><span>Home</span></a>
+      <a class="spv2-tab" href="/services.html"><span class="spv2-tab-icon">◎</span><span>Services</span></a>
+      <a class="spv2-tab" href="/dashboard.html?mode=new"><span class="spv2-tab-icon">＋</span><span>Order</span></a>
+      <a class="spv2-tab" href="/orders.html"><span class="spv2-tab-icon">▤</span><span>Orders</span></a>
+      <a class="spv2-tab active" href="/settings.html"><span class="spv2-tab-icon">♙</span><span>Profile</span></a>
+    </nav>
   </main>
 
   <main class="support-mobile" data-figma-node="11:99">
