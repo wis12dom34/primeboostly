@@ -51,6 +51,11 @@
     document.querySelectorAll('[data-selected-platform]').forEach(node => {
       node.textContent = platform;
     });
+
+    const readyUrl = `/dashboard.html?mode=new&platform=${encodeURIComponent(rawPlatform)}&step=ready`;
+    const reviewUrl = `/dashboard.html?mode=new&platform=${encodeURIComponent(rawPlatform)}&step=review`;
+    document.querySelectorAll('.ordrv2-review').forEach(link => { link.href = reviewUrl; });
+    document.querySelectorAll('.orrv2-back').forEach(link => { link.href = readyUrl; });
   }
 
   function applyMobileView(mode, hasExplicitMode) {
