@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/dashboard-figma.css">
   <link rel="stylesheet" href="/orders-figma.css">
+  <link rel="stylesheet" href="/orders-v2.css">
   <script src="/auth.js" defer></script>
 </head>
 <body class="app orders-page" data-auth-protected="true">
@@ -14,7 +15,7 @@
     <div class="pb-side-brand"><strong><span>SMM</span>Panel</strong><small>Prime Boostly</small></div>
     <nav>
       <a href="/dashboard.html">Dashboard</a>
-      <a href="/dashboard.html">New Order</a>
+      <a href="/dashboard.html?mode=new">New Order</a>
       <a class="active" href="/orders.html">Orders</a>
       <a href="/order-history.html">Order History</a>
       <a href="/add-funds.html">Add Funds</a>
@@ -54,6 +55,53 @@
         </table>
       </section>
     </div>
+  </main>
+
+  <main class="orders-v2" aria-label="Orders">
+    <div class="ov2-status" aria-hidden="true"><span>9:41</span><span class="ov2-status-right">● 5G ▰</span></div>
+    <section class="ov2-content">
+      <header class="ov2-header">
+        <div class="ov2-title-block"><h1 class="ov2-title">Orders</h1><p class="ov2-subtitle">Track your service activity</p></div>
+        <a class="ov2-search" href="/orders.html" aria-label="Search orders">⌕</a>
+      </header>
+
+      <nav class="ov2-filters" aria-label="Order filters">
+        <a class="ov2-filter all" href="/orders.html">All</a>
+        <a class="ov2-filter processing" href="/orders.html?status=processing">Processing</a>
+        <a class="ov2-filter completed" href="/orders.html?status=completed">Completed</a>
+        <a class="ov2-filter failed" href="/orders.html?status=failed">Failed</a>
+      </nav>
+
+      <div class="ov2-section-head"><h2>Recent orders</h2><a href="/orders.html?status=processing">Live orders</a></div>
+
+      <a class="ov2-order" href="/order-detail.html">
+        <div class="ov2-order-top">
+          <div class="ov2-ident"><span class="ov2-icon">NG</span><span class="ov2-copy"><strong>Real Nigeria Followers</strong><small>Instagram • Runtime quantity</small></span></div>
+          <span class="ov2-status-pill">Processing</span>
+        </div>
+        <span class="ov2-divider"></span>
+        <div class="ov2-order-foot"><span class="ov2-ref"><strong>Live reference</strong><small>Reference from production</small></span><span class="ov2-open">›</span></div>
+      </a>
+
+      <a class="ov2-order" href="/order-detail.html">
+        <div class="ov2-order-top">
+          <div class="ov2-ident"><span class="ov2-icon">IG</span><span class="ov2-copy"><strong>Instagram Followers</strong><small>Normal SMM • Instagram • Runtime quantity</small></span></div>
+          <span class="ov2-status-pill">Processing</span>
+        </div>
+        <span class="ov2-divider"></span>
+        <div class="ov2-order-foot"><span class="ov2-ref"><strong>Live reference</strong><small>Reference from production</small></span><span class="ov2-open">›</span></div>
+      </a>
+
+      <div class="ov2-notice"><span class="ov2-info">i</span><span class="ov2-notice-copy"><strong>Live order updates</strong><small>Status, amount and references come from production data.</small></span></div>
+    </section>
+
+    <nav class="ov2-bottom" aria-label="Primary navigation">
+      <a class="ov2-tab" href="/dashboard.html"><span class="ov2-tab-icon">⌂</span><span>Home</span></a>
+      <a class="ov2-tab" href="/services.html"><span class="ov2-tab-icon">◎</span><span>Services</span></a>
+      <a class="ov2-tab" href="/dashboard.html?mode=new"><span class="ov2-tab-icon">＋</span><span>Order</span></a>
+      <a class="ov2-tab active" href="/orders.html" aria-current="page"><span class="ov2-tab-icon">▤</span><span>Orders</span></a>
+      <a class="ov2-tab" href="/settings.html"><span class="ov2-tab-icon">♙</span><span>Profile</span></a>
+    </nav>
   </main>
 
   <main class="mobile figma-orders orders-mobile pb-mobile-bg" data-figma-node="6:663">
