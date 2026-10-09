@@ -16,7 +16,6 @@
   platforms.forEach(button => button.addEventListener('click', () => {
     if (!category) return;
     const platform = button.dataset.platform;
-    // Use an existing matching option if the catalogue has supplied one.
     let option = [...category.options].find(item =>
       item.value === platform || item.textContent.trim() === platform);
     if (!option) {
@@ -27,6 +26,7 @@
     category.dispatchEvent(new Event('change', { bubbles: true }));
     markPlatform(platform);
   }));
+
   category?.addEventListener('change', () => {
     const option = category.selectedOptions[0];
     const platform = platforms.find(button =>
@@ -34,6 +34,14 @@
       button.dataset.platform === option?.textContent.trim());
     markPlatform(platform?.dataset.platform || '');
   });
+
+  function applyMobileView(mode, hasExplicitMode) {
+    const mobile = window.matchMedia('(max-width: 900px)').matches;
+    const orderView = mobile && hasExplicitMode;
+    document.body.classList.toggle('mobile-order-view', orderView);
+    if (orderView) document.body.dataset.orderMode = mode;
+    else delete document.body.dataset.orderMode;
+  }
 
   function showMode(requested, updateUrl = false) {
     const mode = modes.some(link => link.dataset.orderMode === requested) ? requested : 'new';
@@ -44,12 +52,15 @@
       else link.removeAttribute('aria-current');
     });
     panels.forEach(panel => { panel.hidden = panel.dataset.orderPanel !== mode; });
+
     if (updateUrl) {
       const url = new URL(location.href);
-      if (mode === 'new') url.searchParams.delete('mode');
-      else url.searchParams.set('mode', mode);
+      url.searchParams.set('mode', mode);
       history.pushState(null, '', url);
     }
+
+    const params = new URLSearchParams(location.search);
+    applyMobileView(mode, params.has('mode'));
   }
 
   modes.forEach(link => link.addEventListener('click', event => {
@@ -57,13 +68,20 @@
     event.preventDefault();
     showMode(link.dataset.orderMode, true);
   }));
+
   document.querySelectorAll('[data-return-new]').forEach(link => link.addEventListener('click', event => {
     if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
     event.preventDefault();
     showMode('new', true);
     modes[0]?.focus();
   }));
-  const readMode = () => showMode(new URLSearchParams(location.search).get('mode'));
+
+  const readMode = () => {
+    const params = new URLSearchParams(location.search);
+    showMode(params.get('mode') || 'new');
+  };
+
   window.addEventListener('popstate', readMode);
+  window.addEventListener('resize', readMode);
   readMode();
 })();
