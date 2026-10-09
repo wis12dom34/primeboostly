@@ -7,219 +7,55 @@
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/dashboard-figma.css">
 <link rel="stylesheet" href="/dashboard-v2.css">
+<link rel="stylesheet" href="/order-v2.css">
 <script src="/auth.js" defer></script>
 <script src="/dashboard-ui.js" defer></script>
 </head>
 <body class="app" data-auth-protected="true">
 
-<!-- Mobile home: PrimeBoostly Modern Dashboard V2 — Figma node 1:20 -->
 <section class="v2-dashboard" aria-label="PrimeBoostly dashboard">
-  <div class="v2-status" aria-hidden="true">
-    <span>9:41</span>
-    <span class="v2-status-right">● 5G ▰</span>
-  </div>
-
-  <div class="v2-content">
-    <div class="v2-body">
-      <p class="v2-greeting">Good afternoon</p>
-      <h1 class="v2-title">PrimeBoostly</h1>
-
-      <button class="v2-top-action v2-notifications" type="button" aria-label="Notifications">
-        ◔<span class="v2-unread" aria-hidden="true"></span>
-      </button>
-      <a class="v2-top-action v2-profile" href="/settings.html" aria-label="Profile">♙</a>
-
-      <section class="v2-wallet" aria-label="Wallet balance">
-        <p class="v2-wallet-label">Available balance</p>
-        <p class="v2-wallet-balance">₦48,250.00</p>
-        <span class="v2-currency">₦</span>
-        <a class="v2-add-funds" href="/add-funds.html">＋&nbsp; Add funds</a>
-        <a class="v2-live-orders" href="/orders.html"><strong>Live orders</strong><small>today</small></a>
-      </section>
-
-      <h2 class="v2-section-title v2-quick-title">Quick actions</h2>
-      <a class="v2-section-link v2-manage" href="/services.html">Manage</a>
-
-      <nav class="v2-quick-grid" aria-label="Quick actions">
-        <a class="v2-quick v2-q-new" href="/dashboard.html?mode=new">
-          <span class="v2-quick-icon">＋</span><span>New order</span>
-        </a>
-        <a class="v2-quick v2-q-services" href="/services.html">
-          <span class="v2-quick-icon">◎</span><span>Services</span>
-        </a>
-        <a class="v2-quick v2-q-orders" href="/orders.html">
-          <span class="v2-quick-icon">↗</span><span>Orders</span>
-        </a>
-        <a class="v2-quick v2-q-support" href="/support.html">
-          <span class="v2-quick-icon">?</span><span>Support</span>
-        </a>
-      </nav>
-
-      <h2 class="v2-section-title v2-services-title">Choose a service</h2>
-      <a class="v2-section-link v2-view-all" href="/services.html">View all</a>
-
-      <a class="v2-service-card v2-service-real" href="/services.html">
-        <span class="v2-service-icon">NG</span>
-        <p class="v2-service-name">Real Nigeria Followers</p>
-        <p class="v2-service-desc">Local audience • Higher trust</p>
-        <span class="v2-arrow">›</span>
-      </a>
-
-      <a class="v2-service-card v2-service-normal" href="/services.html">
-        <span class="v2-service-icon">↗</span>
-        <p class="v2-service-name">Normal SMM</p>
-        <p class="v2-service-desc">Followers, likes, views &amp; more</p>
-        <span class="v2-arrow">›</span>
-      </a>
-
-      <h2 class="v2-section-title v2-recent-title">Recent activity</h2>
-      <a class="v2-section-link v2-see-all" href="/orders.html">See all</a>
-
-      <a class="v2-recent-card" href="/order-detail.html">
-        <p class="v2-recent-name">Instagram Followers</p>
-        <p class="v2-recent-desc">Production order details</p>
-        <span class="v2-processing">Processing</span>
-      </a>
-    </div>
-  </div>
-
-  <nav class="v2-bottom-nav" aria-label="Primary navigation">
-    <a class="v2-tab active" href="/dashboard.html" aria-current="page"><span class="v2-tab-icon">⌂</span><span>Home</span></a>
-    <a class="v2-tab" href="/services.html"><span class="v2-tab-icon">◎</span><span>Services</span></a>
-    <a class="v2-tab" href="/dashboard.html?mode=new"><span class="v2-tab-icon">＋</span><span>Order</span></a>
-    <a class="v2-tab" href="/orders.html"><span class="v2-tab-icon">▤</span><span>Orders</span></a>
-    <a class="v2-tab" href="/settings.html"><span class="v2-tab-icon">♙</span><span>Profile</span></a>
-  </nav>
+  <div class="v2-status" aria-hidden="true"><span>9:41</span><span class="v2-status-right">● 5G ▰</span></div>
+  <div class="v2-content"><div class="v2-body">
+    <p class="v2-greeting">Good afternoon</p><h1 class="v2-title">PrimeBoostly</h1>
+    <button class="v2-top-action v2-notifications" type="button" aria-label="Notifications">◔<span class="v2-unread" aria-hidden="true"></span></button>
+    <a class="v2-top-action v2-profile" href="/settings.html" aria-label="Profile">♙</a>
+    <section class="v2-wallet" aria-label="Wallet balance"><p class="v2-wallet-label">Available balance</p><p class="v2-wallet-balance">₦48,250.00</p><span class="v2-currency">₦</span><a class="v2-add-funds" href="/add-funds.html">＋&nbsp; Add funds</a><a class="v2-live-orders" href="/orders.html"><strong>Live orders</strong><small>today</small></a></section>
+    <h2 class="v2-section-title v2-quick-title">Quick actions</h2><a class="v2-section-link v2-manage" href="/services.html">Manage</a>
+    <nav class="v2-quick-grid" aria-label="Quick actions"><a class="v2-quick v2-q-new" href="/dashboard.html?mode=new"><span class="v2-quick-icon">＋</span><span>New order</span></a><a class="v2-quick v2-q-services" href="/services.html"><span class="v2-quick-icon">◎</span><span>Services</span></a><a class="v2-quick v2-q-orders" href="/orders.html"><span class="v2-quick-icon">↗</span><span>Orders</span></a><a class="v2-quick v2-q-support" href="/support.html"><span class="v2-quick-icon">?</span><span>Support</span></a></nav>
+    <h2 class="v2-section-title v2-services-title">Choose a service</h2><a class="v2-section-link v2-view-all" href="/services.html">View all</a>
+    <a class="v2-service-card v2-service-real" href="/services.html"><span class="v2-service-icon">NG</span><p class="v2-service-name">Real Nigeria Followers</p><p class="v2-service-desc">Local audience • Higher trust</p><span class="v2-arrow">›</span></a>
+    <a class="v2-service-card v2-service-normal" href="/services.html"><span class="v2-service-icon">↗</span><p class="v2-service-name">Normal SMM</p><p class="v2-service-desc">Followers, likes, views &amp; more</p><span class="v2-arrow">›</span></a>
+    <h2 class="v2-section-title v2-recent-title">Recent activity</h2><a class="v2-section-link v2-see-all" href="/orders.html">See all</a>
+    <a class="v2-recent-card" href="/order-detail.html"><p class="v2-recent-name">Instagram Followers</p><p class="v2-recent-desc">Production order details</p><span class="v2-processing">Processing</span></a>
+  </div></div>
+  <nav class="v2-bottom-nav" aria-label="Primary navigation"><a class="v2-tab active" href="/dashboard.html" aria-current="page"><span class="v2-tab-icon">⌂</span><span>Home</span></a><a class="v2-tab" href="/services.html"><span class="v2-tab-icon">◎</span><span>Services</span></a><a class="v2-tab" href="/dashboard.html?mode=new"><span class="v2-tab-icon">＋</span><span>Order</span></a><a class="v2-tab" href="/orders.html"><span class="v2-tab-icon">▤</span><span>Orders</span></a><a class="v2-tab" href="/settings.html"><span class="v2-tab-icon">♙</span><span>Profile</span></a></nav>
 </section>
 
-<!-- Existing desktop dashboard + mobile order form. Kept so current flows are preserved. -->
-<aside class="pb-sidebar">
-<div class="pb-side-brand">
-<strong><span>SMM</span>Panel</strong>
-<small>Prime Boostly</small>
-</div>
-<nav>
-<a href="/dashboard.html">Dashboard</a>
-<a class="active" href="/dashboard.html?mode=new">New Order</a>
-<a href="/orders.html">Orders</a>
-<a href="/order-history.html">Order History</a>
-<a href="/add-funds.html">Add Funds</a>
-<a href="/support.html">Support</a>
-<a href="/settings.html">Settings</a>
-</nav>
-<a class="logout" href="/login.html" data-auth-logout>Log out</a>
-</aside>
-<main class="pb-dashboard">
-<div class="pb-dashboard-inner">
-<header class="pb-dashboard-header">
-<a class="brand figma-brand" href="/" aria-label="PrimeBoostly home">
-<span class="mark">B</span>
-<span><b>PRIME</b><strong>BOOSTLY</strong></span>
-</a>
-<a class="menu" href="/mobile-menu.html" aria-label="Open navigation">☰</a>
-</header>
-<section class="pb-metrics" aria-label="Account metrics">
-<article><small>Your Balance</small><b>₦125,500.00</b></article>
-<article><small>Total Orders</small><b>1,248</b></article>
-<article><small>Pending Orders</small><b>18</b></article>
-<article><small>Completed Orders</small><b>1,201</b></article>
+<section class="order-v2" aria-label="New order">
+  <div class="orv2-status" aria-hidden="true"><span>9:41</span><span class="orv2-status-right">● 5G ▰</span></div>
+  <section class="orv2-content">
+    <header class="orv2-top"><a class="orv2-circle orv2-back" href="/dashboard.html" aria-label="Back">‹</a><h1>Select platform</h1><a class="orv2-circle orv2-help" href="/support.html" aria-label="Help">?</a></header>
+    <h2 class="orv2-heading">Choose a platform</h2><p class="orv2-sub">Select where you want the followers delivered.</p>
+    <a class="orv2-platform ig" href="/dashboard.html?mode=new&platform=instagram"><span class="orv2-icon">IG</span><span class="orv2-copy"><strong>Instagram</strong><small>Followers • Profile link</small></span><span class="orv2-arrow">›</span></a>
+    <a class="orv2-platform tt" href="/dashboard.html?mode=new&platform=tiktok"><span class="orv2-icon">TT</span><span class="orv2-copy"><strong>TikTok</strong><small>Followers • Profile link</small></span><span class="orv2-arrow">›</span></a>
+    <a class="orv2-platform fb" href="/dashboard.html?mode=new&platform=facebook"><span class="orv2-icon">f</span><span class="orv2-copy"><strong>Facebook</strong><small>Followers • Profile/Page</small></span><span class="orv2-arrow">›</span></a>
+    <a class="orv2-platform yt" href="/dashboard.html?mode=new&platform=youtube"><span class="orv2-icon">YT</span><span class="orv2-copy"><strong>YouTube</strong><small>Subscribers • Channel link</small></span><span class="orv2-arrow">›</span></a>
+    <div class="orv2-note"><span class="orv2-info">i</span><p>Availability follows the live provider catalogue.</p></div>
+  </section>
+  <nav class="orv2-bottom" aria-label="Primary navigation"><a class="orv2-tab" href="/dashboard.html"><span class="orv2-tab-icon">⌂</span><span>Home</span></a><a class="orv2-tab" href="/services.html"><span class="orv2-tab-icon">◎</span><span>Services</span></a><a class="orv2-tab active" href="/dashboard.html?mode=new" aria-current="page"><span class="orv2-tab-icon">＋</span><span>Order</span></a><a class="orv2-tab" href="/orders.html"><span class="orv2-tab-icon">▤</span><span>Orders</span></a><a class="orv2-tab" href="/settings.html"><span class="orv2-tab-icon">♙</span><span>Profile</span></a></nav>
 </section>
-<section class="pb-category" aria-labelledby="category-heading">
-<h2 id="category-heading">Select Category</h2>
-<div class="pb-platforms" aria-label="Platform filters">
-<button class="fb" type="button" data-platform="Facebook" aria-label="Facebook" aria-pressed="false">FB</button>
-<button class="ig" type="button" data-platform="Instagram" aria-label="Instagram" aria-pressed="false">IG</button>
-<button class="yt" type="button" data-platform="YouTube" aria-label="YouTube" aria-pressed="false">YT</button>
-<button class="x" type="button" data-platform="X" aria-label="X" aria-pressed="false">X</button>
-<button class="tt" type="button" data-platform="TikTok" aria-label="TikTok" aria-pressed="false">TT</button>
-<button class="tg" type="button" data-platform="Telegram" aria-label="Telegram" aria-pressed="false">TG</button>
-<button class="in" type="button" data-platform="LinkedIn" aria-label="LinkedIn" aria-pressed="false">IN</button>
-<button class="sp" type="button" data-platform="Spotify" aria-label="Spotify" aria-pressed="false">SP</button>
-</div>
-</section>
-<nav class="pb-order-tabs" aria-label="Order mode">
-<a class="active" href="/dashboard.html?mode=new" data-order-mode="new" aria-current="page" aria-controls="new-order">New Order</a>
-<a href="/dashboard.html?mode=mass" data-order-mode="mass" aria-controls="mass-order">Mass Order</a>
-<a href="/dashboard.html?mode=favorite" data-order-mode="favorite" aria-controls="favorite-order">Favorite</a>
-</nav>
-<div class="pb-workspace">
-<section class="pb-order-form" id="new-order" data-order-panel="new" aria-labelledby="order-heading">
-<div class="pb-card-heading">
-<h3 id="order-heading">New Order</h3>
-<a href="/services.html">Browse services</a>
-</div>
-<label class="pb-field">
-<span>Provider</span>
-<select aria-label="Provider"><option>Mercury</option></select>
-</label>
-<label class="pb-field">
-<span>Category</span>
-<select aria-label="Category" data-category-select><option>Select a category</option></select>
-</label>
-<label class="pb-field">
-<span>Service</span>
-<select aria-label="Service"><option>Select a service</option></select>
-</label>
-<label class="pb-field">
-<span>Link</span>
-<input type="url" aria-label="Link" placeholder="Enter your link here">
-</label>
-<label class="pb-field">
-<span>Quantity</span>
-<input aria-label="Quantity" inputmode="numeric" value="0">
-</label>
-<div class="pb-charge"><span>Charge</span><strong>₦0.00</strong></div>
-<label class="pb-confirm">
-<input type="checkbox">
-<span>Yes, i have confirmed the order!</span>
-</label>
-<a class="pb-submit" href="/orders.html">Submit Order</a>
-</section>
-<section class="pb-order-form pb-mode-panel" id="mass-order" data-order-panel="mass" hidden aria-labelledby="mass-heading">
-<h3 id="mass-heading">Mass Order</h3>
-<p>Browse available services before preparing your orders.</p>
-<p>This preview does not support bulk submission yet.</p>
-<a class="pb-submit" href="/services.html">Browse services</a>
-<a href="/dashboard.html?mode=new" data-return-new>Return to New Order</a>
-</section>
-<section class="pb-order-form pb-mode-panel" id="favorite-order" data-order-panel="favorite" hidden aria-labelledby="favorite-heading">
-<h3 id="favorite-heading">Favorite Services</h3>
-<p>No favorite services are connected to this preview.</p>
-<a class="pb-submit" href="/services.html">Explore services</a>
-<a href="/dashboard.html?mode=new" data-return-new>Return to New Order</a>
-</section>
-<aside class="pb-service-details">
-<h3>Service Details</h3>
-<p>Select a service to preview its description, example link, and delivery details.</p>
-<div class="pb-description">—</div>
-<div class="pb-example"><b>Example Link:</b><span>--</span></div>
-<div class="pb-detail-list">
-<div class="pb-detail"><img src="/assets/figma-detail-dot.svg" alt=""><span><b>Min / Max</b><small>--</small></span></div>
-<div class="pb-detail"><img src="/assets/figma-detail-dot.svg" alt=""><span><b>Rate / 1k</b><small>--</small></span></div>
-<div class="pb-detail"><img src="/assets/figma-detail-dot.svg" alt=""><span><b>Speed</b><small>--</small></span></div>
-<div class="pb-detail"><img src="/assets/figma-detail-dot.svg" alt=""><span><b>Refill</b><small>--</small></span></div>
-<div class="pb-detail"><img src="/assets/figma-detail-dot.svg" alt=""><span><b>Service Type</b><small>--</small></span></div>
-<div class="pb-detail"><img src="/assets/figma-detail-dot.svg" alt=""><span><b>Drip Feed</b><small>--</small></span></div>
-</div>
-</aside>
-</div>
-<section class="pb-recent">
-<div class="pb-card-heading">
-<h3>Recent Orders</h3>
-<a href="/orders.html">View all</a>
-</div>
-<div class="pb-table-scroll" tabindex="0" role="region" aria-label="Recent orders table">
-<table class="pb-table">
-<thead><tr><th>ORDER</th><th>STATUS</th><th>TIME</th><th>ACTIONS</th></tr></thead>
-<tbody>
-<tr><td>#1248 Instagram Followers</td><td class="pb-completed">Completed</td><td>06 Oct 2026 11:32 AM</td><td><a class="pb-refill" href="/order-detail.html">Refill</a></td></tr>
-<tr><td>#1247 TikTok Views</td><td class="pb-processing">Processing</td><td>06 Oct 2026 10:18 AM</td><td><a class="pb-cancel" href="/order-detail.html">Cancel</a></td></tr>
-<tr><td>#1246 YouTube Views</td><td class="pb-pending">Pending</td><td>06 Oct 2026 09:50 AM</td><td><a class="pb-cancel" href="/order-detail.html">Cancel</a></td></tr>
-</tbody>
-</table>
-</div>
-</section>
-</div>
-</main>
+
+<aside class="pb-sidebar"><div class="pb-side-brand"><strong><span>SMM</span>Panel</strong><small>Prime Boostly</small></div><nav><a href="/dashboard.html">Dashboard</a><a class="active" href="/dashboard.html?mode=new">New Order</a><a href="/orders.html">Orders</a><a href="/order-history.html">Order History</a><a href="/add-funds.html">Add Funds</a><a href="/support.html">Support</a><a href="/settings.html">Settings</a></nav><a class="logout" href="/login.html" data-auth-logout>Log out</a></aside>
+<main class="pb-dashboard"><div class="pb-dashboard-inner">
+<header class="pb-dashboard-header"><a class="brand figma-brand" href="/" aria-label="PrimeBoostly home"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a><a class="menu" href="/mobile-menu.html" aria-label="Open navigation">☰</a></header>
+<section class="pb-metrics" aria-label="Account metrics"><article><small>Your Balance</small><b>₦125,500.00</b></article><article><small>Total Orders</small><b>1,248</b></article><article><small>Pending Orders</small><b>18</b></article><article><small>Completed Orders</small><b>1,201</b></article></section>
+<section class="pb-category" aria-labelledby="category-heading"><h2 id="category-heading">Select Category</h2><div class="pb-platforms" aria-label="Platform filters"><button class="fb" type="button" data-platform="Facebook" aria-label="Facebook" aria-pressed="false">FB</button><button class="ig" type="button" data-platform="Instagram" aria-label="Instagram" aria-pressed="false">IG</button><button class="yt" type="button" data-platform="YouTube" aria-label="YouTube" aria-pressed="false">YT</button><button class="x" type="button" data-platform="X" aria-label="X" aria-pressed="false">X</button><button class="tt" type="button" data-platform="TikTok" aria-label="TikTok" aria-pressed="false">TT</button><button class="tg" type="button" data-platform="Telegram" aria-label="Telegram" aria-pressed="false">TG</button><button class="in" type="button" data-platform="LinkedIn" aria-label="LinkedIn" aria-pressed="false">IN</button><button class="sp" type="button" data-platform="Spotify" aria-label="Spotify" aria-pressed="false">SP</button></div></section>
+<nav class="pb-order-tabs" aria-label="Order mode"><a class="active" href="/dashboard.html?mode=new" data-order-mode="new" aria-current="page" aria-controls="new-order">New Order</a><a href="/dashboard.html?mode=mass" data-order-mode="mass" aria-controls="mass-order">Mass Order</a><a href="/dashboard.html?mode=favorite" data-order-mode="favorite" aria-controls="favorite-order">Favorite</a></nav>
+<div class="pb-workspace"><section class="pb-order-form" id="new-order" data-order-panel="new" aria-labelledby="order-heading"><div class="pb-card-heading"><h3 id="order-heading">New Order</h3><a href="/services.html">Browse services</a></div><label class="pb-field"><span>Provider</span><select aria-label="Provider"><option>Mercury</option></select></label><label class="pb-field"><span>Category</span><select aria-label="Category" data-category-select><option>Select a category</option></select></label><label class="pb-field"><span>Service</span><select aria-label="Service"><option>Select a service</option></select></label><label class="pb-field"><span>Link</span><input type="url" aria-label="Link" placeholder="Enter your link here"></label><label class="pb-field"><span>Quantity</span><input aria-label="Quantity" inputmode="numeric" value="0"></label><div class="pb-charge"><span>Charge</span><strong>₦0.00</strong></div><label class="pb-confirm"><input type="checkbox"><span>Yes, i have confirmed the order!</span></label><a class="pb-submit" href="/orders.html">Submit Order</a></section>
+<section class="pb-order-form pb-mode-panel" id="mass-order" data-order-panel="mass" hidden aria-labelledby="mass-heading"><h3 id="mass-heading">Mass Order</h3><p>Browse available services before preparing your orders.</p><p>This preview does not support bulk submission yet.</p><a class="pb-submit" href="/services.html">Browse services</a><a href="/dashboard.html?mode=new" data-return-new>Return to New Order</a></section>
+<section class="pb-order-form pb-mode-panel" id="favorite-order" data-order-panel="favorite" hidden aria-labelledby="favorite-heading"><h3 id="favorite-heading">Favorite Services</h3><p>No favorite services are connected to this preview.</p><a class="pb-submit" href="/services.html">Explore services</a><a href="/dashboard.html?mode=new" data-return-new>Return to New Order</a></section>
+<aside class="pb-service-details"><h3>Service Details</h3><p>Select a service to preview its description, example link, and delivery details.</p><div class="pb-description">—</div><div class="pb-example"><b>Example Link:</b><span>--</span></div><div class="pb-detail-list"><div class="pb-detail"><img src="/assets/figma-detail-dot.svg" alt=""><span><b>Min / Max</b><small>--</small></span></div><div class="pb-detail"><img src="/assets/figma-detail-dot.svg" alt=""><span><b>Rate / 1k</b><small>--</small></span></div><div class="pb-detail"><img src="/assets/figma-detail-dot.svg" alt=""><span><b>Speed</b><small>--</small></span></div><div class="pb-detail"><img src="/assets/figma-detail-dot.svg" alt=""><span><b>Refill</b><small>--</small></span></div><div class="pb-detail"><img src="/assets/figma-detail-dot.svg" alt=""><span><b>Service Type</b><small>--</small></span></div><div class="pb-detail"><img src="/assets/figma-detail-dot.svg" alt=""><span><b>Drip Feed</b><small>--</small></span></div></div></aside></div>
+<section class="pb-recent"><div class="pb-card-heading"><h3>Recent Orders</h3><a href="/orders.html">View all</a></div><div class="pb-table-scroll" tabindex="0" role="region" aria-label="Recent orders table"><table class="pb-table"><thead><tr><th>ORDER</th><th>STATUS</th><th>TIME</th><th>ACTIONS</th></tr></thead><tbody><tr><td>#1248 Instagram Followers</td><td class="pb-completed">Completed</td><td>06 Oct 2026 11:32 AM</td><td><a class="pb-refill" href="/order-detail.html">Refill</a></td></tr><tr><td>#1247 TikTok Views</td><td class="pb-processing">Processing</td><td>06 Oct 2026 10:18 AM</td><td><a class="pb-cancel" href="/order-detail.html">Cancel</a></td></tr><tr><td>#1246 YouTube Views</td><td class="pb-pending">Pending</td><td>06 Oct 2026 09:50 AM</td><td><a class="pb-cancel" href="/order-detail.html">Cancel</a></td></tr></tbody></table></div></section>
+</div></main>
 </body>
 </html>
