@@ -23,9 +23,12 @@
   const navIcons={Home:'home',Services:'grid',Order:'plus',Orders:'orders',Profile:'user'};
   document.querySelectorAll('.pb-primary-nav').forEach(nav=>{
     nav.querySelectorAll('a').forEach(a=>{
-      const label=Object.keys(navIcons).find(k=>a.textContent.trim()===k)||a.textContent.trim();
+      const label=Object.keys(navIcons).find(k=>a.querySelector('span:last-child')?.textContent.trim()===k||a.textContent.trim()===k)||a.textContent.trim();
       let target=new URL(a.href);let current=new URL(location.href);
-      const active=target.pathname===current.pathname && (label!=='Home'||!current.searchParams.has('mode')) && (label!=='Order'||current.searchParams.has('mode'));
+      const route=current.pathname.replace(/\.html$/,'');
+      const normal=/normal-smm$/.test(route),ordering=normal&&['order','review','price','submitted'].includes(current.searchParams.get('step'));
+      const section=/dashboard$/.test(route)?(current.searchParams.has('mode')?'Order':'Home'):/order-detail$|order-history$|refund-confirmation$|orders$/.test(route)?'Orders':/services$|services-search$|global-search$/.test(route)||normal&&!ordering?'Services':ordering?'Order':'Profile';
+      const active=label===section;
       a.classList.toggle('active',active);a.removeAttribute('aria-current');if(active)a.setAttribute('aria-current','page');
       a.replaceChildren();const i=document.createElement('span');icon(i,navIcons[label]);const text=document.createElement('span');text.textContent=label;a.append(i,text);
     });
@@ -38,8 +41,9 @@
     else if(c.some(x=>x.endsWith('-settings')))name='settings';
     else if(c.some(x=>x.endsWith('-profile')))name='user';
     else if(c.some(x=>x.endsWith('-close')))name='close';
-    else if(c.some(x=>x.endsWith('-search-icon')))name='search';
-    else if(c.some(x=>x.endsWith('-info')||x.endsWith('-info-icon')))name='info';
+    else if(c.some(x=>x.endsWith('-search-icon'))||n.matches('[data-orders-search-button]'))name=n.getAttribute('aria-label')?.startsWith('Back')?'back':'search';
+    else if(c.some(x=>x.endsWith('-menu')))name='grid';
+    else if(n.tagName==='SPAN'&&c.some(x=>x.endsWith('-info')||x.endsWith('-info-icon')))name='info';
     else if(c.some(x=>x.endsWith('-arrow')||x.endsWith('-row-arrow'))&&n.textContent.trim()==='›')name='chevron';
     if(name){const span=document.createElement('span');icon(span,name);n.replaceChildren(span);}
     const status=n.textContent.trim().toLowerCase();
@@ -63,4 +67,24 @@
     document.querySelectorAll(`.${prefix}-tabs span`).forEach(span=>{const b=document.createElement('button');b.type='button';b.className=span.className;b.textContent=span.textContent;b.classList.toggle('active',span.className==='all');b.setAttribute('aria-pressed',String(span.className==='all'));span.replaceWith(b);b.onclick=()=>{filter=b.classList[0];b.parentElement.querySelectorAll('button').forEach(n=>{n.classList.toggle('active',n===b);n.setAttribute('aria-pressed',String(n===b))});refresh()}});
   }
   document.addEventListener('click',e=>{const a=e.target.closest('a[aria-disabled=true]');if(a)e.preventDefault()});
+})();
+/* Empty service/search states use existing routes, never fake catalog data. */
+(() => {
+  const search=document.querySelector('[data-service-search]');
+  if(search){
+    const empty=document.createElement('div');empty.className='pb-empty';empty.hidden=true;empty.innerHTML='<strong>No services found</strong><p>Try a different platform or service name.</p><button class="pb-primary-button" type="button">Clear search</button>';
+    search.closest('.pb-page-content')?.append(empty);
+    const update=()=>empty.hidden=[...document.querySelectorAll('[data-search-item]')].some(n=>!n.hidden);
+    search.addEventListener('input',update);empty.querySelector('button').onclick=()=>{search.value='';search.dispatchEvent(new Event('input'));search.focus()};
+  }
+  const screen=document.querySelector('.nsm-screen[data-screen=services]');
+  screen?.querySelectorAll('.is-placeholder').forEach(n=>n.hidden=true);
+  const unavailable=screen&&[...screen.querySelectorAll('[data-provider-service]')].every(n=>n.getAttribute('aria-disabled')==='true');
+  if(unavailable){screen.querySelectorAll('[data-provider-service]').forEach(n=>n.hidden=true);const empty=document.createElement('div');empty.className='pb-empty';empty.innerHTML='<strong>No services available yet</strong><p>Choose another platform or check back for available services.</p><a href="/normal-smm.html">Choose a platform</a>';screen.querySelector('.pb-page-content')?.append(empty)}
+  const quantity=document.querySelector('#nsm-quantity');
+  const params=new URLSearchParams(location.search);const min=params.get('min'),max=params.get('max'),rate=Number(params.get('rate'));
+  if(quantity){const help=document.createElement('p');help.id='pb-quantity-help';help.textContent=[min?`Minimum ${Number(min).toLocaleString()}`:'',max?`Maximum ${Number(max).toLocaleString()}`:''].filter(Boolean).join(' · ')||'Choose a service to see its quantity limits.';quantity.closest('.nsm-field')?.append(help);quantity.setAttribute('aria-describedby',help.id);quantity.step='1';}
+  const priceRows=[...document.querySelectorAll('[data-review-price]')];
+  function estimate(){const q=Number(quantity?.value||params.get('quantity'));const total=Number.isFinite(rate)&&rate>0&&q>0?rate*q/1000:null;priceRows.forEach(n=>n.textContent=total===null?'Shown before confirmation':`₦${total.toLocaleString('en-NG',{minimumFractionDigits:2,maximumFractionDigits:2})} estimated`)}
+  quantity?.addEventListener('input',estimate);estimate();
 })();

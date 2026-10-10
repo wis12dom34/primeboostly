@@ -121,7 +121,7 @@
       return url.pathname + url.search;
     };
 
-    document.querySelectorAll('[data-selected-platform]').forEach(node => {
+    document.querySelectorAll('span[data-selected-platform]').forEach(node => {
       node.textContent = platformLabel;
     });
 
@@ -148,7 +148,7 @@
       : 'Price is calculated after you select a platform and quantity.';
     const readyFoot = readySection?.querySelector('.ordrv2-foot');
     if (readyFoot) readyFoot.textContent = selectedPlatform
-      ? 'Entered order details appear here at runtime.'
+      ? 'Check your profile link and quantity before continuing.'
       : 'Enter your details before reviewing the order';
 
     const selectorBack = document.querySelector('.order-v2 .orv2-back');
@@ -263,6 +263,5 @@
   };
 
   window.addEventListener('popstate', readMode);
-  window.addEventListener('resize', readMode);
   readMode();
 })();

@@ -173,7 +173,7 @@
     const q = Number(quantityInput?.value);
     const minOkay = !serviceMin || q >= Number(serviceMin);
     const maxOkay = !serviceMax || q <= Number(serviceMax);
-    const ready = Boolean(profileInput?.value.trim()) && q > 0 && minOkay && maxOkay;
+    const ready = Boolean(profileInput?.value.trim()) && profileInput.checkValidity() && Number.isInteger(q) && q > 0 && minOkay && maxOkay;
     reviewButton.disabled = !ready;
     if (!profileInput?.value.trim() || !(q > 0)) {
       reviewButton.textContent = 'Enter details to review';

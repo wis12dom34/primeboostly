@@ -59,4 +59,9 @@
   setRow('profile', profile);
   setRow('quantity', quantity);
   setRow('price', 'Shown after confirmation');
+  setRow('id', params.get('orderId') || '—');
+  setRow('initial', params.get('initial') || '—');
+  setRow('remaining', params.get('remaining') || '—');
+  const created = params.get('created');
+  setRow('created', created && Number.isFinite(Date.parse(created)) ? new Date(created).toLocaleString('en-NG') : '—');
 })();
