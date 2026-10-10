@@ -94,13 +94,28 @@
   }
   if (quantityInput) quantityInput.value = quantity;
 
+  const currentProfile = () => profileInput?.value.trim() || profile;
+  const currentQuantity = () => quantityInput?.value.trim() || quantity;
+
   const makeUrl = nextStep => {
     const url = new URL('/normal-smm.html', location.origin);
     url.searchParams.set('platform', platform);
     url.searchParams.set('service', service.key);
     url.searchParams.set('step', nextStep);
-    const liveProfile = profileInput?.value.trim() || profile;
-    const liveQuantity = quantityInput?.value.trim() || quantity;
+    const liveProfile = currentProfile();
+    const liveQuantity = currentQuantity();
+    if (liveProfile) url.searchParams.set('profile', liveProfile);
+    if (liveQuantity) url.searchParams.set('quantity', liveQuantity);
+    return url.pathname + url.search;
+  };
+
+  const makeDetailUrl = () => {
+    const url = new URL('/order-detail.html', location.origin);
+    url.searchParams.set('type', 'normal');
+    url.searchParams.set('platform', platform);
+    url.searchParams.set('service', service.key);
+    const liveProfile = currentProfile();
+    const liveQuantity = currentQuantity();
     if (liveProfile) url.searchParams.set('profile', liveProfile);
     if (liveQuantity) url.searchParams.set('quantity', liveQuantity);
     return url.pathname + url.search;
@@ -129,4 +144,9 @@
   if (priceBack) priceBack.href = makeUrl('review');
   const submitLink = document.querySelector('[data-submit-link]');
   if (submitLink) submitLink.href = makeUrl('submitted');
+  const submittedStatusLink = document.querySelector('[data-screen="submitted"] .nsm-primary');
+  if (submittedStatusLink) {
+    submittedStatusLink.href = makeDetailUrl();
+    submittedStatusLink.textContent = 'View order status';
+  }
 })();
