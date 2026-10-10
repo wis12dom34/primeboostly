@@ -1,72 +1,64 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Services · Prime Boostly Admin</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/admin-services.css">
-  <script src="/admin-services.js" defer></script>
-</head>
-<body class="admin-services-page">
-  <main class="services-desktop" data-figma-node="20:2">
-    <aside class="services-sidebar">
-      <a class="services-brand" href="/admin.html"><span><b>PRIME</b><strong>BOOSTLY</strong></span><small>Admin Panel</small></a>
-      <p class="services-section-label">OVERVIEW</p><a class="services-nav" href="/admin.html">Dashboard</a>
-      <p class="services-section-label">MANAGE SERVICE</p><a class="services-nav" href="/admin-add-service.html">Add Services</a><a class="services-nav active" href="/admin-services.html" aria-current="page">Show Services</a><a class="services-nav" href="/admin-categories.html">Categories</a><a class="services-nav" href="/admin-api-providers.html">API Providers</a>
-      <p class="services-section-label">MANAGE ORDERS</p><a class="services-nav" href="/admin-orders.html">All Orders</a><a class="services-nav" href="/admin-orders.html">Awaiting</a><a class="services-nav" href="/admin-orders.html">Pending</a><a class="services-nav" href="/admin-orders.html">Processing</a><a class="services-nav" href="/admin-orders.html">Completed</a><a class="services-nav" href="/admin-orders.html">Refunded</a>
-      <p class="services-section-label">MANAGE USER</p><a class="services-nav" href="/admin-users.html">All Users</a><a class="services-nav" href="/admin-send-email.html">Send Email</a>
-      <p class="services-section-label">PAYMENT SETTINGS</p><a class="services-nav" href="/admin-payments.html">Payment Methods</a><a class="services-nav" href="/admin-manual-gateway.html">Manual Gateway</a><a class="services-nav" href="/admin-deposit-requests.html">Deposit Request</a><a class="services-nav" href="/admin-payment-logs.html">Payment Log</a>
-      <p class="services-section-label">OPERATIONS</p><a class="services-nav" href="/admin-transactions.html">Transactions</a><a class="services-nav" href="/admin-support.html">Support Tickets</a>
-      <p class="services-section-label">CONTROLS</p><a class="services-nav" href="/admin-controls.html">Basic Controls</a><a class="services-nav" href="/admin-color-settings.html">Color Settings</a><a class="services-nav" href="/admin-plugins.html">Plugins</a><a class="services-nav" href="/admin-theme-content.html">Theme &amp; Content</a>
-    </aside>
-
-    <section class="services-content">
-      <header class="services-header">
-        <div class="services-heading"><h1>Services</h1><p>Manage live SMM services, rates, limits, providers, and visibility</p></div>
-        <div class="services-header-actions"><a class="services-notifications" href="/admin-notifications.html">Notifications</a><span class="services-admin-pill"><b>A</b><span>Admin</span></span></div>
-      </header>
-
-      <section class="services-metrics" aria-label="Service metrics">
-        <article class="services-metric active"><small>Active</small><strong>512</strong></article>
-        <article class="services-metric"><small>Hidden</small><strong>18</strong></article>
-        <article class="services-metric"><small>Out of sync</small><strong class="warning">7</strong></article>
-        <article class="services-metric"><small>Providers</small><strong>12</strong></article>
-      </section>
-
-      <div class="services-section-title"><h2>Service Catalogue</h2><a class="services-add-secondary" href="/admin-add-service.html">Add Service</a></div>
-
-      <form class="services-filters" data-services-filter>
-        <label class="services-field search"><span>Search</span><input type="search" value="Service ID or name" data-service-search aria-label="Search services"></label>
-        <label class="services-field"><span>Provider</span><select data-service-provider><option value="all">All providers</option><option>Mercury</option><option>Atlas</option><option>Nova</option></select></label>
-        <label class="services-field"><span>Category</span><select data-service-category><option value="all">All categories</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Telegram</option></select></label>
-        <button class="services-search-button" type="submit">Search</button>
-      </form>
-
-      <section class="services-table-card">
-        <div class="services-table-head"><span>ID</span><span>SERVICE</span><span>PROVIDER</span><span>RATE / 1K</span><span>MIN / MAX</span><span>STATUS</span><span>ACTION</span></div>
-        <div class="services-row" data-service-row data-id="101" data-name="Instagram Followers | Fast" data-provider="Mercury" data-category="Instagram"><span>101</span><span>Instagram Followers | Fast</span><span>Mercury</span><span>₦1,850</span><span>100 / 100K</span><span class="status-cell"><b class="service-badge active">Active</b></span><a href="/admin-add-service.html?service=101">Edit</a></div>
-        <div class="services-row" data-service-row data-id="217" data-name="TikTok Views | Instant" data-provider="Atlas" data-category="TikTok"><span>217</span><span>TikTok Views | Instant</span><span>Atlas</span><span>₦720</span><span>100 / 1M</span><span class="status-cell"><b class="service-badge active">Active</b></span><a href="/admin-add-service.html?service=217">Edit</a></div>
-        <div class="services-row" data-service-row data-id="344" data-name="YouTube Views | HQ" data-provider="Mercury" data-category="YouTube"><span>344</span><span>YouTube Views | HQ</span><span>Mercury</span><span>₦1,200</span><span>100 / 500K</span><span class="status-cell"><b class="service-badge neutral">Hidden</b></span><a href="/admin-add-service.html?service=344">Edit</a></div>
-        <div class="services-row" data-service-row data-id="418" data-name="Telegram Members" data-provider="Nova" data-category="Telegram"><span>418</span><span>Telegram Members</span><span>Nova</span><span>₦2,150</span><span>50 / 100K</span><span class="status-cell"><b class="service-badge warning">Sync issue</b></span><a href="/admin-add-service.html?service=418">Review</a></div>
-        <p class="services-empty" data-services-empty hidden>No services match these filters.</p>
-      </section>
-    </section>
-  </main>
-
-  <main class="services-mobile" data-figma-node="22:2">
-    <header class="services-mobile-head"><a class="services-mobile-brand" href="/admin.html"><span><b>PRIME</b><strong>BOOSTLY</strong></span><small>Admin Panel</small></a><a class="services-mobile-menu" href="/admin-mobile-menu.html" aria-label="Open admin menu">☰</a></header>
-    <h1>Services</h1>
-    <p class="services-mobile-lead">Manage live SMM services and visibility.</p>
-    <section class="services-mobile-stats"><article class="mobile-stat active"><small>Active</small><strong>512</strong></article><article class="mobile-stat"><small>Issues</small><strong>7</strong></article></section>
-    <label class="services-mobile-search"><span>Search</span><input type="search" value="Service ID or name" data-service-search aria-label="Search services"></label>
-    <section class="services-mobile-list">
-      <a class="mobile-service-card" href="/admin-add-service.html?service=101" data-service-card data-id="101" data-name="Instagram Followers | Fast" data-provider="Mercury" data-category="Instagram"><div><h2>Instagram Followers | Fast</h2><b class="service-badge active">Active</b></div><p>Mercury · ₦1,850 / 1K</p><small>Min 100 · Max 100K</small></a>
-      <a class="mobile-service-card" href="/admin-add-service.html?service=217" data-service-card data-id="217" data-name="TikTok Views | Instant" data-provider="Atlas" data-category="TikTok"><div><h2>TikTok Views | Instant</h2><b class="service-badge active">Active</b></div><p>Atlas · ₦720 / 1K</p><small>Min 100 · Max 1M</small></a>
-      <a class="mobile-service-card" href="/admin-add-service.html?service=344" data-service-card data-id="344" data-name="YouTube Views | HQ" data-provider="Mercury" data-category="YouTube"><div><h2>YouTube Views | HQ</h2><b class="service-badge neutral">Hidden</b></div><p>Mercury · ₦1,200 / 1K</p><small>Min 100 · Max 500K</small></a>
-      <p class="services-empty" data-services-empty hidden>No services match your search.</p>
-    </section>
-    <a class="services-mobile-add" href="/admin-add-service.html">Add Service</a>
-  </main>
-</body>
-</html>
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><link href="/admin-preview-assets/admin/css/theme.css" rel="stylesheet"/><link href="/admin-preview-assets/admin/css/style.css" rel="stylesheet"/><link href="/admin-preview-assets/admin/css/select2.min.css" rel="stylesheet"/><link href="/admin-preview-assets/admin/css/custom.css" rel="stylesheet"/><title>PrimeBoostly Admin Preview</title></head><body class="pba-admin"><div data-header-position="fixed" data-layout="vertical" data-sidebar-position="fixed" data-sidebartype="full" id="main-wrapper"><header class="topbar"><nav class="navbar top-navbar navbar-expand-md"><div class="navbar-header"><a class="nav-toggler d-block d-md-none" href="#"><i data-feather="menu"></i></a><div class="navbar-brand"><a href="/admin.html"><span class="logo-text"><span class="pba-brand-text">PrimeBoostly</span></span></a></div><a aria-label="Account menu" class="topbartoggler d-block d-md-none" data-target="#navbarSupportedContent" data-toggle="collapse" href="#"><i data-feather="more-horizontal"></i></a></div><div class="navbar-collapse collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto"><li><a class="nav-link" href="#">Admin account</a></li></ul></div></nav></header><aside class="left-sidebar" data-sidebarbg="skin6"><div class="scroll-sidebar"><nav class="sidebar-nav"><ul id="sidebarnav"><li class="sidebar-item"><a class="sidebar-link" href="/admin.html"><i data-feather="home"></i><span class="hide-menu">Dashboard</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-api-providers.html"><i data-feather="link"></i><span class="hide-menu">API providers</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-orders.html"><i data-feather="clipboard"></i><span class="hide-menu">Orders</span></a></li><li class="sidebar-item selected"><a aria-current="page" class="sidebar-link" href="/admin-services.html"><i data-feather="grid"></i><span class="hide-menu">Services</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-users.html"><i data-feather="users"></i><span class="hide-menu">Customers</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-payment-logs.html"><i data-feather="credit-card"></i><span class="hide-menu">Payments</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-transactions.html"><i data-feather="repeat"></i><span class="hide-menu">Transactions</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-support.html"><i data-feather="message-square"></i><span class="hide-menu">Support tickets</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-controls.html"><i data-feather="settings"></i><span class="hide-menu">Settings</span></a></li></ul></nav></div></aside><main class="page-wrapper"><div class="page-breadcrumb"><div class="row"><div class="col-7"><h4 class="page-title text-truncate">Services</h4><ol class="breadcrumb"><li>Dashboard / Services</li></ol></div></div></div><div class="alert alert-info mx-4" role="note">UI preview · Sample data. API saving and payments are disabled.</div><div class="alert alert-info mx-4" hidden="" id="demo-result" role="status"></div><div class="page-header card"><form action="#" method="get" onsubmit="event.preventDefault()">
+<div class="row">
+<div class="col-md-4 col-xl-3">
+<div class="form-group">
+<label>Service</label>
+<input class="form-control" name="service" placeholder="Type Here" type="text" value=""/>
+</div>
+</div>
+<div class="col-md-4 col-xl-3">
+<div class="form-group">
+<label>Category</label>
+<select class="form-control statusfield" id="category" name="category">
+<option value="-1">All Category</option>
+<option value="example">Example category</option>
+</select>
+</div>
+</div>
+<div class="col-md-4 col-xl-2">
+<div class="form-group">
+<label>API provider</label>
+<select class="form-control statusfield" id="provider" name="provider">
+<option value="-1">All Provider</option>
+<option value="example">Example category</option>
+</select>
+</div>
+</div>
+<div class="col-md-4 col-xl-2">
+<div class="form-group">
+<label>Status</label>
+<select class="form-control" name="status">
+<option value="-1">All Status</option>
+<option value="1">Active</option>
+<option value="0">Inactive</option>
+</select>
+</div>
+</div>
+<div class="col-md-4 col-xl-2">
+<div class="form-group">
+<button class="btn btn-light w-100 w-sm-auto" type="submit"><i data-feather="search"></i> Search</button>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xl-12">
+<div class="d-flex justify-content-start justify-content-xl-end">
+<button class="btn btn-sm btn-primary mr-3" data-target="#qa-modal" data-toggle="modal" type="button">
+<span> Import Services</span>
+</button>
+<div class="dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn btn-dark btn-sm dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" type="button">
+<span><i data-feather="menu"></i> Action</span>
+</button>
+<div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
+<button class="dropdown-item" data-target="#all_active" data-toggle="modal" type="button">Active</button>
+<button class="dropdown-item" data-target="#all_deactive" data-toggle="modal" type="button">Inactive</button>
+<button class="dropdown-item" data-target="#delete" data-toggle="modal" type="button">Delete</button>
+<button class="dropdown-item" data-target="#priceModal" data-toggle="modal" type="button">Price Update</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</form></div><div class="card"><div class="card-body"><div class="table-responsive"><table class="categories-show-table table table-striped table-bordered"><thead class="thead-primary"><tr><th>Service</th><th>Category</th><th>Min / Max</th><th>Rate</th><th>Status</th><th>Action</th></tr></thead><tbody><tr><td>Instagram Followers</td><td>Instagram</td><td>100 / 10,000</td><td>₦1,850</td><td><span class="badge badge-success">Active</span></td><td><div class="dropdown"><a class="dropdown-toggle p-3" data-toggle="dropdown" href="#"><i data-feather="more-vertical"></i></a><div class="dropdown-menu"><a class="dropdown-item" href="/admin-add-service.html">Edit</a><button class="dropdown-item" data-target="#qa-modal" data-toggle="modal">Change status</button></div></div></td></tr></tbody></table></div></div></div><footer class="footer">PrimeBoostly admin · Preview</footer></main></div><div class="modal fade" id="qa-modal" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header bg-primary text-white"><h5 class="modal-title">Confirm status change</h5><button aria-label="Close" class="close" data-dismiss="modal">×</button></div><div class="modal-body"><p>Change the selected record status?</p></div><div class="modal-footer"><button class="btn btn-light" data-dismiss="modal">Cancel</button><button class="btn btn-primary" data-dismiss="modal">Change status</button></div></div></div></div><script src="/admin-preview-assets/global/js/jquery.min.js"></script><script src="/admin-preview-assets/global/js/popper.min.js"></script><script src="/admin-preview-assets/global/js/bootstrap.min.js"></script><script src="/admin-preview-assets/admin/js/feather.min.js"></script><script src="/admin-preview-assets/admin/js/perfect-scrollbar.jquery.min.js"></script><script src="/admin-preview-assets/admin/js/app-style-switcher.js"></script><script src="/admin-preview-assets/admin/js/admin-mart.js"></script><script src="/admin-preview-assets/admin/js/custom.js"></script><script>document.addEventListener('submit',function(e){e.preventDefault();var notice=document.getElementById('demo-result');notice.textContent='Preview only. This action is saved through your live cPanel admin.';notice.hidden=false;});</script></body></html>
