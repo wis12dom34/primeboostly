@@ -1,5 +1,10 @@
 .mobile-login-lead,.mobile-register-foot,.mobile-register-phone-label,.mobile-submit-label{display:none}
 
+/* Auth pages must never create horizontal scroll on mobile Safari. */
+html,body.auth-page{width:100%;max-width:100%;overflow-x:hidden}
+body.auth-page *{box-sizing:border-box}
+.auth-page .auth-figma-shell,.auth-page .auth-form-panel,.auth-page .auth-form,.auth-page .auth-field,.auth-page .auth-field-row,.auth-page .mobile-stack-fields,.auth-page input,.auth-page button{max-width:100%}
+
 @media(min-width:901px){
   .auth-register-page .register-form-panel{padding-top:92px;gap:14px}
   .auth-register-page .register-form-panel .auth-panel-lead{min-height:40px}
@@ -10,9 +15,30 @@
 }
 
 @media(max-width:900px){
+  .auth-page .auth-figma-shell{width:100%;max-width:100vw;margin:0;overflow-x:hidden}
+  .auth-page .auth-form-panel{width:100%;max-width:420px;margin-left:auto;margin-right:auto;overflow:visible}
+  .auth-page .auth-figma-form{width:100%;max-width:100%}
+  .auth-page .auth-field-row{width:100%;max-width:100%;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .auth-page .auth-field-row .auth-field,.auth-page .auth-field,.auth-page .mobile-stack-fields{width:100%;min-width:0}
+  .auth-page .auth-field input{width:100%;min-width:0;max-width:100%}
+
   .auth-login-page .desktop-login-lead{display:none}
-  .auth-login-page .mobile-login-lead{display:block;width:auto;min-height:0;font:400 13px/1.4 Nunito,Inter,sans-serif;text-align:center;white-space:nowrap}
+  .auth-login-page .mobile-login-lead{display:block;width:auto;min-height:0;font:400 13px/1.4 Nunito,Inter,sans-serif;text-align:center;white-space:normal}
+  .auth-login-page .auth-figma-shell{padding-left:16px;padding-right:16px}
+  .auth-login-page .auth-form-panel{padding-left:0;padding-right:0}
+  .auth-login-page .auth-inline-foot{width:100%}
+
   .auth-register-page .desktop-register-foot,.auth-register-page .desktop-register-phone-label,.auth-register-page .desktop-submit-label{display:none}
   .auth-register-page .mobile-register-foot,.auth-register-page .mobile-register-phone-label,.auth-register-page .mobile-submit-label{display:inline}
   .auth-register-page .mobile-register-foot{display:block}
+  .auth-register-page .auth-figma-shell{padding-left:16px;padding-right:16px}
+  .auth-register-page .auth-form-panel{width:100%;max-width:420px}
+  .auth-register-page .register-figma-form{width:100%}
+  .auth-register-page .register-mobile-header{width:100%;max-width:100vw}
+}
+
+@media(max-width:420px){
+  .auth-register-page .auth-figma-shell{padding-left:14px;padding-right:14px}
+  .auth-register-page .auth-field-row{gap:8px}
+  .auth-register-page .auth-field input{padding-left:12px;padding-right:12px}
 }
