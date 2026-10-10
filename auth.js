@@ -22,20 +22,31 @@
   if(s){all('[data-auth-avatar]').forEach(el=>el.textContent=(s.username||s.email||'PB').slice(0,2).toUpperCase());all('[data-auth-name]').forEach(el=>el.textContent=s.username||s.email)}
   all('[data-auth-logout]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();drop(SESSION);const next=el.dataset.authLogoutNext;location.href=next&&next.startsWith('/')&&!next.startsWith('//')?next:'/login.html'}));
 
-  all('[data-auth-login]').forEach(form=>form.addEventListener('submit',async e=>{
-    e.preventDefault();clear(form);
-    const id=value(form,'identity'),pw=value(form,'password');
-    if(!id||!pw){error(form,'Enter your username/email and password.');return}
-    loading(form,true,'Signing in…');
-    try{
-      const a=read(ACCOUNT);
-      if(!a){error(form,'No preview account exists yet. Create an account first.');return}
-      const match=[a.username,a.email].some(v=>(v||'').toLowerCase()===id.toLowerCase());
-      if(!match||await hash(pw)!==a.passwordHash){error(form,'Incorrect username/email or password.');return}
-      const payload={username:a.username,email:a.email,firstName:a.firstName||'',lastName:a.lastName||'',loginAt:new Date().toISOString()};
-      drop(SESSION);write(SESSION,payload,$('[name=remember]',form)?.checked?localStorage:sessionStorage);location.href=nextUrl();
-    }catch{error(form,'Could not sign in. Please try again.')}finally{loading(form,false,'')}
-  }));
+  all('[data-auth-login]').forEach(form=>{
+    const params=new URLSearchParams(location.search);
+    const identity=$('[name="identity"]',form);
+    const account=read(ACCOUNT);
+    const hinted=params.get('identity');
+    if(identity&&!identity.value){identity.value=hinted||account?.email||account?.username||''}
+    if(params.get('created')==='1')success(form,'Account created successfully. Sign in to continue.');
+
+    form.addEventListener('submit',async e=>{
+      e.preventDefault();clear(form);
+      const id=value(form,'identity'),pw=value(form,'password');
+      if(!id||!pw){error(form,'Enter your username/email and password.');return}
+      loading(form,true,'Signing in…');
+      try{
+        const a=read(ACCOUNT);
+        if(!a){error(form,'No account exists on this preview yet. Create an account first.');return}
+        const match=[a.username,a.email].some(v=>(v||'').toLowerCase()===id.toLowerCase());
+        if(!match||await hash(pw)!==a.passwordHash){error(form,'Incorrect username/email or password.');return}
+        const payload={username:a.username,email:a.email,firstName:a.firstName||'',lastName:a.lastName||'',loginAt:new Date().toISOString()};
+        drop(SESSION);
+        write(SESSION,payload,$('[name=remember]',form)?.checked?localStorage:sessionStorage);
+        location.replace(nextUrl());
+      }catch{error(form,'Could not sign in. Please try again.')}finally{loading(form,false,'')}
+    });
+  });
 
   const reg=$('[data-auth-register]');
   if(reg)reg.addEventListener('submit',async e=>{
@@ -52,7 +63,10 @@
       const existing=read(ACCOUNT);
       if(existing&&((existing.email||'').toLowerCase()===em.toLowerCase()||(existing.username||'').toLowerCase()===u.toLowerCase())){error(reg,'That preview account already exists. Sign in instead.');return}
       const account={firstName,lastName,username:u,email:em,phone,passwordHash:await hash(pw),createdAt:new Date().toISOString()};
-      write(ACCOUNT,account);drop(SESSION);write(SESSION,{username:u,email:em,firstName,lastName,loginAt:new Date().toISOString()},sessionStorage);success(reg,'Account created. Opening your dashboard…');setTimeout(()=>location.href='/dashboard.html',450);
+      write(ACCOUNT,account);
+      drop(SESSION);
+      success(reg,'Account created. Taking you to login…');
+      setTimeout(()=>location.replace(`/login.html?created=1&identity=${encodeURIComponent(em)}`),450);
     }catch{error(reg,'Could not create the account. Please try again.')}finally{loading(reg,false,'')}
   });
 
@@ -65,7 +79,7 @@
     const t=makeToken();write(RESET,{email:a.email,token:t,requestedAt:Date.now()});
     success(reset,'Reset link prepared. Opening the password reset screen…');
     setTimeout(()=>location.href=`/reset-password.html?email=${encodeURIComponent(a.email)}&token=${encodeURIComponent(t)}`,350);
-  }));
+  });
 
   const change=$('[data-auth-new-password],[data-password-change]');
   if(change){
