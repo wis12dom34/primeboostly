@@ -35,16 +35,26 @@ A pre-existing order-flow bug selected `body[data-selected-platform]` along with
 - No document horizontal overflow, right-edge overflow or visible inputs below 16px in the layout checks. No page JavaScript errors.
 - Screenshots reviewed for major home, catalogue, form, order, wallet, transaction, support, profile, security, alert, auth and confirmation views. Desktop screenshots reviewed for Home, Services, Orders, Add funds, Support, Profile and Login.
 - Local disposable-account journey: protected-route redirect; signup→login; incorrect password; successful login; Nigeria platform/details/review/price/preview/details; funding steps; transaction search/empty/reset; notification filters; service search; Normal SMM limits/estimate/review/preview; logout and protected-route redirect.
-- `auth.js`, `paystack-checkout.js`, `customer-derived.js` and public `index.html` remained byte-for-byte unchanged.
+- `auth.js`, `paystack-checkout.js` and public `index.html` remained byte-for-byte unchanged. The existing preview ticket reply handler now renders replies in the visible mobile thread as well as the desktop thread.
 
 Run the repeatable local flow test with Playwright installed:
 
 ```sh
 node tests/customer-ui.cjs
 node tests/customer-navigation.cjs
+node tests/customer-buttons.cjs
 ```
 
 Use `CHROMIUM_EXECUTABLE_PATH` for an existing Chromium binary. The test serves the repository on localhost:8081 and uses a disposable browser account; it sends no real orders or payments.
+
+## Button follow-up
+
+- Shared 48px button targets, 44px icon/filter/link targets, readable labels, consistent secondary/danger styles and disabled states. Small-screen Home actions retain 44px dimensions.
+- Payment filter buttons no longer inherit status-chip dimensions. Clear filters restores both records and the active tab. Filter labels no longer wrap inside narrow fixed widths.
+- Normal SMM Order tabs point to New Order. Header icon controls have accessible names. The hidden new-password field is visible and the Update password preview flow can continue. Password visibility uses outline eye icons and a 44px target; notification toggles are no longer nested inside links.
+- Review CTAs use the shorter “Check price” label. Customer refund actions route to existing order support and order history rather than an admin screen. Manual payment submission is explicitly unavailable in the static preview, with an existing wallet-support entry point.
+- The mobile support reply button now displays its local preview reply in the visible conversation.
+- Button QA covers 56 screen/query variants at the 10 listed widths, accessible names, touch targets, customer destinations and horizontal overflow, plus filter reset, toggles, password visibility, order navigation, support reply and payment/refund help. Screenshots reviewed at 393×852.
 
 ## Limits
 

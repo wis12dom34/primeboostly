@@ -34,7 +34,9 @@
 </div>
 <label class="flow-field manual-reference"><span>Transaction Reference</span><input name="reference" placeholder="Bank transfer reference"/></label>
 <label class="manual-upload"><b><span class="desktop-upload-copy pb-copy">Upload payment screenshot / receipt</span></b><small>PNG or JPG · max 10MB</small><input accept="image/png,image/jpeg" name="proof" type="file"/></label>
-<button class="flow-button" type="button">Confirm Now</button>
+<p id="manual-preview-note">Payment proof submission is unavailable in this preview. Contact support for help with an existing payment.</p>
+<button aria-describedby="manual-preview-note" class="flow-button pb-primary-button" disabled="" type="button">Submit payment proof</button>
+<a class="pb-secondary-button" href="/support-flow.html?type=wallet">Get payment help</a>
 </form>
 <nav aria-label="Primary navigation" class="pb-primary-nav"><a href="/dashboard.html">Home</a><a href="/services.html">Services</a><a href="/dashboard.html?mode=new">Order</a><a href="/orders.html">Orders</a><a href="/settings.html">Profile</a></nav></main>
 </body>

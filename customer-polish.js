@@ -24,7 +24,8 @@
   document.querySelectorAll('.pb-primary-nav').forEach(nav=>{
     nav.querySelectorAll('a').forEach(a=>{
       const label=Object.keys(navIcons).find(k=>a.querySelector('span:last-child')?.textContent.trim()===k||a.textContent.trim()===k)||a.textContent.trim();
-      let target=new URL(a.href);let current=new URL(location.href);
+      if(a.getAttribute('href')==='#')a.href='/dashboard.html?mode=new';
+      let current=new URL(location.href);
       const route=current.pathname.replace(/\.html$/,'');
       const normal=/normal-smm$/.test(route),ordering=normal&&['order','review','price','submitted'].includes(current.searchParams.get('step'));
       const section=/dashboard$/.test(route)?(current.searchParams.has('mode')?'Order':'Home'):/order-detail$|order-history$|refund-confirmation$|orders$/.test(route)?'Orders':/services$|services-search$|global-search$/.test(route)||normal&&!ordering?'Services':ordering?'Order':'Profile';
@@ -45,7 +46,7 @@
     else if(c.some(x=>x.endsWith('-menu')))name='grid';
     else if(n.tagName==='SPAN'&&c.some(x=>x.endsWith('-info')||x.endsWith('-info-icon')))name='info';
     else if(c.some(x=>x.endsWith('-arrow')||x.endsWith('-row-arrow'))&&n.textContent.trim()==='›')name='chevron';
-    if(name){const span=document.createElement('span');icon(span,name);n.replaceChildren(span);}
+    if(name){if(n.matches('a,button')&&!n.getAttribute('aria-label'))n.setAttribute('aria-label',({back:'Back',help:'Help',settings:'Settings',user:'Profile',close:'Close',search:'Search',grid:'Open menu'})[name]||name);const span=document.createElement('span');icon(span,name);n.replaceChildren(span);}
     const status=n.textContent.trim().toLowerCase();
     if(['pending','processing','completed','cancelled','refunded','failed'].includes(status)&&!['A','BUTTON','H1','H2'].includes(n.tagName)){
       n.classList.add('pb-status');n.dataset.status=status;
@@ -62,11 +63,11 @@
     const search=document.querySelector(`.${prefix}-search div`);
     const cards=[...document.querySelectorAll(prefix==='transactions-mobile'?'.transactions-mobile-card':'.fund-history-card')];
     let term='',filter='all';
-    function refresh(){let count=0;cards.forEach(card=>{const text=card.textContent.toLowerCase();const credit=card.querySelector('.credit-amount');const debit=card.querySelector('.debit-amount');const match=(!term||text.includes(term))&&(filter==='all'||filter==='credit'&&credit||filter==='debit'&&debit||filter==='complete'&&text.includes('completed')||filter==='pending'&&text.includes('pending')||filter==='cancel'&&text.includes('cancel'));card.hidden=!match;if(match)count++});let empty=document.querySelector(`[data-empty-for="${prefix}"]`);if(!empty){empty=document.createElement('div');empty.className='pb-empty';empty.dataset.emptyFor=prefix;const title=document.createElement('strong');title.textContent='No transactions found';const copy=document.createElement('p');copy.textContent='Try another search or view all transactions.';const button=document.createElement('button');button.textContent='Clear filters';button.className='pb-primary-button';button.onclick=()=>{term='';filter='all';if(search?.querySelector('input'))search.querySelector('input').value='';refresh()};empty.append(title,copy,button);cards.at(-1)?.after(empty)}empty.hidden=count>0;}
+    function refresh(){let count=0;cards.forEach(card=>{const text=card.textContent.toLowerCase();const credit=card.querySelector('.credit-amount');const debit=card.querySelector('.debit-amount');const match=(!term||text.includes(term))&&(filter==='all'||filter==='credit'&&credit||filter==='debit'&&debit||filter==='complete'&&text.includes('completed')||filter==='pending'&&text.includes('pending')||filter==='cancel'&&text.includes('cancel'));card.hidden=!match;if(match)count++});let empty=document.querySelector(`[data-empty-for="${prefix}"]`);if(!empty){empty=document.createElement('div');empty.className='pb-empty';empty.dataset.emptyFor=prefix;const title=document.createElement('strong');title.textContent='No transactions found';const copy=document.createElement('p');copy.textContent='Try another search or view all transactions.';const button=document.createElement('button');button.textContent='Clear filters';button.className='pb-primary-button';button.onclick=()=>{term='';filter='all';document.querySelectorAll(`.${prefix}-tabs button`).forEach(n=>{const active=n.classList.contains('all');n.classList.toggle('active',active);n.setAttribute('aria-pressed',String(active))});if(search?.querySelector('input'))search.querySelector('input').value='';refresh()};empty.append(title,copy,button);cards.at(-1)?.after(empty)}empty.hidden=count>0;}
     if(search){const input=document.createElement('input');input.type='search';input.placeholder=search.textContent.trim();input.setAttribute('aria-label','Search transactions');search.replaceChildren(input);input.addEventListener('input',()=>{term=input.value.trim().toLowerCase();refresh()})}
-    document.querySelectorAll(`.${prefix}-tabs span`).forEach(span=>{const b=document.createElement('button');b.type='button';b.className=span.className;b.textContent=span.textContent;b.classList.toggle('active',span.className==='all');b.setAttribute('aria-pressed',String(span.className==='all'));span.replaceWith(b);b.onclick=()=>{filter=b.classList[0];b.parentElement.querySelectorAll('button').forEach(n=>{n.classList.toggle('active',n===b);n.setAttribute('aria-pressed',String(n===b))});refresh()}});
+    document.querySelectorAll(`.${prefix}-tabs span`).forEach(span=>{const b=document.createElement('button');b.type='button';b.className=span.className;b.classList.remove('pb-status');b.removeAttribute('data-status');b.textContent=span.textContent;b.classList.toggle('active',span.className==='all');b.setAttribute('aria-pressed',String(span.className==='all'));span.replaceWith(b);b.onclick=()=>{filter=b.classList[0];b.parentElement.querySelectorAll('button').forEach(n=>{n.classList.toggle('active',n===b);n.setAttribute('aria-pressed',String(n===b))});refresh()}});
   }
-  document.addEventListener('click',e=>{const a=e.target.closest('a[aria-disabled=true]');if(a)e.preventDefault()});
+  document.addEventListener('click',e=>{const a=e.target.closest('a[aria-disabled=true]');if(a){e.preventDefault();e.stopImmediatePropagation()}},true);
 })();
 /* Empty service/search states use existing routes, never fake catalog data. */
 (() => {

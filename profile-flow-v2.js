@@ -11,7 +11,7 @@
   if (back) back.href = ['transactions','currency'].includes(view) ? '/profile-flow.html?view=wallet' : '/settings.html';
 
   const row = ({title, copy, action, href = '#', green = false, toggle}) => {
-    const wrap = document.createElement(href === '#' && toggle === undefined ? 'div' : 'a');
+    const wrap = document.createElement(href === '#' ? 'div' : 'a');
     wrap.className = 'pfv2-row';
     if (wrap.tagName === 'A') wrap.href = href;
     const text = document.createElement('span');

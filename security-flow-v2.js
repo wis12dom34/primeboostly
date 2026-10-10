@@ -66,7 +66,7 @@
       toggle.type = 'button';
       toggle.className = 'secv2-toggle';
       toggle.setAttribute('aria-label', `Show ${rowTitle.toLowerCase()}`);
-      const img = document.createElement('img'); img.alt = ''; img.src = '/assets/v2-toggle-on.svg';
+      const img = document.createElement('img'); img.alt = ''; img.src = '/assets/v2-eye.svg';
       toggle.appendChild(img);
       let showing = false;
       toggle.addEventListener('click', event => {
@@ -74,7 +74,7 @@
         event.stopPropagation();
         showing = !showing;
         input.type = showing ? 'text' : 'password';
-        img.src = showing ? '/assets/v2-toggle-off.svg' : '/assets/v2-toggle-on.svg';
+        img.src = showing ? '/assets/v2-eye-off.svg' : '/assets/v2-eye.svg';
         toggle.setAttribute('aria-label', `${showing ? 'Hide' : 'Show'} ${rowTitle.toLowerCase()}`);
         input.focus();
       });
@@ -114,7 +114,7 @@
     title.textContent = 'Password';
     back.href = '/profile-flow.html?view=security';
     const current = inputRow({title:'Current password',copy:'Required for production validation'});
-    const next = inputRow({title:'New password',copy:'Provided securely for production validation',hiddenInput:true,withToggle:true});
+    const next = inputRow({title:'New password',copy:'Provided securely for production validation',withToggle:true});
     const confirm = inputRow({title:'Confirm password',copy:'Required for production validation'});
     const submit = textRow({title:'Update password',copy:'Enter required fields first',action:'',href:'#',disabled:true});
     const sync = () => {
