@@ -1,0 +1,22 @@
+/* PrimeBoostly Logout V2 — Figma 44:6 and 44:27 */
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#fff}
+body.lov2-page{min-height:100vh;background:#fff;color:#0e1310;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,Arial,sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.lov2-screen{display:none}
+.lov2-screen.active{position:relative;width:min(393px,100%);height:852px;min-height:852px;margin:0 auto;background:#fff;overflow:hidden}
+.lov2-status{position:absolute;left:0;top:0;width:100%;height:44px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;background:#fff;color:#0e1310;font-size:14px;font-weight:600}.lov2-status-right{font-size:12px;white-space:pre}
+.lov2-top{position:absolute;left:20px;top:62px;width:353px;height:48px}.lov2-back{position:absolute;left:0;top:6px;width:36px;height:36px;border-radius:18px;background:#f2f6f2;display:grid;place-items:center;font-size:23px;font-weight:600}.lov2-top h1{position:absolute;left:0;top:11px;width:353px;margin:0;text-align:center;font-size:20px;line-height:24px;font-weight:700;pointer-events:none}
+.lov2-danger-icon{position:absolute;left:160.5px;top:160px;width:72px;height:72px;border-radius:36px;background:#fff0f0;color:#d12424;display:grid;place-items:center;font-size:28px;font-weight:700}
+.lov2-confirm-title{position:absolute;left:20px;top:258px;width:353px;margin:0;text-align:center;color:#0e1310;font-size:24px;line-height:29px;font-weight:700}
+.lov2-confirm-copy{position:absolute;left:32px;top:302px;width:329px;margin:0;text-align:center;color:#66736b;font-size:13px;line-height:17px;font-weight:400}
+.lov2-safe{position:absolute;left:20px;top:374px;width:353px;height:76px;border-radius:20px;background:#f2f6f2;padding:13px 16px;overflow:hidden}.lov2-safe strong{display:block;color:#0e1310;font-size:13px;line-height:16px;font-weight:600}.lov2-safe p{margin:5px 0 0;color:#66736b;font-size:10.5px;line-height:14px;font-weight:500}
+.lov2-cancel,.lov2-confirm{position:absolute;left:20px;width:353px;height:52px;border-radius:20px;display:grid;place-items:center;font-size:14px;font-weight:600}.lov2-cancel{top:478px;border:1px solid #e3ebe5;background:#fff;color:#0e1310}.lov2-confirm{top:542px;background:#d12424;color:#fff}
+
+.lov2-brand{position:absolute;left:157.5px;top:192px;width:78px;height:78px;border-radius:24px;background:#06331c;color:#fff;display:grid;place-items:center;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;font-size:25px;font-weight:700}
+.lov2-signed-title{position:absolute;left:20px;top:302px;width:353px;margin:0;text-align:center;color:#0e1310;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;font-size:26px;line-height:31px;font-weight:700}
+.lov2-signed-copy{position:absolute;left:20px;top:342px;width:353px;margin:0;text-align:center;color:#66736b;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;font-size:13px;line-height:16px;font-weight:400}
+.lov2-signin{position:absolute;left:20px;top:408px;width:353px;height:54px;border-radius:20px;background:#06331c;color:#fff;display:grid;place-items:center;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;font-size:15px;font-weight:600}
+.lov2-signed-foot{position:absolute;left:20px;top:480px;width:353px;margin:0;text-align:center;color:#66736b;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;font-size:11px;line-height:14px;font-weight:400}
+@media(max-width:392px){.lov2-screen.active{width:100%}.lov2-top,.lov2-confirm-title,.lov2-cancel,.lov2-confirm,.lov2-signin,.lov2-signed-title,.lov2-signed-copy,.lov2-signed-foot{max-width:calc(100vw - 40px)}.lov2-safe{width:calc(100vw - 40px)}.lov2-danger-icon{left:calc(50% - 36px)}.lov2-brand{left:calc(50% - 39px)}}
+@media(min-width:901px){body.lov2-page{background:#f7faf8}.lov2-screen.active{margin-top:24px;margin-bottom:24px;border-radius:44px;box-shadow:0 16px 45px rgba(6,51,28,.08)}}
