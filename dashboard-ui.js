@@ -5,6 +5,11 @@
   const modes = [...document.querySelectorAll('[data-order-mode]')];
   const panels = [...document.querySelectorAll('[data-order-panel]')];
 
+  const normalSmmCard = document.querySelector('.v2-service-normal');
+  const nigeriaFollowersCard = document.querySelector('.v2-service-real');
+  if (normalSmmCard) normalSmmCard.href = '/normal-smm.html';
+  if (nigeriaFollowersCard) nigeriaFollowersCard.href = '/dashboard.html?mode=new';
+
   function markPlatform(value) {
     platforms.forEach(button => {
       const selected = button.dataset.platform === value;
