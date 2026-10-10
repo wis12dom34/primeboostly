@@ -31,6 +31,7 @@ A pre-existing order-flow bug selected `body[data-selected-platform]` along with
 ## Verification
 
 - 54 screen/query variants captured at 393×852 and checked at 320, 360, 375, 390, 393, 414, 430, 440, 768 and 1280px.
+- Navigation regression: each visible bar stays fixed at the viewport bottom before and after document scrolling, with one visible bar, at least 44px link targets, and reserved content space across the same 10 viewport widths. The shared legacy positioning reset explicitly excludes navigation.
 - No document horizontal overflow, right-edge overflow or visible inputs below 16px in the layout checks. No page JavaScript errors.
 - Screenshots reviewed for major home, catalogue, form, order, wallet, transaction, support, profile, security, alert, auth and confirmation views. Desktop screenshots reviewed for Home, Services, Orders, Add funds, Support, Profile and Login.
 - Local disposable-account journey: protected-route redirect; signup→login; incorrect password; successful login; Nigeria platform/details/review/price/preview/details; funding steps; transaction search/empty/reset; notification filters; service search; Normal SMM limits/estimate/review/preview; logout and protected-route redirect.
@@ -40,6 +41,7 @@ Run the repeatable local flow test with Playwright installed:
 
 ```sh
 node tests/customer-ui.cjs
+node tests/customer-navigation.cjs
 ```
 
 Use `CHROMIUM_EXECUTABLE_PATH` for an existing Chromium binary. The test serves the repository on localhost:8081 and uses a disposable browser account; it sends no real orders or payments.
