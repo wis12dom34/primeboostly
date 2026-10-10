@@ -1,67 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <title>Notifications · PrimeBoostly</title>
-<link rel="stylesheet" href="/notifications-v2.css">
-<script src="/auth.js" defer></script>
-<script src="/notifications-v2.js" defer></script>
-</head>
-<body class="nv2-page" data-auth-protected="true">
-<main class="nv2" aria-label="Notification center">
-  <div class="nv2-status" aria-hidden="true"><span>9:41</span><span class="nv2-status-right">●  5G  ▰</span></div>
-  <section class="nv2-content">
-    <header class="nv2-top">
-      <a class="nv2-circle nv2-back" href="/dashboard.html" aria-label="Back">‹</a>
-      <h1 class="nv2-title">Notifications</h1>
-      <a class="nv2-circle nv2-settings" href="/profile-flow.html?view=notifications" aria-label="Notification settings">⚙</a>
-    </header>
-
-    <section class="nv2-notice">
-      <span class="nv2-info">i</span>
-      <p class="nv2-notice-title">Live notification center</p>
-      <p class="nv2-notice-copy">Alerts are populated from production order, wallet and account events.</p>
-    </section>
-
-    <nav class="nv2-filters" aria-label="Notification filters">
-      <a class="nv2-filter all active" data-notification-filter="all" href="/notifications.html">All</a>
-      <a class="nv2-filter orders" data-notification-filter="orders" href="/notifications.html?filter=orders">Orders</a>
-      <a class="nv2-filter wallet" data-notification-filter="wallet" href="/notifications.html?filter=wallet">Wallet</a>
-      <a class="nv2-filter security" data-notification-filter="security" href="/notifications.html?filter=security">Security</a>
-    </nav>
-
-    <a class="nv2-alert order" data-alert-type="orders" href="/orders.html">
-      <span class="nv2-dot"><img src="/assets/v2-alert-order.svg" alt=""></span>
-      <p class="nv2-alert-title">Order update</p>
-      <p class="nv2-alert-copy">Open your current orders to see the latest provider status.</p>
-      <span class="nv2-chip">Order</span>
-    </a>
-
-    <a class="nv2-alert wallet" data-alert-type="wallet" href="/profile-flow.html?view=transactions">
-      <span class="nv2-dot"><img src="/assets/v2-alert-wallet.svg" alt=""></span>
-      <p class="nv2-alert-title">Wallet activity</p>
-      <p class="nv2-alert-copy">Funding, balance and transaction updates appear from the live wallet.</p>
-      <span class="nv2-chip">Wallet</span>
-    </a>
-
-    <a class="nv2-alert security" data-alert-type="security" href="/security-flow.html?view=activity">
-      <span class="nv2-dot"><img src="/assets/v2-alert-security.svg" alt=""></span>
-      <p class="nv2-alert-title">Security notice</p>
-      <p class="nv2-alert-copy">Review sign-in and account-protection alerts from production security data.</p>
-      <span class="nv2-chip">Security</span>
-    </a>
-
-    <section class="nv2-older"><strong>Older notifications</strong><small>Production history will appear here when available.</small></section>
-  </section>
-
-  <nav class="nv2-bottom" aria-label="Primary navigation">
-    <a class="nv2-tab active" href="/dashboard.html" aria-current="page"><span class="nv2-tab-icon">⌂</span><span>Home</span></a>
-    <a class="nv2-tab" href="/services.html"><span class="nv2-tab-icon">◎</span><span>Services</span></a>
-    <a class="nv2-tab" href="/dashboard.html?mode=new"><span class="nv2-tab-icon">＋</span><span>Order</span></a>
-    <a class="nv2-tab" href="/orders.html"><span class="nv2-tab-icon">▤</span><span>Orders</span></a>
-    <a class="nv2-tab" href="/settings.html"><span class="nv2-tab-icon">♙</span><span>Profile</span></a>
-  </nav>
+<link href="/notifications-v2.css" rel="stylesheet"/>
+<script defer="" src="/auth.js"></script>
+<script defer="" src="/notifications-v2.js"></script>
+<link href="/customer-polish.css" rel="stylesheet"/><script defer="" src="/customer-polish.js"></script></head>
+<body class="nv2-page pb-ui" data-auth-protected="true">
+<main aria-label="Notification center" class="nv2 pb-screen">
+<div aria-hidden="true" class="nv2-status pb-fake-status"><span>9:41</span><span class="nv2-status-right">●  5G  ▰</span></div>
+<section class="nv2-content pb-page-content">
+<header class="nv2-top pb-page-header">
+<a aria-label="Back" class="nv2-circle nv2-back" href="/dashboard.html">‹</a>
+<h1 class="nv2-title">Notifications</h1>
+<a aria-label="Notification settings" class="nv2-circle nv2-settings" href="/profile-flow.html?view=notifications">⚙</a>
+</header>
+<section class="nv2-notice pb-component">
+<span class="nv2-info">i</span>
+<p class="nv2-notice-title">Live notification center</p>
+<p class="nv2-notice-copy pb-copy">Alerts are populated from production order, wallet and account events.</p>
+</section>
+<nav aria-label="Notification filters" class="nv2-filters">
+<a class="nv2-filter all active" data-notification-filter="all" href="/notifications.html">All</a>
+<a class="nv2-filter orders" data-notification-filter="orders" href="/notifications.html?filter=orders">Orders</a>
+<a class="nv2-filter wallet" data-notification-filter="wallet" href="/notifications.html?filter=wallet">Wallet</a>
+<a class="nv2-filter security" data-notification-filter="security" href="/notifications.html?filter=security">Security</a>
+</nav>
+<a class="nv2-alert order pb-component" data-alert-type="orders" href="/orders.html">
+<span class="nv2-dot"><img alt="" src="/assets/v2-alert-order.svg"/></span>
+<p class="nv2-alert-title">Order update</p>
+<p class="nv2-alert-copy pb-copy">Open your current orders to see the latest provider status.</p>
+<span class="nv2-chip">Order</span>
+</a>
+<a class="nv2-alert wallet pb-component" data-alert-type="wallet" href="/profile-flow.html?view=transactions">
+<span class="nv2-dot"><img alt="" src="/assets/v2-alert-wallet.svg"/></span>
+<p class="nv2-alert-title">Wallet activity</p>
+<p class="nv2-alert-copy pb-copy">Funding, balance and transaction updates appear from the live wallet.</p>
+<span class="nv2-chip">Wallet</span>
+</a>
+<a class="nv2-alert security pb-component" data-alert-type="security" href="/security-flow.html?view=activity">
+<span class="nv2-dot"><img alt="" src="/assets/v2-alert-security.svg"/></span>
+<p class="nv2-alert-title">Security notice</p>
+<p class="nv2-alert-copy pb-copy">Review sign-in and account-protection alerts from production security data.</p>
+<span class="nv2-chip">Security</span>
+</a>
+<section class="nv2-older"><strong>Older notifications</strong><small>Production history will appear here when available.</small></section>
+</section>
+<nav aria-label="Primary navigation" class="nv2-bottom pb-primary-nav">
+<a aria-current="page" class="nv2-tab active" href="/dashboard.html"><span class="nv2-tab-icon">⌂</span><span>Home</span></a>
+<a class="nv2-tab" href="/services.html"><span class="nv2-tab-icon">◎</span><span>Services</span></a>
+<a class="nv2-tab" href="/dashboard.html?mode=new"><span class="nv2-tab-icon">＋</span><span>Order</span></a>
+<a class="nv2-tab" href="/orders.html"><span class="nv2-tab-icon">▤</span><span>Orders</span></a>
+<a class="nv2-tab" href="/settings.html"><span class="nv2-tab-icon">♙</span><span>Profile</span></a>
+</nav>
 </main>
 </body>
 </html>

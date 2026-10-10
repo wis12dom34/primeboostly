@@ -29,7 +29,7 @@
   });
 
   const title = document.querySelector('[data-platform-services-title]');
-  if (title) title.textContent = `${platformLabel} provider services`;
+  if (title) title.textContent = `${platformLabel} services`;
 
   const normalizeService = item => {
     if (!item || typeof item !== 'object') return null;
@@ -95,12 +95,12 @@
       metaParts.push([minText, maxText].filter(Boolean).join(' • '));
     }
     if (item.rate !== '') metaParts.push(`Live rate ${item.rate}`);
-    if (meta) meta.textContent = metaParts.length ? metaParts.join(' • ') : 'Live provider service';
+    if (meta) meta.textContent = metaParts.length ? metaParts.join(' • ') : 'Available service';
     if (icon) icon.textContent = item.name.trim().charAt(0).toUpperCase() || 'S';
   });
 
   const selectedName = serviceName || 'Selected live service';
-  const selectedMeta = serviceId ? `Service ${serviceId}` : 'runtime selection';
+  const selectedMeta = platformLabel;
 
   document.querySelectorAll('.nsm-live-summary .nsm-summary-copy strong').forEach(node => {
     node.textContent = selectedName;
@@ -112,7 +112,7 @@
     node.textContent = platformLabel;
   });
   document.querySelectorAll('[data-review-service]').forEach(node => {
-    node.textContent = serviceName || (serviceId ? `Service ${serviceId}` : 'Runtime service');
+    node.textContent = serviceName || 'Selected service';
   });
   document.querySelectorAll('[data-review-profile]').forEach(node => {
     node.textContent = profile || 'Target URL';

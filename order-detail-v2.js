@@ -11,8 +11,8 @@
   const serviceLabels = {followers:'Followers', subscribers:'Subscribers', likes:'Likes', views:'Views', engagement:'Engagement'};
   const platform = platformLabels[platformKey] || 'Instagram';
   const service = serviceLabels[serviceKey] || 'Followers';
-  const profile = params.get('profile') || 'Runtime profile';
-  const quantity = params.get('quantity') || 'Runtime quantity';
+  const profile = params.get('profile') || 'Not available';
+  const quantity = params.get('quantity') || 'Not available';
 
   const summary = root.querySelector('.odv2-summary');
   const icon = root.querySelector('[data-order-icon]');
@@ -58,5 +58,5 @@
   setRow('service', service);
   setRow('profile', profile);
   setRow('quantity', quantity);
-  setRow('price', 'Live rate at purchase');
+  setRow('price', 'Shown after confirmation');
 })();

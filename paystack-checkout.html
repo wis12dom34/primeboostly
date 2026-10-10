@@ -1,37 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Pay with Paystack · Prime Boostly</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/account-flow.css">
-  <script src="/auth.js" defer></script>
-  <script src="/paystack-checkout.js" defer></script>
-</head>
-<body class="flow-page" data-auth-protected="true">
-  <header class="flow-header">
-    <a class="flow-brand" href="/" aria-label="Prime Boostly home"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
-    <nav class="flow-nav" aria-label="Account navigation"><a href="/dashboard.html">Dashboard</a><a href="/dashboard.html">Order</a><a href="/services.html">Services</a><a href="/add-funds.html">Add Fund</a><a href="/fund-history.html">Fund History</a><a href="/transactions.html">Transactions</a></nav>
-    <div class="flow-user"><span class="flow-avatar" aria-hidden="true"></span><span data-auth-name>wick</span></div>
-    <a class="flow-menu" href="/mobile-menu.html" aria-label="Open menu">☰</a>
-  </header>
-  <main class="flow-content">
-    <p class="flow-crumb">Home / Add Fund / Paystack</p>
-    <h1 class="mobile-only mobile-title">Pay with Paystack</h1>
-    <section class="flow-card paystack-card">
-      <div class="paystack-top">
-        <div class="paystack-logo" aria-hidden="true">PS</div>
-        <div class="paystack-details">
-          <h1>Pay with Paystack</h1>
-          <p class="pay-due" data-pay-due>Please Pay ₦25,375 NGN</p>
-          <p class="pay-credit"><span class="desktop-only" data-pay-credit>To Get ₦25,000 NGN in your Wallet</span><span class="mobile-only" data-pay-credit>To Get ₦25,000 NGN</span></p>
-          <div class="pay-summary"><p><span>Amount</span><b data-pay-amount>₦25,000</b></p><p><span>Charge</span><b data-pay-charge>₦375</b></p></div>
-          <a class="flow-button" data-pay-complete href="/payment-success.html">Pay Now</a>
-        </div>
-      </div>
-      <p class="paystack-note">Secure payment is processed by Paystack.</p>
-    </section>
-  </main>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Pay with Paystack · Prime Boostly</title>
+<link href="/style.css" rel="stylesheet"/>
+<link href="/account-flow.css" rel="stylesheet"/>
+<script defer="" src="/auth.js"></script>
+<script defer="" src="/paystack-checkout.js"></script>
+<link href="/customer-polish.css" rel="stylesheet"/><script defer="" src="/customer-polish.js"></script></head>
+<body class="flow-page pb-ui" data-auth-protected="true">
+<header class="flow-header">
+<a aria-label="Prime Boostly home" class="flow-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
+<nav aria-label="Account navigation" class="flow-nav"><a href="/dashboard.html">Dashboard</a><a href="/dashboard.html">Order</a><a href="/services.html">Services</a><a href="/add-funds.html">Add Fund</a><a href="/fund-history.html">Fund History</a><a href="/transactions.html">Transactions</a></nav>
+<div class="flow-user"><span aria-hidden="true" class="flow-avatar"></span><span data-auth-name="">wick</span></div>
+<a aria-label="Open menu" class="flow-menu" href="/mobile-menu.html">☰</a>
+</header>
+<main class="flow-content pb-screen">
+<p class="flow-crumb">Home / Add Fund / Paystack</p>
+<h1 class="mobile-only mobile-title">Pay with Paystack</h1>
+<section class="flow-card paystack-card pb-component">
+<div class="paystack-top">
+<div aria-hidden="true" class="paystack-logo">PS</div>
+<div class="paystack-details">
+<h1>Pay with Paystack</h1>
+<p class="pay-due" data-pay-due="">Please Pay ₦25,375 NGN</p>
+<p class="pay-credit"><span class="desktop-only" data-pay-credit="">To Get ₦25,000 NGN in your Wallet</span><span class="mobile-only" data-pay-credit="">To Get ₦25,000 NGN</span></p>
+<div class="pay-summary pb-component"><p><span>Amount</span><b data-pay-amount="">₦25,000</b></p><p><span>Charge</span><b data-pay-charge="">₦375</b></p></div>
+<a class="flow-button" data-pay-complete="" href="/payment-success.html">Pay Now</a>
+</div>
+</div>
+<p class="paystack-note">Secure payment is processed by Paystack.</p>
+</section>
+<nav aria-label="Primary navigation" class="pb-primary-nav"><a href="/dashboard.html">Home</a><a href="/services.html">Services</a><a href="/dashboard.html?mode=new">Order</a><a href="/orders.html">Orders</a><a href="/settings.html">Profile</a></nav></main>
 </body>
 </html>

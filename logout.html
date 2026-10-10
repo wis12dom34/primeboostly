@@ -1,32 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <title>Log out · PrimeBoostly</title>
-<link rel="stylesheet" href="/logout-v2.css">
-<script src="/auth.js" defer></script>
-<script src="/logout-v2.js" defer></script>
-</head>
-<body class="lov2-page">
-  <main class="lov2-screen" data-logout-screen="confirm" aria-label="Log out confirmation">
-    <div class="lov2-status" aria-hidden="true"><span>9:41</span><span class="lov2-status-right">●  5G  ▰</span></div>
-    <header class="lov2-top"><a class="lov2-back" href="/settings.html" aria-label="Back">‹</a><h1>Log out</h1></header>
-    <div class="lov2-danger-icon" aria-hidden="true">↪</div>
-    <h2 class="lov2-confirm-title">Log out of PrimeBoostly?</h2>
-    <p class="lov2-confirm-copy">You’ll need to sign in again to access your wallet, orders and account settings.</p>
-    <section class="lov2-safe"><strong>Your data stays safe</strong><p>Logging out only ends this device session. It does not delete your account or order history.</p></section>
-    <a class="lov2-cancel" href="/settings.html">Cancel</a>
-    <a class="lov2-confirm" href="/login.html" data-auth-logout data-auth-logout-next="/logout.html?state=signed-out">Log out</a>
-  </main>
-
-  <main class="lov2-screen" data-logout-screen="signed-out" aria-label="Signed out">
-    <div class="lov2-status" aria-hidden="true"><span>9:41</span><span class="lov2-status-right">●  5G  ▰</span></div>
-    <div class="lov2-brand" aria-hidden="true">PB</div>
-    <h1 class="lov2-signed-title">You’re signed out</h1>
-    <p class="lov2-signed-copy">Your PrimeBoostly session has ended on this device.</p>
-    <a class="lov2-signin" href="/login.html">Sign in</a>
-    <p class="lov2-signed-foot">In production, this opens the authenticated sign-in flow.</p>
-  </main>
+<link href="/logout-v2.css" rel="stylesheet"/>
+<script defer="" src="/auth.js"></script>
+<script defer="" src="/logout-v2.js"></script>
+<link href="/customer-polish.css" rel="stylesheet"/><script defer="" src="/customer-polish.js"></script></head>
+<body class="lov2-page pb-ui">
+<main aria-label="Log out confirmation" class="lov2-screen pb-screen" data-logout-screen="confirm">
+<div aria-hidden="true" class="lov2-status pb-fake-status"><span>9:41</span><span class="lov2-status-right">●  5G  ▰</span></div>
+<header class="lov2-top pb-page-header"><a aria-label="Back" class="lov2-back" href="/settings.html">‹</a><h1>Log out</h1></header>
+<div aria-hidden="true" class="lov2-danger-icon">↪</div>
+<h2 class="lov2-confirm-title">Log out of PrimeBoostly?</h2>
+<p class="lov2-confirm-copy pb-copy">You’ll need to sign in again to access your wallet, orders and account settings.</p>
+<section class="lov2-safe"><strong>Your data stays safe</strong><p>Logging out only ends this device session. It does not delete your account or order history.</p></section>
+<a class="lov2-cancel" href="/settings.html">Cancel</a>
+<a class="lov2-confirm pb-primary-button" data-auth-logout="" data-auth-logout-next="/logout.html?state=signed-out" href="/login.html">Log out</a>
+</main>
+<main aria-label="Signed out" class="lov2-screen pb-screen" data-logout-screen="signed-out">
+<div aria-hidden="true" class="lov2-status pb-fake-status"><span>9:41</span><span class="lov2-status-right">●  5G  ▰</span></div>
+<div aria-hidden="true" class="lov2-brand">PB</div>
+<h1 class="lov2-signed-title">You’re signed out</h1>
+<p class="lov2-signed-copy pb-copy">Your PrimeBoostly session has ended on this device.</p>
+<a class="lov2-signin" href="/login.html">Sign in</a>
+<p class="lov2-signed-foot">In production, this opens the authenticated sign-in flow.</p>
+</main>
 </body>
 </html>

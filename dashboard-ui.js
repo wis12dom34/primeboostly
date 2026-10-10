@@ -168,7 +168,7 @@
       const quantity = currentQuantity();
       if (platformField) platformField.href = buildOrderUrl('platform');
       if (!reviewLink) return;
-      const complete = Boolean(selectedPlatform && profile && Number(quantity) > 0);
+      const complete = Boolean(selectedPlatform && profileInput?.checkValidity() && profile && Number.isInteger(Number(quantity)) && Number(quantity) > 0);
       reviewLink.classList.toggle('disabled', !complete);
       reviewLink.setAttribute('aria-disabled', String(!complete));
       reviewLink.href = complete ? buildOrderUrl('review') : '#';
@@ -210,7 +210,7 @@
   }
 
   function applyMobileView(mode, hasExplicitMode) {
-    const mobile = window.matchMedia('(max-width: 900px)').matches;
+    const mobile = true;
     const orderView = mobile && hasExplicitMode;
     document.body.classList.toggle('mobile-order-view', orderView);
 

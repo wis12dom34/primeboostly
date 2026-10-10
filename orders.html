@@ -1,123 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Orders · Prime Boostly</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/dashboard-figma.css">
-  <link rel="stylesheet" href="/orders-figma.css">
-  <link rel="stylesheet" href="/orders-v2.css">
-  <script src="/auth.js" defer></script>
-  <script src="/orders-v2.js" defer></script>
-</head>
-<body class="app orders-page" data-auth-protected="true">
-  <aside class="pb-sidebar">
-    <div class="pb-side-brand"><strong><span>SMM</span>Panel</strong><small>Prime Boostly</small></div>
-    <nav>
-      <a href="/dashboard.html">Dashboard</a>
-      <a href="/dashboard.html?mode=new">New Order</a>
-      <a class="active" href="/orders.html">Orders</a>
-      <a href="/order-history.html">Order History</a>
-      <a href="/add-funds.html">Add Funds</a>
-      <a href="/support.html">Support</a>
-      <a href="/settings.html">Settings</a>
-    </nav>
-    <a class="logout" href="/login.html" data-auth-logout>Log out</a>
-  </aside>
-
-  <main class="orders-desktop" data-figma-node="6:2">
-    <div class="orders-desktop-inner">
-      <header class="orders-heading"><h1>Orders</h1><p>Track, filter, and manage your active service orders.</p></header>
-      <section class="orders-stats" aria-label="Order statistics">
-        <article><small>All Orders</small><b>1,248</b></article>
-        <article><small>Processing</small><b>18</b></article>
-        <article><small>Completed</small><b>1,201</b></article>
-        <article><small>Canceled</small><b>29</b></article>
-      </section>
-      <form class="orders-filter" action="/orders.html" method="get">
-        <label class="orders-control">Search<input name="q" placeholder="Order ID or service"></label>
-        <label class="orders-control">Status<select name="status"><option>All statuses</option><option>Pending</option><option>Processing</option><option>Completed</option><option>Canceled</option></select></label>
-        <label class="orders-control">Period<select name="period"><option>Last 30 days</option><option>Last 7 days</option><option>Last 90 days</option></select></label>
-        <button class="orders-search-btn" type="submit">Search</button>
-      </form>
-      <section class="orders-table-card">
-        <h2>Latest Orders</h2>
-        <table class="orders-table">
-          <thead><tr><th>ORDER</th><th>SERVICE</th><th>CHARGE</th><th>STATUS</th><th>START</th><th>REMAINS</th><th>ACTION</th></tr></thead>
-          <tbody>
-            <tr><td>#1248</td><td>Instagram Followers | Fast</td><td>₦1,850</td><td class="completed">Completed</td><td>12,408</td><td>0</td><td><a class="action" href="/order-detail.html">Refill</a></td></tr>
-            <tr><td>#1247</td><td>TikTok Views | Instant</td><td>₦720</td><td class="processing">Processing</td><td>85,100</td><td>14,900</td><td><a class="action" href="/order-detail.html">Cancel</a></td></tr>
-            <tr><td>#1246</td><td>YouTube Views | HQ</td><td>₦1,200</td><td class="pending">Pending</td><td>—</td><td>50,000</td><td><a class="action" href="/order-detail.html">Cancel</a></td></tr>
-            <tr><td>#1245</td><td>Facebook Page Likes</td><td>₦3,400</td><td class="completed">Completed</td><td>9,220</td><td>0</td><td><a class="action" href="/order-detail.html">Details</a></td></tr>
-            <tr><td>#1244</td><td>Telegram Members</td><td>₦2,150</td><td class="partial">Partial</td><td>4,400</td><td>600</td><td><a class="action" href="/order-detail.html">Refill</a></td></tr>
-            <tr><td>#1243</td><td>Instagram Reels Views</td><td>₦540</td><td class="completed">Completed</td><td>220,000</td><td>0</td><td><a class="action" href="/order-detail.html">Details</a></td></tr>
-          </tbody>
-        </table>
-      </section>
-    </div>
-  </main>
-
-  <main class="orders-v2" aria-label="Orders">
-    <div class="ov2-status" aria-hidden="true"><span>9:41</span><span class="ov2-status-right">● 5G ▰</span></div>
-    <section class="ov2-content">
-      <header class="ov2-header">
-        <div class="ov2-title-block"><h1 class="ov2-title" data-orders-title>Orders</h1><p class="ov2-subtitle" data-orders-subtitle>Track your service activity</p></div>
-        <a class="ov2-search" data-orders-search-button href="/orders.html?view=search" aria-label="Search orders">⌕</a>
-      </header>
-
-      <nav class="ov2-filters" data-orders-filters aria-label="Order filters">
-        <a class="ov2-filter all active" data-orders-filter="all" href="/orders.html">All</a>
-        <a class="ov2-filter processing" data-orders-filter="processing" href="/orders.html?filter=processing">Processing</a>
-        <a class="ov2-filter completed" data-orders-filter="completed" href="/orders.html?filter=completed">Completed</a>
-        <a class="ov2-filter failed" data-orders-filter="failed" href="/orders.html?filter=failed">Failed</a>
-      </nav>
-
-      <label class="ov2-search-field" data-orders-search-field hidden><span class="ov2-search-icon">⌕</span><input type="search" placeholder="Search by service name or production reference" autocomplete="off" aria-label="Search orders"></label>
-
-      <div class="ov2-section-head"><h2 data-orders-section-title>Recent orders</h2><span data-orders-section-meta>1 active</span></div>
-
-      <a class="ov2-order" data-order-card="real" href="/order-detail.html?type=real&platform=instagram">
-        <div class="ov2-order-top"><div class="ov2-ident"><span class="ov2-icon">NG</span><span class="ov2-copy"><strong>Real Nigeria Followers</strong><small>Instagram • Runtime quantity</small></span></div><span class="ov2-status-pill">Processing</span></div>
-        <span class="ov2-divider"></span>
-        <div class="ov2-order-foot"><span class="ov2-ref"><strong>Live reference</strong><small>Reference from production</small></span><span class="ov2-open">›</span></div>
-      </a>
-
-      <a class="ov2-order" data-order-card="normal" hidden href="/order-detail.html?type=normal&platform=instagram&service=followers">
-        <div class="ov2-order-top"><div class="ov2-ident"><span class="ov2-icon">IG</span><span class="ov2-copy"><strong>Instagram Followers</strong><small>Normal SMM • Instagram • Runtime quantity</small></span></div><span class="ov2-status-pill">Processing</span></div>
-        <span class="ov2-divider"></span>
-        <div class="ov2-order-foot"><span class="ov2-ref"><strong>Live reference</strong><small>Reference from production</small></span><span class="ov2-open">›</span></div>
-      </a>
-
-      <section class="ov2-empty" data-orders-empty hidden><span class="ov2-empty-icon" data-orders-empty-icon>✓</span><h3 data-orders-empty-title>Completed orders</h3><p data-orders-empty-copy>Production-completed orders will appear here.</p></section>
-
-      <div class="ov2-notice" data-orders-notice><span class="ov2-info">i</span><span class="ov2-notice-copy"><strong data-orders-notice-title>Live order updates</strong><small data-orders-notice-copy>Status, amount and references come from production data.</small></span></div>
-    </section>
-
-    <nav class="ov2-bottom" aria-label="Primary navigation">
-      <a class="ov2-tab" href="/dashboard.html"><span class="ov2-tab-icon">⌂</span><span>Home</span></a>
-      <a class="ov2-tab" href="/services.html"><span class="ov2-tab-icon">◎</span><span>Services</span></a>
-      <a class="ov2-tab" href="/dashboard.html?mode=new"><span class="ov2-tab-icon">＋</span><span>Order</span></a>
-      <a class="ov2-tab active" href="/orders.html" aria-current="page"><span class="ov2-tab-icon">▤</span><span>Orders</span></a>
-      <a class="ov2-tab" href="/settings.html"><span class="ov2-tab-icon">♙</span><span>Profile</span></a>
-    </nav>
-  </main>
-
-  <main class="mobile figma-orders orders-mobile pb-mobile-bg" data-figma-node="6:663">
-    <header class="mtop">
-      <a class="brand figma-brand" href="/" aria-label="Prime Boostly home"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
-      <a class="menu" href="/mobile-menu.html" aria-label="Open menu">☰</a>
-    </header>
-    <section class="mobile-content orders-content">
-      <h1>Orders</h1>
-      <p class="lead">Track your latest service orders.</p>
-      <div class="stats" aria-label="Order statistics"><div class="processing"><small>Processing</small><b>18</b></div><div class="completed"><small>Completed</small><b>1,201</b></div><div class="issues"><small>Issues</small><b>3</b></div></div>
-      <label class="mobile-search"><span>Search</span><div>Order ID or service</div></label>
-      <nav class="chips order-chips" aria-label="Order status"><span class="active">All</span><span>Pending</span><span>Completed</span></nav>
-      <a class="order" href="/order-detail.html"><div class="order-top"><span>#1248</span><em class="badge completed-badge">Completed</em></div><h3>Instagram Followers</h3><div class="order-bottom"><b>₦1,850</b><span>View details →</span></div></a>
-      <a class="order" href="/order-detail.html"><div class="order-top"><span>#1247</span><em class="badge warn processing-badge">Processing</em></div><h3>TikTok Views</h3><div class="order-bottom"><b>₦720</b><span>View details →</span></div></a>
-      <a class="order" href="/order-detail.html"><div class="order-top"><span>#1246</span><em class="badge warn pending-badge">Pending</em></div><h3>YouTube Views</h3><div class="order-bottom"><b>₦1,200</b><span>View details →</span></div></a>
-    </section>
-  </main>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Orders · Prime Boostly</title>
+<link href="/style.css" rel="stylesheet"/>
+<link href="/dashboard-figma.css" rel="stylesheet"/>
+<link href="/orders-figma.css" rel="stylesheet"/>
+<link href="/orders-v2.css" rel="stylesheet"/>
+<script defer="" src="/auth.js"></script>
+<script defer="" src="/orders-v2.js"></script>
+<link href="/customer-polish.css" rel="stylesheet"/><script defer="" src="/customer-polish.js"></script></head>
+<body class="app orders-page pb-ui" data-auth-protected="true">
+<aside class="pb-sidebar pb-legacy">
+<div class="pb-side-brand"><strong><span>SMM</span>Panel</strong><small>Prime Boostly</small></div>
+<nav>
+<a href="/dashboard.html">Dashboard</a>
+<a href="/dashboard.html?mode=new">New Order</a>
+<a class="active" href="/orders.html">Orders</a>
+<a href="/order-history.html">Order History</a>
+<a href="/add-funds.html">Add Funds</a>
+<a href="/support.html">Support</a>
+<a href="/settings.html">Settings</a>
+</nav>
+<a class="logout" data-auth-logout="" href="/login.html">Log out</a>
+</aside>
+<main class="orders-desktop pb-legacy" data-figma-node="6:2">
+<div class="orders-desktop-inner">
+<header class="orders-heading"><h1>Orders</h1><p>Track, filter, and manage your active service orders.</p></header>
+<section aria-label="Order statistics" class="orders-stats">
+<article><small>All Orders</small><b>1,248</b></article>
+<article><small>Processing</small><b>18</b></article>
+<article><small>Completed</small><b>1,201</b></article>
+<article><small>Canceled</small><b>29</b></article>
+</section>
+<form action="/orders.html" class="orders-filter" method="get">
+<label class="orders-control">Search<input name="q" placeholder="Order ID or service"/></label>
+<label class="orders-control">Status<select name="status"><option>All statuses</option><option>Pending</option><option>Processing</option><option>Completed</option><option>Canceled</option></select></label>
+<label class="orders-control">Period<select name="period"><option>Last 30 days</option><option>Last 7 days</option><option>Last 90 days</option></select></label>
+<button class="orders-search-btn" type="submit">Search</button>
+</form>
+<section class="orders-table-card">
+<h2>Latest Orders</h2>
+<table class="orders-table">
+<thead><tr><th>ORDER</th><th>SERVICE</th><th>CHARGE</th><th>STATUS</th><th>START</th><th>REMAINS</th><th>ACTION</th></tr></thead>
+<tbody>
+<tr><td>#1248</td><td>Instagram Followers | Fast</td><td>₦1,850</td><td class="completed">Completed</td><td>12,408</td><td>0</td><td><a class="action" href="/order-detail.html">Refill</a></td></tr>
+<tr><td>#1247</td><td>TikTok Views | Instant</td><td>₦720</td><td class="processing">Processing</td><td>85,100</td><td>14,900</td><td><a class="action" href="/order-detail.html">Cancel</a></td></tr>
+<tr><td>#1246</td><td>YouTube Views | HQ</td><td>₦1,200</td><td class="pending">Pending</td><td>—</td><td>50,000</td><td><a class="action" href="/order-detail.html">Cancel</a></td></tr>
+<tr><td>#1245</td><td>Facebook Page Likes</td><td>₦3,400</td><td class="completed">Completed</td><td>9,220</td><td>0</td><td><a class="action" href="/order-detail.html">Details</a></td></tr>
+<tr><td>#1244</td><td>Telegram Members</td><td>₦2,150</td><td class="partial">Partial</td><td>4,400</td><td>600</td><td><a class="action" href="/order-detail.html">Refill</a></td></tr>
+<tr><td>#1243</td><td>Instagram Reels Views</td><td>₦540</td><td class="completed">Completed</td><td>220,000</td><td>0</td><td><a class="action" href="/order-detail.html">Details</a></td></tr>
+</tbody>
+</table>
+</section>
+</div>
+</main>
+<main aria-label="Orders" class="orders-v2 pb-screen">
+<div aria-hidden="true" class="ov2-status pb-fake-status"><span>9:41</span><span class="ov2-status-right">● 5G ▰</span></div>
+<section class="ov2-content pb-page-content">
+<header class="ov2-header pb-page-header">
+<div class="ov2-title-block"><h1 class="ov2-title" data-orders-title="">Orders</h1><p class="ov2-subtitle" data-orders-subtitle="">Track your service activity</p></div>
+<a aria-label="Search orders" class="ov2-search" data-orders-search-button="" href="/orders.html?view=search">⌕</a>
+</header>
+<nav aria-label="Order filters" class="ov2-filters" data-orders-filters="">
+<a class="ov2-filter all active" data-orders-filter="all" href="/orders.html">All</a>
+<a class="ov2-filter processing" data-orders-filter="processing" href="/orders.html?filter=processing">Processing</a>
+<a class="ov2-filter completed" data-orders-filter="completed" href="/orders.html?filter=completed">Completed</a>
+<a class="ov2-filter failed" data-orders-filter="failed" href="/orders.html?filter=failed">Failed</a>
+</nav>
+<label class="ov2-search-field" data-orders-search-field="" hidden=""><span class="ov2-search-icon">⌕</span><input aria-label="Search orders" autocomplete="off" placeholder="Search by service name or production reference" type="search"/></label>
+<div class="ov2-section-head"><h2 data-orders-section-title="">Recent orders</h2><span data-orders-section-meta="">1 active</span></div>
+<a class="ov2-order" data-order-card="real" href="/order-detail.html?type=real&amp;platform=instagram">
+<div class="ov2-order-top"><div class="ov2-ident"><span class="ov2-icon">NG</span><span class="ov2-copy pb-copy"><strong>Real Nigeria Followers</strong><small>Instagram • Runtime quantity</small></span></div><span class="ov2-status-pill">Processing</span></div>
+<span class="ov2-divider"></span>
+<div class="ov2-order-foot"><span class="ov2-ref"><strong>Live reference</strong><small>Reference from production</small></span><span class="ov2-open">›</span></div>
+</a>
+<a class="ov2-order" data-order-card="normal" hidden="" href="/order-detail.html?type=normal&amp;platform=instagram&amp;service=followers">
+<div class="ov2-order-top"><div class="ov2-ident"><span class="ov2-icon">IG</span><span class="ov2-copy pb-copy"><strong>Instagram Followers</strong><small>Normal SMM • Instagram • Runtime quantity</small></span></div><span class="ov2-status-pill">Processing</span></div>
+<span class="ov2-divider"></span>
+<div class="ov2-order-foot"><span class="ov2-ref"><strong>Live reference</strong><small>Reference from production</small></span><span class="ov2-open">›</span></div>
+</a>
+<section class="ov2-empty" data-orders-empty="" hidden=""><span class="ov2-empty-icon" data-orders-empty-icon="">✓</span><h3 data-orders-empty-title="">Completed orders</h3><p data-orders-empty-copy="">Production-completed orders will appear here.</p></section>
+<div class="ov2-notice pb-component" data-orders-notice=""><span class="ov2-info">i</span><span class="ov2-notice-copy pb-copy"><strong data-orders-notice-title="">Live order updates</strong><small data-orders-notice-copy="">Status, amount and references come from production data.</small></span></div>
+</section>
+<nav aria-label="Primary navigation" class="ov2-bottom pb-primary-nav">
+<a class="ov2-tab" href="/dashboard.html"><span class="ov2-tab-icon">⌂</span><span>Home</span></a>
+<a class="ov2-tab" href="/services.html"><span class="ov2-tab-icon">◎</span><span>Services</span></a>
+<a class="ov2-tab" href="/dashboard.html?mode=new"><span class="ov2-tab-icon">＋</span><span>Order</span></a>
+<a aria-current="page" class="ov2-tab active" href="/orders.html"><span class="ov2-tab-icon">▤</span><span>Orders</span></a>
+<a class="ov2-tab" href="/settings.html"><span class="ov2-tab-icon">♙</span><span>Profile</span></a>
+</nav>
+</main>
+<main class="mobile figma-orders orders-mobile pb-mobile-bg pb-legacy" data-figma-node="6:663">
+<header class="mtop">
+<a aria-label="Prime Boostly home" class="brand figma-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
+<a aria-label="Open menu" class="menu" href="/mobile-menu.html">☰</a>
+</header>
+<section class="mobile-content orders-content">
+<h1>Orders</h1>
+<p class="lead">Track your latest service orders.</p>
+<div aria-label="Order statistics" class="stats"><div class="processing"><small>Processing</small><b>18</b></div><div class="completed"><small>Completed</small><b>1,201</b></div><div class="issues"><small>Issues</small><b>3</b></div></div>
+<label class="mobile-search"><span>Search</span><div>Order ID or service</div></label>
+<nav aria-label="Order status" class="chips order-chips"><span class="active">All</span><span>Pending</span><span>Completed</span></nav>
+<a class="order" href="/order-detail.html"><div class="order-top"><span>#1248</span><em class="badge completed-badge">Completed</em></div><h3>Instagram Followers</h3><div class="order-bottom"><b>₦1,850</b><span>View details →</span></div></a>
+<a class="order" href="/order-detail.html"><div class="order-top"><span>#1247</span><em class="badge warn processing-badge">Processing</em></div><h3>TikTok Views</h3><div class="order-bottom"><b>₦720</b><span>View details →</span></div></a>
+<a class="order" href="/order-detail.html"><div class="order-top"><span>#1246</span><em class="badge warn pending-badge">Pending</em></div><h3>YouTube Views</h3><div class="order-bottom"><b>₦1,200</b><span>View details →</span></div></a>
+</section>
+</main>
 </body>
 </html>

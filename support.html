@@ -1,84 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Support · Prime Boostly</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/dashboard-figma.css">
-  <link rel="stylesheet" href="/support.css">
-  <link rel="stylesheet" href="/support-figma.css">
-  <link rel="stylesheet" href="/support-v2.css">
-  <script src="/auth.js" defer></script>
-</head>
-<body class="app support-page" data-auth-protected="true">
-  <aside class="pb-sidebar">
-    <div class="pb-side-brand"><strong><span>SMM</span>Panel</strong><small>Prime Boostly</small></div>
-    <nav>
-      <a href="/dashboard.html">Dashboard</a>
-      <a href="/dashboard.html?mode=new">New Order</a>
-      <a href="/orders.html">Orders</a>
-      <a href="/order-history.html">Order History</a>
-      <a href="/add-funds.html">Add Funds</a>
-      <a class="active" href="/support.html">Support</a>
-      <a href="/settings.html">Settings</a>
-    </nav>
-    <a class="logout" href="/login.html" data-auth-logout>Log out</a>
-  </aside>
-
-  <main class="support-desktop" data-figma-node="6:326">
-    <div class="support-desktop-inner">
-      <header class="support-desktop-heading"><div><h1>Support</h1><p>Get help with orders, payments, account access, or API issues.</p></div><a class="support-new-ticket" href="/new-ticket.html">New Ticket</a></header>
-      <section class="support-desktop-stats" aria-label="Support statistics"><article><small>Open Tickets</small><b>2</b></article><article><small>Resolved</small><b>38</b></article><article><small>Avg. Response</small><b>&lt; 15 min</b></article></section>
-      <div class="support-workspace">
-        <section class="support-ticket-list">
-          <h2>Your Tickets</h2>
-          <a class="support-ticket-card" href="/ticket-detail.html"><div class="support-ticket-card-top"><span>#T-219</span><em class="support-desktop-badge">Open</em></div><h3>Order #1247 still processing</h3><p>Updated 4 min ago</p></a>
-          <a class="support-ticket-card" href="/ticket-detail.html"><div class="support-ticket-card-top"><span>#T-214</span><em class="support-desktop-badge waiting">Waiting</em></div><h3>Wallet funding pending</h3><p>Updated 2h ago</p></a>
-          <a class="support-ticket-card" href="/ticket-detail.html"><div class="support-ticket-card-top"><span>#T-207</span><em class="support-desktop-badge">Resolved</em></div><h3>Service refill request</h3><p>Yesterday</p></a>
-          <a class="support-ticket-card" href="/ticket-detail.html"><div class="support-ticket-card-top"><span>#T-201</span><em class="support-desktop-badge">Resolved</em></div><h3>API authentication question</h3><p>02 Oct 2026</p></a>
-        </section>
-        <form class="support-contact" action="/new-ticket.html" method="get">
-          <h2>How can we help?</h2>
-          <p>Create a ticket with your order ID, payment reference, or screenshots so support can resolve it faster.</p>
-          <label>Subject<input name="subject" placeholder="What do you need help with?"></label>
-          <textarea name="message" aria-label="Message" placeholder="Describe the issue clearly…"></textarea>
-          <button type="submit">Submit Ticket</button>
-          <small>Human support is available 24/7.</small>
-        </form>
-      </div>
-    </div>
-  </main>
-
-  <main class="support-v2" aria-label="Support">
-    <div class="spv2-status" aria-hidden="true"><span>9:41</span><span class="spv2-status-right">● 5G ▰</span></div>
-    <section class="spv2-content">
-      <header class="spv2-top"><a class="spv2-back" href="/settings.html" aria-label="Back">‹</a><h1>Support</h1><span class="spv2-spacer"></span></header>
-      <div class="spv2-notice"><span class="spv2-info">i</span><span class="spv2-notice-copy"><strong>PrimeBoostly Support</strong><small>Choose the issue type in production so your request reaches the right support queue.</small></span></div>
-      <a class="spv2-row" href="/support-flow.html?type=order"><span class="spv2-row-copy"><strong>Order issue</strong><small>Problems with an active or completed service order</small></span><span class="spv2-action">Support</span></a>
-      <a class="spv2-row" href="/support-flow.html?type=wallet"><span class="spv2-row-copy"><strong>Wallet or funding</strong><small>Deposit, balance or transaction questions</small></span><span class="spv2-action">Support</span></a>
-      <a class="spv2-row" href="/support-flow.html?type=account"><span class="spv2-row-copy"><strong>Account access</strong><small>Login, password or account assistance</small></span><span class="spv2-action">Support</span></a>
-      <a class="spv2-row" href="/support-flow.html?type=general"><span class="spv2-row-copy"><strong>General question</strong><small>Anything else about PrimeBoostly</small></span><span class="spv2-action">Support</span></a>
-      <p class="spv2-footnote">Support conversations and case references are created by the production support system.</p>
-    </section>
-    <nav class="spv2-bottom" aria-label="Primary navigation">
-      <a class="spv2-tab" href="/dashboard.html"><span class="spv2-tab-icon">⌂</span><span>Home</span></a>
-      <a class="spv2-tab" href="/services.html"><span class="spv2-tab-icon">◎</span><span>Services</span></a>
-      <a class="spv2-tab" href="/dashboard.html?mode=new"><span class="spv2-tab-icon">＋</span><span>Order</span></a>
-      <a class="spv2-tab" href="/orders.html"><span class="spv2-tab-icon">▤</span><span>Orders</span></a>
-      <a class="spv2-tab active" href="/settings.html"><span class="spv2-tab-icon">♙</span><span>Profile</span></a>
-    </nav>
-  </main>
-
-  <main class="support-mobile" data-figma-node="11:99">
-    <header class="support-mobile-head"><a class="brand support-mobile-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a><a class="support-mobile-menu" href="/mobile-menu.html" aria-label="Open menu">☰</a></header>
-    <section class="support-mobile-content">
-      <h1>Support</h1><p class="support-mobile-sub">Create and follow up on support requests from your account.</p><a class="support-create" href="/new-ticket.html">Create New Ticket</a>
-      <article class="support-notice"><h2>Need a faster answer?</h2><p>Include your order ID, transaction ID, or a screenshot when reporting an issue.</p></article>
-      <a class="support-ticket" href="/ticket-detail.html"><div class="support-ticket-top"><span>#TKT-204</span><em class="support-status open">Open</em></div><h2>Order not starting</h2><p>Today 10:22 AM</p></a>
-      <a class="support-ticket" href="/ticket-detail.html"><div class="support-ticket-top"><span>#TKT-198</span><em class="support-status answered">Answered</em></div><h2>Wallet funding delay</h2><p>Yesterday 6:18 PM</p></a>
-      <a class="support-ticket" href="/ticket-detail.html"><div class="support-ticket-top"><span>#TKT-181</span><em class="support-status closed">Closed</em></div><h2>Service question</h2><p>03 Oct 2026</p></a>
-    </section>
-  </main>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Support · Prime Boostly</title>
+<link href="/style.css" rel="stylesheet"/>
+<link href="/dashboard-figma.css" rel="stylesheet"/>
+<link href="/support.css" rel="stylesheet"/>
+<link href="/support-figma.css" rel="stylesheet"/>
+<link href="/support-v2.css" rel="stylesheet"/>
+<script defer="" src="/auth.js"></script>
+<link href="/customer-polish.css" rel="stylesheet"/><script defer="" src="/customer-polish.js"></script></head>
+<body class="app support-page pb-ui" data-auth-protected="true">
+<aside class="pb-sidebar pb-legacy">
+<div class="pb-side-brand"><strong><span>SMM</span>Panel</strong><small>Prime Boostly</small></div>
+<nav>
+<a href="/dashboard.html">Dashboard</a>
+<a href="/dashboard.html?mode=new">New Order</a>
+<a href="/orders.html">Orders</a>
+<a href="/order-history.html">Order History</a>
+<a href="/add-funds.html">Add Funds</a>
+<a class="active" href="/support.html">Support</a>
+<a href="/settings.html">Settings</a>
+</nav>
+<a class="logout" data-auth-logout="" href="/login.html">Log out</a>
+</aside>
+<main class="support-desktop pb-legacy" data-figma-node="6:326">
+<div class="support-desktop-inner">
+<header class="support-desktop-heading"><div><h1>Support</h1><p>Get help with orders, payments, account access, or API issues.</p></div><a class="support-new-ticket" href="/new-ticket.html">New Ticket</a></header>
+<section aria-label="Support statistics" class="support-desktop-stats"><article><small>Open Tickets</small><b>2</b></article><article><small>Resolved</small><b>38</b></article><article><small>Avg. Response</small><b>&lt; 15 min</b></article></section>
+<div class="support-workspace">
+<section class="support-ticket-list">
+<h2>Your Tickets</h2>
+<a class="support-ticket-card" href="/ticket-detail.html"><div class="support-ticket-card-top"><span>#T-219</span><em class="support-desktop-badge">Open</em></div><h3>Order #1247 still processing</h3><p>Updated 4 min ago</p></a>
+<a class="support-ticket-card" href="/ticket-detail.html"><div class="support-ticket-card-top"><span>#T-214</span><em class="support-desktop-badge waiting">Waiting</em></div><h3>Wallet funding pending</h3><p>Updated 2h ago</p></a>
+<a class="support-ticket-card" href="/ticket-detail.html"><div class="support-ticket-card-top"><span>#T-207</span><em class="support-desktop-badge">Resolved</em></div><h3>Service refill request</h3><p>Yesterday</p></a>
+<a class="support-ticket-card" href="/ticket-detail.html"><div class="support-ticket-card-top"><span>#T-201</span><em class="support-desktop-badge">Resolved</em></div><h3>API authentication question</h3><p>02 Oct 2026</p></a>
+</section>
+<form action="/new-ticket.html" class="support-contact" method="get">
+<h2>How can we help?</h2>
+<p>Create a ticket with your order ID, payment reference, or screenshots so support can resolve it faster.</p>
+<label>Subject<input name="subject" placeholder="What do you need help with?"/></label>
+<textarea aria-label="Message" name="message" placeholder="Describe the issue clearly…"></textarea>
+<button type="submit">Submit Ticket</button>
+<small>Human support is available 24/7.</small>
+</form>
+</div>
+</div>
+</main>
+<main aria-label="Support" class="support-v2 pb-screen">
+<div aria-hidden="true" class="spv2-status pb-fake-status"><span>9:41</span><span class="spv2-status-right">● 5G ▰</span></div>
+<section class="spv2-content pb-page-content">
+<header class="spv2-top pb-page-header"><a aria-label="Back" class="spv2-back" href="/settings.html">‹</a><h1>Support</h1><span class="spv2-spacer"></span></header>
+<div class="spv2-notice pb-component"><span class="spv2-info">i</span><span class="spv2-notice-copy pb-copy"><strong>PrimeBoostly Support</strong><small>Choose the issue type in production so your request reaches the right support queue.</small></span></div>
+<a class="spv2-row pb-component" href="/support-flow.html?type=order"><span class="spv2-row-copy pb-copy"><strong>Order issue</strong><small>Problems with an active or completed service order</small></span><span class="spv2-action">Support</span></a>
+<a class="spv2-row pb-component" href="/support-flow.html?type=wallet"><span class="spv2-row-copy pb-copy"><strong>Wallet or funding</strong><small>Deposit, balance or transaction questions</small></span><span class="spv2-action">Support</span></a>
+<a class="spv2-row pb-component" href="/support-flow.html?type=account"><span class="spv2-row-copy pb-copy"><strong>Account access</strong><small>Login, password or account assistance</small></span><span class="spv2-action">Support</span></a>
+<a class="spv2-row pb-component" href="/support-flow.html?type=general"><span class="spv2-row-copy pb-copy"><strong>General question</strong><small>Anything else about PrimeBoostly</small></span><span class="spv2-action">Support</span></a>
+<p class="spv2-footnote">Support conversations and case references are created by the production support system.</p>
+</section>
+<nav aria-label="Primary navigation" class="spv2-bottom pb-primary-nav">
+<a class="spv2-tab" href="/dashboard.html"><span class="spv2-tab-icon">⌂</span><span>Home</span></a>
+<a class="spv2-tab" href="/services.html"><span class="spv2-tab-icon">◎</span><span>Services</span></a>
+<a class="spv2-tab" href="/dashboard.html?mode=new"><span class="spv2-tab-icon">＋</span><span>Order</span></a>
+<a class="spv2-tab" href="/orders.html"><span class="spv2-tab-icon">▤</span><span>Orders</span></a>
+<a class="spv2-tab active" href="/settings.html"><span class="spv2-tab-icon">♙</span><span>Profile</span></a>
+</nav>
+</main>
+<main class="support-mobile pb-legacy" data-figma-node="11:99">
+<header class="support-mobile-head"><a class="brand support-mobile-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a><a aria-label="Open menu" class="support-mobile-menu" href="/mobile-menu.html">☰</a></header>
+<section class="support-mobile-content">
+<h1>Support</h1><p class="support-mobile-sub">Create and follow up on support requests from your account.</p><a class="support-create" href="/new-ticket.html">Create New Ticket</a>
+<article class="support-notice"><h2>Need a faster answer?</h2><p>Include your order ID, transaction ID, or a screenshot when reporting an issue.</p></article>
+<a class="support-ticket" href="/ticket-detail.html"><div class="support-ticket-top"><span>#TKT-204</span><em class="support-status open">Open</em></div><h2>Order not starting</h2><p>Today 10:22 AM</p></a>
+<a class="support-ticket" href="/ticket-detail.html"><div class="support-ticket-top"><span>#TKT-198</span><em class="support-status answered">Answered</em></div><h2>Wallet funding delay</h2><p>Yesterday 6:18 PM</p></a>
+<a class="support-ticket" href="/ticket-detail.html"><div class="support-ticket-top"><span>#TKT-181</span><em class="support-status closed">Closed</em></div><h2>Service question</h2><p>03 Oct 2026</p></a>
+</section>
+</main>
 </body>
 </html>

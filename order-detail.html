@@ -1,90 +1,88 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Order details · Prime Boostly</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/dashboard-figma.css">
-  <link rel="stylesheet" href="/order-detail-figma.css">
-  <link rel="stylesheet" href="/order-detail-v2.css">
-  <script src="/auth.js" defer></script>
-  <script src="/order-detail-v2.js" defer></script>
-</head>
-<body class="app order-detail-page" data-auth-protected="true">
-  <aside class="pb-sidebar" aria-label="Account navigation">
-    <div class="pb-side-brand"><strong><span>SMM</span>Panel</strong><small>Prime Boostly</small></div>
-    <nav>
-      <a href="/dashboard.html">Dashboard</a>
-      <a href="/dashboard.html?mode=new">New Order</a>
-      <a class="active" href="/orders.html">Orders</a>
-      <a href="/order-history.html">Order History</a>
-      <a href="/add-funds.html">Add Funds</a>
-      <a href="/support.html">Support</a>
-      <a href="/settings.html">Settings</a>
-    </nav>
-    <a class="logout" href="/login.html" data-auth-logout>Log out</a>
-  </aside>
-
-  <main class="order-detail-desktop" data-figma-node="37:744">
-    <header class="od-page-header">
-      <div class="od-title"><h1>Order #142806</h1><p>Instagram Followers | Fast · placed 06 Oct 2026</p></div>
-      <em class="od-status">Completed</em>
-    </header>
-    <section class="od-summary" aria-label="Order summary">
-      <article class="od-metric"><small>Amount</small><b>₦1,850</b></article>
-      <article class="od-metric"><small>Quantity</small><b>1,000</b></article>
-      <article class="od-metric"><small>Start count</small><b>24,180</b></article>
-      <article class="od-metric"><small>Remains</small><b>0</b></article>
-    </section>
-    <div class="od-grid">
-      <section class="od-card">
-        <h2>Order details</h2>
-        <div class="od-detail-rows">
-          <div class="od-detail-row"><span>Service</span><b>Instagram Followers | Fast</b></div>
-          <div class="od-detail-row"><span>Target</span><b>instagram.com/primeboostly</b></div>
-          <div class="od-detail-row"><span>Status</span><b>Completed</b></div>
-          <div class="od-detail-row"><span>Order ID</span><b>#142806</b></div>
-        </div>
-        <a class="od-repeat" href="/dashboard.html?mode=new">Order This Service Again</a>
-      </section>
-      <section class="od-card od-progress-card">
-        <h2>Order progress</h2>
-        <div class="od-progress-item"><i class="od-dot"></i><div class="od-progress-copy"><b>Order confirmed</b><small>11:42 AM</small></div></div>
-        <div class="od-progress-item"><i class="od-dot"></i><div class="od-progress-copy"><b>Processing</b><small>11:44 AM</small></div></div>
-        <div class="od-progress-item"><i class="od-dot"></i><div class="od-progress-copy"><b>Completed</b><small>12:08 PM</small></div></div>
-      </section>
-    </div>
-    <section class="od-help"><h2>Need help with this order?</h2><p>Open a support ticket and include order #142806 so support can check it quickly.</p><a href="/support.html">Contact Support</a></section>
-  </main>
-
-  <main class="order-detail-v2" aria-label="Order details">
-    <div class="odv2-status" aria-hidden="true"><span>9:41</span><span class="odv2-status-right">● 5G ▰</span></div>
-    <section class="odv2-content">
-      <header class="odv2-top"><a class="odv2-circle odv2-back" href="/orders.html" aria-label="Back">‹</a><h1>Order details</h1><a class="odv2-circle odv2-help" href="/support.html" aria-label="Help">?</a></header>
-      <section class="odv2-summary"><span class="odv2-icon" data-order-icon>NG</span><span class="odv2-copy"><strong data-order-title>Real Nigeria Followers</strong><small data-order-subtitle>Local audience • Higher trust</small></span><span class="odv2-pill" data-order-pill>Nigeria</span></section>
-      <h2 class="odv2-processing">Processing</h2>
-      <section class="odv2-card" aria-label="Order summary">
-        <div class="odv2-row" data-key="platform"><span>Platform</span><strong>Instagram</strong></div>
-        <div class="odv2-row" data-key="service"><span>Service</span><strong>Followers</strong></div>
-        <div class="odv2-row" data-key="profile"><span>Profile</span><strong>Runtime profile</strong></div>
-        <div class="odv2-row" data-key="quantity"><span>Quantity</span><strong>Runtime quantity</strong></div>
-        <div class="odv2-row" data-key="price"><span>Price</span><strong>Live rate at purchase</strong></div>
-      </section>
-      <section class="odv2-notice"><span class="odv2-notice-icon">i</span><span class="odv2-notice-copy"><strong>Live status updates</strong><p>Production refreshes this order state from the provider until delivery is completed.</p></span></section>
-      <div class="odv2-balance"><span class="odv2-balance-copy"><small>Available balance</small><strong>₦48,250.00</strong></span><small>NGN</small></div>
-      <a class="odv2-action" href="/dashboard.html">Back home</a>
-      <p class="odv2-foot">Status, price and reference values come from production data.</p>
-    </section>
-    <nav class="odv2-bottom" aria-label="Primary navigation"><a class="odv2-tab" href="/dashboard.html"><span class="odv2-tab-icon">⌂</span><span>Home</span></a><a class="odv2-tab" href="/services.html"><span class="odv2-tab-icon">◎</span><span>Services</span></a><a class="odv2-tab" href="/dashboard.html?mode=new"><span class="odv2-tab-icon">＋</span><span>Order</span></a><a class="odv2-tab active" href="/orders.html" aria-current="page"><span class="odv2-tab-icon">▤</span><span>Orders</span></a><a class="odv2-tab" href="/settings.html"><span class="odv2-tab-icon">♙</span><span>Profile</span></a></nav>
-  </main>
-
-  <main class="order-detail-mobile" data-figma-node="37:1141">
-    <header class="od-mobile-head"><a class="od-mobile-brand" href="/" aria-label="Prime Boostly home"><span class="od-mobile-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Prime Boostly</small></a><a class="od-mobile-menu" href="/mobile-menu.html" aria-label="Open menu">☰</a></header>
-    <section class="od-mobile-title"><h1>Order #142806</h1><p>Instagram Followers | Fast</p></section><em class="od-status">Completed</em>
-    <section class="od-mobile-summary" aria-label="Order summary"><div class="od-detail-row"><span>Amount</span><b>₦1,850</b></div><div class="od-detail-row"><span>Quantity</span><b>1,000</b></div><div class="od-detail-row"><span>Start count</span><b>24,180</b></div><div class="od-detail-row"><span>Remains</span><b>0</b></div></section>
-    <section class="od-mobile-progress"><h2>Order progress</h2><div class="od-progress-item"><i class="od-dot"></i><div class="od-progress-copy"><b>Order confirmed</b><small>11:42 AM</small></div></div><div class="od-progress-item"><i class="od-dot"></i><div class="od-progress-copy"><b>Processing</b><small>11:44 AM</small></div></div><div class="od-progress-item"><i class="od-dot"></i><div class="od-progress-copy"><b>Completed</b><small>12:08 PM</small></div></div></section>
-    <a class="od-mobile-repeat" href="/dashboard.html?mode=new">Order This Service Again</a>
-  </main>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Order details · Prime Boostly</title>
+<link href="/style.css" rel="stylesheet"/>
+<link href="/dashboard-figma.css" rel="stylesheet"/>
+<link href="/order-detail-figma.css" rel="stylesheet"/>
+<link href="/order-detail-v2.css" rel="stylesheet"/>
+<script defer="" src="/auth.js"></script>
+<script defer="" src="/order-detail-v2.js"></script>
+<link href="/customer-polish.css" rel="stylesheet"/><script defer="" src="/customer-polish.js"></script></head>
+<body class="app order-detail-page pb-ui" data-auth-protected="true">
+<aside aria-label="Account navigation" class="pb-sidebar pb-legacy">
+<div class="pb-side-brand"><strong><span>SMM</span>Panel</strong><small>Prime Boostly</small></div>
+<nav>
+<a href="/dashboard.html">Dashboard</a>
+<a href="/dashboard.html?mode=new">New Order</a>
+<a class="active" href="/orders.html">Orders</a>
+<a href="/order-history.html">Order History</a>
+<a href="/add-funds.html">Add Funds</a>
+<a href="/support.html">Support</a>
+<a href="/settings.html">Settings</a>
+</nav>
+<a class="logout" data-auth-logout="" href="/login.html">Log out</a>
+</aside>
+<main class="order-detail-desktop pb-legacy" data-figma-node="37:744">
+<header class="od-page-header">
+<div class="od-title"><h1>Order #142806</h1><p>Instagram Followers | Fast · placed 06 Oct 2026</p></div>
+<em class="od-status">Completed</em>
+</header>
+<section aria-label="Order summary" class="od-summary">
+<article class="od-metric"><small>Amount</small><b>₦1,850</b></article>
+<article class="od-metric"><small>Quantity</small><b>1,000</b></article>
+<article class="od-metric"><small>Start count</small><b>24,180</b></article>
+<article class="od-metric"><small>Remains</small><b>0</b></article>
+</section>
+<div class="od-grid">
+<section class="od-card">
+<h2>Order details</h2>
+<div class="od-detail-rows">
+<div class="od-detail-row"><span>Service</span><b>Instagram Followers | Fast</b></div>
+<div class="od-detail-row"><span>Target</span><b>instagram.com/primeboostly</b></div>
+<div class="od-detail-row"><span>Status</span><b>Completed</b></div>
+<div class="od-detail-row"><span>Order ID</span><b>#142806</b></div>
+</div>
+<a class="od-repeat" href="/dashboard.html?mode=new">Order This Service Again</a>
+</section>
+<section class="od-card od-progress-card">
+<h2>Order progress</h2>
+<div class="od-progress-item"><i class="od-dot"></i><div class="od-progress-copy"><b>Order confirmed</b><small>11:42 AM</small></div></div>
+<div class="od-progress-item"><i class="od-dot"></i><div class="od-progress-copy"><b>Processing</b><small>11:44 AM</small></div></div>
+<div class="od-progress-item"><i class="od-dot"></i><div class="od-progress-copy"><b>Completed</b><small>12:08 PM</small></div></div>
+</section>
+</div>
+<section class="od-help"><h2>Need help with this order?</h2><p>Open a support ticket and include order #142806 so support can check it quickly.</p><a href="/support.html">Contact Support</a></section>
+</main>
+<main aria-label="Order details" class="order-detail-v2 pb-screen">
+<div aria-hidden="true" class="odv2-status pb-fake-status"><span>9:41</span><span class="odv2-status-right">● 5G ▰</span></div>
+<section class="odv2-content pb-page-content">
+<header class="odv2-top pb-page-header"><a aria-label="Back" class="odv2-circle odv2-back" href="/orders.html">‹</a><h1>Order details</h1><a aria-label="Help" class="odv2-circle odv2-help" href="/support.html">?</a></header>
+<section class="odv2-summary pb-component"><span class="odv2-icon" data-order-icon="">NG</span><span class="odv2-copy pb-copy"><strong data-order-title="">Real Nigeria Followers</strong><small data-order-subtitle="">Local audience • Higher trust</small></span><span class="odv2-pill" data-order-pill="">Nigeria</span></section>
+<h2 class="odv2-processing">Processing</h2>
+<section aria-label="Order summary" class="odv2-card pb-component">
+<div class="odv2-row pb-component" data-key="platform"><span>Platform</span><strong>Instagram</strong></div>
+<div class="odv2-row pb-component" data-key="service"><span>Service</span><strong>Followers</strong></div>
+<div class="odv2-row pb-component" data-key="profile"><span>Profile</span><strong>Runtime profile</strong></div>
+<div class="odv2-row pb-component" data-key="quantity"><span>Quantity</span><strong>Runtime quantity</strong></div>
+<div class="odv2-row pb-component" data-key="price"><span>Price</span><strong>Live rate at purchase</strong></div>
+</section>
+<section class="odv2-notice pb-component"><span class="odv2-notice-icon">i</span><span class="odv2-notice-copy pb-copy"><strong>Live status updates</strong><p>Production refreshes this order state from PrimeBoostly until delivery is completed.</p></span></section>
+<div class="odv2-balance"><span class="odv2-balance-copy pb-copy"><small>Available balance</small><strong>₦48,250.00</strong></span><small>NGN</small></div>
+<a class="odv2-action" href="/dashboard.html">Back home</a>
+<p class="odv2-foot">Status, price and reference values come from production data.</p>
+</section>
+<nav aria-label="Primary navigation" class="odv2-bottom pb-primary-nav"><a class="odv2-tab" href="/dashboard.html"><span class="odv2-tab-icon">⌂</span><span>Home</span></a><a class="odv2-tab" href="/services.html"><span class="odv2-tab-icon">◎</span><span>Services</span></a><a class="odv2-tab" href="/dashboard.html?mode=new"><span class="odv2-tab-icon">＋</span><span>Order</span></a><a aria-current="page" class="odv2-tab active" href="/orders.html"><span class="odv2-tab-icon">▤</span><span>Orders</span></a><a class="odv2-tab" href="/settings.html"><span class="odv2-tab-icon">♙</span><span>Profile</span></a></nav>
+</main>
+<main class="order-detail-mobile pb-legacy" data-figma-node="37:1141">
+<header class="od-mobile-head"><a aria-label="Prime Boostly home" class="od-mobile-brand" href="/"><span class="od-mobile-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Prime Boostly</small></a><a aria-label="Open menu" class="od-mobile-menu" href="/mobile-menu.html">☰</a></header>
+<section class="od-mobile-title"><h1>Order #142806</h1><p>Instagram Followers | Fast</p></section><em class="od-status">Completed</em>
+<section aria-label="Order summary" class="od-mobile-summary"><div class="od-detail-row"><span>Amount</span><b>₦1,850</b></div><div class="od-detail-row"><span>Quantity</span><b>1,000</b></div><div class="od-detail-row"><span>Start count</span><b>24,180</b></div><div class="od-detail-row"><span>Remains</span><b>0</b></div></section>
+<section class="od-mobile-progress"><h2>Order progress</h2><div class="od-progress-item"><i class="od-dot"></i><div class="od-progress-copy"><b>Order confirmed</b><small>11:42 AM</small></div></div><div class="od-progress-item"><i class="od-dot"></i><div class="od-progress-copy"><b>Processing</b><small>11:44 AM</small></div></div><div class="od-progress-item"><i class="od-dot"></i><div class="od-progress-copy"><b>Completed</b><small>12:08 PM</small></div></div></section>
+<a class="od-mobile-repeat" href="/dashboard.html?mode=new">Order This Service Again</a>
+</main>
 </body>
 </html>

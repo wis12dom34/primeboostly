@@ -1,72 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Order History · Prime Boostly</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/dashboard-figma.css">
-  <link rel="stylesheet" href="/order-history-figma.css">
-  <script src="/auth.js" defer></script>
-</head>
-<body class="app history-page" data-auth-protected="true">
-  <aside class="pb-sidebar">
-    <div class="pb-side-brand"><strong><span>SMM</span>Panel</strong><small>Prime Boostly</small></div>
-    <nav>
-      <a href="/dashboard.html">Dashboard</a>
-      <a href="/dashboard.html">New Order</a>
-      <a href="/orders.html">Orders</a>
-      <a class="active" href="/order-history.html">Order History</a>
-      <a href="/add-funds.html">Add Funds</a>
-      <a href="/support.html">Support</a>
-      <a href="/settings.html">Settings</a>
-    </nav>
-    <a class="logout" href="/login.html" data-auth-logout>Log out</a>
-  </aside>
-
-  <main class="history-desktop" data-figma-node="6:171">
-    <div class="history-desktop-inner">
-      <header class="history-heading"><h1>Order History</h1><p>Review completed, canceled, partial, and refunded orders.</p></header>
-      <section class="history-summary" aria-label="Order history summary">
-        <article><small>Spent This Month</small><b>₦94,750</b></article>
-        <article><small>Completed</small><b>94</b></article>
-        <article><small>Partial</small><b>7</b></article>
-        <article><small>Refunded</small><b>3</b></article>
-      </section>
-      <form class="history-filter" action="/order-history.html" method="get">
-        <label class="history-control">Search<input name="q" placeholder="Search history"></label>
-        <label class="history-control">Status<select name="status"><option>All results</option><option>Completed</option><option>Partial</option><option>Refunded</option><option>Canceled</option></select></label>
-        <label class="history-control">Date range<input name="range" value="01 Sep — 06 Oct" aria-label="Date range"></label>
-        <button class="history-export" type="button">Export</button>
-      </form>
-      <section class="history-table-card">
-        <h2>Activity</h2>
-        <table class="history-table">
-          <thead><tr><th>ORDER</th><th>SERVICE</th><th>AMOUNT</th><th>RESULT</th><th>COMPLETED</th><th>DETAILS</th></tr></thead>
-          <tbody>
-            <tr><td>#1239</td><td>Instagram Likes | HQ</td><td>₦650</td><td class="completed">Completed</td><td>05 Oct 18:42</td><td><a class="view" href="/order-detail.html">View</a></td></tr>
-            <tr><td>#1238</td><td>TikTok Followers</td><td>₦4,900</td><td class="partial">Partial</td><td>05 Oct 13:18</td><td><a class="view" href="/order-detail.html">View</a></td></tr>
-            <tr><td>#1232</td><td>YouTube Subscribers</td><td>₦8,250</td><td class="refunded">Refunded</td><td>03 Oct 09:41</td><td><a class="view" href="/order-detail.html">View</a></td></tr>
-            <tr><td>#1228</td><td>Facebook Reactions</td><td>₦1,400</td><td class="completed">Completed</td><td>02 Oct 21:05</td><td><a class="view" href="/order-detail.html">View</a></td></tr>
-            <tr><td>#1222</td><td>Telegram Post Views</td><td>₦450</td><td class="completed">Completed</td><td>01 Oct 14:22</td><td><a class="view" href="/order-detail.html">View</a></td></tr>
-            <tr><td>#1218</td><td>Spotify Plays</td><td>₦3,150</td><td class="canceled">Canceled</td><td>30 Sep 20:16</td><td><a class="view" href="/order-detail.html">View</a></td></tr>
-          </tbody>
-        </table>
-      </section>
-    </div>
-  </main>
-
-  <main class="history-mobile">
-    <header class="mtop"><a class="brand figma-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a><a class="menu" href="/mobile-menu.html" aria-label="Open menu">☰</a></header>
-    <section class="history-mobile-content">
-      <h1>Order History</h1><p>Review your completed, partial, refunded, and canceled orders.</p>
-      <div class="history-mobile-stats"><article><small>Spent This Month</small><b>₦94,750</b></article><article><small>Completed</small><b>94</b></article><article><small>Partial</small><b>7</b></article><article><small>Refunded</small><b>3</b></article></div>
-      <div class="history-mobile-search">Search history</div>
-      <a class="history-mobile-card" href="/order-detail.html"><div class="history-mobile-top"><span>#1239</span><em class="history-mobile-result">Completed</em></div><h2>Instagram Likes | HQ</h2><div class="history-mobile-meta"><b>₦650</b><span>05 Oct 18:42</span></div></a>
-      <a class="history-mobile-card" href="/order-detail.html"><div class="history-mobile-top"><span>#1238</span><em class="history-mobile-result partial">Partial</em></div><h2>TikTok Followers</h2><div class="history-mobile-meta"><b>₦4,900</b><span>05 Oct 13:18</span></div></a>
-      <a class="history-mobile-card" href="/order-detail.html"><div class="history-mobile-top"><span>#1232</span><em class="history-mobile-result refunded">Refunded</em></div><h2>YouTube Subscribers</h2><div class="history-mobile-meta"><b>₦8,250</b><span>03 Oct 09:41</span></div></a>
-      <a class="history-mobile-card" href="/order-detail.html"><div class="history-mobile-top"><span>#1218</span><em class="history-mobile-result canceled">Canceled</em></div><h2>Spotify Plays</h2><div class="history-mobile-meta"><b>₦3,150</b><span>30 Sep 20:16</span></div></a>
-    </section>
-  </main>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Order History · Prime Boostly</title>
+<link href="/style.css" rel="stylesheet"/>
+<link href="/dashboard-figma.css" rel="stylesheet"/>
+<link href="/order-history-figma.css" rel="stylesheet"/>
+<script defer="" src="/auth.js"></script>
+<link href="/customer-polish.css" rel="stylesheet"/><script defer="" src="/customer-polish.js"></script></head>
+<body class="app history-page pb-ui" data-auth-protected="true">
+<aside class="pb-sidebar pb-legacy">
+<div class="pb-side-brand"><strong><span>SMM</span>Panel</strong><small>Prime Boostly</small></div>
+<nav>
+<a href="/dashboard.html">Dashboard</a>
+<a href="/dashboard.html">New Order</a>
+<a href="/orders.html">Orders</a>
+<a class="active" href="/order-history.html">Order History</a>
+<a href="/add-funds.html">Add Funds</a>
+<a href="/support.html">Support</a>
+<a href="/settings.html">Settings</a>
+</nav>
+<a class="logout" data-auth-logout="" href="/login.html">Log out</a>
+</aside>
+<main class="history-desktop pb-legacy" data-figma-node="6:171">
+<div class="history-desktop-inner">
+<header class="history-heading"><h1>Order History</h1><p>Review completed, canceled, partial, and refunded orders.</p></header>
+<section aria-label="Order history summary" class="history-summary">
+<article><small>Spent This Month</small><b>₦94,750</b></article>
+<article><small>Completed</small><b>94</b></article>
+<article><small>Partial</small><b>7</b></article>
+<article><small>Refunded</small><b>3</b></article>
+</section>
+<form action="/order-history.html" class="history-filter" method="get">
+<label class="history-control">Search<input name="q" placeholder="Search history"/></label>
+<label class="history-control">Status<select name="status"><option>All results</option><option>Completed</option><option>Partial</option><option>Refunded</option><option>Canceled</option></select></label>
+<label class="history-control">Date range<input aria-label="Date range" name="range" value="01 Sep — 06 Oct"/></label>
+<button class="history-export" type="button">Export</button>
+</form>
+<section class="history-table-card">
+<h2>Activity</h2>
+<table class="history-table">
+<thead><tr><th>ORDER</th><th>SERVICE</th><th>AMOUNT</th><th>RESULT</th><th>COMPLETED</th><th>DETAILS</th></tr></thead>
+<tbody>
+<tr><td>#1239</td><td>Instagram Likes | HQ</td><td>₦650</td><td class="completed">Completed</td><td>05 Oct 18:42</td><td><a class="view" href="/order-detail.html">View</a></td></tr>
+<tr><td>#1238</td><td>TikTok Followers</td><td>₦4,900</td><td class="partial">Partial</td><td>05 Oct 13:18</td><td><a class="view" href="/order-detail.html">View</a></td></tr>
+<tr><td>#1232</td><td>YouTube Subscribers</td><td>₦8,250</td><td class="refunded">Refunded</td><td>03 Oct 09:41</td><td><a class="view" href="/order-detail.html">View</a></td></tr>
+<tr><td>#1228</td><td>Facebook Reactions</td><td>₦1,400</td><td class="completed">Completed</td><td>02 Oct 21:05</td><td><a class="view" href="/order-detail.html">View</a></td></tr>
+<tr><td>#1222</td><td>Telegram Post Views</td><td>₦450</td><td class="completed">Completed</td><td>01 Oct 14:22</td><td><a class="view" href="/order-detail.html">View</a></td></tr>
+<tr><td>#1218</td><td>Spotify Plays</td><td>₦3,150</td><td class="canceled">Canceled</td><td>30 Sep 20:16</td><td><a class="view" href="/order-detail.html">View</a></td></tr>
+</tbody>
+</table>
+</section>
+</div>
+</main>
+<main class="history-mobile pb-screen">
+<header class="mtop"><a class="brand figma-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a><a aria-label="Open menu" class="menu" href="/mobile-menu.html">☰</a></header>
+<section class="history-mobile-content pb-page-content">
+<h1>Order History</h1><p>Review your completed, partial, refunded, and canceled orders.</p>
+<div class="history-mobile-stats"><article><small>Spent This Month</small><b>₦94,750</b></article><article><small>Completed</small><b>94</b></article><article><small>Partial</small><b>7</b></article><article><small>Refunded</small><b>3</b></article></div>
+<div class="history-mobile-search">Search history</div>
+<a class="history-mobile-card pb-component" href="/order-detail.html"><div class="history-mobile-top"><span>#1239</span><em class="history-mobile-result">Completed</em></div><h2>Instagram Likes | HQ</h2><div class="history-mobile-meta"><b>₦650</b><span>05 Oct 18:42</span></div></a>
+<a class="history-mobile-card pb-component" href="/order-detail.html"><div class="history-mobile-top"><span>#1238</span><em class="history-mobile-result partial">Partial</em></div><h2>TikTok Followers</h2><div class="history-mobile-meta"><b>₦4,900</b><span>05 Oct 13:18</span></div></a>
+<a class="history-mobile-card pb-component" href="/order-detail.html"><div class="history-mobile-top"><span>#1232</span><em class="history-mobile-result refunded">Refunded</em></div><h2>YouTube Subscribers</h2><div class="history-mobile-meta"><b>₦8,250</b><span>03 Oct 09:41</span></div></a>
+<a class="history-mobile-card pb-component" href="/order-detail.html"><div class="history-mobile-top"><span>#1218</span><em class="history-mobile-result canceled">Canceled</em></div><h2>Spotify Plays</h2><div class="history-mobile-meta"><b>₦3,150</b><span>30 Sep 20:16</span></div></a>
+</section>
+<nav aria-label="Primary navigation" class="pb-primary-nav"><a href="/dashboard.html">Home</a><a href="/services.html">Services</a><a href="/dashboard.html?mode=new">Order</a><a href="/orders.html">Orders</a><a href="/settings.html">Profile</a></nav></main>
 </body>
 </html>

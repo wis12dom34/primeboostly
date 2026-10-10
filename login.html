@@ -1,42 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Sign In · Prime Boostly</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/auth.css">
-  <link rel="stylesheet" href="/auth-figma-fixes.css">
-  <script src="/auth.js" defer></script>
-</head>
-<body class="auth-page auth-login-page">
-  <main class="auth-figma-shell">
-    <aside class="auth-brand-panel">
-      <a class="brand auth-brand" href="/" aria-label="Prime Boostly home"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
-      <h1>Welcome back</h1>
-      <p>Sign in to manage your orders, wallet, services, and support requests.</p>
-      <div class="auth-benefits" aria-label="Prime Boostly benefits">
-        <span>✓&nbsp; Fast service delivery</span>
-        <span>✓&nbsp; Simple ordering flow</span>
-        <span>✓&nbsp; Secure wallet funding</span>
-        <span>✓&nbsp; 24/7 support</span>
-      </div>
-    </aside>
-    <section class="auth-form-panel">
-      <a class="brand auth-mobile-brand" href="/" aria-label="Prime Boostly home"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
-      <h2>LOGIN</h2>
-      <p class="auth-panel-lead desktop-login-lead">Enter your details to continue to Prime Boostly.</p>
-      <p class="auth-panel-lead mobile-login-lead">Sign in to continue to Prime Boostly.</p>
-      <form class="auth-form auth-figma-form" data-auth-login novalidate>
-        <p class="auth-error" data-auth-error role="alert"></p>
-        <p class="auth-success" data-auth-success role="status"></p>
-        <label class="auth-field">Username or Email<input name="identity" autocomplete="username" inputmode="email" placeholder="Enter username or email" required></label>
-        <label class="auth-field">Password<input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Enter password" required></label>
-        <div class="auth-row"><label class="auth-check"><input type="checkbox" name="remember">Remember me</label><a class="auth-link" href="/forgot-password.html">Forgot password?</a></div>
-        <button class="auth-submit" type="submit">Login</button>
-      </form>
-      <p class="auth-inline-foot">Don't have an account? <a href="/register.html">Sign up</a></p>
-    </section>
-  </main>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Sign In · Prime Boostly</title>
+<link href="/style.css" rel="stylesheet"/>
+<link href="/auth.css" rel="stylesheet"/>
+<link href="/auth-figma-fixes.css" rel="stylesheet"/>
+<script defer="" src="/auth.js"></script>
+<link href="/customer-polish.css" rel="stylesheet"/><script defer="" src="/customer-polish.js"></script></head>
+<body class="auth-page auth-login-page pb-ui">
+<main class="auth-figma-shell pb-screen">
+<aside class="auth-brand-panel">
+<a aria-label="Prime Boostly home" class="brand auth-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
+<h1>Welcome back</h1>
+<p>Sign in to manage your orders, wallet, services, and support requests.</p>
+<div aria-label="Prime Boostly benefits" class="auth-benefits">
+<span>✓  Fast service delivery</span>
+<span>✓  Simple ordering flow</span>
+<span>✓  Secure wallet funding</span>
+<span>✓  24/7 support</span>
+</div>
+</aside>
+<section class="auth-form-panel">
+<a aria-label="Prime Boostly home" class="brand auth-mobile-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
+<h2>LOGIN</h2>
+<p class="auth-panel-lead desktop-login-lead">Enter your details to continue to Prime Boostly.</p>
+<p class="auth-panel-lead mobile-login-lead">Sign in to continue to Prime Boostly.</p>
+<form class="auth-form auth-figma-form" data-auth-login="" novalidate="">
+<p class="auth-error" data-auth-error="" role="alert"></p>
+<p class="auth-success" data-auth-success="" role="status"></p>
+<label class="auth-field">Username or Email<input autocomplete="username" inputmode="email" name="identity" placeholder="Enter username or email" required=""/></label>
+<label class="auth-field">Password<input autocomplete="current-password" id="login-password" name="password" placeholder="Enter password" required="" type="password"/></label>
+<div class="auth-row pb-component"><label class="auth-check"><input name="remember" type="checkbox"/>Remember me</label><a class="auth-link" href="/forgot-password.html">Forgot password?</a></div>
+<button class="auth-submit pb-primary-button" type="submit">Login</button>
+</form>
+<p class="auth-inline-foot">Don't have an account? <a href="/register.html">Sign up</a></p>
+</section>
+</main>
 </body>
 </html>

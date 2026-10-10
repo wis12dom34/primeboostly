@@ -1,40 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Manual Deposit · Prime Boostly</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/account-flow.css">
-  <script src="/auth.js" defer></script>
-</head>
-<body class="flow-page" data-auth-protected="true">
-  <header class="flow-header">
-    <a class="flow-brand" href="/" aria-label="Prime Boostly home"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
-    <nav class="flow-nav" aria-label="Account navigation"><a href="/dashboard.html">Dashboard</a><a href="/dashboard.html">Order</a><a href="/services.html">Services</a><a href="/add-funds.html">Add Fund</a><a href="/fund-history.html">Fund History</a><a href="/transactions.html">Transactions</a></nav>
-    <div class="flow-user"><span class="flow-avatar" aria-hidden="true"></span><span data-auth-name>wick</span></div>
-    <a class="flow-menu" href="/mobile-menu.html" aria-label="Open menu">☰</a>
-  </header>
-  <main class="flow-content">
-    <p class="flow-crumb">Home / Add Fund / Bank Transfer</p>
-    <h1 class="mobile-only mobile-title">Manual Deposit</h1>
-    <p class="mobile-only mobile-lead">Follow the bank transfer instruction and submit proof.</p>
-    <form class="flow-card manual-card" onsubmit="return false">
-      <h1>Please follow the instruction below</h1>
-      <div class="manual-instructions">
-        <p><strong class="desktop-only">Bank: Prime Boostly Payments</strong><strong class="mobile-only">Bank · Prime Boostly Payments</strong></p>
-        <p><span class="desktop-only">Account Number: 0123456789</span><span class="mobile-only">Account · 0123456789</span></p>
-        <p><span class="desktop-only">Account Name: Prime Boostly Ltd</span><span class="mobile-only">Name · Prime Boostly Ltd</span></p>
-        <p class="muted">After transfer, enter the details below and upload your payment proof.</p>
-      </div>
-      <div class="manual-fields-row">
-        <label class="flow-field"><span>Sender Name</span><input name="sender" placeholder="Your full name" autocomplete="name"></label>
-        <label class="flow-field"><span>Amount</span><input name="amount" placeholder="₦25,000" inputmode="decimal"></label>
-      </div>
-      <label class="flow-field manual-reference"><span>Transaction Reference</span><input name="reference" placeholder="Bank transfer reference"></label>
-      <label class="manual-upload"><b><span class="desktop-upload-copy">Upload payment screenshot / receipt</span></b><small>PNG or JPG · max 10MB</small><input name="proof" type="file" accept="image/png,image/jpeg"></label>
-      <button class="flow-button" type="button">Confirm Now</button>
-    </form>
-  </main>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Manual Deposit · Prime Boostly</title>
+<link href="/style.css" rel="stylesheet"/>
+<link href="/account-flow.css" rel="stylesheet"/>
+<script defer="" src="/auth.js"></script>
+<link href="/customer-polish.css" rel="stylesheet"/><script defer="" src="/customer-polish.js"></script></head>
+<body class="flow-page pb-ui" data-auth-protected="true">
+<header class="flow-header">
+<a aria-label="Prime Boostly home" class="flow-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
+<nav aria-label="Account navigation" class="flow-nav"><a href="/dashboard.html">Dashboard</a><a href="/dashboard.html">Order</a><a href="/services.html">Services</a><a href="/add-funds.html">Add Fund</a><a href="/fund-history.html">Fund History</a><a href="/transactions.html">Transactions</a></nav>
+<div class="flow-user"><span aria-hidden="true" class="flow-avatar"></span><span data-auth-name="">wick</span></div>
+<a aria-label="Open menu" class="flow-menu" href="/mobile-menu.html">☰</a>
+</header>
+<main class="flow-content pb-screen">
+<p class="flow-crumb">Home / Add Fund / Bank Transfer</p>
+<h1 class="mobile-only mobile-title">Manual Deposit</h1>
+<p class="mobile-only mobile-lead">Follow the bank transfer instruction and submit proof.</p>
+<form class="flow-card manual-card pb-component" onsubmit="return false">
+<h1>Please follow the instruction below</h1>
+<div class="manual-instructions">
+<p><strong class="desktop-only">Bank: Prime Boostly Payments</strong><strong class="mobile-only">Bank · Prime Boostly Payments</strong></p>
+<p><span class="desktop-only">Account Number: 0123456789</span><span class="mobile-only">Account · 0123456789</span></p>
+<p><span class="desktop-only">Account Name: Prime Boostly Ltd</span><span class="mobile-only">Name · Prime Boostly Ltd</span></p>
+<p class="muted">After transfer, enter the details below and upload your payment proof.</p>
+</div>
+<div class="manual-fields-row pb-component">
+<label class="flow-field"><span>Sender Name</span><input autocomplete="name" name="sender" placeholder="Your full name"/></label>
+<label class="flow-field"><span>Amount</span><input inputmode="decimal" name="amount" placeholder="₦25,000"/></label>
+</div>
+<label class="flow-field manual-reference"><span>Transaction Reference</span><input name="reference" placeholder="Bank transfer reference"/></label>
+<label class="manual-upload"><b><span class="desktop-upload-copy pb-copy">Upload payment screenshot / receipt</span></b><small>PNG or JPG · max 10MB</small><input accept="image/png,image/jpeg" name="proof" type="file"/></label>
+<button class="flow-button" type="button">Confirm Now</button>
+</form>
+<nav aria-label="Primary navigation" class="pb-primary-nav"><a href="/dashboard.html">Home</a><a href="/services.html">Services</a><a href="/dashboard.html?mode=new">Order</a><a href="/orders.html">Orders</a><a href="/settings.html">Profile</a></nav></main>
 </body>
 </html>
