@@ -106,6 +106,16 @@
       if (quantity) url.searchParams.set('quantity', quantity);
       return url.pathname + url.search;
     };
+    const buildDetailUrl = () => {
+      const url = new URL('/order-detail.html', location.origin);
+      url.searchParams.set('type', 'real');
+      if (selectedPlatform) url.searchParams.set('platform', selectedPlatform);
+      const profile = currentProfile();
+      const quantity = currentQuantity();
+      if (profile) url.searchParams.set('profile', profile);
+      if (quantity) url.searchParams.set('quantity', quantity);
+      return url.pathname + url.search;
+    };
 
     document.querySelectorAll('[data-selected-platform]').forEach(node => {
       node.textContent = platformLabel;
@@ -158,7 +168,6 @@
       reviewLink.classList.toggle('disabled', !complete);
       reviewLink.setAttribute('aria-disabled', String(!complete));
       reviewLink.href = complete ? buildOrderUrl('review') : '#';
-      reviewLink.textContent = complete ? 'Review order' : 'Review order';
     };
 
     [profileInput, quantityInput].forEach(input => {
@@ -189,6 +198,11 @@
     if (priceBack) priceBack.href = buildOrderUrl('review');
     document.querySelectorAll('[data-order-next="price"]').forEach(link => { link.href = buildOrderUrl('price'); });
     document.querySelectorAll('[data-order-next="submitted"]').forEach(link => { link.href = buildOrderUrl('submitted'); });
+    const submittedStatusLink = document.querySelector('.order-submitted-v2 .orrv2-confirm');
+    if (submittedStatusLink) {
+      submittedStatusLink.href = buildDetailUrl();
+      submittedStatusLink.textContent = 'View order status';
+    }
   }
 
   function applyMobileView(mode, hasExplicitMode) {
