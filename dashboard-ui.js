@@ -8,9 +8,11 @@
   const normalSmmCard = document.querySelector('.v2-service-normal');
   const nigeriaFollowersCard = document.querySelector('.v2-service-real');
   const recentActivityCard = document.querySelector('.v2-recent-card');
+  const notificationButton = document.querySelector('.v2-notifications');
   if (normalSmmCard) normalSmmCard.href = '/normal-smm.html';
   if (nigeriaFollowersCard) nigeriaFollowersCard.href = '/dashboard.html?mode=new';
   if (recentActivityCard) recentActivityCard.href = '/order-detail.html?type=normal&platform=instagram&service=followers';
+  notificationButton?.addEventListener('click', () => { location.href = '/notifications.html'; });
 
   function markPlatform(value) {
     platforms.forEach(button => {
