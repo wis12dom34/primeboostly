@@ -3,10 +3,11 @@
   if (!root) return;
 
   const params = new URLSearchParams(location.search);
-  const validSteps = ['home','amount','amount-entered','method','selected','review','handoff'];
+  const validSteps = ['home','amount','amount-entered','method','selected','review','handoff','initiated'];
   const step = validSteps.includes(params.get('step')) ? params.get('step') : 'home';
   const amount = params.get('amount') || '';
   const method = params.get('method') || '';
+  const reference = params.get('reference') || '';
 
   const title = root.querySelector('[data-fund-title]');
   const back = root.querySelector('[data-fund-back]');
@@ -19,8 +20,10 @@
     url.searchParams.set('step', nextStep);
     const nextAmount = overrides.amount ?? amount;
     const nextMethod = overrides.method ?? method;
+    const nextReference = overrides.reference ?? reference;
     if (nextAmount) url.searchParams.set('amount', nextAmount);
     if (nextMethod) url.searchParams.set('method', nextMethod);
+    if (nextReference) url.searchParams.set('reference', nextReference);
     return url.pathname + url.search;
   };
 
@@ -53,7 +56,7 @@
         const ready = Number(field.value) > 0;
         continueRow?.setAttribute('aria-disabled', String(!ready));
         continueRow?.classList.toggle('locked', !ready);
-        if (continueRow) continueRow.href = ready ? makeUrl('amount-entered', {amount: field.value, method: ''}) : '#';
+        if (continueRow) continueRow.href = ready ? makeUrl('amount-entered', {amount: field.value, method:'', reference:''}) : '#';
       });
     } else {
       actionNode.textContent = action;
@@ -68,7 +71,7 @@
   if (step === 'home') {
     if (title) title.textContent = 'Add funds';
     if (back) back.href = '/settings.html';
-    setRow(0, {title:'Funding amount', copy:'Enter the amount in production checkout', action:'Enter amount', href:makeUrl('amount', {amount:'', method:''})});
+    setRow(0, {title:'Funding amount', copy:'Enter the amount in production checkout', action:'Enter amount', href:makeUrl('amount', {amount:'', method:'', reference:''})});
     setRow(1, {title:'Payment method', copy:'Available after a funding amount is entered', action:'Enter amount first', locked:true, disabled:true});
     setRow(2, {title:'Funding summary', copy:'Available after amount and payment method', action:'Complete previous steps', locked:true, disabled:true});
     setNotice('Secure production checkout','Exact methods, fees and limits come from the live funding system.');
@@ -131,8 +134,27 @@
     if (back) back.href = makeUrl('review');
     setRow(0, {title:'Funding amount', copy:'Amount confirmed by production', action:'Confirmed', href:'#', disabled:true});
     setRow(1, {title:'Payment method', copy:'Selected from the live funding provider', action:'Selected', href:'#', disabled:true});
-    const checkoutHref = method === 'paystack' ? '/paystack-checkout.html' : makeUrl('method', {method:''});
-    setRow(2, {title:'Secure checkout', copy:'Production creates the checkout session', action:method === 'paystack' ? 'Continue ›' : 'Choose method ›', href:checkoutHref});
+    let checkoutHref = makeUrl('method', {method:'', reference:''});
+    let checkoutAction = 'Choose method ›';
+    if (method === 'paystack') {
+      const returnUrl = makeUrl('initiated', {reference:'production'});
+      const checkout = new URL('/paystack-checkout.html', location.origin);
+      if (amount) checkout.searchParams.set('amount', amount);
+      checkout.searchParams.set('return', returnUrl);
+      checkoutHref = checkout.pathname + checkout.search;
+      checkoutAction = 'Continue ›';
+    }
+    setRow(2, {title:'Secure checkout', copy:'Production creates the checkout session', action:checkoutAction, href:checkoutHref});
     setNotice('Provider checkout','The live funding system supplies the checkout destination, fees and final total.');
+    return;
+  }
+
+  if (step === 'initiated') {
+    if (title) title.textContent = 'Funding initiated';
+    if (back) back.href = '/add-funds.html';
+    setRow(0, {title:'Checkout status', copy:'Current state from the funding provider', action:'Awaiting provider', href:'#', disabled:true});
+    setRow(1, {title:'Reference', copy:'Created by the production funding system', action:reference && reference !== 'production' ? reference : 'Production', href:'#', disabled:true});
+    setRow(2, {title:'Back to wallet', copy:'Balance updates only after verified payment', action:'View wallet ›', href:'/settings.html'});
+    setNotice('Wallet credits after confirmation','PrimeBoostly credits the wallet only after production confirms the payment.');
   }
 })();
