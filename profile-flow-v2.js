@@ -134,10 +134,10 @@
 
   title.textContent = 'Security';
   body.append(
-    row({title:'Password',copy:'Manage your sign-in password',action:'Protected',href:'/settings.html#security'}),
-    row({title:'Two-step verification',copy:'Extra verification for sensitive account actions',toggle:storedToggle('Two-step verification', true),href:'#'}),
-    row({title:'Active sessions',copy:'Review devices currently signed in',action:'Production',href:'/settings.html#security'}),
-    row({title:'Sign-in activity',copy:'Recent authentication activity',action:'Production',href:'/settings.html#security'}),
-    notice('Security data','Sensitive credentials and session details are never stored in the design prototype.')
+    row({title:'Password',copy:'Manage your sign-in password',action:'Protected ›',href:'/security-flow.html?view=password'}),
+    row({title:'Two-step verification',copy:'Extra verification for sensitive account actions',action:'Manage ›',href:'/security-flow.html?view=2fa'}),
+    row({title:'Active sessions',copy:'Review devices currently signed in',action:'Production ›',href:'/security-flow.html?view=sessions'}),
+    row({title:'Sign-in activity',copy:'Recent authentication activity',action:'Review ›',href:'/security-flow.html?view=activity'}),
+    notice('Security data','Sensitive credentials and session details are loaded securely from production and are not invented in this prototype.')
   );
 })();
