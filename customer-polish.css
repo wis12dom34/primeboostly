@@ -719,7 +719,7 @@ body.pb-ui{margin:0!important;min-height:100dvh!important;background:#f5f8f6!imp
 .pb-ui .pb-screen button{min-width:44px!important;min-height:48px!important;font-size:16px!important;line-height:1.4!important;cursor:pointer;touch-action:manipulation}
 .pb-ui :is(.pb-primary-button,.pb-secondary-button,.auth-submit){cursor:pointer;touch-action:manipulation;transition:background-color 180ms ease,opacity 180ms ease}
 .pb-ui :is(button:disabled,a[aria-disabled=true]){cursor:not-allowed!important;opacity:.5!important}
-.pb-ui .pb-secondary-button,.pb-ui .pb-screen :is(.state-secondary,.cd-mobile-secondary,.cd-mobile-danger){min-height:48px!important;padding:12px 16px!important;border:1px solid var(--pb-border)!important;border-radius:16px!important;background:#f5f8f6!important;color:var(--pb-ink)!important;display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;white-space:normal!important;font-size:16px!important;line-height:1.4!important}
+.pb-ui .pb-secondary-button,.pb-ui .pb-screen :is(.state-secondary,.cd-mobile-secondary,.cd-mobile-danger){min-height:48px!important;padding:12px 16px!important;border:1px solid var(--pb-border)!important;border-radius:16px!important;background:#f5f8f6!important;color:var(--pb-ink)!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;text-align:center!important;white-space:normal!important;font-size:16px!important;line-height:1.4!important}
 .pb-ui .pb-screen .cd-mobile-danger{background:#fff0ed!important;border-color:#f2d4ce!important;color:#a43d30!important}
 .pb-ui .pb-screen :is(.secv2-toggle,.pfv2-toggle){min-height:44px!important;min-width:44px!important;flex-shrink:0!important;display:grid!important;place-items:center!important}
 .pb-ui .pb-screen :is(.transactions-mobile-tabs,.fund-history-mobile-tabs){display:flex!important;flex-wrap:wrap!important;gap:8px!important;height:auto!important}
@@ -738,3 +738,5 @@ body.pb-ui{margin:0!important;min-height:100dvh!important;background:#f5f8f6!imp
 .pb-ui .pb-screen .secv2-row:has(input){display:flex!important;flex-wrap:wrap!important;align-items:center!important}
 .pb-ui .pb-screen .secv2-row:has(input) .secv2-copy{flex:0 0 100%!important;width:100%!important}
 .pb-ui .pb-screen .secv2-row input{flex:1 1 160px!important;width:auto!important;text-align:left!important}
+
+.pb-ui .pb-section-heading .pb-secondary-button{font-size:14px!important;padding:10px 12px!important;gap:6px!important}

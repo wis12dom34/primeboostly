@@ -1,6 +1,7 @@
 /* Shared presentation helpers. No requests, wallet mutations or authentication changes. */
 (() => {
   const paths = {
+    history:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
     home:'<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>',
     grid:'<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',
     plus:'<path d="M12 5v14M5 12h14"/>',
