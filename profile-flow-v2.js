@@ -2,11 +2,13 @@
   const root = document.querySelector('.pfv2');
   if (!root) return;
   const params = new URLSearchParams(location.search);
-  const validViews = ['account','wallet','notifications','security'];
+  const validViews = ['account','wallet','transactions','currency','notifications','security'];
   const view = validViews.includes(params.get('view')) ? params.get('view') : 'account';
   const title = root.querySelector('[data-profile-title]');
   const body = root.querySelector('[data-profile-body]');
+  const back = root.querySelector('.pfv2-back');
   if (!title || !body) return;
+  if (back) back.href = ['transactions','currency'].includes(view) ? '/profile-flow.html?view=wallet' : '/settings.html';
 
   const row = ({title, copy, action, href = '#', green = false, toggle}) => {
     const wrap = document.createElement(href === '#' && toggle === undefined ? 'div' : 'a');
@@ -55,10 +57,10 @@
     text.append(strong, small); box.append(info, text); return box;
   };
 
-  const wallet = () => {
+  const wallet = (label = 'Available balance', value = '₦48,250.00') => {
     const box = document.createElement('div'); box.className = 'pfv2-wallet';
-    const small = document.createElement('small'); small.textContent = 'Available balance';
-    const strong = document.createElement('strong'); strong.textContent = '₦48,250.00';
+    const small = document.createElement('small'); small.textContent = label;
+    const strong = document.createElement('strong'); strong.textContent = value;
     box.append(small, strong); return box;
   };
 
@@ -80,9 +82,33 @@
     body.append(
       wallet(),
       row({title:'Wallet funding',copy:'Add money through the live funding flow',action:'Production checkout',href:'/add-funds.html'}),
-      row({title:'Transaction history',copy:'Funding and wallet activity',action:'Production records',href:'/transactions.html'}),
-      row({title:'Billing currency',copy:'Primary wallet display currency',action:'NGN'}),
+      row({title:'Transaction history',copy:'Funding and wallet activity',action:'Production records',href:'/profile-flow.html?view=transactions'}),
+      row({title:'Billing currency',copy:'Primary wallet display currency',action:'NGN',href:'/profile-flow.html?view=currency'}),
       notice('Live wallet data','Balance and transaction values are supplied by production wallet data.')
+    );
+    return;
+  }
+
+  if (view === 'transactions') {
+    title.textContent = 'Transaction details';
+    body.append(
+      wallet('Wallet activity','Production records'),
+      row({title:'Latest transactions',copy:'Funding and wallet movements',action:'Live data'}),
+      row({title:'Transaction history',copy:'Amount, method, status and reference',action:'Production records'}),
+      row({title:'History source',copy:'Transactions from the production wallet',action:'Live'}),
+      notice('Live transaction history','Real transactions appear here when production wallet data is connected.')
+    );
+    return;
+  }
+
+  if (view === 'currency') {
+    title.textContent = 'Currency source';
+    body.append(
+      wallet('Current display currency','NGN'),
+      row({title:'Nigerian Naira',copy:'Current wallet display currency',action:'Active'}),
+      row({title:'Additional currencies',copy:'Loaded from production configuration',action:'Not invented'}),
+      row({title:'Billing currency',copy:'Enabled by live wallet settings',action:'NGN'}),
+      notice('Production currency configuration','Only currencies enabled by the live wallet should appear here.')
     );
     return;
   }
