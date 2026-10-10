@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/orders-figma.css">
   <link rel="stylesheet" href="/orders-v2.css">
   <script src="/auth.js" defer></script>
+  <script src="/orders-v2.js" defer></script>
 </head>
 <body class="app orders-page" data-auth-protected="true">
   <aside class="pb-sidebar">
@@ -61,38 +62,36 @@
     <div class="ov2-status" aria-hidden="true"><span>9:41</span><span class="ov2-status-right">● 5G ▰</span></div>
     <section class="ov2-content">
       <header class="ov2-header">
-        <div class="ov2-title-block"><h1 class="ov2-title">Orders</h1><p class="ov2-subtitle">Track your service activity</p></div>
-        <a class="ov2-search" href="/orders.html" aria-label="Search orders">⌕</a>
+        <div class="ov2-title-block"><h1 class="ov2-title" data-orders-title>Orders</h1><p class="ov2-subtitle" data-orders-subtitle>Track your service activity</p></div>
+        <a class="ov2-search" data-orders-search-button href="/orders.html?view=search" aria-label="Search orders">⌕</a>
       </header>
 
-      <nav class="ov2-filters" aria-label="Order filters">
-        <a class="ov2-filter all" href="/orders.html">All</a>
-        <a class="ov2-filter processing" href="/orders.html?status=processing">Processing</a>
-        <a class="ov2-filter completed" href="/orders.html?status=completed">Completed</a>
-        <a class="ov2-filter failed" href="/orders.html?status=failed">Failed</a>
+      <nav class="ov2-filters" data-orders-filters aria-label="Order filters">
+        <a class="ov2-filter all active" data-orders-filter="all" href="/orders.html">All</a>
+        <a class="ov2-filter processing" data-orders-filter="processing" href="/orders.html?filter=processing">Processing</a>
+        <a class="ov2-filter completed" data-orders-filter="completed" href="/orders.html?filter=completed">Completed</a>
+        <a class="ov2-filter failed" data-orders-filter="failed" href="/orders.html?filter=failed">Failed</a>
       </nav>
 
-      <div class="ov2-section-head"><h2>Recent orders</h2><a href="/orders.html?status=processing">Live orders</a></div>
+      <label class="ov2-search-field" data-orders-search-field hidden><span class="ov2-search-icon">⌕</span><input type="search" placeholder="Search by service name or production reference" autocomplete="off" aria-label="Search orders"></label>
 
-      <a class="ov2-order" href="/order-detail.html">
-        <div class="ov2-order-top">
-          <div class="ov2-ident"><span class="ov2-icon">NG</span><span class="ov2-copy"><strong>Real Nigeria Followers</strong><small>Instagram • Runtime quantity</small></span></div>
-          <span class="ov2-status-pill">Processing</span>
-        </div>
+      <div class="ov2-section-head"><h2 data-orders-section-title>Recent orders</h2><span data-orders-section-meta>1 active</span></div>
+
+      <a class="ov2-order" data-order-card="real" href="/order-detail.html?type=real&platform=instagram">
+        <div class="ov2-order-top"><div class="ov2-ident"><span class="ov2-icon">NG</span><span class="ov2-copy"><strong>Real Nigeria Followers</strong><small>Instagram • Runtime quantity</small></span></div><span class="ov2-status-pill">Processing</span></div>
         <span class="ov2-divider"></span>
         <div class="ov2-order-foot"><span class="ov2-ref"><strong>Live reference</strong><small>Reference from production</small></span><span class="ov2-open">›</span></div>
       </a>
 
-      <a class="ov2-order" href="/order-detail.html">
-        <div class="ov2-order-top">
-          <div class="ov2-ident"><span class="ov2-icon">IG</span><span class="ov2-copy"><strong>Instagram Followers</strong><small>Normal SMM • Instagram • Runtime quantity</small></span></div>
-          <span class="ov2-status-pill">Processing</span>
-        </div>
+      <a class="ov2-order" data-order-card="normal" hidden href="/order-detail.html?type=normal&platform=instagram&service=followers">
+        <div class="ov2-order-top"><div class="ov2-ident"><span class="ov2-icon">IG</span><span class="ov2-copy"><strong>Instagram Followers</strong><small>Normal SMM • Instagram • Runtime quantity</small></span></div><span class="ov2-status-pill">Processing</span></div>
         <span class="ov2-divider"></span>
         <div class="ov2-order-foot"><span class="ov2-ref"><strong>Live reference</strong><small>Reference from production</small></span><span class="ov2-open">›</span></div>
       </a>
 
-      <div class="ov2-notice"><span class="ov2-info">i</span><span class="ov2-notice-copy"><strong>Live order updates</strong><small>Status, amount and references come from production data.</small></span></div>
+      <section class="ov2-empty" data-orders-empty hidden><span class="ov2-empty-icon" data-orders-empty-icon>✓</span><h3 data-orders-empty-title>Completed orders</h3><p data-orders-empty-copy>Production-completed orders will appear here.</p></section>
+
+      <div class="ov2-notice" data-orders-notice><span class="ov2-info">i</span><span class="ov2-notice-copy"><strong data-orders-notice-title>Live order updates</strong><small data-orders-notice-copy>Status, amount and references come from production data.</small></span></div>
     </section>
 
     <nav class="ov2-bottom" aria-label="Primary navigation">
