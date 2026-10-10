@@ -69,9 +69,9 @@
     title.textContent = 'Account details';
     body.append(
       notice('Signed-in account data','Profile information is populated from the authenticated PrimeBoostly account in production.'),
-      row({title:'Profile name',copy:'Name used across your account',action:'Edit ›',href:'/settings.html#profile'}),
-      row({title:'Email address',copy:'Primary sign-in and recovery email',action:'Change ›',href:'/settings.html#profile'}),
-      row({title:'Phone number',copy:'Optional account contact',action:'Change ›',href:'/settings.html#profile'}),
+      row({title:'Profile name',copy:'Name used across your account',action:'Edit ›',href:'/account-edit.html?type=name'}),
+      row({title:'Email address',copy:'Primary sign-in and recovery email',action:'Change ›',href:'/account-edit.html?type=email'}),
+      row({title:'Phone number',copy:'Optional account contact',action:'Change ›',href:'/account-edit.html?type=phone'}),
       row({title:'Account status',copy:'Current account access state',action:'Active',green:true})
     );
     return;
