@@ -96,8 +96,10 @@
     }
     if (item.rate !== '') metaParts.push(`Live rate ${item.rate}`);
     if (meta) meta.textContent = metaParts.length ? metaParts.join(' • ') : 'Available service';
-    if (icon) icon.textContent = item.name.trim().charAt(0).toUpperCase() || 'S';
+    if (icon) window.PrimeBoostlySocialIcons.render(icon, platform);
   });
+
+  document.querySelectorAll('.nsm-summary-icon').forEach(icon => window.PrimeBoostlySocialIcons.render(icon, platform));
 
   const selectedName = serviceName || 'Selected live service';
   const selectedMeta = platformLabel;

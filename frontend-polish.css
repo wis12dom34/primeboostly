@@ -1,0 +1,18 @@
+/* Shared platform marks: bundled SVGs retain brand shapes at every screen size. */
+.pb-brand-icon{display:block;width:24px;height:24px;flex:none;overflow:visible}
+[data-social-icon]{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.platform-row .pb-brand-icon{width:19px;height:19px}
+.orv2-icon .pb-brand-icon,.sv2-platform-icon .pb-brand-icon,.ssv2-platform-icon .pb-brand-icon,.nsm-choice-icon .pb-brand-icon{width:26px;height:26px}
+.pb-platforms button[data-social-icon]{min-width:44px;min-height:44px}
+body:not(.app) .service{display:flex;flex-direction:column;border-radius:22px;min-width:0;transition:border-color 180ms ease,box-shadow 180ms ease}
+body:not(.app) .service:hover{transform:none;border-color:#bfd8c7;box-shadow:0 8px 24px #0f172a06}
+body:not(.app) .service .icon{border-radius:14px}
+body:not(.app) .service a{margin-top:auto;gap:12px;min-height:48px;font-size:14px}
+body:not(.app) .service h3{line-height:1.35}
+body:not(.app) .service p{font-size:14px;line-height:1.6}
+body:not(.app) .btn{min-height:48px;border-radius:14px;transition:background 180ms ease,border-color 180ms ease;transform:none}
+body:not(.app) .btn:hover{transform:none}
+body:not(.app) .footer-links a{display:inline-flex;align-items:center;min-height:44px}
+body:not(.app) a:focus-visible,body:not(.app) button:focus-visible{outline:3px solid #16a34a;outline-offset:4px}
+@media(max-width:440px){body:not(.app) h1{font-size:clamp(36px,10.5vw,46px);line-height:1.12;letter-spacing:-1.5px}body:not(.app) .service{padding:20px}body:not(.app) .service .tags{min-height:0;margin-bottom:16px}body:not(.app) .wrap{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}}
+@media(prefers-reduced-motion:reduce){body:not(.app) .btn,body:not(.app) .service{transition:none}}
