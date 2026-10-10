@@ -1,1 +1,16 @@
-{"cleanUrls":true,"trailingSlash":false}
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/api-docs",
+      "destination": "/services.html",
+      "permanent": false
+    },
+    {
+      "source": "/api-docs.html",
+      "destination": "/services.html",
+      "permanent": false
+    }
+  ]
+}
