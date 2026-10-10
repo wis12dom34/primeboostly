@@ -75,3 +75,7 @@ Repeatable tests cover history search/reset/detail context, status visibility, s
 ## Limits
 
 Chromium with iPhone-sized viewports was used, not physical iPhone Safari/WebKit. No live backend, wallet debit, payment callback, supplier purchase, real email delivery or production customer account was tested. Production integration and release to `primebooslty.com` require the separate Laravel source/deployment access. The Vercel release is the existing UI preview, not a production backend rollout.
+
+## Orders filter clipping correction
+
+Removed the legacy 34px flex basis that clipped the 48px filter links. The filter group grows naturally, uses four equal columns and switches to two columns at 320–360px. Card headings and status badges use a wrapping grid. Added a regression check for all filter bounds at the 10 supported widths, including selecting Completed. Preview references and notices use customer language.

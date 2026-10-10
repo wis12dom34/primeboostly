@@ -60,8 +60,8 @@
     if (sectionTitle) sectionTitle.textContent = 'Processing orders';
     if (sectionMeta) sectionMeta.textContent = '2 active';
     showCard(realCard,true); showCard(normalCard,true); showEmpty(false);
-    if (noticeTitle) noticeTitle.textContent = 'Live order updates';
-    if (noticeCopy) noticeCopy.textContent = 'Status, amount and references come from production data.';
+    if (noticeTitle) noticeTitle.textContent = 'Track your orders';
+    if (noticeCopy) noticeCopy.textContent = 'Preview orders are shown here. Your actual orders appear in the live app.';
     return;
   }
 
@@ -73,14 +73,14 @@
     if (emptyIcon) emptyIcon.textContent = completed ? '✓' : '!';
     if (emptyTitle) emptyTitle.textContent = completed ? 'Completed orders' : 'Failed orders';
     if (emptyCopy) emptyCopy.textContent = completed ? 'Production-completed orders will appear here.' : 'Production-failed orders will appear here.';
-    if (noticeTitle) noticeTitle.textContent = 'Production records only';
-    if (noticeCopy) noticeCopy.textContent = 'This prototype does not fabricate completed or failed order history.';
+    if (noticeTitle) noticeTitle.textContent = 'Preview history';
+    if (noticeCopy) noticeCopy.textContent = 'Actual order history is available in the live app.';
     return;
   }
 
   if (sectionTitle) sectionTitle.textContent = 'Recent orders';
   if (sectionMeta) sectionMeta.textContent = '1 active';
   showCard(realCard,true); showCard(normalCard,false); showEmpty(false);
-  if (noticeTitle) noticeTitle.textContent = 'Live order updates';
-  if (noticeCopy) noticeCopy.textContent = 'Status, amount and references come from production data.';
+  if (noticeTitle) noticeTitle.textContent = 'Track your orders';
+  if (noticeCopy) noticeCopy.textContent = 'Preview orders are shown here. Your actual orders appear in the live app.';
 })();

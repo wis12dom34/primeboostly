@@ -9,6 +9,17 @@ const server=http.createServer((req,res)=>{let file=path.join(root,new URL(req.u
  const context=await browser.newContext({viewport:{width:393,height:852}});
  await context.addInitScript(()=>sessionStorage.setItem('primeboostly.preview.session.v1',JSON.stringify({username:'QA',email:'qa@example.com'})));
  const page=await context.newPage(),base='http://localhost:8085',errors=[];page.on('pageerror',error=>errors.push(error.message));
+
+ // Regression: links used to overflow the 34px-high filter container vertically.
+ for(const width of [320,360,375,390,393,414,430,440,768,1280]){
+  await page.setViewportSize({width,height:852});await page.goto(base+'/orders');
+  const layout=await page.locator('.ov2-filters').evaluate(n=>{const r=n.getBoundingClientRect();return [...n.children].map(c=>{const b=c.getBoundingClientRect();return {inside:b.top>=r.top&&b.bottom<=r.bottom&&b.left>=r.left&&b.right<=r.right,height:b.height}})});
+  assert(layout.every(x=>x.inside&&x.height>=44),width+'px order filters fully visible');
+  assert(await page.locator('[data-order-card=real]').evaluate(n=>{const r=n.getBoundingClientRect();return [...n.querySelectorAll('.ov2-order-foot *,.ov2-order-top *')].filter(c=>c.getClientRects().length).every(c=>{const b=c.getBoundingClientRect();return b.top>=r.top&&b.bottom<=r.bottom&&b.right<=r.right&&b.left>=r.left})}),width+'px complete order card visible');
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),width+'px orders do not overflow');
+  await page.getByRole('link',{name:'Completed',exact:true}).click();assert(await page.getByRole('heading',{name:'Completed orders',exact:true,level:2}).isVisible());
+ }
+ await page.setViewportSize({width:393,height:852});
  await page.goto(base+'/order-history');await page.getByRole('searchbox',{name:'Search order history'}).fill('1238');assert.equal(await page.locator('.history-mobile-card:visible').count(),1);
  await page.locator('.history-mobile-card:visible').click();await page.waitForURL('**/order-detail.html?*');assert.equal(await page.locator('[data-key=id] strong').innerText(),'1238');assert.equal(await page.locator('.odv2-processing').innerText(),'Partial');assert((await page.locator('[data-key=price] strong').innerText()).includes('4,900'));
  await page.goto(base+'/order-history');await page.getByRole('searchbox').fill('no matching history');assert(await page.getByText('No orders found',{exact:true}).isVisible());await page.getByRole('button',{name:'Clear search',exact:true}).click();assert.equal(await page.locator('.history-mobile-card:visible').count(),4);
