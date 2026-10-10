@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/account-flow.css">
   <script src="/auth.js" defer></script>
+  <script src="/paystack-checkout.js" defer></script>
 </head>
 <body class="flow-page" data-auth-protected="true">
   <header class="flow-header">
@@ -23,10 +24,10 @@
         <div class="paystack-logo" aria-hidden="true">PS</div>
         <div class="paystack-details">
           <h1>Pay with Paystack</h1>
-          <p class="pay-due">Please Pay ₦25,375 NGN</p>
-          <p class="pay-credit"><span class="desktop-only">To Get ₦25,000 NGN in your Wallet</span><span class="mobile-only">To Get ₦25,000 NGN</span></p>
-          <div class="pay-summary"><p><span>Amount</span><b>₦25,000</b></p><p><span>Charge</span><b>₦375</b></p></div>
-          <a class="flow-button" href="/payment-success.html">Pay Now</a>
+          <p class="pay-due" data-pay-due>Please Pay ₦25,375 NGN</p>
+          <p class="pay-credit"><span class="desktop-only" data-pay-credit>To Get ₦25,000 NGN in your Wallet</span><span class="mobile-only" data-pay-credit>To Get ₦25,000 NGN</span></p>
+          <div class="pay-summary"><p><span>Amount</span><b data-pay-amount>₦25,000</b></p><p><span>Charge</span><b data-pay-charge>₦375</b></p></div>
+          <a class="flow-button" data-pay-complete href="/payment-success.html">Pay Now</a>
         </div>
       </div>
       <p class="paystack-note">Secure payment is processed by Paystack.</p>
