@@ -11,24 +11,19 @@
 <script defer="" src="/paystack-checkout.js"></script>
 <link href="/customer-polish.css" rel="stylesheet"/><script defer="" src="/customer-polish.js"></script></head>
 <body class="flow-page pb-ui" data-auth-protected="true">
-<header class="flow-header">
-<a aria-label="Prime Boostly home" class="flow-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
-<nav aria-label="Account navigation" class="flow-nav"><a href="/dashboard.html">Dashboard</a><a href="/dashboard.html">Order</a><a href="/services.html">Services</a><a href="/add-funds.html">Add Fund</a><a href="/fund-history.html">Fund History</a><a href="/transactions.html">Transactions</a></nav>
-<div class="flow-user"><span aria-hidden="true" class="flow-avatar"></span><span data-auth-name="">wick</span></div>
-<a aria-label="Open menu" class="flow-menu" href="/mobile-menu.html">☰</a>
-</header>
+<header class="pb-page-header pb-standard-header"><a aria-label="Back" class="pb-back" href="/add-funds.html"><span data-icon="back"></span></a><h1>Checkout</h1><a aria-label="Help" class="pb-header-help" href="/support.html"><span data-icon="help"></span></a></header>
 <main class="flow-content pb-screen">
 <p class="flow-crumb">Home / Add Fund / Paystack</p>
-<h1 class="mobile-only mobile-title">Pay with Paystack</h1>
+
 <section class="flow-card paystack-card pb-component">
 <div class="paystack-top">
 <div aria-hidden="true" class="paystack-logo">PS</div>
 <div class="paystack-details">
-<h1>Pay with Paystack</h1>
+<h2>Payment summary</h2>
 <p class="pay-due" data-pay-due="">Please Pay ₦25,375 NGN</p>
 <p class="pay-credit"><span class="desktop-only" data-pay-credit="">To Get ₦25,000 NGN in your Wallet</span><span class="mobile-only" data-pay-credit="">To Get ₦25,000 NGN</span></p>
 <div class="pay-summary pb-component"><p><span>Amount</span><b data-pay-amount="">₦25,000</b></p><p><span>Charge</span><b data-pay-charge="">₦375</b></p></div>
-<a class="flow-button" data-pay-complete="" href="/payment-success.html">Pay Now</a>
+<a class="flow-button pb-primary-button" data-pay-complete="" href="/payment-success.html">Pay Now</a>
 </div>
 </div>
 <p class="paystack-note">Secure payment is processed by Paystack.</p>

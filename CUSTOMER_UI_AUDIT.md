@@ -43,6 +43,7 @@ Run the repeatable local flow test with Playwright installed:
 node tests/customer-ui.cjs
 node tests/customer-navigation.cjs
 node tests/customer-buttons.cjs
+node tests/customer-polish.cjs
 ```
 
 Use `CHROMIUM_EXECUTABLE_PATH` for an existing Chromium binary. The test serves the repository on localhost:8081 and uses a disposable browser account; it sends no real orders or payments.
@@ -55,6 +56,21 @@ Use `CHROMIUM_EXECUTABLE_PATH` for an existing Chromium binary. The test serves 
 - Review CTAs use the shorter “Check price” label. Customer refund actions route to existing order support and order history rather than an admin screen. Manual payment submission is explicitly unavailable in the static preview, with an existing wallet-support entry point.
 - The mobile support reply button now displays its local preview reply in the visible conversation.
 - Button QA covers 56 screen/query variants at the 10 listed widths, accessible names, touch targets, customer destinations and horizontal overflow, plus filter reset, toggles, password visibility, order navigation, support reply and payment/refund help. Screenshots reviewed at 393×852.
+
+## Screen-by-screen finish
+
+Reviewed 74 existing customer route/query states, including every funding stage, profile currency/history, security verification/session/activity states, support categories and account verification. Captured full pages and scrolled-bottom views at 393×852; checked 320, 360, 375, 390, 393, 414, 430, 440, 768 and 1280px.
+
+- Home, catalogue and order screens retain their existing structure and use the shared font, card titles, empty-state and button hierarchy.
+- History, transaction, ticket, payment, security, reset-password and account-menu screens now use consistent back/title/help headers. Menu icons use the shared outline set; Home stays inside the dashboard.
+- History search filters existing rows and provides a clear reset action. History links carry the selected record's ID, service, displayed price and status into the existing detail view. No new order is created.
+- Funding status badges are visible; transaction/history amounts and dates have consistent hierarchy. Funding inputs stretch correctly on mobile.
+- Support descriptions use multiline fields and a clear primary CTA. Existing local preview tickets display the submitted subject and message on the detail screen.
+- Login/signup/recovery layouts share the same hierarchy. Password visibility controls preserve field values. Invalid email addresses cannot enable the account verification CTA.
+- Payment confirmations use consistent state icons and buttons. Removed a false automatic-redirect promise and unverified sample bank-transfer instructions. Payment handlers and auth handlers remain unchanged.
+- Loading skeletons now draw horizontal bars at full card width. Empty, error and disabled states share card and action styling. Customer copy uses plain language and retains explicit limitations on simulated preview actions.
+
+Repeatable tests cover history search/reset/detail context, status visibility, support review, email validation, preview ticket create/reply and password visibility, alongside the existing purchase and navigation suites.
 
 ## Limits
 

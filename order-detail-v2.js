@@ -5,7 +5,7 @@
   const params = new URLSearchParams(location.search);
   const normal = (params.get('type') || '').toLowerCase() === 'normal';
   const platformKey = (params.get('platform') || 'instagram').toLowerCase();
-  const platformLabels = {instagram:'Instagram', tiktok:'TikTok', facebook:'Facebook', youtube:'YouTube'};
+  const platformLabels = {instagram:'Instagram', tiktok:'TikTok', facebook:'Facebook', youtube:'YouTube',spotify:'Spotify'};
   const platformIcons = {instagram:'IG', tiktok:'TT', facebook:'f', youtube:'YT'};
   const serviceKey = (params.get('service') || (platformKey === 'youtube' ? 'subscribers' : 'followers')).toLowerCase();
   const serviceLabels = {followers:'Followers', subscribers:'Subscribers', likes:'Likes', views:'Views', engagement:'Engagement'};
@@ -29,7 +29,7 @@
     card?.classList.add('normal');
     notice?.classList.add('normal');
     if (icon) icon.textContent = platformIcons[platformKey] || 'IG';
-    if (title) title.textContent = `${platform} ${service}`;
+    if (title) title.textContent = params.get('serviceName') || `${platform} ${service}`;
     if (subtitle) subtitle.textContent = `Normal SMM • ${platform}`;
     if (pill) pill.textContent = 'Global';
     if (action) { action.textContent = 'Back to orders'; action.href = '/orders.html'; }
@@ -58,7 +58,10 @@
   setRow('service', service);
   setRow('profile', profile);
   setRow('quantity', quantity);
-  setRow('price', 'Shown after confirmation');
+  const price=Number(params.get('price'));
+  setRow('price', params.has('price')&&Number.isFinite(price)&&price>=0?`₦${price.toLocaleString('en-NG',{minimumFractionDigits:2,maximumFractionDigits:2})}`:'Shown after confirmation');
+  const status=params.get('status');
+  if(['Pending','Processing','Completed','Cancelled','Refunded','Failed','Partial'].includes(status)){const badge=root.querySelector('.odv2-processing');if(badge){badge.textContent=status;badge.classList.add('pb-status');badge.dataset.status=status.toLowerCase()}}
   setRow('id', params.get('orderId') || '—');
   setRow('initial', params.get('initial') || '—');
   setRow('remaining', params.get('remaining') || '—');

@@ -14,8 +14,8 @@
   const configs = {
     order: {
       title:'Order Support', notice:'Order Support',
-      noticeCopy:'Tell support which order needs attention. The production app attaches the real order and account context.',
-      firstTitle:'Order reference', firstCopy:'Select from your real orders', firstPlaceholder:'Required',
+      noticeCopy:'Tell us which order needs attention and what happened.',
+      firstTitle:'Order reference', firstCopy:'Enter the order ID you need help with', firstPlaceholder:'Required',
       secondTitle:'Issue details', secondCopy:'Describe what went wrong', secondPlaceholder:'Required',
       optionalTitle:'Evidence', optionalCopy:'Attach screenshot or proof'
     },
@@ -35,7 +35,7 @@
     },
     general: {
       title:'General Support', notice:'General Support',
-      noticeCopy:'Send a general question to PrimeBoostly support. The production system creates the real conversation and case reference.',
+      noticeCopy:'Ask a question or tell us how we can help.',
       firstTitle:'Topic', firstCopy:'Choose the closest help topic', firstPlaceholder:'Required',
       secondTitle:'Question', secondCopy:'Describe what you need help with', secondPlaceholder:'Required',
       optionalTitle:'Attachment', optionalCopy:'Add supporting evidence if useful'
@@ -69,7 +69,7 @@
   const inputRow = ({title:rowTitle,copy:rowCopy,placeholder}) => {
     const row = document.createElement('div'); row.className = 'spfv2-row';
     const block = copyBlock(rowTitle,rowCopy);
-    const input = document.createElement('input'); input.className = 'spfv2-input'; input.placeholder = placeholder; input.setAttribute('aria-label',rowTitle);
+    const input = document.createElement(/details|question/i.test(rowTitle)?'textarea':'input'); input.className = 'spfv2-input'; input.placeholder = placeholder; input.setAttribute('aria-label',rowTitle);
     row.append(block.copy,input); return {row,block,input};
   };
   const evidenceRow = ({title:rowTitle,copy:rowCopy}) => {
@@ -87,9 +87,9 @@
     title.textContent = 'Request received';
     back.href = '/support.html';
     body.append(
-      notice('Support request','Your request is handed to the production support system with the real account context.'),
-      textRow({title:'Support review',copy:'Production creates the real support case',action:'Submitted'}).row,
-      textRow({title:'Case reference',copy:'Support reviews the attached context',action:'Production'}).row,
+      notice('Support request','Your request is ready for review. This preview does not send a live support request.'),
+      textRow({title:'Support review',copy:'Request details are ready for review',action:'Submitted'}).row,
+      textRow({title:'Case reference',copy:'Support reviews the attached context',action:'Preview'}).row,
       textRow({title:'Back to Support',copy:'Shown after the live case is created',action:'Live data'}).row,
       textRow({title:'Back to Support',copy:'Return to the Support center',action:'Open',href:'/support.html'}).row,
       foot('Case IDs, replies and status are shown only when returned by the production support system.')
@@ -100,9 +100,10 @@
   title.textContent = cfg.title;
   back.href = '/support.html';
   const first = inputRow({title:cfg.firstTitle,copy:cfg.firstCopy,placeholder:cfg.firstPlaceholder});
-  const second = inputRow({title:cfg.secondTitle,copy:cfg.secondCopy,placeholder:cfg.secondPlaceholder});
-  const submit = textRow({title:'Submit request',copy:type === 'account' ? 'Creates a secure support case' : 'Creates a support case in production',action:'Complete required fields first',href:'#',disabled:true});
+  const second = inputRow({title:cfg.secondTitle,copy:cfg.secondCopy,placeholder:'Describe what happened and how we can help'});
+  const submit = textRow({title:'Submit request',copy:type === 'account' ? 'Creates a secure support case' : 'Tell us what you need help with',action:'Complete required fields first',href:'#',disabled:true});
 
+  submit.row.classList.add('pb-primary-button');
   body.append(notice(cfg.notice,cfg.noticeCopy),first.row);
   if (type === 'account') {
     body.append(textRow({title:cfg.staticTitle,copy:cfg.staticCopy,action:cfg.staticAction}).row,second.row,submit.row);
@@ -113,11 +114,11 @@
 
   const sync = () => {
     const ready = Boolean(first.input.value.trim() && second.input.value.trim());
-    first.input.placeholder = first.input.value ? 'Entered' : cfg.firstPlaceholder;
-    second.input.placeholder = second.input.value ? 'Entered' : cfg.secondPlaceholder;
+    first.input.placeholder = type==='order'?'e.g. #1247':type==='wallet'?'Transaction reference':'Tell us the topic';
+    second.input.placeholder = 'Describe what happened and how we can help';
     submit.row.classList.toggle('disabled',!ready);
     submit.row.setAttribute('aria-disabled',String(!ready));
-    submit.block.small.textContent = ready ? (type === 'account' ? 'Ready for secure production support' : 'Ready to create a production support case') : (type === 'account' ? 'Creates a secure support case' : 'Creates a support case in production');
+    submit.block.small.textContent = ready ? (type === 'account' ? 'Ready for secure production support' : 'Ready to review your request') : (type === 'account' ? 'Creates a secure support case' : 'Tell us what you need help with');
     submit.end.textContent = ready ? 'Submit ›' : 'Complete required fields first';
     submit.row.classList.toggle('dark',ready);
     submit.row.href = ready ? `/support-flow.html?type=${encodeURIComponent(type)}&state=submitted` : '#';

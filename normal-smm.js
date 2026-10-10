@@ -115,10 +115,10 @@
     node.textContent = serviceName || 'Selected service';
   });
   document.querySelectorAll('[data-review-profile]').forEach(node => {
-    node.textContent = profile || 'Target URL';
+    node.textContent = profile || 'Not available';
   });
   document.querySelectorAll('[data-review-quantity]').forEach(node => {
-    node.textContent = quantity || 'Runtime quantity';
+    node.textContent = quantity || 'Not available';
   });
 
   const orderBack = document.querySelector('[data-order-back]');

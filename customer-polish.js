@@ -1,6 +1,8 @@
 /* Shared presentation helpers. No requests, wallet mutations or authentication changes. */
 (() => {
   const paths = {
+    eye:'<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>',
+    eyeOff:'<path d="m3 3 18 18M10.5 5.1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3 4M6 6a19 19 0 0 0-4 6s3.5 7 10 7c2 0 3.8-.7 5.3-1.6M10 10a3 3 0 0 0 4 4"/>',
     history:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
     home:'<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>',
     grid:'<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',
@@ -49,7 +51,7 @@
     else if(c.some(x=>x.endsWith('-arrow')||x.endsWith('-row-arrow'))&&n.textContent.trim()==='›')name='chevron';
     if(name){if(n.matches('a,button')&&!n.getAttribute('aria-label'))n.setAttribute('aria-label',({back:'Back',help:'Help',settings:'Settings',user:'Profile',close:'Close',search:'Search',grid:'Open menu'})[name]||name);const span=document.createElement('span');icon(span,name);n.replaceChildren(span);}
     const status=n.textContent.trim().toLowerCase();
-    if(['pending','processing','completed','cancelled','refunded','failed'].includes(status)&&!['A','BUTTON','H1','H2'].includes(n.tagName)){
+    if(['pending','processing','completed','cancelled','refunded','failed','partial'].includes(status)&&!['A','BUTTON','H1','H2'].includes(n.tagName)){
       n.classList.add('pb-status');n.dataset.status=status;
     }
   });
@@ -68,6 +70,12 @@
     if(search){const input=document.createElement('input');input.type='search';input.placeholder=search.textContent.trim();input.setAttribute('aria-label','Search transactions');search.replaceChildren(input);input.addEventListener('input',()=>{term=input.value.trim().toLowerCase();refresh()})}
     document.querySelectorAll(`.${prefix}-tabs span`).forEach(span=>{const b=document.createElement('button');b.type='button';b.className=span.className;b.classList.remove('pb-status');b.removeAttribute('data-status');b.textContent=span.textContent;b.classList.toggle('active',span.className==='all');b.setAttribute('aria-pressed',String(span.className==='all'));span.replaceWith(b);b.onclick=()=>{filter=b.classList[0];b.parentElement.querySelectorAll('button').forEach(n=>{n.classList.toggle('active',n===b);n.setAttribute('aria-pressed',String(n===b))});refresh()}});
   }
+  document.querySelectorAll('.auth-form-panel input[type=password],.reset-password-content input[type=password]').forEach(input=>{
+    const wrap=document.createElement('div');wrap.className='pb-password-control';input.before(wrap);wrap.append(input);
+    const button=document.createElement('button');button.type='button';button.className='pb-password-toggle';button.setAttribute('aria-label','Show '+(input.placeholder||'password').toLowerCase());button.setAttribute('aria-pressed','false');
+    const glyph=document.createElement('span');icon(glyph,'eye');button.append(glyph);wrap.append(button);
+    button.addEventListener('click',event=>{event.preventDefault();const show=input.type==='password';input.type=show?'text':'password';button.setAttribute('aria-pressed',String(show));button.setAttribute('aria-label',(show?'Hide ':'Show ')+(input.placeholder||'password').toLowerCase());icon(glyph,show?'eyeOff':'eye')});
+  });
   document.addEventListener('click',e=>{const a=e.target.closest('a[aria-disabled=true]');if(a){e.preventDefault();e.stopImmediatePropagation()}},true);
 })();
 /* Empty service/search states use existing routes, never fake catalog data. */
@@ -89,4 +97,28 @@
   const priceRows=[...document.querySelectorAll('[data-review-price]')];
   function estimate(){const q=Number(quantity?.value||params.get('quantity'));const total=Number.isFinite(rate)&&rate>0&&q>0?rate*q/1000:null;priceRows.forEach(n=>n.textContent=total===null?'Shown before confirmation':`₦${total.toLocaleString('en-NG',{minimumFractionDigits:2,maximumFractionDigits:2})} estimated`)}
   quantity?.addEventListener('input',estimate);estimate();
+})();
+/* Search existing order history locally and retain the selected record context. */
+(() => {
+  const host=document.querySelector('.history-mobile-search');
+  const cards=[...document.querySelectorAll('.history-mobile-card')];
+  if(!host||!cards.length)return;
+  const input=document.createElement('input');input.type='search';input.placeholder='Search orders or order ID';input.setAttribute('aria-label','Search order history');host.replaceChildren(input);
+  const empty=document.createElement('div');empty.className='pb-empty';empty.hidden=true;
+  const title=document.createElement('strong');title.textContent='No orders found';
+  const copy=document.createElement('p');copy.textContent='Try another service name or order ID.';
+  const clear=document.createElement('button');clear.type='button';clear.className='pb-secondary-button';clear.textContent='Clear search';empty.append(title,copy,clear);cards.at(-1).after(empty);
+  const refresh=()=>{let count=0;const term=input.value.trim().toLowerCase();cards.forEach(card=>{card.hidden=!!term&&!card.textContent.toLowerCase().includes(term);if(!card.hidden)count++});empty.hidden=count>0};
+  input.addEventListener('input',refresh);clear.addEventListener('click',()=>{input.value='';refresh();input.focus()});
+  cards.forEach(card=>{
+    const service=card.querySelector('h2')?.textContent||'';
+    const platform=['instagram','tiktok','youtube','spotify'].find(value=>service.toLowerCase().includes(value));
+    const kind=['likes','followers','subscribers','views'].find(value=>service.toLowerCase().includes(value));
+    const url=new URL('/order-detail.html',location.origin);url.searchParams.set('type','normal');
+    if(platform)url.searchParams.set('platform',platform);if(kind)url.searchParams.set('service',kind);
+    url.searchParams.set('orderId',card.querySelector('.history-mobile-top>span')?.textContent.replace('#','')||'');
+    url.searchParams.set('status',card.querySelector('em')?.textContent.trim().replace('Canceled','Cancelled')||'');
+    const price=card.querySelector('.history-mobile-meta b')?.textContent.replace(/[^\d.]/g,'');if(price)url.searchParams.set('price',price);
+    url.searchParams.set('serviceName',service);card.href=url.pathname+url.search;
+  });
 })();

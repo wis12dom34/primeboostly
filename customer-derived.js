@@ -1,6 +1,15 @@
 (()=>{
   const feedback=document.querySelector('[data-cd-feedback]');
   const toast=message=>{if(!feedback)return;feedback.textContent=message;feedback.classList.add('show');clearTimeout(feedback._t);feedback._t=setTimeout(()=>feedback.classList.remove('show'),1800)};
+  // Reuse the existing local preview ticket so its detail view shows the submitted request.
+  if(document.body.dataset.customerDerived==='ticket-detail'){
+    let ticket;try{ticket=JSON.parse(localStorage.getItem('primeboostly.preview.latest-ticket')||'null')}catch{}
+    if(ticket&&typeof ticket.subject==='string'&&typeof ticket.message==='string'){
+      document.querySelectorAll('.pb-standard-header h1,.cd-heading h1').forEach(node=>node.textContent=`Ticket #${ticket.id}`);
+      document.querySelectorAll('.cd-mobile-sub,.cd-heading-copy>p').forEach(node=>node.textContent=ticket.subject);
+      document.querySelectorAll('[data-ticket-thread]').forEach(thread=>{const state=thread.querySelector('[data-ticket-state]');thread.replaceChildren();if(state){state.textContent='Open';thread.append(state)}const message=document.createElement('div');message.className=thread.closest('.cd-mobile')?'cd-mobile-message me':'cd-message me';const heading=document.createElement('b');heading.textContent='You · just now';const copy=document.createElement('p');copy.textContent=ticket.message;message.append(heading,copy);thread.append(message)});
+    }
+  }
   const copy=async value=>{try{await navigator.clipboard.writeText(value);toast('Copied to clipboard.')}catch{toast('Copy is unavailable in this preview browser.')}};
   document.querySelectorAll('[data-copy-endpoint]').forEach(b=>b.addEventListener('click',()=>copy(document.querySelector('[data-api-endpoint]')?.value||'https://primeboostly.com/api/v2')));
   document.querySelectorAll('[data-copy-key]').forEach(b=>b.addEventListener('click',()=>copy('pb_live_preview_key')));

@@ -25,35 +25,35 @@
   const configs = {
     name: {
       title:'Edit profile name', noticeTitle:'Signed-in profile',
-      noticeCopy:'The current account name is loaded and saved by production. No real profile value is stored in this prototype.',
+      noticeCopy:'Choose the name shown on your account. Changes are not saved to a live account in this preview.',
       fieldTitle:'Profile name', fieldCopy:'Name shown across your account', placeholder:'Enter name', inputType:'text',
-      row2Title:'Current value', row2Copy:'Loaded from the authenticated account', row2Action:'Live data',
+      row2Title:'Current value', row2Copy:'Loaded from the authenticated account', row2Action:'Not shown in preview',
       row3Title:'Visibility', row3Copy:'Used across PrimeBoostly account surfaces', row3Action:'Account',
-      submitTitle:'Save changes', disabledCopy:'Enter a profile name first', readyCopy:'Ready to save to production'
+      submitTitle:'Save changes', disabledCopy:'Enter a profile name first', readyCopy:'Ready to continue'
     },
     email: {
       title:'Change email', noticeTitle:'Verification required',
       noticeCopy:'Your sign-in email changes only after the new address is verified. Existing account data remains active until then.',
       fieldTitle:'New email address', fieldCopy:'Enter the replacement sign-in email', placeholder:'Enter email', inputType:'email',
-      row2Title:'Current email', row2Copy:'Loaded from the authenticated account', row2Action:'Live data',
+      row2Title:'Current email', row2Copy:'Loaded from the authenticated account', row2Action:'Not shown in preview',
       row3Title:'Verification', row3Copy:'A code is sent before the change is saved', row3Action:'Required',
-      submitTitle:'Continue to verification', disabledCopy:'Enter a new email address first', readyCopy:'Continue with production verification'
+      submitTitle:'Continue to verification', disabledCopy:'Enter a new email address first', readyCopy:'Verify your contact details'
     },
     phone: {
       title:'Change phone', noticeTitle:'Optional contact',
-      noticeCopy:'Phone details, country code validation and verification are handled by production account services.',
+      noticeCopy:'Include your country code. Verify the number before saving.',
       fieldTitle:'New phone number', fieldCopy:'Enter a new contact number', placeholder:'Enter phone', inputType:'tel',
-      row2Title:'Current phone', row2Copy:'Loaded from the authenticated account', row2Action:'Live data',
-      row3Title:'Verification', row3Copy:'A production verification step is required before saving', row3Action:'Required',
-      submitTitle:'Continue to verification', disabledCopy:'Enter a new phone number first', readyCopy:'Continue with production verification'
+      row2Title:'Current phone', row2Copy:'Loaded from the authenticated account', row2Action:'Not shown in preview',
+      row3Title:'Verification', row3Copy:'Verify your number before saving', row3Action:'Required',
+      submitTitle:'Continue to verification', disabledCopy:'Enter a new phone number first', readyCopy:'Verify your contact details'
     },
     verify: {
       title:'Verify change', noticeTitle:'Secure account update',
-      noticeCopy:'Verification codes, expiry windows and retry rules come from production. This prototype stores no real code or private account data.',
+      noticeCopy:'Enter the code sent to your email or phone. This preview does not change a live account.',
       fieldTitle:'Verification code', fieldCopy:'Enter the code sent by PrimeBoostly', placeholder:'Enter code', inputType:'text',
-      row2Title:'Delivery method', row2Copy:'Email or phone selected in the previous step', row2Action:'Runtime',
+      row2Title:'Delivery method', row2Copy:'Email or phone selected in the previous step', row2Action:'Selected method',
       row3Title:'Code status', row3Copy:'Expiry and retry state come from production', row3Action:'Live state',
-      submitTitle:'Verify and save', disabledCopy:'Enter the production verification code first', readyCopy:'Production validates this code before saving'
+      submitTitle:'Verify and save', disabledCopy:'Enter your verification code', readyCopy:'Ready to verify'
     }
   };
 
@@ -80,7 +80,7 @@
 
   const updateReady = () => {
     const value = input.value.trim();
-    const ready = Boolean(value);
+    const ready = Boolean(value)&&input.checkValidity();
     submit.classList.toggle('disabled', !ready);
     submit.setAttribute('aria-disabled', String(!ready));
     submitCopy.textContent = ready ? cfg.readyCopy : cfg.disabledCopy;

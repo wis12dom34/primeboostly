@@ -10,24 +10,14 @@
 <script defer="" src="/auth.js"></script>
 <link href="/customer-polish.css" rel="stylesheet"/><script defer="" src="/customer-polish.js"></script></head>
 <body class="flow-page pb-ui" data-auth-protected="true">
-<header class="flow-header">
-<a aria-label="Prime Boostly home" class="flow-brand" href="/"><span class="mark">B</span><span><b>PRIME</b><strong>BOOSTLY</strong></span></a>
-<nav aria-label="Account navigation" class="flow-nav"><a href="/dashboard.html">Dashboard</a><a href="/dashboard.html">Order</a><a href="/services.html">Services</a><a href="/add-funds.html">Add Fund</a><a href="/fund-history.html">Fund History</a><a href="/transactions.html">Transactions</a></nav>
-<div class="flow-user"><span aria-hidden="true" class="flow-avatar"></span><span data-auth-name="">wick</span></div>
-<a aria-label="Open menu" class="flow-menu" href="/mobile-menu.html">☰</a>
-</header>
+<header class="pb-page-header pb-standard-header"><a aria-label="Back" class="pb-back" href="/add-funds.html"><span data-icon="back"></span></a><h1>Manual deposit</h1><a aria-label="Help" class="pb-header-help" href="/support.html"><span data-icon="help"></span></a></header>
 <main class="flow-content pb-screen">
 <p class="flow-crumb">Home / Add Fund / Bank Transfer</p>
-<h1 class="mobile-only mobile-title">Manual Deposit</h1>
+
 <p class="mobile-only mobile-lead">Follow the bank transfer instruction and submit proof.</p>
 <form class="flow-card manual-card pb-component" onsubmit="return false">
-<h1>Please follow the instruction below</h1>
-<div class="manual-instructions">
-<p><strong class="desktop-only">Bank: Prime Boostly Payments</strong><strong class="mobile-only">Bank · Prime Boostly Payments</strong></p>
-<p><span class="desktop-only">Account Number: 0123456789</span><span class="mobile-only">Account · 0123456789</span></p>
-<p><span class="desktop-only">Account Name: Prime Boostly Ltd</span><span class="mobile-only">Name · Prime Boostly Ltd</span></p>
-<p class="muted">After transfer, enter the details below and upload your payment proof.</p>
-</div>
+<h2>Bank transfer</h2>
+<div class="manual-instructions"><p>Verified bank details appear during checkout. This preview does not accept transfers or payment proof.</p></div>
 <div class="manual-fields-row pb-component">
 <label class="flow-field"><span>Sender Name</span><input autocomplete="name" name="sender" placeholder="Your full name"/></label>
 <label class="flow-field"><span>Amount</span><input inputmode="decimal" name="amount" placeholder="₦25,000"/></label>

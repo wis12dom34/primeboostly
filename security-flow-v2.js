@@ -33,6 +33,7 @@
     row.className = `secv2-row${dark ? ' dark' : ''}${disabled ? ' disabled' : ''}`;
     if (href) row.href = href;
     if (disabled) row.setAttribute('aria-disabled', 'true');
+    if(href&&(disabled||dark))row.classList.add('pb-primary-button');
     const block = copyBlock(rowTitle, rowCopy);
     const end = document.createElement('span'); end.className = 'secv2-action'; end.textContent = action;
     row.append(block.copy, end);
@@ -99,7 +100,7 @@
     return {row, block, control, img};
   };
 
-  const notice = (heading = 'Protected account data', copy = 'Credentials, device details and security history are loaded securely from production and are not invented in this prototype.') => {
+  const notice = (heading = 'Protected account data', copy = 'Protect your account with a strong password and two-step verification. This is a preview of your security settings.') => {
     const box = document.createElement('div'); box.className = 'secv2-notice';
     const info = document.createElement('span'); info.className = 'secv2-info'; info.textContent = 'i';
     const text = document.createElement('span'); text.className = 'secv2-notice-copy';
@@ -113,18 +114,18 @@
   if (view === 'password') {
     title.textContent = 'Password';
     back.href = '/profile-flow.html?view=security';
-    const current = inputRow({title:'Current password',copy:'Required for production validation'});
-    const next = inputRow({title:'New password',copy:'Provided securely for production validation',withToggle:true});
-    const confirm = inputRow({title:'Confirm password',copy:'Required for production validation'});
+    const current = inputRow({title:'Current password',copy:'Enter your current password',placeholder:'Current password'});
+    const next = inputRow({title:'New password',copy:'Choose a new password',placeholder:'New password',withToggle:true});
+    const confirm = inputRow({title:'Confirm password',copy:'Re-enter your new password',placeholder:'Re-enter new password'});
     const submit = textRow({title:'Update password',copy:'Enter required fields first',action:'',href:'#',disabled:true});
     const sync = () => {
       const ready = Boolean(current.input.value && next.input.value && confirm.input.value && next.input.value === confirm.input.value);
-      current.input.placeholder = current.input.value ? 'Entered' : 'Required';
-      confirm.input.placeholder = confirm.input.value ? 'Entered' : 'Required';
-      next.block.small.textContent = next.input.value ? 'Provided securely for production validation' : 'Provided securely for production validation';
+      current.input.autocomplete='current-password';next.input.autocomplete=confirm.input.autocomplete='new-password';
+      confirm.input.placeholder='Re-enter new password';
+      next.block.small.textContent = next.input.value ? 'Choose a new password' : 'Choose a new password';
       submit.row.classList.toggle('disabled', !ready);
       submit.row.setAttribute('aria-disabled', String(!ready));
-      submit.block.small.textContent = ready ? 'Continue with production verification' : 'Enter required fields first';
+      submit.block.small.textContent = ready ? 'Continue to verification' : 'Enter required fields first';
       submit.end.textContent = ready ? '›' : '';
       submit.row.href = ready ? makeUrl('verify', {kind:'password'}) : '#';
     };
@@ -138,17 +139,17 @@
     title.textContent = 'Two-step verification';
     back.href = '/profile-flow.html?view=security';
     const status = textRow({title:'Status',copy:'Extra sign-in protection',action:'Off'});
-    const method = toggleRow({title:'Verification method',copy:'Choose a production verification method',on:false,interactive:true});
+    const method = toggleRow({title:'Verification method',copy:'Choose your verification method',on:false,interactive:true});
     const recovery = textRow({title:'Recovery codes',copy:'Generated only after setup',action:'Unavailable'});
     const enable = textRow({title:'Enable two-step',copy:'Choose a verification method first',action:'',href:'#',disabled:true});
     const apply = selected => {
       method.img.src = selected ? '/assets/v2-toggle-on.svg' : '/assets/v2-toggle-off.svg';
       method.control.setAttribute('aria-pressed', String(selected));
       method.control.setAttribute('aria-label', `Verification method: ${selected ? 'selected' : 'not selected'}`);
-      method.block.small.textContent = selected ? 'Production verification method selected' : 'Choose a production verification method';
+      method.block.small.textContent = selected ? 'Verification method selected' : 'Choose your verification method';
       enable.row.classList.toggle('disabled', !selected);
       enable.row.setAttribute('aria-disabled', String(!selected));
-      enable.block.small.textContent = selected ? 'Continue with production verification' : 'Choose a verification method first';
+      enable.block.small.textContent = selected ? 'Continue to verification' : 'Choose a verification method first';
       enable.end.textContent = selected ? '›' : '';
       enable.row.href = selected ? makeUrl('verify', {kind:'2fa'}) : '#';
     };
@@ -193,14 +194,14 @@
     code.input.classList.add('code');
     const delivery = textRow({title:'Delivery method',copy:'Email or phone selected in the previous step',action:'Runtime'});
     const state = textRow({title:'Code status',copy:'Expiry and retry state come from production',action:'Live state'});
-    const save = textRow({title:'Verify and save',copy:'Enter the production verification code first',action:'',href:'#',dark:true,disabled:true});
+    const save = textRow({title:'Verify and save',copy:'Enter your verification code',action:'',href:'#',dark:true,disabled:true});
     const sync = () => {
       const ready = Boolean(code.input.value.trim());
       code.block.small.textContent = ready ? 'Code entered for production validation' : 'Enter the code for production validation';
       code.input.placeholder = ready ? 'Provided code' : 'Provided code';
       save.row.classList.toggle('disabled', !ready);
       save.row.setAttribute('aria-disabled', String(!ready));
-      save.block.small.textContent = ready ? 'Production validates the code before saving' : 'Enter the production verification code first';
+      save.block.small.textContent = ready ? 'Production validates the code before saving' : 'Enter your verification code';
       save.end.textContent = ready ? '›' : '';
       save.row.href = ready ? makeUrl('complete', {kind}) : '#';
     };
@@ -213,8 +214,8 @@
   title.textContent = 'Update confirmed';
   back.href = '/profile-flow.html?view=security';
   body.append(
-    notice('Production-confirmed security','No password, verification code, recovery code, device or private security data is stored in this prototype.'),
-    textRow({title:'Security status',copy:'Production confirmed the requested security change',action:'Confirmed'}).row,
+    notice('Security preview','This preview does not change your live account or store passwords.'),
+    textRow({title:'Security status',copy:'Review the result of this preview flow',action:'Confirmed'}).row,
     textRow({title:'Return to security',copy:'Latest state is loaded from your account',action:'Production',href:'/profile-flow.html?view=security'}).row,
     textRow({title:'Security settings',copy:'Review password, two-step verification and sessions',action:'View security ›',href:'/profile-flow.html?view=security'}).row,
     textRow({title:'Back to security',copy:'Review your current security settings',action:'›',href:'/profile-flow.html?view=security',dark:true}).row

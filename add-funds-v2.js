@@ -71,7 +71,7 @@
   if (step === 'home') {
     if (title) title.textContent = 'Add funds';
     if (back) back.href = '/settings.html';
-    setRow(0, {title:'Funding amount', copy:'Enter the amount in production checkout', action:'Enter amount', href:makeUrl('amount', {amount:'', method:'', reference:''})});
+    setRow(0, {title:'Funding amount', copy:'Choose how much to add to your wallet', action:'Enter amount', href:makeUrl('amount', {amount:'', method:'', reference:''})});
     setRow(1, {title:'Payment method', copy:'Available after a funding amount is entered', action:'Enter amount first', locked:true, disabled:true});
     setRow(2, {title:'Funding summary', copy:'Available after amount and payment method', action:'Complete previous steps', locked:true, disabled:true});
     setNotice('Secure production checkout','Exact methods, fees and limits come from the live funding system.');
@@ -81,11 +81,11 @@
   if (step === 'amount') {
     if (title) title.textContent = 'Enter amount';
     if (back) back.href = '/add-funds.html';
-    setRow(0, {title:'Funding amount', copy:'Enter your funding amount in production', input:true, href:'#'});
+    setRow(0, {title:'Funding amount', copy:'Enter the amount you want to add', input:true, href:'#'});
     setRow(1, {title:'Currency', copy:'Current wallet funding currency', action:'NGN', href:'#', disabled:true});
     const validAmount = Number(amount) > 0;
     setRow(2, {title:'Continue', copy:'Choose a live payment method next', action:'Next ›', href:validAmount ? makeUrl('amount-entered') : '#', locked:!validAmount, disabled:!validAmount});
-    setNotice('Runtime validation','Funding minimums, maximums and eligibility are checked by production.');
+    setNotice('Funding limits','Funding minimums, maximums and eligibility are checked by production.');
     return;
   }
 
@@ -95,7 +95,7 @@
     setRow(0, {title:'Funding amount', copy:'Entered amount from the production form', action:amount ? `₦${Number(amount).toLocaleString('en-NG')}` : 'Runtime amount', href:makeUrl('amount')});
     setRow(1, {title:'Currency', copy:'Current wallet funding currency', action:'NGN', href:'#', disabled:true});
     setRow(2, {title:'Continue', copy:'Choose a live payment method next', action:'Next ›', href:makeUrl('method')});
-    setNotice('Runtime validation','Production validates the entered amount and exposes eligible payment methods.');
+    setNotice('Funding limits','Production validates the entered amount and exposes eligible payment methods.');
     return;
   }
 
@@ -104,8 +104,8 @@
     if (back) back.href = makeUrl('amount-entered');
     setRow(0, {title:'Live payment option', copy:'Loaded from the connected funding provider', action:'Select', href:makeUrl('selected', {method:'paystack'})});
     setRow(1, {title:'Another live option', copy:'Availability can vary by amount and account', action:'Select', href:makeUrl('selected', {method:'alternate'})});
-    setRow(2, {title:'More payment methods', copy:'Production can expose additional methods', action:'Browse', href:makeUrl('method')});
-    setNotice('Provider-driven methods','No processor, fee or payment method is invented in this prototype.');
+    setRow(2, {title:'Other payment options', copy:'Production can expose additional methods', action:'Browse', href:makeUrl('method')});
+    setNotice('Payment options','No processor, fee or payment method is invented in this prototype.');
     return;
   }
 
@@ -113,7 +113,7 @@
     if (title) title.textContent = 'Payment selected';
     if (back) back.href = makeUrl('method');
     setRow(0, {title:'Selected live method', copy:'Method supplied by the connected funding provider', action:'Selected', href:'#', disabled:true});
-    setRow(1, {title:'Change payment method', copy:'Return to currently available provider methods', action:'Change ›', href:makeUrl('method', {method:''})});
+    setRow(1, {title:'Change payment method', copy:'Return to currently available payment methods', action:'Change ›', href:makeUrl('method', {method:''})});
     setRow(2, {title:'Continue to review', copy:'Fees and exact total are confirmed next', action:'Review ›', href:makeUrl('review')});
     setNotice('Live method selected','The exact provider method and availability remain production-driven.');
     return;
@@ -145,7 +145,7 @@
       checkoutAction = 'Continue ›';
     }
     setRow(2, {title:'Secure checkout', copy:'Production creates the checkout session', action:checkoutAction, href:checkoutHref});
-    setNotice('Provider checkout','The live funding system supplies the checkout destination, fees and final total.');
+    setNotice('Secure checkout','The live funding system supplies the checkout destination, fees and final total.');
     return;
   }
 

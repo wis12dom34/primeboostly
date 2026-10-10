@@ -68,7 +68,7 @@
   if (view === 'account') {
     title.textContent = 'Account details';
     body.append(
-      notice('Signed-in account data','Profile information is populated from the authenticated PrimeBoostly account in production.'),
+      notice('Signed-in account data','Manage the name and contact details on your account. Changes are not saved to a live account in this preview.'),
       row({title:'Profile name',copy:'Name used across your account',action:'Edit ›',href:'/account-edit.html?type=name'}),
       row({title:'Email address',copy:'Primary sign-in and recovery email',action:'Change ›',href:'/account-edit.html?type=email'}),
       row({title:'Phone number',copy:'Optional account contact',action:'Change ›',href:'/account-edit.html?type=phone'}),
@@ -81,8 +81,8 @@
     title.textContent = 'Wallet & billing';
     body.append(
       wallet(),
-      row({title:'Wallet funding',copy:'Add money through the live funding flow',action:'Production checkout',href:'/add-funds.html'}),
-      row({title:'Transaction history',copy:'Funding and wallet activity',action:'Production records',href:'/profile-flow.html?view=transactions'}),
+      row({title:'Wallet funding',copy:'Add money to your PrimeBoostly wallet',action:'Add funds ›',href:'/add-funds.html'}),
+      row({title:'Transaction history',copy:'Funding and wallet activity',action:'View history ›',href:'/profile-flow.html?view=transactions'}),
       row({title:'Billing currency',copy:'Primary wallet display currency',action:'NGN',href:'/profile-flow.html?view=currency'}),
       notice('Live wallet data','Balance and transaction values are supplied by production wallet data.')
     );
@@ -92,9 +92,9 @@
   if (view === 'transactions') {
     title.textContent = 'Transaction details';
     body.append(
-      wallet('Wallet activity','Production records'),
-      row({title:'Latest transactions',copy:'Funding and wallet movements',action:'Live data'}),
-      row({title:'Transaction history',copy:'Amount, method, status and reference',action:'Production records'}),
+      notice('Wallet activity','Review wallet credits, purchases and refunds below.'),
+      row({title:'Latest transactions',copy:'Funding and wallet movements',action:'View history ›',href:'/transactions.html'}),
+      row({title:'Transaction history',copy:'Amount, method, status and reference',action:'View history ›',href:'/transactions.html'}),
       row({title:'History source',copy:'Transactions from the production wallet',action:'Live'}),
       notice('Live transaction history','Real transactions appear here when production wallet data is connected.')
     );
@@ -102,11 +102,11 @@
   }
 
   if (view === 'currency') {
-    title.textContent = 'Currency source';
+    title.textContent = 'Billing currency';
     body.append(
-      wallet('Current display currency','NGN'),
+      wallet('Wallet currency','NGN'),
       row({title:'Nigerian Naira',copy:'Current wallet display currency',action:'Active'}),
-      row({title:'Additional currencies',copy:'Loaded from production configuration',action:'Not invented'}),
+      row({title:'Additional currencies',copy:'Loaded from production configuration',action:'Not available'}),
       row({title:'Billing currency',copy:'Enabled by live wallet settings',action:'NGN'}),
       notice('Production currency configuration','Only currencies enabled by the live wallet should appear here.')
     );
@@ -123,11 +123,11 @@
   if (view === 'notifications') {
     title.textContent = 'Notifications';
     body.append(
-      row({title:'Order updates',copy:'Status changes for active SMM orders',toggle:storedToggle('Order updates', true),href:'#'}),
+      row({title:'Order updates',copy:'Status changes for your active orders',toggle:storedToggle('Order updates', true),href:'#'}),
       row({title:'Wallet alerts',copy:'Funding and wallet activity alerts',toggle:storedToggle('Wallet alerts', true),href:'#'}),
       row({title:'Account alerts',copy:'Important sign-in and security notices',toggle:storedToggle('Account alerts', true),href:'#'}),
       row({title:'Promotions',copy:'Product news and service announcements',toggle:storedToggle('Promotions', false),href:'#'}),
-      notice('Notification preferences','The production app stores these choices per signed-in account.')
+      notice('Notification preferences','Choose the updates you want to receive. Preferences are saved locally in this preview.')
     );
     return;
   }
@@ -136,8 +136,8 @@
   body.append(
     row({title:'Password',copy:'Manage your sign-in password',action:'Protected ›',href:'/security-flow.html?view=password'}),
     row({title:'Two-step verification',copy:'Extra verification for sensitive account actions',action:'Manage ›',href:'/security-flow.html?view=2fa'}),
-    row({title:'Active sessions',copy:'Review devices currently signed in',action:'Production ›',href:'/security-flow.html?view=sessions'}),
+    row({title:'Active sessions',copy:'Review devices currently signed in',action:'Review ›',href:'/security-flow.html?view=sessions'}),
     row({title:'Sign-in activity',copy:'Recent authentication activity',action:'Review ›',href:'/security-flow.html?view=activity'}),
-    notice('Security data','Sensitive credentials and session details are loaded securely from production and are not invented in this prototype.')
+    notice('Security data','Review your password, verification settings and recent sign-ins.')
   );
 })();
