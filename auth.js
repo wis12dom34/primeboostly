@@ -20,7 +20,7 @@
   if(protectedPage&&!session()){location.replace('/login.html?next='+encodeURIComponent(location.pathname+location.search));return}
   const s=session();
   if(s){all('[data-auth-avatar]').forEach(el=>el.textContent=(s.username||s.email||'PB').slice(0,2).toUpperCase());all('[data-auth-name]').forEach(el=>el.textContent=s.username||s.email)}
-  all('[data-auth-logout]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();drop(SESSION);location.href='/login.html'}));
+  all('[data-auth-logout]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();drop(SESSION);const next=el.dataset.authLogoutNext;location.href=next&&next.startsWith('/')&&!next.startsWith('//')?next:'/login.html'}));
 
   all('[data-auth-login]').forEach(form=>form.addEventListener('submit',async e=>{
     e.preventDefault();clear(form);
@@ -65,7 +65,7 @@
     const t=makeToken();write(RESET,{email:a.email,token:t,requestedAt:Date.now()});
     success(reset,'Reset link prepared. Opening the password reset screen…');
     setTimeout(()=>location.href=`/reset-password.html?email=${encodeURIComponent(a.email)}&token=${encodeURIComponent(t)}`,350);
-  });
+  }));
 
   const change=$('[data-auth-new-password],[data-password-change]');
   if(change){
