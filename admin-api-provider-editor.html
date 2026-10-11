@@ -1,78 +1,100 @@
-<!DOCTYPE html>
-<html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><link href="/admin-preview-assets/admin/css/theme.css" rel="stylesheet"/><link href="/admin-preview-assets/admin/css/style.css" rel="stylesheet"/><link href="/admin-preview-assets/admin/css/select2.min.css" rel="stylesheet"/><link href="/admin-preview-assets/admin/css/custom.css" rel="stylesheet"/><title>PrimeBoostly Admin Preview</title></head><body class="pba-admin"><div data-header-position="fixed" data-layout="vertical" data-sidebar-position="fixed" data-sidebartype="full" id="main-wrapper"><header class="topbar"><nav class="navbar top-navbar navbar-expand-md"><div class="navbar-header"><a class="nav-toggler d-block d-md-none" href="#"><i data-feather="menu"></i></a><div class="navbar-brand"><a href="/admin.html"><span class="logo-text"><span class="pba-brand-text">PrimeBoostly</span></span></a></div><a aria-label="Account menu" class="topbartoggler d-block d-md-none" data-target="#navbarSupportedContent" data-toggle="collapse" href="#"><i data-feather="more-horizontal"></i></a></div><div class="navbar-collapse collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto"><li><a class="nav-link" href="#">Admin account</a></li></ul></div></nav></header><aside class="left-sidebar" data-sidebarbg="skin6"><div class="scroll-sidebar"><nav class="sidebar-nav"><ul id="sidebarnav"><li class="sidebar-item"><a class="sidebar-link" href="/admin.html"><i data-feather="home"></i><span class="hide-menu">Dashboard</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-api-providers.html"><i data-feather="link"></i><span class="hide-menu">API providers</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-orders.html"><i data-feather="clipboard"></i><span class="hide-menu">Orders</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-services.html"><i data-feather="grid"></i><span class="hide-menu">Services</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-users.html"><i data-feather="users"></i><span class="hide-menu">Customers</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-payment-logs.html"><i data-feather="credit-card"></i><span class="hide-menu">Payments</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-transactions.html"><i data-feather="repeat"></i><span class="hide-menu">Transactions</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-support.html"><i data-feather="message-square"></i><span class="hide-menu">Support tickets</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-controls.html"><i data-feather="settings"></i><span class="hide-menu">Settings</span></a></li></ul></nav></div></aside><main class="page-wrapper"><div class="page-breadcrumb"><div class="row"><div class="col-7"><h4 class="page-title text-truncate">Add API Provider</h4><ol class="breadcrumb"><li>Dashboard / Add API Provider</li></ol></div></div></div><div class="alert alert-info mx-4" role="note">UI preview · Sample data. API saving and payments are disabled.</div><div class="alert alert-info mx-4" hidden="" id="demo-result" role="status"></div> <div class="card card-primary m-0 m-md-4 my-4 m-md-0 shadow">
-<div class="card-body">
-<form action="#" enctype="multipart/form-data" method="post" onsubmit="event.preventDefault()">
-<div class="mb-4">
-<button class="btn btn-light" data-base-currency="NGN" data-taskletpay-preset="" type="button">
-                        Use TaskletPay settings
-                    </button>
-<a class="btn btn-light" href="https://taskletpay.com/api_docs" rel="noopener noreferrer" target="_blank">
-                        TaskletPay API documentation
-                    </a>
-<p class="text-muted mt-2 mb-0">Enter your TaskletPay Advertiser API key below. Use a conversion rate of 1 when your base currency is NGN.</p>
-</div>
-<div class="row">
-<div class="col-md-6">
-<div class="form-group">
-<label>Api Name</label>
-<input class="form-control form-control-sm" name="api_name" required="required" type="text" value=""/>
-<div class="invalid-feedback">Please fill in the api name</div>
-</div>
-<div class="form-group">
-<label>API Key</label>
-<input autocomplete="off" class="form-control form-control-sm" name="api_key" placeholder="API key entry is disabled in this UI preview" readonly="readonly" required="False" type="password" value=""/>
-<div class="invalid-feedback">Please fill in the api key</div>
-</div>
-</div>
-<div class="col-md-6">
-<div class="form-group">
-<label>URL</label>
-<input class="form-control form-control-sm" name="url" required="required" type="text" value=""/>
-<div class="invalid-feedback">Please fill in the url</div>
-</div>
-<div class="form-group">
-<label>Conversion Rate</label>
-<div class="input-group input-group-sm">
-<div class="input-group-prepend">
-<div class="input-group-text">1 NGN =</div>
-</div>
-<input class="form-control form-control-sm" id="convRateInput" name="convention_rate" required="" step=".01" type="number" value=""/>
-<div class="input-group-append">
-<div class="input-group-text set-currency">
-                                        provider's currency
-                                    </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-md-6">
-<div class="form-group">
-<label for="description">Description</label>
-<textarea class="form-control" id="description" name="description" rows="3"></textarea>
-<div class="invalid-feedback">Please fill in the description</div>
-</div>
-</div>
-<div class="col-md-6">
-<div class="form-group">
-<label class="d-block">Status</label>
-<div class="custom-switch-btn w-md-50">
-<input name="status" type="hidden" value="1"/>
-<input class="custom-switch-checkbox" id="status" name="status" type="checkbox" value="0"/>
-<label class="custom-switch-checkbox-label" for="status">
-<span class="custom-switch-checkbox-inner"></span>
-<span class="custom-switch-checkbox-switch"></span>
-</label>
-</div>
-</div>
-</div>
-</div>
-<div class="submit-btn-wrapper mt-md-5 text-center text-md-left">
-<button class="btn btn-primary btn-block mt-3" type="submit">
-<span>Add API Provider</span></button>
-</div>
-</form>
-</div>
-</div>
-<footer class="footer">PrimeBoostly admin · Preview</footer></main></div><div class="modal fade" id="qa-modal" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header bg-primary text-white"><h5 class="modal-title">Confirm status change</h5><button aria-label="Close" class="close" data-dismiss="modal">×</button></div><div class="modal-body"><p>Change the selected record status?</p></div><div class="modal-footer"><button class="btn btn-light" data-dismiss="modal">Cancel</button><button class="btn btn-primary" data-dismiss="modal">Change status</button></div></div></div></div><script src="/admin-preview-assets/global/js/jquery.min.js"></script><script src="/admin-preview-assets/global/js/popper.min.js"></script><script src="/admin-preview-assets/global/js/bootstrap.min.js"></script><script src="/admin-preview-assets/admin/js/feather.min.js"></script><script src="/admin-preview-assets/admin/js/perfect-scrollbar.jquery.min.js"></script><script src="/admin-preview-assets/admin/js/app-style-switcher.js"></script><script src="/admin-preview-assets/admin/js/admin-mart.js"></script><script src="/admin-preview-assets/admin/js/custom.js"></script><script>document.addEventListener('submit',function(e){e.preventDefault();var notice=document.getElementById('demo-result');notice.textContent='Preview only. This action is saved through your live cPanel admin.';notice.hidden=false;});</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Configure API Provider · PrimeBoostly Admin</title>
+  <link rel="stylesheet" href="/admin-api-provider-editor.css">
+  <style>
+    .ape-note{margin:0;padding:11px 13px;border:1px solid #dbe7de;border-radius:10px;background:#f4faf6;color:#52616d;font:400 12px/18px Poppins,Inter,sans-serif}.ape-note strong{color:#16212d}.ape-link{color:#2db05e;text-decoration:none;font-weight:600}.ape-field textarea{width:100%;min-height:90px;padding:12px;border:1px solid #dbe7de;border-radius:10px;background:#fff;color:#16212d;font:400 13px/20px Poppins,Inter,sans-serif;resize:vertical;outline:none}.ape-field textarea:focus{border-color:#2db05e;box-shadow:0 0 0 3px rgba(45,176,94,.08)}.ape-check{display:flex;align-items:center;gap:9px;color:#52616d;font-size:12px}.ape-actions a{text-decoration:none}.ape-message{min-height:18px;margin:0;color:#2db05e;font-size:12px}.ape-mobile .ape-card{width:100%}.ape-mobile .ape-two{grid-template-columns:1fr;width:100%;gap:12px}.ape-mobile .ape-field input,.ape-mobile .ape-field select,.ape-mobile .ape-field textarea{width:100%}.ape-mobile .ape-actions{height:auto;flex-wrap:wrap}.ape-mobile .ape-note{width:100%}@media(max-width:1100px){.ape-mobile{width:min(440px,100%)}.apem-head,.apem-title,.apem-card{width:100%}.apem-title{height:auto}.apem-title p{width:100%;height:auto}.ape-mobile form{width:100%;display:flex;flex-direction:column;gap:12px}}
+  </style>
+</head>
+<body class="api-provider-editor-page">
+  <main class="ape-desktop">
+    <aside class="ape-side">
+      <a class="ape-brand" href="/admin.html"><span class="ape-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></a>
+      <p class="ape-label">OVERVIEW</p><a class="ape-nav" href="/admin.html">Dashboard</a>
+      <p class="ape-label">MANAGE SERVICE</p><a class="ape-nav" href="/admin-add-service.html">Add Services</a><a class="ape-nav" href="/admin-services.html">Show Services</a><a class="ape-nav active" href="/admin-api-providers.html">API Providers</a>
+      <p class="ape-label">MANAGE ORDERS</p><a class="ape-nav" href="/admin-orders.html">All Orders</a>
+      <p class="ape-label">MANAGE USER</p><a class="ape-nav" href="/admin-users.html">All Users</a>
+      <p class="ape-label">PAYMENT SETTINGS</p><a class="ape-nav" href="/admin-payments.html">Payment Methods</a>
+      <p class="ape-label">OPERATIONS</p><a class="ape-nav" href="/admin-transactions.html">Transactions</a><a class="ape-nav" href="/admin-support.html">Support Tickets</a>
+      <p class="ape-label">CONTROLS</p><a class="ape-nav" href="/admin-controls.html">Basic Controls</a>
+    </aside>
+
+    <section class="ape-content">
+      <header class="ape-header"><div class="ape-header-copy"><h1>Configure API Provider</h1><p>Connect TaskletPay as an upstream SMM supplier for PrimeBoostly orders.</p></div><div class="ape-header-actions"><a class="ape-btn" href="/admin-api-providers.html">Back to providers</a><span class="ape-admin"><b>A</b>Admin</span></div></header>
+
+      <section class="ape-metrics"><article class="ape-metric"><small>Protocol</small><b>SMM v2</b></article><article class="ape-metric"><small>Provider currency</small><b>NGN</b></article><article class="ape-metric"><small>Endpoint</small><b>/api/v2</b></article><article class="ape-metric"><small>Refill support</small><b>No</b></article></section>
+
+      <section class="ape-grid">
+        <form class="ape-card" id="provider-form" autocomplete="off">
+          <h2>TaskletPay connection</h2>
+          <p class="ape-note"><strong>Supplier API only.</strong> This connection is used to fulfil PrimeBoostly customer orders. It is separate from any API you expose to PrimeBoostly resellers.</p>
+          <div class="ape-actions"><button class="ape-btn" id="tasklet-preset" type="button">Use TaskletPay preset</button><a class="ape-btn" href="https://taskletpay.com/api_docs" target="_blank" rel="noopener noreferrer">Open API docs ↗</a></div>
+          <div class="ape-two">
+            <label class="ape-field"><span>Provider name</span><input id="provider-name" name="api_name" required value="TaskletPay"></label>
+            <label class="ape-field"><span>API URL</span><input id="provider-url" name="url" required inputmode="url" value="https://taskletpay.com/api/v2"></label>
+          </div>
+          <label class="ape-field"><span>API key</span><input id="provider-key" name="api_key" type="password" autocomplete="new-password" placeholder="Enter your TaskletPay Advertiser API key" value=""></label>
+          <div class="ape-two">
+            <label class="ape-field"><span>Provider currency</span><select id="provider-currency" name="currency"><option selected>NGN</option></select></label>
+            <label class="ape-field"><span>Conversion rate</span><input id="conversion-rate" name="convention_rate" type="number" min="0" step="0.01" value="1"></label>
+          </div>
+          <label class="ape-field"><span>Description</span><textarea id="provider-description" name="description">TaskletPay SMM v2 supplier API</textarea></label>
+          <label class="ape-check"><input id="provider-status" name="status" type="checkbox" checked> Enable provider after successful live connection test</label>
+          <p class="ape-note">Your API key is intentionally <strong>not stored in this GitHub/Vercel preview</strong>. Enter it in the live cPanel admin once this UI is merged into the Laravel source.</p>
+          <div class="ape-actions"><button class="ape-primary" type="submit">Save provider</button><button class="ape-btn" id="test-provider" type="button">Test connection</button></div>
+          <p class="ape-message" id="provider-message" role="status" aria-live="polite"></p>
+        </form>
+
+        <aside class="ape-health">
+          <h2>Provider capabilities</h2><span class="ape-status">TaskletPay · SMM v2</span>
+          <div class="ape-health-row"><span>Fetch services</span><b>Supported</b></div>
+          <div class="ape-health-row"><span>Add order</span><b>Supported</b></div>
+          <div class="ape-health-row"><span>Order status</span><b>Supported</b></div>
+          <div class="ape-health-row"><span>Multiple status</span><b>Supported</b></div>
+          <div class="ape-health-row"><span>Balance</span><b>Supported</b></div>
+          <div class="ape-health-row"><span>Cancel</span><b>Supported</b></div>
+          <div class="ape-health-row"><span>Refill</span><b>Not supported</b></div>
+          <p class="ape-note">Live connection tests must run server-side so the provider key never gets exposed in browser requests.</p>
+        </aside>
+      </section>
+    </section>
+  </main>
+
+  <main class="ape-mobile">
+    <header class="apem-head"><a class="apem-brand" href="/admin.html"><span class="apem-brand-row"><span>PRIME</span><span>BOOSTLY</span></span><small>Admin Panel</small></a><a class="apem-menu" href="/admin-mobile-menu.html" aria-label="Open admin menu">☰</a></header>
+    <section class="apem-title"><h1>Configure Provider</h1><p>TaskletPay supplier connection for PrimeBoostly orders.</p></section>
+    <form class="ape-card" id="provider-form-mobile" autocomplete="off">
+      <p class="ape-note"><strong>Supplier API only.</strong> Separate from PrimeBoostly reseller API access.</p>
+      <label class="ape-field"><span>Provider name</span><input name="api_name" value="TaskletPay" required></label>
+      <label class="ape-field"><span>API URL</span><input name="url" value="https://taskletpay.com/api/v2" required></label>
+      <label class="ape-field"><span>API key</span><input name="api_key" type="password" autocomplete="new-password" placeholder="Enter key in live cPanel admin"></label>
+      <div class="ape-two"><label class="ape-field"><span>Currency</span><select name="currency"><option selected>NGN</option></select></label><label class="ape-field"><span>Conversion rate</span><input name="convention_rate" type="number" step="0.01" value="1"></label></div>
+      <div class="ape-actions"><button class="ape-primary" type="submit">Save provider</button><a class="ape-btn" href="https://taskletpay.com/api_docs" target="_blank" rel="noopener noreferrer">Docs ↗</a></div>
+      <p class="ape-message" data-mobile-message role="status" aria-live="polite"></p>
+    </form>
+    <section class="apem-card"><div class="apem-row"><span>Protocol</span><b>SMM v2</b></div><div class="apem-row"><span>Currency</span><b>NGN</b></div><div class="apem-row"><span>Refill</span><b>Not supported</b></div></section>
+  </main>
+
+  <script>
+    (()=>{
+      const preset=document.getElementById('tasklet-preset');
+      const message=document.getElementById('provider-message');
+      const fill=()=>{
+        document.getElementById('provider-name').value='TaskletPay';
+        document.getElementById('provider-url').value='https://taskletpay.com/api/v2';
+        document.getElementById('provider-currency').value='NGN';
+        document.getElementById('conversion-rate').value='1';
+        document.getElementById('provider-description').value='TaskletPay SMM v2 supplier API';
+        message.textContent='TaskletPay preset loaded. Add the API key only in the live cPanel admin.';
+      };
+      preset?.addEventListener('click',fill);
+      document.getElementById('test-provider')?.addEventListener('click',()=>{message.textContent='Live connection testing requires the Laravel/cPanel backend so your API key stays server-side.';});
+      document.getElementById('provider-form')?.addEventListener('submit',e=>{e.preventDefault();message.textContent='UI is ready. Live saving will be enabled when this form is wired to the existing Laravel provider controller.';});
+      document.getElementById('provider-form-mobile')?.addEventListener('submit',e=>{e.preventDefault();const m=document.querySelector('[data-mobile-message]');if(m)m.textContent='Live saving requires the existing Laravel/cPanel provider controller.';});
+    })();
+  </script>
+</body>
+</html>
