@@ -1,2 +1,77 @@
-<!DOCTYPE html>
-<html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><link href="/admin-preview-assets/admin/css/theme.css" rel="stylesheet"/><link href="/admin-preview-assets/admin/css/style.css" rel="stylesheet"/><link href="/admin-preview-assets/admin/css/select2.min.css" rel="stylesheet"/><link href="/admin-preview-assets/admin/css/custom.css" rel="stylesheet"/><title>PrimeBoostly Admin Preview</title></head><body class="pba-admin"><div data-header-position="fixed" data-layout="vertical" data-sidebar-position="fixed" data-sidebartype="full" id="main-wrapper"><header class="topbar"><nav class="navbar top-navbar navbar-expand-md"><div class="navbar-header"><a class="nav-toggler d-block d-md-none" href="#"><i data-feather="menu"></i></a><div class="navbar-brand"><a href="/admin.html"><span class="logo-text"><span class="pba-brand-text">PrimeBoostly</span></span></a></div><a aria-label="Account menu" class="topbartoggler d-block d-md-none" data-target="#navbarSupportedContent" data-toggle="collapse" href="#"><i data-feather="more-horizontal"></i></a></div><div class="navbar-collapse collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto"><li><a class="nav-link" href="#">Admin account</a></li></ul></div></nav></header><aside class="left-sidebar" data-sidebarbg="skin6"><div class="scroll-sidebar"><nav class="sidebar-nav"><ul id="sidebarnav"><li class="sidebar-item"><a class="sidebar-link" href="/admin.html"><i data-feather="home"></i><span class="hide-menu">Dashboard</span></a></li><li class="sidebar-item selected"><a aria-current="page" class="sidebar-link" href="/admin-api-providers.html"><i data-feather="link"></i><span class="hide-menu">API providers</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-orders.html"><i data-feather="clipboard"></i><span class="hide-menu">Orders</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-services.html"><i data-feather="grid"></i><span class="hide-menu">Services</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-users.html"><i data-feather="users"></i><span class="hide-menu">Customers</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-payment-logs.html"><i data-feather="credit-card"></i><span class="hide-menu">Payments</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-transactions.html"><i data-feather="repeat"></i><span class="hide-menu">Transactions</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-support.html"><i data-feather="message-square"></i><span class="hide-menu">Support tickets</span></a></li><li class="sidebar-item"><a class="sidebar-link" href="/admin-controls.html"><i data-feather="settings"></i><span class="hide-menu">Settings</span></a></li></ul></nav></div></aside><main class="page-wrapper"><div class="page-breadcrumb"><div class="row"><div class="col-7"><h4 class="page-title text-truncate">API Providers</h4><ol class="breadcrumb"><li>Dashboard / API Providers</li></ol></div></div></div><div class="alert alert-info mx-4" role="note">UI preview · Sample data. API saving and payments are disabled.</div><div class="alert alert-info mx-4" hidden="" id="demo-result" role="status"></div><div class="card"><div class="card-body"><form onsubmit="event.preventDefault()"><div class="row"><div class="col-md-4"><div class="form-group"><label>Search</label><input class="form-control" placeholder="Name or reference"/></div></div><div class="col-md-4"><div class="form-group"><label>Status</label><select class="form-control"><option>All statuses</option><option>Active</option></select></div></div><div class="col-md-4 d-flex align-items-end"><div class="form-group"><button class="btn btn-light">Search</button></div></div></div></form><a class="btn btn-primary" href="/admin-api-provider-editor.html">Add provider</a> <button class="btn btn-dark" data-target="#qa-modal" data-toggle="modal">Action</button></div></div><div class="card"><div class="card-body"><div class="table-responsive"><table class="categories-show-table table table-striped table-bordered"><thead class="thead-primary"><tr><th>Select</th><th>No.</th><th>Name</th><th>Balance</th><th>Description</th><th>Status</th><th>Action</th></tr></thead><tbody><tr><td><input aria-label="Select provider" type="checkbox"/></td><td>1</td><td>Demo provider</td><td>0.00 NGN</td><td>Service connection</td><td><span class="badge badge-success">Active</span></td><td><div class="dropdown"><a class="dropdown-toggle p-3" data-toggle="dropdown" href="#"><i data-feather="more-vertical"></i></a><div class="dropdown-menu"><a class="dropdown-item" href="/admin-api-provider-editor.html">Edit</a><button class="dropdown-item" data-target="#qa-modal" data-toggle="modal">Change status</button></div></div></td></tr><tr><td><input aria-label="Select provider" type="checkbox"/></td><td>2</td><td>Second Demo provider</td><td>0.00 INR</td><td></td><td><span class="badge badge-success">Active</span></td><td><div class="dropdown"><a class="dropdown-toggle p-3" data-toggle="dropdown" href="#"><i data-feather="more-vertical"></i></a><div class="dropdown-menu"><a class="dropdown-item" href="/admin-api-provider-editor.html">Edit</a><button class="dropdown-item" data-target="#qa-modal" data-toggle="modal">Change status</button></div></div></td></tr></tbody></table></div></div></div><footer class="footer">PrimeBoostly admin · Preview</footer></main></div><div class="modal fade" id="qa-modal" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header bg-primary text-white"><h5 class="modal-title">Confirm status change</h5><button aria-label="Close" class="close" data-dismiss="modal">×</button></div><div class="modal-body"><p>Change the selected record status?</p></div><div class="modal-footer"><button class="btn btn-light" data-dismiss="modal">Cancel</button><button class="btn btn-primary" data-dismiss="modal">Change status</button></div></div></div></div><script src="/admin-preview-assets/global/js/jquery.min.js"></script><script src="/admin-preview-assets/global/js/popper.min.js"></script><script src="/admin-preview-assets/global/js/bootstrap.min.js"></script><script src="/admin-preview-assets/admin/js/feather.min.js"></script><script src="/admin-preview-assets/admin/js/perfect-scrollbar.jquery.min.js"></script><script src="/admin-preview-assets/admin/js/app-style-switcher.js"></script><script src="/admin-preview-assets/admin/js/admin-mart.js"></script><script src="/admin-preview-assets/admin/js/custom.js"></script><script>document.addEventListener('submit',function(e){e.preventDefault();var notice=document.getElementById('demo-result');notice.textContent='Preview only. This action is saved through your live cPanel admin.';notice.hidden=false;});</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>API Providers · PrimeBoostly Admin</title>
+  <link rel="stylesheet" href="/admin-api-providers.css">
+</head>
+<body class="admin-providers-page">
+  <main class="providers-desktop">
+    <aside class="providers-sidebar">
+      <a class="providers-brand" href="/admin.html"><span><b>PRIME</b><strong>BOOSTLY</strong></span><small>Admin Panel</small></a>
+      <p class="providers-label">OVERVIEW</p>
+      <a class="providers-nav" href="/admin.html">Dashboard</a>
+      <p class="providers-label">MANAGE SERVICE</p>
+      <a class="providers-nav" href="/admin-add-service.html">Add Services</a>
+      <a class="providers-nav" href="/admin-services.html">Show Services</a>
+      <a class="providers-nav" href="/admin-categories.html">Categories</a>
+      <a class="providers-nav active" href="/admin-api-providers.html" aria-current="page">API Providers</a>
+      <p class="providers-label">MANAGE ORDERS</p>
+      <a class="providers-nav" href="/admin-orders.html">All Orders</a>
+      <p class="providers-label">MANAGE USER</p>
+      <a class="providers-nav" href="/admin-users.html">All Users</a>
+      <p class="providers-label">PAYMENT SETTINGS</p>
+      <a class="providers-nav" href="/admin-payments.html">Payment Methods</a>
+      <a class="providers-nav" href="/admin-payment-logs.html">Payment Log</a>
+      <p class="providers-label">OPERATIONS</p>
+      <a class="providers-nav" href="/admin-transactions.html">Transactions</a>
+      <a class="providers-nav" href="/admin-support.html">Support Tickets</a>
+      <p class="providers-label">CONTROLS</p>
+      <a class="providers-nav" href="/admin-controls.html">Basic Controls</a>
+    </aside>
+
+    <section class="providers-content">
+      <header class="providers-header">
+        <div><h1>API Providers</h1><p>Connect supplier SMM APIs used to fulfil PrimeBoostly orders.</p></div>
+        <div class="providers-head-actions"><a href="https://taskletpay.com/api_docs" target="_blank" rel="noopener noreferrer">TaskletPay docs ↗</a><span><b>A</b>Admin</span></div>
+      </header>
+
+      <section class="providers-metrics" aria-label="Provider summary">
+        <article><small>Providers</small><strong>1</strong></article>
+        <article class="soft"><small>Active</small><strong>0</strong></article>
+        <article><small>Needs setup</small><strong class="warning">1</strong></article>
+        <article><small>Base currency</small><strong>NGN</strong></article>
+      </section>
+
+      <div class="providers-title"><div><h2>Supplier connections</h2></div><a href="/admin-api-provider-editor.html">+ Add provider</a></div>
+
+      <section class="providers-grid">
+        <article class="provider-card" data-provider-card data-provider="TaskletPay">
+          <div><h3>TaskletPay</h3><span class="provider-badge warning">Setup needed</span></div>
+          <small>Standard SMM v2 · NGN</small>
+          <strong>API key not configured</strong>
+          <div class="provider-actions"><a href="/admin-api-provider-editor.html">Configure</a><a href="https://taskletpay.com/api_docs" target="_blank" rel="noopener noreferrer">Docs</a></div>
+        </article>
+      </section>
+
+      <section class="providers-log">
+        <div class="providers-log-head"><span>PROVIDER</span><span>PROTOCOL</span><span>CURRENCY</span><span>ENDPOINT</span><span>STATUS</span><span>ACTION</span></div>
+        <div class="providers-log-row"><span>TaskletPay</span><span>SMM v2</span><span>NGN</span><span>taskletpay.com/api/v2</span><span class="badge-cell"><span class="provider-badge warning">Not connected</span></span><a href="/admin-api-provider-editor.html">Configure →</a></div>
+        <p class="providers-feedback" data-provider-feedback>Supplier API connections are admin-only. PrimeBoostly customer/reseller API access is separate.</p>
+      </section>
+    </section>
+  </main>
+
+  <main class="providers-mobile">
+    <header class="providers-mobile-head"><a class="providers-mobile-brand" href="/admin.html"><span><b>PRIME</b><strong>BOOSTLY</strong></span><small>Admin Panel</small></a><a class="providers-mobile-menu" href="/admin-mobile-menu.html" aria-label="Open admin menu">☰</a></header>
+    <h1>API Providers</h1>
+    <p class="providers-mobile-lead">Supplier APIs that fulfil customer orders. This is separate from your PrimeBoostly reseller API.</p>
+    <section class="providers-mobile-stats"><article><small>Providers</small><strong>1</strong></article><article class="soft"><small>Active</small><strong>0</strong></article></section>
+    <section class="providers-mobile-list">
+      <article class="mobile-provider-card"><div><h2>TaskletPay</h2><span class="provider-badge warning">Setup needed</span></div><p>SMM v2 · NGN · API key not configured</p><div><a href="/admin-api-provider-editor.html">Configure →</a><a href="https://taskletpay.com/api_docs" target="_blank" rel="noopener noreferrer">Docs ↗</a></div></article>
+    </section>
+    <a class="providers-mobile-add" href="/admin-api-provider-editor.html">+ Add provider</a>
+  </main>
+</body>
+</html>
