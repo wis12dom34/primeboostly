@@ -1,14 +1,14 @@
-/* Final PrimeBoostly Services source of truth.
-   Approved Figma: desktop 2:32 · mobile 6:509.
-   Keep the superseded Services V2 presentation inert. Existing service links,
-   catalogue routes and Normal SMM flows remain unchanged. */
+/* PrimeBoostly Services source of truth.
+   Keep the approved desktop table at desktop widths and use the V2 mobile
+   customer screen so Services matches Dashboard, Orders and New Order. */
 html body.pb-mobile-bg.pb-ui>main.services-v2.pb-screen{display:none!important}
 @media(min-width:901px){
   html body.pb-mobile-bg.pb-ui>main.services-desktop.pb-legacy{display:block!important}
+  html body.pb-mobile-bg.pb-ui>main.services-v2.pb-screen,
   html body.pb-mobile-bg.pb-ui>main.mobile.figma-services.pb-legacy{display:none!important}
 }
 @media(max-width:900px){
   html body.pb-mobile-bg.pb-ui>main.services-desktop.pb-legacy,
-  html body.pb-mobile-bg.pb-ui>main.services-v2.pb-screen{display:none!important}
-  html body.pb-mobile-bg.pb-ui>main.mobile.figma-services.pb-legacy{display:block!important}
+  html body.pb-mobile-bg.pb-ui>main.mobile.figma-services.pb-legacy{display:none!important}
+  html body.pb-mobile-bg.pb-ui>main.services-v2.pb-screen{display:flex!important;flex-direction:column!important}
 }
