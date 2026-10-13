@@ -16,3 +16,27 @@ body:not(.app) .footer-links a{display:inline-flex;align-items:center;min-height
 body:not(.app) a:focus-visible,body:not(.app) button:focus-visible{outline:3px solid #16a34a;outline-offset:4px}
 @media(max-width:440px){body:not(.app) h1{font-size:clamp(36px,10.5vw,46px);line-height:1.12;letter-spacing:-1.5px}body:not(.app) .service{padding:20px}body:not(.app) .service .tags{min-height:0;margin-bottom:16px}body:not(.app) .wrap{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}}
 @media(prefers-reduced-motion:reduce){body:not(.app) .btn,body:not(.app) .service{transition:none}}
+
+/* FINAL FIGMA LOCK — New Prime Boostly
+   Approved source of truth:
+   - Dashboard desktop: 2:30
+   - Dashboard mobile: 2:36
+   - New Order mobile: 2:38
+   Keep superseded V2 concepts from replacing these screens. */
+body.app.pb-ui{background:#f8fbf8!important;color:#16212d!important;font-family:Inter,sans-serif!important}
+body.app.pb-ui>.v2-dashboard,
+body.app.pb-ui>.order-v2,
+body.app.pb-ui>.order-ready-v2,
+body.app.pb-ui>.order-review-v2,
+body.app.pb-ui>.order-price-v2,
+body.app.pb-ui>.order-submitted-v2{display:none!important}
+body.app.pb-ui>.pb-dashboard{display:block!important}
+@media(min-width:901px){
+  body.app.pb-ui>.pb-sidebar{display:block!important}
+  body.app.pb-ui>.pb-dashboard{display:block!important}
+}
+@media(max-width:900px){
+  body.app.pb-ui>.pb-sidebar{display:none!important}
+  body.app.pb-ui>.pb-dashboard{display:block!important}
+  body.app.pb-ui.mobile-order-view>.pb-dashboard{display:block!important}
+}
