@@ -17,32 +17,12 @@ body:not(.app) a:focus-visible,body:not(.app) button:focus-visible{outline:3px s
 @media(max-width:440px){body:not(.app) h1{font-size:clamp(36px,10.5vw,46px);line-height:1.12;letter-spacing:-1.5px}body:not(.app) .service{padding:20px}body:not(.app) .service .tags{min-height:0;margin-bottom:16px}body:not(.app) .wrap{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}}
 @media(prefers-reduced-motion:reduce){body:not(.app) .btn,body:not(.app) .service{transition:none}}
 
-/* FINAL FIGMA LOCK — New Prime Boostly
-   Approved source of truth:
-   - Dashboard desktop: 2:30
-   - Dashboard mobile: 2:36
-   - New Order mobile: 2:38
-   Keep superseded V2 concepts from replacing these screens. */
-body.app.pb-ui{background:#f8fbf8!important;color:#16212d!important;font-family:Inter,sans-serif!important}
-body.app.pb-ui>.v2-dashboard,
-body.app.pb-ui>.order-v2,
-body.app.pb-ui>.order-ready-v2,
-body.app.pb-ui>.order-review-v2,
-body.app.pb-ui>.order-price-v2,
-body.app.pb-ui>.order-submitted-v2{display:none!important}
-body.app.pb-ui>.pb-dashboard{display:block!important}
-@media(min-width:901px){
-  body.app.pb-ui>.pb-sidebar{display:block!important}
-  body.app.pb-ui>.pb-dashboard{display:block!important}
-}
-@media(max-width:900px){
-  body.app.pb-ui>.pb-sidebar{display:none!important}
-  body.app.pb-ui>.pb-dashboard{display:block!important}
-  body.app.pb-ui.mobile-order-view>.pb-dashboard{display:block!important}
-}
+/* Dashboard note:
+   Mobile dashboard and New Order now intentionally use the PrimeBoostly V2
+   Figma flow. Do not force-hide .v2-dashboard or the V2 order states here. */
 
-/* Figma 2:30 / 2:38 includes a Provider row before Category. Keep it
-   presentation-only so the existing order/provider backend is untouched. */
+/* The legacy desktop order card still needs the Provider row used by the
+   approved desktop preview. This does not affect the V2 mobile order flow. */
 #new-order>.pb-field:first-of-type::before{content:'Provider';order:0;color:#2db05e;font:700 13px Inter,sans-serif}
 #new-order>.pb-field:first-of-type::after{content:'Mercury';order:1;width:577px;height:40px;padding:0 14px;border:1px solid #dbe7de;border-radius:14px;background:#fff;color:#6c7b88;display:flex;align-items:center;box-sizing:border-box;font:400 13px Inter,sans-serif}
 #new-order>.pb-field:first-of-type>span{order:2}
@@ -57,8 +37,8 @@ body.app.pb-ui>.pb-dashboard{display:block!important}
 }
 
 /* FINAL ORDERS FIGMA LOCK
-   Desktop: 6:2 · Mobile: 6:663. The V2 Orders concept remains in markup for
-   compatibility but must never replace the approved Figma screens. */
+   Desktop: 6:2 · Mobile: 6:663. The separate Orders page keeps the approved
+   Figma screens while the dashboard uses the V2 mobile experience. */
 body.orders-page.pb-ui>.orders-v2{display:none!important}
 @media(min-width:1101px){
   body.orders-page.pb-ui>.pb-sidebar{display:block!important}
