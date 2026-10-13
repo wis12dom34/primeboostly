@@ -122,3 +122,84 @@
     url.searchParams.set('serviceName',service);card.href=url.pathname+url.search;
   });
 })();
+
+/* Provider-facing frontend map.
+   Real Nigeria Followers = the newly added provider/API.
+   Normal SMM = the existing SMM provider, limited in this customer UI to
+   Instagram, TikTok, Facebook and YouTube. Provider names and API keys stay hidden. */
+(() => {
+  const style=document.createElement('style');
+  style.textContent=`
+    .pb-source-pill{display:inline-flex;align-items:center;width:max-content;min-height:22px;margin:0 0 5px;padding:3px 8px;border-radius:999px;background:#e8faf0;color:#168a45;font:700 9px/1.2 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase}
+    .pb-source-pill.normal{background:#f1f5f2;color:#53645a}
+    .pb-provider-copy{white-space:normal!important;line-height:1.35!important}
+  `;
+  document.head.append(style);
+
+  const setCopy=(card,title,description,badge,kind)=>{
+    if(!card)return;
+    card.dataset.providerGroup=kind;
+    const copy=card.querySelector('.pb-copy,[class*="-copy"]');
+    if(!copy)return;
+    const strong=copy.querySelector('strong,.v2-service-name');
+    const small=copy.querySelector('small,.v2-service-desc');
+    if(strong)strong.textContent=title;
+    if(small){small.textContent=description;small.classList.add('pb-provider-copy')}
+    if(!copy.querySelector('.pb-source-pill')){
+      const pill=document.createElement('span');
+      pill.className='pb-source-pill'+(kind==='normal-smm'?' normal':'');
+      pill.textContent=badge;
+      copy.prepend(pill);
+    }
+  };
+
+  const realHome=document.querySelector('.v2-service-real');
+  setCopy(realHome,'Real Nigeria Followers','Nigeria-focused followers from the new provider','New provider','real-nigeria');
+  if(realHome)realHome.href='/dashboard.html?mode=new&source=real-nigeria';
+
+  const normalHome=document.querySelector('.v2-service-normal');
+  setCopy(normalHome,'Normal SMM','Instagram · TikTok · Facebook · YouTube','Normal SMM','normal-smm');
+  if(normalHome)normalHome.href='/normal-smm.html';
+
+  const realService=document.querySelector('.sv2-type-real');
+  setCopy(realService,'Real Nigeria Followers','Nigeria-focused followers from the new provider','New provider','real-nigeria');
+  if(realService)realService.href='/dashboard.html?mode=new&source=real-nigeria';
+
+  const normalService=document.querySelector('.sv2-type-normal');
+  setCopy(normalService,'Normal SMM','Instagram · TikTok · Facebook · YouTube','Normal SMM','normal-smm');
+  if(normalService)normalService.href='/normal-smm.html';
+
+  const normalSummary=document.querySelector('.nsm-summary-copy');
+  if(normalSummary){
+    const name=normalSummary.querySelector('strong');
+    const desc=normalSummary.querySelector('small');
+    if(name)name.textContent='Normal SMM';
+    if(desc){desc.textContent='Instagram · TikTok · Facebook · YouTube';desc.classList.add('pb-provider-copy')}
+  }
+  const normalHeading=document.querySelector('.nsm-heading');
+  if(normalHeading)normalHeading.textContent='Choose a Normal SMM platform';
+
+  const allowed=['instagram','tiktok','facebook','youtube'];
+  document.querySelectorAll('.nsm-choice').forEach(card=>{
+    const label=card.querySelector('strong')?.textContent.trim().toLowerCase();
+    if(label&&!allowed.includes(label))card.hidden=true;
+    else if(label)card.dataset.providerGroup='normal-smm';
+  });
+  document.querySelectorAll('.sv2-platform').forEach(card=>{
+    const label=card.querySelector('strong')?.textContent.trim().toLowerCase();
+    if(label&&!allowed.includes(label))card.hidden=true;
+    else if(label)card.dataset.providerGroup='normal-smm';
+  });
+
+  const params=new URLSearchParams(location.search);
+  if(params.get('source')==='real-nigeria'){
+    document.querySelectorAll('.ordrv2-summary-copy,.orrv2-summary-copy').forEach(copy=>{
+      const name=copy.querySelector('strong');
+      const desc=copy.querySelector('small');
+      if(name)name.textContent='Real Nigeria Followers';
+      if(desc)desc.textContent='New provider · Nigeria-focused followers';
+    });
+    const sub=document.querySelector('.orv2-sub');
+    if(sub)sub.textContent='Choose the platform for your Real Nigeria Followers order.';
+  }
+})();
