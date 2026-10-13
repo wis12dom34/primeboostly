@@ -55,3 +55,20 @@ body.app.pb-ui>.pb-dashboard{display:block!important}
   body.app.pb-ui.mobile-order-view .pb-platforms .sp{display:none!important}
   body.app.pb-ui.mobile-order-view .pb-order-tabs [data-order-mode='favorite']{display:none!important}
 }
+
+/* FINAL ORDERS FIGMA LOCK
+   Desktop: 6:2 · Mobile: 6:663. The V2 Orders concept remains in markup for
+   compatibility but must never replace the approved Figma screens. */
+body.orders-page.pb-ui>.orders-v2{display:none!important}
+@media(min-width:1101px){
+  body.orders-page.pb-ui>.pb-sidebar{display:block!important}
+  body.orders-page.pb-ui>.orders-desktop{display:block!important}
+  body.orders-page.pb-ui>.orders-mobile{display:none!important}
+}
+@media(max-width:1100px){
+  body.orders-page.pb-ui>.pb-sidebar,
+  body.orders-page.pb-ui>.orders-desktop,
+  body.orders-page.pb-ui>.orders-v2{display:none!important}
+  body.orders-page.pb-ui>.orders-mobile{display:block!important}
+  body.orders-page.pb-ui{background:#f8fbf8!important;font-family:Poppins,Inter,sans-serif!important}
+}
