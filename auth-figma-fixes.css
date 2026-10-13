@@ -1,4 +1,5 @@
-.mobile-login-lead,.mobile-register-foot,.mobile-register-phone-label,.mobile-submit-label{display:none}
+.mobile-login-lead,.mobile-register-foot,.mobile-register-phone-label,.mobile-submit-label,.mobile-login-title{display:none}
+.desktop-login-title{display:inline}
 
 /* Auth pages must never create horizontal scroll on mobile Safari. */
 html,body.auth-page{width:100%;max-width:100%;overflow-x:hidden}
@@ -22,6 +23,8 @@ body.auth-page *{box-sizing:border-box}
   .auth-page .auth-field-row .auth-field,.auth-page .auth-field,.auth-page .mobile-stack-fields{width:100%;min-width:0}
   .auth-page .auth-field input{width:100%;min-width:0;max-width:100%}
 
+  .auth-login-page .desktop-login-title{display:none}
+  .auth-login-page .mobile-login-title{display:inline}
   .auth-login-page .desktop-login-lead{display:none}
   .auth-login-page .mobile-login-lead{display:block;width:auto;min-height:0;font:400 13px/1.4 Nunito,Inter,sans-serif;text-align:center;white-space:normal}
   .auth-login-page .auth-figma-shell{padding-left:16px;padding-right:16px}
