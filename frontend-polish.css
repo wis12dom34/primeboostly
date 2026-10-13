@@ -36,21 +36,22 @@ body:not(.app) a:focus-visible,body:not(.app) button:focus-visible{outline:3px s
   body.app.pb-ui.mobile-order-view .pb-order-tabs [data-order-mode='favorite']{display:none!important}
 }
 
-/* FINAL ORDERS FIGMA LOCK
-   Desktop: 6:2 · Mobile: 6:663. The separate Orders page keeps the approved
-   Figma screens while the dashboard uses the V2 mobile experience. */
+/* ORDERS RESPONSIVE SOURCE OF TRUTH
+   Desktop keeps the existing table. Mobile uses Orders V2 so navigation,
+   spacing and card hierarchy match Dashboard, Services and New Order. */
 body.orders-page.pb-ui>.orders-v2{display:none!important}
-@media(min-width:1101px){
+@media(min-width:901px){
   body.orders-page.pb-ui>.pb-sidebar{display:block!important}
   body.orders-page.pb-ui>.orders-desktop{display:block!important}
-  body.orders-page.pb-ui>.orders-mobile{display:none!important}
+  body.orders-page.pb-ui>.orders-mobile,
+  body.orders-page.pb-ui>.orders-v2{display:none!important}
 }
-@media(max-width:1100px){
+@media(max-width:900px){
   body.orders-page.pb-ui>.pb-sidebar,
   body.orders-page.pb-ui>.orders-desktop,
-  body.orders-page.pb-ui>.orders-v2{display:none!important}
-  body.orders-page.pb-ui>.orders-mobile{display:block!important}
-  body.orders-page.pb-ui{background:#f8fbf8!important;font-family:Poppins,Inter,sans-serif!important}
+  body.orders-page.pb-ui>.orders-mobile{display:none!important}
+  body.orders-page.pb-ui>.orders-v2{display:flex!important;flex-direction:column!important}
+  body.orders-page.pb-ui{background:#fff!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,Arial,sans-serif!important}
 }
 
 /* CUSTOMER SCREEN ALIGNMENT + OVERLAP FIX
@@ -165,12 +166,17 @@ body.pb-ui input,body.pb-ui select,body.pb-ui textarea,body.app.pb-ui input,body
     overflow:visible!important;
     padding-bottom:calc(106px + env(safe-area-inset-bottom))!important;
   }
-  body.orders-page.pb-ui>.orders-mobile{
+  body.orders-page.pb-ui>.orders-v2{
     width:min(100%,440px)!important;
     max-width:100%!important;
     min-height:100dvh!important;
     height:auto!important;
     margin-inline:auto!important;
+    overflow:visible!important;
+  }
+  body.orders-page.pb-ui .ov2-content{
+    height:auto!important;
+    min-height:calc(100dvh - 44px)!important;
     overflow:visible!important;
     padding-bottom:calc(106px + env(safe-area-inset-bottom))!important;
   }
