@@ -187,3 +187,55 @@ body.pb-ui input,body.pb-ui select,body.pb-ui textarea,body.app.pb-ui input,body
   body.pb-ui nav[aria-label='Primary navigation'],body.app.pb-ui nav[aria-label='Primary navigation']{padding-left:6px!important;padding-right:6px!important}
   body.pb-ui nav[aria-label='Primary navigation']>a,body.app.pb-ui nav[aria-label='Primary navigation']>a{font-size:10px!important}
 }
+
+/* MINIMAL MOBILE BUTTON DENSITY
+   Keep accessible 44px touch targets while reducing visual weight. */
+@media(max-width:900px){
+  body.pb-ui .pb-screen button,body.app.pb-ui .pb-screen button{
+    min-height:44px!important;
+    font-size:14px!important;
+    line-height:1.25!important;
+  }
+  body.pb-ui .pb-primary-button,body.app.pb-ui .pb-primary-button,
+  body.pb-ui .btn.primary,body.app.pb-ui .btn.primary,
+  body.pb-ui .auth-submit,body.pb-ui .flow-button,
+  body.pb-ui .ordrv2-review,body.pb-ui .orrv2-confirm{
+    min-height:44px!important;
+    padding:10px 14px!important;
+    border-radius:12px!important;
+    font-size:14px!important;
+    line-height:1.25!important;
+    font-weight:650!important;
+  }
+  body.pb-ui .pb-secondary-button,body.app.pb-ui .pb-secondary-button,
+  body.pb-ui .pb-screen :is(.state-secondary,.cd-mobile-secondary,.cd-mobile-danger),
+  body.app.pb-ui .pb-screen :is(.state-secondary,.cd-mobile-secondary,.cd-mobile-danger){
+    min-height:44px!important;
+    padding:9px 12px!important;
+    border-radius:12px!important;
+    font-size:14px!important;
+    line-height:1.25!important;
+  }
+  body.app.pb-ui .v2-add-funds,body.app.pb-ui .v2-live-orders{
+    height:44px!important;
+    min-height:44px!important;
+    border-radius:12px!important;
+  }
+  body.app.pb-ui .v2-add-funds{font-size:13px!important;font-weight:650!important;gap:6px!important}
+  body.app.pb-ui .v2-live-orders{padding:4px 8px!important}
+  body.app.pb-ui .v2-live-orders strong{font-size:12px!important;line-height:14px!important}
+  body.app.pb-ui .v2-live-orders small{font-size:10px!important;line-height:12px!important}
+  body.pb-ui :is(.spfv2-row,.secv2-row,.aev2-submit).pb-primary-button,
+  body.app.pb-ui :is(.spfv2-row,.secv2-row,.aev2-submit).pb-primary-button{
+    min-height:44px!important;
+    padding:10px 14px!important;
+    border-radius:12px!important;
+  }
+  body.pb-ui .pb-section-heading .pb-secondary-button,body.app.pb-ui .pb-section-heading .pb-secondary-button{
+    padding:8px 10px!important;
+    min-height:44px!important;
+    font-size:13px!important;
+    border-radius:11px!important;
+    gap:5px!important;
+  }
+}
