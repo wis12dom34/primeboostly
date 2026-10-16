@@ -1,15 +1,39 @@
-/* Final PrimeBoostly Add Funds source of truth.
-   Approved mobile Figma: 6:564. Keep the superseded Add Funds V2 wizard inert
-   while preserving the existing desktop funding page and all payment links. */
-html body.fund-page.pb-ui>main.add-funds-v2.pb-screen{display:none!important}
+/* PrimeBoostly Add Funds source of truth.
+   Use the production-aware V2 flow on mobile. Keep the existing desktop
+   funding page intact until its payment handoff is migrated separately. */
 @media(min-width:901px){
   html body.fund-page.pb-ui>header.fund-header.pb-legacy{display:flex!important}
   html body.fund-page.pb-ui>main.fund-content.pb-legacy{display:block!important}
+  html body.fund-page.pb-ui>main.add-funds-v2.pb-screen,
   html body.fund-page.pb-ui>main.mobile-add-funds.pb-legacy{display:none!important}
 }
 @media(max-width:900px){
   html body.fund-page.pb-ui>header.fund-header.pb-legacy,
   html body.fund-page.pb-ui>main.fund-content.pb-legacy,
-  html body.fund-page.pb-ui>main.add-funds-v2.pb-screen{display:none!important}
-  html body.fund-page.pb-ui>main.mobile-add-funds.pb-legacy{display:block!important}
+  html body.fund-page.pb-ui>main.mobile-add-funds.pb-legacy{display:none!important}
+  html body.fund-page.pb-ui>main.add-funds-v2.pb-screen{display:flex!important}
+  html body.fund-page.pb-ui{margin:0;min-height:100dvh;background:#f7faf8;overflow-x:hidden}
+  .add-funds-v2{width:100%;min-height:100dvh;flex-direction:column;background:#f7faf8;color:#17212f;padding-top:env(safe-area-inset-top)}
+  .afv2-status.pb-fake-status{display:none!important}
+  .afv2-content{width:min(100%,560px);margin:0 auto;padding:14px 16px calc(104px + env(safe-area-inset-bottom));box-sizing:border-box}
+  .afv2-top{min-height:48px;display:grid;grid-template-columns:44px 1fr 44px;align-items:center;margin-bottom:18px}
+  .afv2-top h1{margin:0;text-align:center;font:700 20px/1.2 Poppins,Inter,sans-serif;color:#17212f}
+  .afv2-back{width:40px;height:40px;border:1px solid #dce7e0;border-radius:12px;background:#fff;color:#17212f;display:grid;place-items:center;text-decoration:none;font:500 30px/1 Inter,sans-serif}
+  .afv2-wallet{padding:18px;border-radius:18px;background:#edf8f1;margin-bottom:14px;display:flex;flex-direction:column;gap:4px}
+  .afv2-wallet small{font:500 12px/1.4 Poppins,Inter,sans-serif;color:#6b7c8f}
+  .afv2-wallet strong{font:700 26px/1.25 Poppins,Inter,sans-serif;color:#17212f}
+  .afv2-step,.afv2-notice{width:100%;box-sizing:border-box;border:1px solid #dce7e0;border-radius:14px;background:#fff;margin-bottom:10px;padding:15px;display:flex;align-items:center;justify-content:space-between;gap:14px;text-decoration:none;color:#17212f;min-height:76px}
+  .afv2-copy{min-width:0;display:flex;flex-direction:column;gap:4px}
+  .afv2-copy strong{font:600 13px/1.4 Poppins,Inter,sans-serif}
+  .afv2-copy small{font:400 11px/1.45 Poppins,Inter,sans-serif;color:#6b7c8f}
+  .afv2-action{flex:none;max-width:48%;text-align:right;color:#199e50;font:600 12px/1.4 Poppins,Inter,sans-serif}
+  .afv2-step.locked{opacity:.58;pointer-events:none}
+  .afv2-amount-input{width:130px;max-width:38vw;height:42px;box-sizing:border-box;border:1px solid #cfded4;border-radius:10px;background:#fff;padding:0 12px;color:#17212f;font:600 15px Poppins,Inter,sans-serif;outline:none}
+  .afv2-amount-input:focus{border-color:#199e50;box-shadow:0 0 0 3px rgba(25,158,80,.10)}
+  .afv2-notice{justify-content:flex-start;background:#f4fbf6;border-color:#d8eee0}
+  .afv2-info{width:28px;height:28px;border-radius:50%;background:#dff4e6;color:#199e50;display:grid;place-items:center;flex:none;font:700 13px Inter,sans-serif}
+  .afv2-bottom{position:fixed;left:0;right:0;bottom:0;z-index:30;min-height:64px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid #e5ece7;display:grid;grid-template-columns:repeat(5,1fr);backdrop-filter:blur(18px)}
+  .afv2-tab{min-width:0;color:#7b8794;text-decoration:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font:500 10px/1.2 Poppins,Inter,sans-serif}
+  .afv2-tab-icon{font:600 20px/1 Inter,sans-serif}
+  .afv2-tab.active{color:#199e50}
 }
